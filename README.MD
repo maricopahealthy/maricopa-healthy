@@ -3,7 +3,7 @@
 ## Tooling
 Markdown CheatSheet: [@Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
 
-Workflow: [@ForkingWorkflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
+Workflow: [@GitFlowWorkflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 #### Node Environment
 Query Builder: [@KnexJS](https://knexjs.org/ "Knex Query Builder Documentation")
 
