@@ -12,10 +12,10 @@ const passport = require('passport');
 
 // express middleware
 app.use(bodyParser.json({
-    extended: true
+  extended: true
 }));
 app.use(bodyParser.urlencoded({
-    extended: true
+  extended: true
 }));
 app.use(cors());
 // Passport.js middleware
@@ -27,8 +27,8 @@ require('./config/passport')(passport);
 routes_setter(app, passport);
 
 app.listen(PORT, function (err) {
-    if (err) {
-        throw new Error("Server failed to start correctly: ", err);
-    }
-    console.log('Server listening on port:', PORT);
+  if (err) {
+    throw new Error("Server failed to start correctly: ", err);
+  }
+  console.log('Server listening on port:', PORT);
 });
