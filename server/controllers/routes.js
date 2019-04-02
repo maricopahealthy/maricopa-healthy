@@ -12,4 +12,22 @@ module.exports = (app) => {
   app.get("/users/{id}", users.findById);
   app.delete("/users/{id}", users.findByIdAndDelete);
 
+  // Routes for Markets
+
+  // Routes for Recipes
+
+  // Routes for Parks
+
+  // Routes for Activities
+
+  // Routes for Events
+
+  // Routes for Resources
+
+  // Routes for Favorites
+
+  // Routes for Subscriptions
+
+  // Routes for Notifications
+
 };

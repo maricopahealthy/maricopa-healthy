@@ -1,3 +1,4 @@
+// todo: DELETE THIS SCREEN THIS IS A SAMPLE
 import React from 'react';
 import { ExpoConfigView } from '@expo/samples';
 
