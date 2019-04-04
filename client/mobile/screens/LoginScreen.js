@@ -1,18 +1,22 @@
-// todo: HomeScreen
+// todo: LoginScreen
 import React from 'react';
 import {
   View,
   Text,
-  Button,
   StyleSheet,
+  Button,
 } from "react-native";
 
-export default class HomeScreen extends React.Component {
+export default class LoginScreen extends React.Component {
 
   render() {
     return (
         <View style={styles.container}>
-          <Text>Home Screen</Text>
+          <Text>Login Screen</Text>
+          <Button
+            title="Login"
+            onPress={() => {}}
+          />
         </View>
     )
   }

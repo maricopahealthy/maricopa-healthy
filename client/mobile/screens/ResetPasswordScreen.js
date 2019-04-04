@@ -1,18 +1,16 @@
-// todo: HomeScreen
+// todo: ResetPasswordScreen
 import React from 'react';
 import {
   View,
-  Text,
-  Button,
-  StyleSheet,
+  Text, StyleSheet
 } from "react-native";
 
-export default class HomeScreen extends React.Component {
+export default class ResetPasswordScreen extends React.Component {
 
   render() {
     return (
         <View style={styles.container}>
-          <Text>Home Screen</Text>
+          <Text>Reset Password Screen</Text>
         </View>
     )
   }

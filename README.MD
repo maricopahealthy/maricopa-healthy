@@ -17,6 +17,15 @@ An example of a valid ticket number would consist of: `OS-0.0.1-0732`.
 Query Builder: [@KnexJS](https://knexjs.org/ "Knex Query Builder Documentation")
 
 Database Driver: [@PostgreSQL](https://github.com/brianc/node-postgres "PostgreSQL driver for node")
+#### React Environment
+Framework: [@React-Native](https://facebook.github.io/react-native/docs/getting-started)
+
+Routing: [@React-Navigation](https://reactnavigation.org/docs/en/getting-started.html)
+
+State-Management: [@React-Redux](https://react-redux.js.org/introduction/basic-tutorial)
+
+Component-Library: [@Nativebase](https://docs.nativebase.io/)
+
 #### Documentation
 Documentation will be handled via JSDocs standard library. For reference getting started see here: [@JSDocs](http://usejsdoc.org/index.html "JSDocs Home Page")
 #### Testing
