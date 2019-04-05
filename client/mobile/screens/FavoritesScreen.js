@@ -1,16 +1,20 @@
-// todo: SettingsScreen
+// todo: FavoritesScreen
 import React from 'react';
 import {
   View,
   Text, StyleSheet
 } from "react-native";
 
-export default class SettingsScreen extends React.Component {
+export default class FavoritesScreen extends React.Component {
 
   render() {
     return (
         <View style={styles.container}>
-          <Text>Settings Screen</Text>
+          <Text>Favorites Screen</Text>
+          <Button
+            title="Create Account"
+            onPress={() => {}}
+          />
         </View>
     )
   }

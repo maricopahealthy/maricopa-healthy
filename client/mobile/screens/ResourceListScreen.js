@@ -1,16 +1,17 @@
-// todo: SettingsScreen
+// todo: ResourceListScreen
+// component corresponds to the Markets ListView, Recipes ListView, etc...
 import React from 'react';
 import {
   View,
   Text, StyleSheet
 } from "react-native";
 
-export default class SettingsScreen extends React.Component {
+export default class AboutScreen extends React.Component {
 
   render() {
     return (
         <View style={styles.container}>
-          <Text>Settings Screen</Text>
+          <Text>About Text Screen</Text>
         </View>
     )
   }
