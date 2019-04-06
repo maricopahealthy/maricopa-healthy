@@ -1,4 +1,4 @@
-# Maricopa Healthy Content Management System
+# Maricopa Healthy Mobile Platform
 
 ## Proposal
 
@@ -6,19 +6,19 @@
 
 ## User Stories
 
-#### Example View 1
+#### Loading
 ###### Layout:
 - Requirement 1
 - Req 2
 ###### Functionality:
 - Req 1
 
-#### Example View 2
+#### OnBoarding
 ###### Layout:
 
 ###### Functionality:
 
-#### Example View 3
-####### Layout:
+#### Settings
+###### Layout:
 
-####### Functionality:
+###### Functionality:
