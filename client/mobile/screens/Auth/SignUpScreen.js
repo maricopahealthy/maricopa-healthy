@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Button,
 } from "react-native";
-import { NavigationActions } from 'react-navigation';
+import { NavigationActions } from 'react-navigation/typescript/react-navigation';
 
 export default class SignUpScreen extends React.Component {
 

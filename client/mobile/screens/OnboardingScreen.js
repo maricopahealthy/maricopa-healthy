@@ -1,4 +1,4 @@
-// todo: OnBoardingScreen
+// todo: OnboardingScreen
 import React from 'react';
 import {
   View,
@@ -7,7 +7,10 @@ import {
   StyleSheet,
 } from "react-native";
 
-export default class OnBoardingScreen extends React.Component {
+/**
+ * Landing page for Users with no active sign-in credentials.
+ */
+export default class OnboardingScreen extends React.Component {
 
   render() {
     return (

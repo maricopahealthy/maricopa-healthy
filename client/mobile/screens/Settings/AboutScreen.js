@@ -1,17 +1,16 @@
-// todo: ResourceListScreen
-// component corresponds to the Markets ListView, Recipes ListView, etc...
+// todo: AboutScreen
 import React from 'react';
-import {
-  View,
-  Text, StyleSheet
-} from "react-native";
+import { View, Text, StyleSheet } from 'react-native';
 
+/**
+ * About Page for Maricopa Healthy Program.
+ */
 export default class AboutScreen extends React.Component {
 
   render() {
     return (
-        <View style={styles.container}>
-          <Text>About Text Screen</Text>
+        <View>
+          <Text>About Screen</Text>
         </View>
     )
   }

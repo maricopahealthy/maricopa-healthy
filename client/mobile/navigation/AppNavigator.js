@@ -6,7 +6,7 @@
 import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import AuthLoadingScreen from "../screens/AuthLoadingScreen";
+import LoadingScreen from "../screens/LoadingScreen";
 
 // Navigators
 import AuthNavigator from './AuthNavigator';
@@ -18,7 +18,7 @@ import AuthNavigator from './AuthNavigator';
  */
 const switchNavigator = createSwitchNavigator(
     {
-      AuthLoading: AuthLoadingScreen,
+      AuthLoading: LoadingScreen,
       Auth: AuthNavigator,
       // todo: figure out how to add more routing.
     },

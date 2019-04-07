@@ -1,16 +1,19 @@
-// todo: AboutScreen
+// todo: NotificationsScreen
 import React from 'react';
 import {
   View,
   Text, StyleSheet
 } from "react-native";
 
-export default class AboutScreen extends React.Component {
+/**
+ * Displays User's active notifications.
+ */
+export default class NotificationsScreen extends React.Component {
 
   render() {
     return (
         <View style={styles.container}>
-          <Text>About Screen</Text>
+          <Text>Notifications Screen</Text>
         </View>
     )
   }
