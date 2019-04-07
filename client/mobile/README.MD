@@ -23,15 +23,15 @@ The following sections detail the features and related functionality of the mobi
 #### Loading
 ###### Layout:
 - When the app is launched, a loading screen will appear consisting of a solid background color.
-- Loading Screen will include the Maricopa Healthy Logo and tagline.
+- Loading Screen will include the Maricopa Healthy Logo and tag-line.
 ###### Functionality:
 - Loading Screen will display an active revolving status icon indicating the app is working to complete loading.
 
 #### Onboarding
 ###### Layout:
-- Onboarding will display a Favorites screen including: Maricopa Healthy Logo, Favorites icon, tagline, Signup Button, Login Button.
-- Onboarding will display a Filters screen including: Maricopa Healthy Logo, Favorites icon, tagline, Signup Button, Login Button.
-- Onboarding will display a Notifications screen including: Maricopa Healthy Logo, Favorites icon, tagline, Signup Button, Login Button.
+- Onboarding will display a Favorites screen including: Maricopa Healthy Logo, Favorites icon, tag-line, Sign-up Button, Login Button.
+- Onboarding will display a Filters screen including: Maricopa Healthy Logo, Favorites icon, tag-line, Sign-up Button, Login Button.
+- Onboarding will display a Notifications screen including: Maricopa Healthy Logo, Favorites icon, tag-line, Sign-up Button, Login Button.
 - All onboarding screen swill display a carousel indicator to indicate active screen.
 
 ###### Functionality:
@@ -40,12 +40,17 @@ The following sections detail the features and related functionality of the mobi
 - Onboarding screens will automatically cycle through display on a fixed timer.
 - User will be able to actively cycle through onboarding screens via a left/right swiping gesture.
 - User will be able to navigate directly to a screen by tapping a the carousel indicator dot.
-- User will be able to login, or signup for a new account on the application.
+- User will be able to login, or sign-up for a new account on the application.
 
 #### Home Screen
 ###### Layout:
+- Top navigation bar will display icons corresponding to: Settings, Search, Notifications, and Favorites, in addition to Maricopa Healthy title.
+- Home Screen will display a list view of all application-level Features including: Markets, Recipes, Parks, Active, Events, Resources and Subscribe.
+- List view cards will include corresponding title, and include a relevant image as background.
 
 ###### Functionality:
+- Top navigation bar will allow users redirection to: Settings, Search, Notifications, and Favorites.
+- Users will be allowed reduced functionality and navigation through Features depending on User credential status.
 
 #### Settings
 ###### Layout:
