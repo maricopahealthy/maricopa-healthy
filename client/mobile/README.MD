@@ -221,8 +221,12 @@ The following sections detail the features and related functionality of the mobi
 
 #### Resources
 ###### Layout:
--
+- As a User, I will see a list view of tiles of all the resources in alphabetical order of only the first 20 results.
+- As a User, on an individual record I will see a thumbnail, resource name, and favorite icon at the top. That is followed by a description and a learn more button.
 
 ###### Functionality:
--
+- As a User, in list view I can view 20 records and scroll through the list to load more at the bottom.
+- As a User, I can tap the up/down arrows to easily move between the individual records.
+- As an Admin, I will be able to update all database information including thumbnails, resource names, and descriptions.
+- As an Admin, I can edit all action button icons, titles and destinations.
 
