@@ -1,4 +1,6 @@
 // todo: HomeScreen
+// note: Points-of-Interest list view
+// note: Points-of-Interest Card
 import React from 'react';
 import {
   View,
@@ -7,6 +9,9 @@ import {
   StyleSheet,
 } from "react-native";
 
+/**
+ * Application main page used for displaying and navigating the Maricopa Healthy Application Resources.
+ */
 export default class HomeScreen extends React.Component {
 
   render() {

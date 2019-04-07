@@ -1,4 +1,4 @@
-// todo: AuthLoadingScreen
+// todo: LoadingScreen
 import React from 'react';
 import {
   View,
@@ -7,7 +7,10 @@ import {
   StyleSheet,
 } from "react-native";
 
-export default class AuthLoadingScreen extends React.Component {
+/**
+ * Loading Screen displayed during application 'Open'.
+ */
+export default class LoadingScreen extends React.Component {
   // Fetch the token from storage then navigate to the appropriate place.
   // _bootstrapAsync = async () => {
   //  todo: Implement logic for token based Auth

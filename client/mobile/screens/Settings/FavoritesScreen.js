@@ -1,20 +1,17 @@
 // todo: FavoritesScreen
+// note:
 import React from 'react';
-import {
-  View,
-  Text, StyleSheet
-} from "react-native";
+import { View, Text, StyleSheet} from 'react-native';
 
+/**
+ * Primary screen for accessing User's 'Favorite-d' content.
+ */
 export default class FavoritesScreen extends React.Component {
 
   render() {
     return (
-        <View style={styles.container}>
-          <Text>Favorites Screen</Text>
-          <Button
-            title="Create Account"
-            onPress={() => {}}
-          />
+        <View>
+          <Text>Settings Favorites Screen</Text>
         </View>
     )
   }

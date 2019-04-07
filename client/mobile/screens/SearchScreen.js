@@ -1,16 +1,20 @@
-// todo: SettingsScreen
+// todo: SearchScreen
+// note: SearchResultsList component
 import React from 'react';
 import {
   View,
   Text, StyleSheet
 } from "react-native";
 
-export default class SettingsScreen extends React.Component {
+/**
+ * Component corresponds to the App level search functionality. Results are shown for all text matches across all resources.
+ */
+export default class SearchScreen extends React.Component {
 
   render() {
     return (
         <View style={styles.container}>
-          <Text>Settings Screen</Text>
+          <Text>Search Screen</Text>
         </View>
     )
   }

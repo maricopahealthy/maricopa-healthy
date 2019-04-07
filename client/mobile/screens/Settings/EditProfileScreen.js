@@ -1,16 +1,18 @@
-// todo: AboutScreen
+// todo: EditProfileScreen
 import React from 'react';
 import {
-  View,
-  Text, StyleSheet
+  View, Text, StyleSheet
 } from "react-native";
 
-export default class AboutScreen extends React.Component {
+/**
+ * Users can edit their profile settings.
+ */
+export default class EditProfileScreen extends React.Component {
 
   render() {
     return (
-        <View style={styles.container}>
-          <Text>About Text Screen</Text>
+        <View>
+          <Text>Edit Profile Screen</Text>
         </View>
     )
   }
