@@ -3,7 +3,7 @@
 ## Proposal
 #### Project Description
 Maricopa Healthy is an existing mobile app that was originally launched in March 2016. It was built on a proprietary template, has very limited functionality and several unresolved bugs have decreased user retention and limit the product owner’s ability to promote the app. The goal of the app rebuild is to:
-- Fix the existings bugs;
+- Fix the existing bugs;
 - Increase and improve app functionality;
 - Promote user engagement; and
 - Allow the app and its content to be easily shared and promoted by both users and the product owner. 
@@ -85,13 +85,15 @@ The following sections detail the features and related functionality of the mobi
 
 #### Markets
 ###### Layout:
+-
 
 ###### Functionality:
+-
 
 #### Recipes
 ###### Layout:
 - Recipes Home screen will display a list view of all recipes tagged as "featured" in the database.
-- Recipes Filter screen will display a set of features by which to filter including: Ingredient, Meal Type, Rating, and SortBy category.
+- Recipes Filter screen will display a set of criteria by which to filter including: Ingredient, Meal Type, Rating, and SortBy category.
 - Recipes Record screen will display: recipe name, action buttons, Ingredients section, cooking Directions section, Nutrition Facts, and Ratings.
 
 ###### Functionality:
@@ -103,20 +105,40 @@ The following sections detail the features and related functionality of the mobi
 
 #### Parks
 ###### Layout:
+-
 
 ###### Functionality:
+-
 
 #### Active
 ###### Layout:
+-
 
 ###### Functionality:
+-
 
 #### Events
 ###### Layout:
+- Events Home Screen will display a list view of the first 20 events in the database sorted in chronological order inclusive of events currently underway.
+- Events Home Screen will feature infinite scrolling through paginated results.
+- Events Filter screen will display a set of criteria by which to filter including: City, Zip Code, Cost, Recommended Age, Time of Day, Day of Week, and Date Range.
+- Filter sections with more than three rows of buttons will accordion and include an expandability feature.
+- Events Home Screen will indicate active filter criteria in order to inform the user that additional events are available.
+- Events Record Screen will include: an event header component, action buttons, Details, and Where.
 
 ###### Functionality:
+- Users will be able to sort events by: Best Match, Most Popular, and Nearest.
+- City and Zipcode filter criteria shall be mutually exclusive. Users can use one but not both when applying a filter.
+- If a user has location services enabled, relevant filter criteria will be preferentially selected when applying filters.
+- If a user does not have location services enabled, City and Zipcode criteria will both be initially visible until a selection is made.
+- Event Record header component will consist of: a thumbnail, event name, time, and cost.
+- Event Record screen will include action buttons for the following actions: "Favorite", "Reminder", "Directions", "Meetup", and "Learn More".
+- Events Learn More will include a deep-link to the event page.
+- Users will be able to navigate between records via navigational arrows accessible with in the Event Record Screen.
 
 #### Resources
 ###### Layout:
+-
 
 ###### Functionality:
+-
