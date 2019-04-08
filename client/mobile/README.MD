@@ -8,7 +8,7 @@ Maricopa Healthy is an existing mobile app that was originally launched in March
 - Promote user engagement; and
 - Allow the app and its content to be easily shared and promoted by both users and the product owner. 
 
-- From a technical perspective, the new Maricopa Healthy app must be:
+From a technical perspective, the new Maricopa Healthy app must be:
 - Built for iOS and Android platforms using an open-source framework;
 - Compatible with mobile phones and tablets;
 - Able to support previous versions of both platforms; and
