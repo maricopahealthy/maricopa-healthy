@@ -7,14 +7,14 @@ import SignUpScreen from "../screens/Auth/SignUpScreen";
 import ResetPasswordScreen from "../screens/Auth/ResetPasswordScreen";
 
 /**
- * AuthNavigator is a stackNavigator used for authentication flow.
+ * AuthStack is a stackNavigator used for authentication flow.
  * @type {NavigationContainer}
  */
-const AuthNavigator = createStackNavigator({
+const AuthStack = createStackNavigator({
   OnBoarding: OnboardingScreen,
   SignUp: SignUpScreen,
   Login: LoginScreen,
   ResetPassword: ResetPasswordScreen,
 });
 
-export default AuthNavigator;
+export default AuthStack;

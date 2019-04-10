@@ -15,7 +15,7 @@ export default class LoginScreen extends React.Component {
           <Text>Login Screen</Text>
           <Button
             title="Login"
-            onPress={() => {}}
+            onPress={() => {this.props.navigation.navigate("App")}}
           />
         </View>
     )
