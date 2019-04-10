@@ -20,31 +20,31 @@ export default class HomeScreen extends React.Component {
           <Text>Home Screen</Text>
           <Button
             title="Markets"
-            onPress={() => {}}
+            onPress={() => {this.props.navigation.navigate("Markets")}}
           />
           <Button
               title="Recipes"
-              onPress={() => {}}
+              onPress={() => {this.props.navigation.navigate("Recipes")}}
           />
           <Button
               title="Parks"
-              onPress={() => {}}
+              onPress={() => {this.props.navigation.navigate("Parks")}}
           />
           <Button
               title="Active"
-              onPress={() => {}}
+              onPress={() => {this.props.navigation.navigate("Active")}}
           />
           <Button
               title="Events"
-              onPress={() => {}}
+              onPress={() => {this.props.navigation.navigate("Events")}}
           />
           <Button
               title="Resources"
-              onPress={() => {}}
+              onPress={() => {this.props.navigation.navigate("Resources")}}
           />
           <Button
               title="Subscribe"
-              onPress={() => {}}
+              onPress={() => {this.props.navigation.navigate("Subscribe")}}
           />
         </View>
     )
