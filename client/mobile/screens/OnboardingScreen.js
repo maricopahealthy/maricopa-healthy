@@ -2,10 +2,9 @@
 import React from 'react';
 import {
   View,
-  Text,
-  Button,
   StyleSheet,
 } from "react-native";
+import { Container, Content, Button, Text, Form, Item, Input } from "native-base";
 
 /**
  * Landing page for Users with no active sign-in credentials.
@@ -14,17 +13,27 @@ export default class OnboardingScreen extends React.Component {
 
   render() {
     return (
-        <View style={styles.container}>
-          <Text>Onboarding Screen</Text>
-          <Button
-            title="Sign Up"
-            onPress={() => this.props.navigation.navigate("SignUp")}
-          />
-          <Button
-            title="Log In"
-            onPress={() => this.props.navigation.navigate("Login")}
-          />
-        </View>
+        <Container>
+          <Content padder>
+            <View style={{ flexGrow: 3, justifyContent: "center", alignItems: "center" }}>
+              <Text>Onboarding Screen</Text>
+            </View>
+            <View style={{ flexGrow: 1, flexDirection: 'row', justifyContent: 'space-evenly' }}>
+              <Button
+                  bordered
+                  onPress={() => this.props.navigation.navigate("SignUp")}
+              >
+                <Text>Sign Up</Text>
+              </Button>
+              <Button
+                  bordered
+                  onPress={() => this.props.navigation.navigate("Login")}
+              >
+                <Text>Login</Text>
+              </Button>
+            </View>
+          </Content>
+        </Container>
     )
   }
 }

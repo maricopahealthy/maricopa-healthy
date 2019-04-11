@@ -11,7 +11,7 @@ import ResetPasswordScreen from "../screens/Auth/ResetPasswordScreen";
  * @type {NavigationContainer}
  */
 const AuthStack = createStackNavigator({
-  OnBoarding: OnboardingScreen,
+  Onboarding: OnboardingScreen,
   SignUp: SignUpScreen,
   Login: LoginScreen,
   ResetPassword: ResetPasswordScreen,

@@ -1,11 +1,7 @@
 // todo: LoadingScreen
 import React from 'react';
-import {
-  View,
-  Text,
-  Button,
-  StyleSheet,
-} from "react-native";
+import { View, Text, StyleSheet } from "react-native";
+import { Container, Header, Content, Spinner } from 'native-base'
 
 /**
  * Loading Screen displayed during application 'Open'.
@@ -16,16 +12,20 @@ export default class LoadingScreen extends React.Component {
   //  todo: Implement logic for token based Auth
   // this.props.navigation.navigate(userToken ? "App" : "Auth");
   // }
+  componentDidMount() {
+    // currently being used to simulate loading, navigates to onboarding route after 2 seconds
+    setTimeout(() => {this.props.navigation.navigate("Onboarding")}, 2000);
+  }
 
   render() {
     return (
-        <View style={styles.container}>
-          <Text>Loading Screen</Text>
-          <Button
-            title="On Boarding"
-            onPress={() => this.props.navigation.navigate("OnBoarding")}
-          />
-        </View>
+        <Container>
+          <Header></Header>
+          <Content>
+            <Text>Loading Screen</Text>
+            <Spinner  />
+          </Content>
+        </Container>
     )
   }
 }
