@@ -21,9 +21,20 @@ export default class LoadingScreen extends React.Component {
     return (
         <Container>
           <Header></Header>
-          <Content>
-            <Text>Loading Screen</Text>
-            <Spinner  />
+          <Content
+              padder
+              contentContainerStyle={{ flex: 1, backgroundColor: 'orange' }}
+          >
+            <View
+                style={{ flex: 2, flexDirection: 'row', justifyContent: 'center' }}
+            >
+              <Text>Loading Screen</Text>
+            </View>
+            <View
+                style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}
+            >
+              <Spinner color='red' />
+            </View>
           </Content>
         </Container>
     )

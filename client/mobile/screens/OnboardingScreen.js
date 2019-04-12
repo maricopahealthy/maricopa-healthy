@@ -14,11 +14,14 @@ export default class OnboardingScreen extends React.Component {
   render() {
     return (
         <Container>
-          <Content padder>
-            <View style={{ flexGrow: 3, justifyContent: "center", alignItems: "center" }}>
+          <Content
+              padder
+              contentContainerStyle={{ flex: 1 }}
+          >
+            <View style={{ flex: 5, justifyContent: 'center', alignItems: 'center' }}>
               <Text>Onboarding Screen</Text>
             </View>
-            <View style={{ flexGrow: 1, flexDirection: 'row', justifyContent: 'space-evenly' }}>
+            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-evenly' }}>
               <Button
                   bordered
                   onPress={() => this.props.navigation.navigate("SignUp")}
@@ -31,6 +34,11 @@ export default class OnboardingScreen extends React.Component {
               >
                 <Text>Login</Text>
               </Button>
+            </View>
+            <View
+                style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}
+            >
+              <Text>Skip and explore the app.</Text>
             </View>
           </Content>
         </Container>
