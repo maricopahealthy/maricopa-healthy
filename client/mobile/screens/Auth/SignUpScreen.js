@@ -1,7 +1,7 @@
 // todo: SignUpScreen
 import React from 'react';
-import { View, StyleSheet } from "react-native";
-import {Container, Content, Button, Text, Item, Input, Form} from "native-base";
+import { View, StyleSheet, FlatList } from "react-native";
+import {Container, Content, Button, Text, Item, Input, Form } from "native-base";
 
 export default class SignUpScreen extends React.Component {
 
@@ -10,7 +10,16 @@ export default class SignUpScreen extends React.Component {
         <Container>
           <Content padder>
             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
-              <Text>Sign Up Screen Text goes here</Text>
+              <FlatList
+                data={[
+                  {key: 'list-0', text: 'Get more out of Maricopa Healthy by creating an account so you can:'},
+                  {key: 'list-1', text: '\u2022 Favorite content and view it later'},
+                  {key: 'list-2', text: '\u2022 Schedule or join a meetup;'},
+                  {key: 'list-3', text: '\u2022 Rate content and upload photos;'},
+                  {key: 'list-4', text: '\u2022 Subscribe to personalized content.'}
+                ]}
+                renderItem={({item}) => <Text>{item.text}</Text>}
+              />
             </View>
             <Form>
               <Item regular>
@@ -29,10 +38,11 @@ export default class SignUpScreen extends React.Component {
                 <Input placeholder='Promo Code (optional)'/>
               </Item>
             </Form>
-            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
+            <View style={{ flex: 1 }}>
               <Button
-                  bordered
-                  onPress={() => this.props.navigation.navigate("OnBoarding")}
+                  block
+                  danger
+                  onPress={() => {this.props.navigation.navigate("Login")}}
               >
                 <Text>Create Account</Text>
               </Button>

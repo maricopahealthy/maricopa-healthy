@@ -23,13 +23,13 @@ export default class OnboardingScreen extends React.Component {
             </View>
             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-evenly' }}>
               <Button
-                  bordered
+                  danger
                   onPress={() => this.props.navigation.navigate("SignUp")}
               >
                 <Text>Sign Up</Text>
               </Button>
               <Button
-                  bordered
+                  danger
                   onPress={() => this.props.navigation.navigate("Login")}
               >
                 <Text>Login</Text>

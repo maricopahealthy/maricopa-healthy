@@ -2,8 +2,9 @@
 // note: Points-of-Interest list view
 // note: Points-of-Interest Card
 import React from 'react';
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 import { Container, Content, Button, Text } from "native-base";
+import ResourceCard from "../components/ResourceCard";
 
 
 /**
@@ -18,44 +19,17 @@ export default class HomeScreen extends React.Component {
             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
               <Text>Home Screen</Text>
             </View>
-            <View style={{ flex: 1, justifyContent: 'space-evenly', alignItems: 'center' }}>
-              <Button
-                  bordered
-                  onPress={() => {this.props.navigation.navigate("Markets")}}
-              >
-                <Text>Markets</Text>
-              </Button>
-              <Button
-                  bordered
-                  onPress={() => {this.props.navigation.navigate("Recipes")}}
-              >
-                <Text>Recipes</Text>
-              </Button>
-              <Button
-                  bordered
-                  onPress={() => {this.props.navigation.navigate("Active")}}
-              >
-                <Text>Active</Text>
-              </Button>
-              <Button
-                  bordered
-                  onPress={() => {this.props.navigation.navigate("Events")}}
-              >
-                <Text>Events</Text>
-              </Button>
-              <Button
-                  bordered
-                  onPress={() => {this.props.navigation.navigate("Resources")}}
-              >
-                <Text>Resources</Text>
-              </Button>
-              <Button
-                  bordered
-                  onPress={() => {this.props.navigation.navigate("Subscribe")}}
-              >
-                <Text>Subscribe</Text>
-              </Button>
-            </View>
+            <FlatList
+                data={[
+                  {key: 'resource-0', resource: 'Markets'},
+                  {key: 'resource-1', resource: 'Recipes'},
+                  {key: 'resource-2', resource: 'Active'},
+                  {key: 'resource-3', resource: 'Events'},
+                  {key: 'resource-4', resource: 'Resources'},
+                  {key: 'resource-5', resource: 'Subscribe'},
+                ]}
+                renderItem={({item}) => <ResourceCard item={item} />}
+            />
           </Content>
         </Container>
     )
