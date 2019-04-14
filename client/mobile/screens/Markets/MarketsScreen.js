@@ -1,6 +1,8 @@
 // todo: MarketsScreen
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import { Button, Text } from "native-base";
+
 
 /**
  * Markets Screen for viewing individual market records.
@@ -11,6 +13,11 @@ export default class MarketsScreen extends React.Component {
     return (
       <View>
         <Text>Markets Screen</Text>
+        <Button
+          danger
+          onPress={() => this.props.navigation.navigate("MarketsList")}
+          title="List"
+        ><Text>List</Text></Button>
       </View>
     )
   }

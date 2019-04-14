@@ -38,7 +38,10 @@ export default class OnboardingScreen extends React.Component {
             <View
                 style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}
             >
-              <Text>Skip and explore the app.</Text>
+              <Text
+                onPress={() => this.props.navigation.navigate("App")}
+              >
+              Skip and explore the app.</Text>
             </View>
           </Content>
         </Container>

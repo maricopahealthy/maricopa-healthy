@@ -1,6 +1,7 @@
 // todo: MarketsListScreen
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
+import RecordTile from '../../components/RecordTile'
 
 /**
  * Markets view displaying list of markets.
@@ -10,7 +11,12 @@ export default class MarketsListScreen extends React.Component {
   render() {
     return (
       <View>
-        <Text>Markets List Screen</Text>
+        <FlatList
+          data={[
+            { key: 'Market1', record: 'Market 1' }
+          ]}
+          renderItem={({ item }) => <RecordTile item={item} />}
+        />
       </View>
     )
   }
