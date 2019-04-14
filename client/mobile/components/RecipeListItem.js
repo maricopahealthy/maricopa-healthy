@@ -10,7 +10,7 @@ const RecipeListItem = (props) => {
       <Card transparent>
         <CardItem
             button
-            onPress={() => {props.navigation.navigate()}}
+            onPress={() => {props.navigation.navigate("RecipesRecord")}}
         >
           <Left>
             <Thumbnail source={{uri: 'https://placekitten.com/g/200/200'}} />
