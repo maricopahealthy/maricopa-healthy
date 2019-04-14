@@ -15,7 +15,7 @@ export default class MarketsListScreen extends React.Component {
           data={[
             { key: 'Market1', record: 'Market 1' }
           ]}
-          renderItem={({ item }) => <RecordTile item={item} />}
+          renderItem={({ item }) => <RecordTile item={item} type="Markets" />}
         />
       </View>
     )

@@ -1,12 +1,13 @@
 // todo: RecordTile
 import React from 'react';
 import { StyleSheet } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import { Container, Content, List, ListItem, Thumbnail, Text, Left, Body, Right, Button } from 'native-base';
 
 /**
  * RecordTile is used for previewing different records.
  */
-export default class RecordTile extends React.Component {
+class RecordTile extends React.Component {
   render() {
     return (
       <Container>
@@ -21,7 +22,10 @@ export default class RecordTile extends React.Component {
                 <Text note numberOfLines={1}>{this.props.item.record} Description</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button 
+                  onPress={() => this.props.navigation.navigate(this.props.type)} 
+                  transparent
+                >
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -32,6 +36,8 @@ export default class RecordTile extends React.Component {
     );
   }
 }
+
+export default withNavigation(RecordTile);
 
 const styles = StyleSheet.create({
 
