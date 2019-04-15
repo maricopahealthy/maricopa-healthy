@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, SectionList } from 'react-native';
 import { Container, Content, Card, CardItem, Left, Thumbnail, Body, Text, Right, Icon, ListItem } from "native-base";
 import Section from '../../utils/SectionsUtility';
+import SectionHeader from '../../components/SectionHeader';
 
 // Used for sample data ==================================
 const ingredientData = [
@@ -41,7 +42,7 @@ const directionsData = [
     id: 3,
     direction: 'Combine oats, pecans, brown sugar, cinnamon, baking powder, baking soda, and salt in a large mixing bowl. Mix well.',
   },
-]
+];
 
 // remove above =============================================
 
@@ -81,17 +82,6 @@ const extractKey = ({id}) => id;
  */
 export default class RecipesRecordScreen extends React.Component {
 
-  /**
-   * Renders the section title and adds header specific styling.
-   */
-  renderSectionHeader =({section}) => {
-    return (
-        <ListItem itemDivider>
-          <Text>{section.title}</Text>
-        </ListItem>
-    )
-  }
-
   render() {
     return (
         <Container>
@@ -112,7 +102,7 @@ export default class RecipesRecordScreen extends React.Component {
           {/* Section information */}
           <SectionList
               sections={sections}
-              renderSectionHeader={this.renderSectionHeader}
+              renderSectionHeader={SectionHeader}
               keyExtractor={extractKey}
           />
           </Content>

@@ -11,7 +11,7 @@ export default class RecipesFilterScreen extends React.Component {
   render() {
     return (
         <Container>
-          <Content>
+          <Content padder>
             <FlatList>
               <ListItem itemDivider>
                 {/* Ingredient SearchBox */}
