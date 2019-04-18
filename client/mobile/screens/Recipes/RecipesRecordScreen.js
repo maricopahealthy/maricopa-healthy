@@ -4,6 +4,7 @@ import { StyleSheet, SectionList } from 'react-native';
 import { Container, Content, Card, CardItem, Left, Thumbnail, Body, Text, Right, Icon, ListItem } from "native-base";
 import Section from '../../utils/SectionsUtility';
 import SectionHeader from '../../components/SectionHeader';
+import RecipeReviews from '../../components/RecipeReviewsComponent';
 
 // Used for sample data ==================================
 const ingredientData = [
@@ -44,6 +45,13 @@ const directionsData = [
   },
 ];
 
+const nutritionData = [
+  {
+    id: 0,
+    nutrition: 'Calories, 260; Carbohydrates, 37 g; Protein,7 g; Total Fat, 10 g; Saturated Fat,1.5 g; Trans Fat,0 g; Cholesterol, 45 mg; Fiber, 6 g; Total Sugars, 14 g; Sodium, 330 mg; Calcium, 55 mg; Folate, 9.88 mcg; Iron, 1.85 mg.'
+  }
+]
+
 // remove above =============================================
 
 // sections to display for Recipe Record
@@ -62,11 +70,19 @@ const sections = [
         </ListItem>
     );
   }),
-  Section('Nutrition Facts (Per Serving)', [], ({item}) => {
-    return (<Text>Is this thing on?</Text>);
+  Section('Nutrition Facts (Per Serving)', nutritionData, ({item}) => {
+    return (
+        <ListItem>
+          <Text>{item.nutrition}</Text>
+        </ListItem>
+    );
   }),
-  Section('Reviews', [], ({item}) => {
-    return (<Text>Is this thing on?</Text>);
+  Section('Reviews', [{id: 0}], ({item}) => {
+    return (
+        <ListItem>
+          <RecipeReviews />
+        </ListItem>
+    );
   })
 ];
 

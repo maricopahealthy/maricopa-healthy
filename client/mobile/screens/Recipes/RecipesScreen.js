@@ -16,9 +16,9 @@ export default class RecipesScreen extends React.Component {
           <Content style={{ flex: 1 }}>
             <FlatList
                 data={[
-                  {title: 'Recipe 1', stars: '4 stars', reviews: '37 Reviews'},
-                  {title: 'Recipe 2', stars: '4.5 stars', reviews: '25 Reviews'},
-                  {title: 'Recipe 3', stars: '4.3 stars', reviews: '10 Reviews'},
+                  {key: '0', title: 'Recipe 1', stars: '4 stars', reviews: '37 Reviews'},
+                  {key: '1', title: 'Recipe 2', stars: '4.5 stars', reviews: '25 Reviews'},
+                  {key: '2', title: 'Recipe 3', stars: '4.3 stars', reviews: '10 Reviews'},
                 ]}
                 renderItem={({item}) => <RecipeListItem item={item} />}
             />
