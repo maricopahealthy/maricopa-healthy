@@ -1,10 +1,10 @@
 // todo: MarketsScreen
 import React from 'react';
-import { SectionList, View, Text, StyleSheet } from 'react-native';
-import { Container, Content, Button } from 'native-base'
+import { SectionList, View, StyleSheet } from 'react-native';
+import { Content, List, ListItem, Thumbnail, Text, Left, Body } from 'native-base';
 import SectionHeader from '../../components/SectionHeader';
 import ActionButton from '../../components/ActionButton';
-import RecordTile from '../../components/RecordTile';
+
 
 const sections = [
   {
@@ -21,6 +21,23 @@ const sections = [
     data: [
       { id: 2, text: 'Spring' },
       { id: 3, text: 'Summer' },
+    ]
+  },
+  {
+    id: 2,
+    title: 'Payment Options',
+    data: [
+      { id: 3, text: 'Cash' },
+      { id: 4, text: 'Check' },
+      { id: 5, text: 'Visa' },
+      { id: 6, text: 'Mastercard' },
+    ]
+  },
+  {
+    id: 3,
+    title: 'Reviews',
+    data: [
+      { id: 7, text: 'Good Selection' }
     ]
   }
 ]
@@ -51,10 +68,22 @@ export default class MarketsScreen extends React.Component {
     return (
       <View>
         <Text>Markets Screen</Text>
-        <RecordTile item={{ key: 'Market1', record: 'Market 1' }} />
-        <ActionButton title="more info" />
-        <ActionButton title="directions" />
-        <ActionButton title="meetup"/>
+          <List>
+            <ListItem thumbnail>
+              <Left>
+                <Thumbnail square source={{ uri: 'URL' }} />
+              </Left>
+              <Body>
+                <Text>Market 1</Text>
+                <Text note numberOfLines={1}>Market 1 Description</Text>
+              </Body>
+            </ListItem>
+          </List>
+        <View style={{ flexDirection: "row", justifyContent: 'space-between'}}>         
+          <ActionButton title="more info" />
+          <ActionButton title="directions" />
+          <ActionButton title="meetup"/>
+        </View>
         <SectionList
           sections={sections}
           renderItem={this.renderItem}
