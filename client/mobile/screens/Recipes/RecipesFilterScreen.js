@@ -13,8 +13,8 @@ export default class RecipesFilterScreen extends React.Component {
         <Container>
           <Content padder>
             <FlatList>
+              {/* Ingredient SearchBox */}
               <ListItem itemDivider>
-                {/* Ingredient SearchBox */}
                 <Text>Ingredient</Text>
               </ListItem>
               <ListItem>

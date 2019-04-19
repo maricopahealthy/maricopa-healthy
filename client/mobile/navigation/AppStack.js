@@ -1,5 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from "react-navigation";
+import { Icon } from 'native-base';
 // screens
 import HomeScreen from '../screens/HomeScreen'
 import MarketsScreen from '../screens/Markets/MarketsScreen'
@@ -21,7 +22,13 @@ const AppStack = createStackNavigator({
   // Recipes Group
   Recipes: RecipesScreen,
   RecipesFilter: RecipesFilterScreen,
-  RecipesRecord: RecipesRecordScreen,
+  RecipesRecord: {
+    screen: RecipesRecordScreen,
+    navigationOptions: () => ({
+      title: 'Recipes',
+      headerRight: <Icon name='home' />
+    })
+  },
 
   // Parks Group
   Parks: ParksScreen,
