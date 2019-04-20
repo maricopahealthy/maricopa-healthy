@@ -3,7 +3,7 @@ import { createStackNavigator } from "react-navigation";
 import { Header, Left, Right, Body, Icon, Text, Button } from 'native-base';
 // screens
 import HomeScreen from '../screens/HomeScreen'
-//Markets
+//Markets Screen Groups
 import MarketsScreen from '../screens/Markets/MarketsScreen'
 import MarketsListScreen from '../screens/Markets/MarketsListScreen';
 import MarketsMapScreen from '../screens/Markets/MarketsMapScreen';
@@ -17,8 +17,10 @@ import ParksScreen from '../screens/Parks/ParksScreen'
 // Active Screen Group
 import ActiveScreen from '../screens/Active/ActiveScreen'
 // Events Screen Group
-import EventsScreen from '../screens/Events/EventsScreen'
+import EventGroup from './navigation-groups/EventGroup'
+// Resource Screen Group
 import ResourcesScreen from '../screens/Resources/ResourcesScreen'
+// Subscribe Screen Group
 import SubscribeScreen from '../screens/Settings/SubscribeScreen'
 
 /**
@@ -45,7 +47,9 @@ const AppStack = createStackNavigator({
   Active: ActiveScreen,
 
   // Events Group
-  Events: EventsScreen,
+  Events: EventGroup.Events,
+  EventsFilter: EventGroup.EventsFilter,
+  EventsRecord: EventGroup.EventsRecord,
 
   // Resources Group
   Resources: ResourcesScreen,
