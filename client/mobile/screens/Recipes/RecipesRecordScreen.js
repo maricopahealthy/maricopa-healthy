@@ -50,7 +50,7 @@ const nutritionData = [
     id: 0,
     nutrition: 'Calories, 260; Carbohydrates, 37 g; Protein,7 g; Total Fat, 10 g; Saturated Fat,1.5 g; Trans Fat,0 g; Cholesterol, 45 mg; Fiber, 6 g; Total Sugars, 14 g; Sodium, 330 mg; Calcium, 55 mg; Folate, 9.88 mcg; Iron, 1.85 mg.'
   }
-]
+];
 
 // remove above =============================================
 
@@ -87,13 +87,6 @@ const sections = [
 ];
 
 /**
- * returns a unique id property for generating the necessary 'key' of a react list.
- * @param id
- * @returns {*}
- */
-const extractKey = ({id}) => id;
-
-/**
  * RecipesRecord displays a detailed Screen for a single recipe from the RecipeList.
  */
 export default class RecipesRecordScreen extends React.Component {
@@ -126,6 +119,13 @@ export default class RecipesRecordScreen extends React.Component {
     )
   }
 };
+
+/**
+ * returns a unique id property for generating the necessary 'key' of a react list.
+ * @param id
+ * @returns {*}
+ */
+const extractKey = ({id}) => id;
 
 const styles = StyleSheet.create({
   container: {
