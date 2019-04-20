@@ -21,7 +21,7 @@ export default class HomeScreen extends React.Component {
             </View>
             <FlatList
                 data={[
-                  {key: 'resource-0', resource: 'Markets'},
+                  {key: 'resource-0', resource: 'MarketsList'},
                   {key: 'resource-1', resource: 'Recipes'},
                   {key: 'resource-2', resource: 'Active'},
                   {key: 'resource-3', resource: 'Events'},

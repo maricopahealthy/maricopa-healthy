@@ -3,11 +3,14 @@ import { createStackNavigator } from "react-navigation";
 import { Header, Left, Right, Body, Icon, Text, Button } from 'native-base';
 // screens
 import HomeScreen from '../screens/HomeScreen'
+//Markets
 import MarketsScreen from '../screens/Markets/MarketsScreen'
+import MarketsListScreen from '../screens/Markets/MarketsListScreen';
+import MarketsMapScreen from '../screens/Markets/MarketsMapScreen';
+import MarketsFilterScreen from '../screens/Markets/MarketsFilterScreen';
+import MarketsLearnMoreScreen from '../screens/Markets/MarketsLearnMoreScreen';
+
 // Recipe Screen Group
-// import RecipesScreen from '../screens/Recipes/RecipesScreen'
-// import RecipesFilterScreen from "../screens/Recipes/RecipesFilterScreen";
-// import RecipesRecordScreen from "../screens/Recipes/RecipesRecordScreen";
 import RecipeGroup from './navigation-groups/RecipeGroup'
 // Parks Screen Group
 import ParksScreen from '../screens/Parks/ParksScreen'
@@ -24,7 +27,12 @@ import SubscribeScreen from '../screens/Settings/SubscribeScreen'
  */
 const AppStack = createStackNavigator({
   Home: HomeScreen,
+  //Markets
   Markets: MarketsScreen,
+  MarketsList: MarketsListScreen,
+  MarketsMap: MarketsMapScreen,
+  MarketsFilter: MarketsFilterScreen,
+  MarketsLearnMore: MarketsLearnMoreScreen,
   // Recipes Group
   Recipes: RecipeGroup.Recipes,
   RecipesFilter: RecipeGroup.RecipesFilter,
