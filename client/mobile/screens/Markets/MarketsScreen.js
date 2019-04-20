@@ -1,20 +1,23 @@
 // todo: MarketsScreen
 import React from 'react';
 import { SectionList, View, StyleSheet } from 'react-native';
-import { List, ListItem, Thumbnail, Text, Left, Body } from 'native-base';
+import { Container, Content, List, ListItem, Thumbnail, Text, Left, Body, H3 } from 'native-base';
 import Section from '../../utils/SectionsUtility';
 import SectionHeader from '../../components/SectionHeader';
 import ActionButton from '../../components/ActionButton';
 import SeasonalProduceTabs from '../../components/SeasonalProduceTabs';
+import RecipeReviews from '../../components/RecipeReviewsComponent';
 
 const hours = [
   {
     id: 0,
-    text: 'Wednesday'
+    day: 'Wednesday',
+    month: 'May - June: 8:00 am - 12:00 pm, October - April: 8:00 am - 12:00 pm'
   },
   {
     id: 1,
-    text: 'Saturday'
+    day: 'Saturday',
+    month: 'May - September: 8:00 am - 12:00 pm October - April: 9:00 am - 1:00 pm'
   }
 ];
 
@@ -23,22 +26,22 @@ const seasonalProduce = [{
     {
       id: 0,
       text: 'Spring',
-      produce: ['Spring', 'Bananas']
+      produce: 'Artichokes, Asparagus, Beets, Bok Choy, Broccoli, Brussels Sprouts, Cabbage, Carrots, Cauliflower, Celery, Chard, Cucumbers, Eggplant, Grapefruit, Green Onions, Greens, Kale, Kohlrabi, Leeks, Lettuce, Onions, Oranges, Parsnips, Radishes, Spinach, Strawberries, Summer Squash, Tomatoes, Turnips'
     },
     {
       id: 1,
       text: 'Summer',
-      produce: ['Summer', 'Bananas']
+      produce: 'Artichokes, Asparagus, Beets, Bok Choy, Broccoli, Brussels Sprouts, Cabbage, Carrots, Cauliflower, Celery, Chard, Cucumbers, Eggplant, Grapefruit, Green Onions, Greens, Kale, Kohlrabi, Leeks, Lettuce, Onions, Oranges, Parsnips, Radishes, Spinach, Strawberries, Summer Squash, Tomatoes, Turnips'
     },
     {
       id: 2,
       text: 'Autumn',
-      produce: ['Autumn', 'Bananas']
+      produce: 'Artichokes, Asparagus, Beets, Bok Choy, Broccoli, Brussels Sprouts, Cabbage, Carrots, Cauliflower, Celery, Chard, Cucumbers, Eggplant, Grapefruit, Green Onions, Greens, Kale, Kohlrabi, Leeks, Lettuce, Onions, Oranges, Parsnips, Radishes, Spinach, Strawberries, Summer Squash, Tomatoes, Turnips'
     },
     {
       id: 3,
       text: 'Winter',
-      produce: ['Winter', 'Bananas']
+      produce: 'Artichokes, Asparagus, Beets, Bok Choy, Broccoli, Brussels Sprouts, Cabbage, Carrots, Cauliflower, Celery, Chard, Cucumbers, Eggplant, Grapefruit, Green Onions, Greens, Kale, Kohlrabi, Leeks, Lettuce, Onions, Oranges, Parsnips, Radishes, Spinach, Strawberries, Summer Squash, Tomatoes, Turnips'
     }
   ]
 }]
@@ -46,19 +49,7 @@ const seasonalProduce = [{
 const paymentOptions = [
   {
     id: 0,
-    text: 'Cash'
-  },
-  {
-    id: 1,
-    text: 'Check'
-  },
-  {
-    id: 2,
-    text: 'Visa'
-  },
-  {
-    id: 3,
-    text: 'Mastercard'
+    text: 'Cash, Check, Visa, Mastercard, American Express, SNAP, WIC, FMNP, Double Up Food Bucks'
   }
 ]
 
@@ -72,7 +63,10 @@ export default class MarketsScreen extends React.Component {
     Section('Hours', hours, ({ item }) => {
       return (
         <ListItem>
-          <Text>{item.text}</Text>
+          <View>
+            <H3>{item.day}</H3>
+            <Text>{item.month}</Text>
+          </View>
         </ListItem>
       );
     }),
@@ -83,37 +77,48 @@ export default class MarketsScreen extends React.Component {
     }),
     Section('Payment Options', paymentOptions, ({ item }) => {
       return (
-        <Text>{item.text}</Text>
+        <Text>
+          {item.text}
+        </Text> 
       );
     }),
+    Section('Reviews', [{ id: 0 }], ({ item }) => {
+      return (
+        <ListItem>
+          <RecipeReviews />
+        </ListItem>
+      );
+    })
   ];
 
   render() {
     return (
-      <View>
-        <List>
-          <ListItem thumbnail>
-            <Left>
-              <Thumbnail square source={{ uri: 'URL' }} />
-            </Left>
-            <Body>
-              <Text>Market 1</Text>
-              <Text note numberOfLines={1}>Market 1 Description</Text>
-            </Body>
-          </ListItem>
-        </List>
-        <View style={{ flexDirection: "row", justifyContent: 'space-between' }}>
-          {/* //todo Wire up action buttons */}
-          <ActionButton title="more info" />
-          <ActionButton title="directions" />
-          <ActionButton title="meetup" />
-        </View>
-        <SectionList
-          sections={this.sections}
-          renderSectionHeader={SectionHeader}
-          keyExtractor={extractKey}
-        />
-      </View>
+      <Container>
+        <Content>
+          <List>
+            <ListItem thumbnail>
+              <Left>
+                <Thumbnail square source={{ uri: 'URL' }} />
+              </Left>
+              <Body>
+                <Text>Market 1</Text>
+                <Text note numberOfLines={1}>Market 1 Description</Text>
+              </Body>
+            </ListItem>
+          </List>
+          <View style={{ flexDirection: "row", justifyContent: 'space-between' }}>
+            {/* //todo Wire up action buttons */}
+            <ActionButton title="more info" />
+            <ActionButton title="directions" />
+            <ActionButton title="meetup" />
+          </View>
+          <SectionList
+            sections={this.sections}
+            renderSectionHeader={SectionHeader}
+            keyExtractor={extractKey}
+          />
+        </Content>
+      </Container>
     )
   }
 }

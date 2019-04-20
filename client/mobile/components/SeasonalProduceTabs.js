@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native'
-import { Content, Text, Segment, Button } from 'native-base';
+import { Text, Segment, Button } from 'native-base';
 
 export default class SeasonalProduceTabs extends React.Component {
   state = {
@@ -28,19 +28,15 @@ export default class SeasonalProduceTabs extends React.Component {
         </Button>
       )
     })
-    const produce = this.props.item.data.filter(season => season.text === this.state.produceTab)[0].produce.map((produce, i) => <Text key={i}>
-      {produce}
-    </Text>)
+    const produce = this.props.item.data.filter(season => season.text === this.state.produceTab)[0].produce
     return (
       <>
         <Segment>
           {buttons}
         </Segment>
-        <Content>
-          <Text>
-            {produce}
-          </Text>
-        </Content>
+        <Text>
+          {produce}
+        </Text>
       </>
     );
   }
