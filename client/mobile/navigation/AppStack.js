@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from "react-navigation";
-import { Icon } from 'native-base';
+import { Header, Left, Right, Body, Icon, Text, Button } from 'native-base';
 // screens
 import HomeScreen from '../screens/HomeScreen'
 import MarketsScreen from '../screens/Markets/MarketsScreen'
@@ -21,13 +21,59 @@ const AppStack = createStackNavigator({
   Markets: MarketsScreen,
   // Recipes Group
   Recipes: RecipesScreen,
-  RecipesFilter: RecipesFilterScreen,
+  RecipesFilter: {
+    screen: RecipesFilterScreen,
+    navigationOptions: {
+      header: props => {
+        return (
+            <Header>
+              <Left style={{ flexDirection: 'row' }}>
+                <Button transparent>
+                  <Icon name="ios-arrow-back" />
+                </Button>
+                <Button transparent>
+                  <Icon name="ios-home" />
+                </Button>
+              </Left>
+              <Body>
+                <Text>Filter</Text>
+              </Body>
+              <Right>
+                <Button transparent>
+                  <Text>Reset</Text>
+                </Button>
+              </Right>
+            </Header>
+        )
+      }
+    }
+  },
   RecipesRecord: {
     screen: RecipesRecordScreen,
-    navigationOptions: () => ({
-      title: 'Recipes',
-      headerRight: <Icon name='home' />
-    })
+    navigationOptions: {
+      header: props => {
+        return (
+            <Header>
+              <Left style={{ flexDirection: 'row' }}>
+                <Button transparent>
+                  <Icon name="ios-arrow-back" />
+                </Button>
+                <Button transparent>
+                  <Icon name="ios-home" />
+                </Button>
+              </Left>
+              <Body>
+                <Text>Recipes</Text>
+              </Body>
+              <Right>
+                <Button transparent>
+                  <Icon name="ios-options"/>
+                </Button>
+              </Right>
+            </Header>
+        )
+      }
+    }
   },
 
   // Parks Group
@@ -47,3 +93,26 @@ const AppStack = createStackNavigator({
 });
 
 export default AppStack;
+
+const CustomHeader = (props) => {
+  return (
+      <Header>
+        <Left style={{ flexDirection: 'row' }}>
+          <Button transparent>
+            <Icon name="ios-arrow-back" />
+          </Button>
+          <Button transparent>
+            <Icon name="ios-home" />
+          </Button>
+        </Left>
+        <Body>
+          <Text>Recipes</Text>
+        </Body>
+        <Right>
+          <Button transparent>
+            <Icon name="ios-options"/>
+          </Button>
+        </Right>
+      </Header>
+  )
+};
