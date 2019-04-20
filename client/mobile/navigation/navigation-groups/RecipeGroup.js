@@ -8,6 +8,39 @@ export default {
 
   Recipes: {
     screen: RecipesScreen,
+    navigationOptions: {
+      header: ({ navigation }) => {
+        return (
+            <Header>
+              <Left style={{ flexDirection: 'row' }}>
+                <Button
+                    transparent
+                    onPress={() => {navigation.pop()}}
+                >
+                  <Icon name="ios-arrow-back" />
+                </Button>
+                <Button
+                    transparent
+                    onPress={() => navigation.navigate("Home")}
+                >
+                  <Icon name="ios-home" />
+                </Button>
+              </Left>
+              <Body>
+                <Text>Recipes</Text>
+              </Body>
+              <Right>
+                <Button
+                    transparent
+                    onPress={() => navigation.navigate("RecipesFilter")}
+                >
+                  <Icon name="ios-options"/>
+                </Button>
+              </Right>
+            </Header>
+        )
+      }
+    }
   },
 
   RecipesFilter: {
@@ -34,7 +67,11 @@ export default {
                 <Text>Filter</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button
+                    transparent
+                    // todo: implement action for Reset button
+                    onPress={() => {}}
+                >
                   <Text>Reset</Text>
                 </Button>
               </Right>
@@ -70,9 +107,10 @@ export default {
               <Right>
                 <Button
                     transparent
-                    onPress={() => navigation.navigate("RecipesFilter")}
+                    // todo: implement function for share icon
+                    onPress={() => {}}
                 >
-                  <Icon name="ios-options"/>
+                  <Icon name="share"/>
                 </Button>
               </Right>
             </Header>
