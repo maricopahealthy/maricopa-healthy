@@ -1,9 +1,27 @@
 // todo: RecipesFilterScreen
 import React from 'react';
-import { SectionList, View, StyleSheet } from 'react-native';
-import { Container, Content, ListItem, Text, Button, Item, Input, Icon } from 'native-base';
+import { SectionList, FlatList, View, StyleSheet } from 'react-native';
+import { Container, Content, ListItem, Text, Button, Item, Input, Icon, Badge } from 'native-base';
+import { Rating } from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
+
+// Used for sample data ========================
+const mealTypeData = [
+  {id: 0, meal: 'Breakfast'},
+  {id: 1, meal: 'Lunch'},
+  {id: 2, meal: 'Dinner'},
+  {id: 3, meal: 'Dessert'},
+  {id: 4, meal: 'Snack'},
+];
+
+const sortByData = [
+  {id: 0, category: 'Recipe name (A to Z)'},
+  {id: 1, category: 'Recipe Name (Z to A)'},
+  {id: 2, category: 'Date Added (newest first)'},
+  {id: 3, category: 'Date Added (oldest first)'},
+]
+// Remove above ================================
 
 /**
  *  Display to add, modify, and delete filter categories for Recipes display results.
@@ -53,25 +71,25 @@ const sections= [
           </ListItem>
       )
     }),
-    Section('Meal Type', [{id: 0}], ({item}) => {
+    Section('Meal Type', mealTypeData, ({item}) => {
       return (
-          <ListItem>
-            <Text>Test</Text>
-          </ListItem>
+          <Badge>
+            <Text>{item.meal}</Text>
+          </Badge>
       )
     }),
     Section('Rating', [{id: 0}], ({item}) => {
       return (
           <ListItem>
-            <Text>Test</Text>
+            <Rating readonly />
           </ListItem>
       )
     }),
-    Section('Sort By', [{id: 0}], ({item}) => {
+    Section('Sort By', sortByData, ({item}) => {
       return (
-          <ListItem>
-            <Text>Test</Text>
-          </ListItem>
+          <Badge>
+            <Text>{item.category}</Text>
+          </Badge>
       )
     }),
 ];

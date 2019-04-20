@@ -19,7 +19,7 @@ export default {
               <Left style={{ flexDirection: 'row' }}>
                 <Button
                     transparent
-                    onPress={() => {}}
+                    onPress={() => {navigation.pop()}}
                 >
                   <Icon name="ios-arrow-back" />
                 </Button>
@@ -51,7 +51,10 @@ export default {
         return (
             <Header>
               <Left style={{ flexDirection: 'row' }}>
-                <Button transparent>
+                <Button
+                    transparent
+                    onPress={() => {navigation.pop()}}
+                >
                   <Icon name="ios-arrow-back" />
                 </Button>
                 <Button
