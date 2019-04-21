@@ -1,6 +1,6 @@
 // todo: RecipesFilterScreen
 import React from 'react';
-import { SectionList, FlatList, View, StyleSheet } from 'react-native';
+import { SectionList, View, StyleSheet } from 'react-native';
 import { Container, Content, ListItem, Text, Button, Item, Input, Icon, Badge } from 'native-base';
 import { Rating } from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";

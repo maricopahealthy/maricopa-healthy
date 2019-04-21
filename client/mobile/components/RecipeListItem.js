@@ -10,7 +10,7 @@ const RecipeListItem = (props) => {
       <Card transparent>
         <CardItem
             button
-            onPress={() => {props.navigation.navigate("RecipesRecord")}}
+            onPress={() => props.navigation.navigate("RecipesRecord")}
         >
           <Left>
             <Thumbnail source={{uri: 'https://placekitten.com/g/200/200'}} />
@@ -23,7 +23,7 @@ const RecipeListItem = (props) => {
             </Body>
           </Left>
           <Right>
-            <Icon name="arrow-forward" />
+            <Icon name="ios-arrow-forward" />
           </Right>
         </CardItem>
       </Card>
