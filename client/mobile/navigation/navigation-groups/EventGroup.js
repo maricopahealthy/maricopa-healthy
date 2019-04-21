@@ -1,7 +1,7 @@
 import React from 'react'
-import RecipesScreen from "../../screens/Recipes/RecipesScreen";
-import RecipesFilterScreen from "../../screens/Recipes/RecipesFilterScreen";
-import RecipesRecordScreen from "../../screens/Recipes/RecipesRecordScreen";
+import EventsRecordScreen from "../../screens/Events/EventsRecordScreen";
+import EventsFilterScreen from "../../screens/Events/EventsFilter";
+import EventsScreen from "../../screens/Events/EventsScreen";
 
 import NavigationalHeaderHome from "../../components/navigation-headers/NavigationalHeaderHome";
 import NavigationalHeaderFilter from "../../components/navigation-headers/NavigationalHeaderFilter";
@@ -9,22 +9,22 @@ import NavigationalHeaderRecord from "../../components/navigation-headers/Naviga
 
 export default {
 
-  Recipes: {
-    screen: RecipesScreen,
+  Events: {
+    screen: EventsScreen,
     navigationOptions: {
-      header: <NavigationalHeaderHome title="Recipes" filterScreenRoute="RecipesFilter" />
+      header: <NavigationalHeaderHome title="Events" filterScreenRoute="EventsFilter"/>
     }
   },
 
-  RecipesFilter: {
-    screen: RecipesFilterScreen,
+  EventsFilter: {
+    screen: EventsFilterScreen,
     navigationOptions: {
       header: <NavigationalHeaderFilter />
     }
   },
 
-  RecipesRecord: {
-    screen: RecipesRecordScreen,
+  EventsRecord: {
+    screen: EventsRecordScreen,
     navigationOptions: {
       header: <NavigationalHeaderRecord />
     }

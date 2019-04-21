@@ -3,7 +3,7 @@ import {Body, Card, CardItem, Icon, Left, ListItem, Right, Text, Thumbnail} from
 import { withNavigation } from 'react-navigation';
 
 /**
- * RecipeListItem is a presentational component for the Recipes home screen list view.
+ * RecipeListItem is a presentational component for the Recipes home screen list view. It renders a stylistically relevant Card for the Recipe Home screen.
  */
 const RecipeListItem = (props) => {
   return (
