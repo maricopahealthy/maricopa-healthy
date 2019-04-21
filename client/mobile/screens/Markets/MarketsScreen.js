@@ -59,38 +59,6 @@ const extractKey = ({ id }) => id
  * Markets Screen for viewing individual market records.
  */
 export default class MarketsScreen extends React.Component {
-  sections = [
-    Section('Hours', hours, ({ item }) => {
-      return (
-        <ListItem>
-          <View>
-            <H3>{item.day}</H3>
-            <Text>{item.month}</Text>
-          </View>
-        </ListItem>
-      );
-    }),
-    Section('Seasonal Produce', seasonalProduce, ({ item }) => {
-      return (
-        <SeasonalProduceTabs item={item} />
-      );
-    }),
-    Section('Payment Options', paymentOptions, ({ item }) => {
-      return (
-        <Text>
-          {item.text}
-        </Text> 
-      );
-    }),
-    Section('Reviews', [{ id: 0 }], ({ item }) => {
-      return (
-        <ListItem>
-          <RecipeReviews />
-        </ListItem>
-      );
-    })
-  ];
-
   render() {
     return (
       <Container>
@@ -106,14 +74,14 @@ export default class MarketsScreen extends React.Component {
               </Body>
             </ListItem>
           </List>
-          <View style={{ flexDirection: "row", justifyContent: 'space-between' }}>
+          <View style={styles.buttons}>
             {/* //todo Wire up action buttons */}
             <ActionButton title="more info" />
             <ActionButton title="directions" />
             <ActionButton title="meetup" />
           </View>
           <SectionList
-            sections={this.sections}
+            sections={sections}
             renderSectionHeader={SectionHeader}
             keyExtractor={extractKey}
           />
@@ -123,10 +91,41 @@ export default class MarketsScreen extends React.Component {
   }
 }
 
+const sections = [
+  Section('Hours', hours, ({ item }) => {
+    return (
+      <ListItem>
+        <View>
+          <H3>{item.day}</H3>
+          <Text>{item.month}</Text>
+        </View>
+      </ListItem>
+    );
+  }),
+  Section('Seasonal Produce', seasonalProduce, ({ item }) => {
+    return (
+      <SeasonalProduceTabs item={item} />
+    );
+  }),
+  Section('Payment Options', paymentOptions, ({ item }) => {
+    return (
+      <Text>
+        {item.text}
+      </Text>
+    );
+  }),
+  Section('Reviews', [{ id: 0 }], ({ item }) => {
+    return (
+      <ListItem>
+        <RecipeReviews />
+      </ListItem>
+    );
+  })
+];
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 15,
-    backgroundColor: '#fff',
+  buttons: { 
+    flexDirection: "row", 
+    justifyContent: 'space-between' 
   }
 });

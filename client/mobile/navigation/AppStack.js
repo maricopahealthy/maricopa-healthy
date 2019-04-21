@@ -5,18 +5,15 @@ import { Header, Left, Right, Body, Icon, Text, Button } from 'native-base';
 import HomeScreen from '../screens/HomeScreen'
 //Markets Screen Group
 import MarketsGroup from './navigation-groups/MarketsGroup'
-import MarketsScreen from '../screens/Markets/MarketsScreen'
-import MarketsListScreen from '../screens/Markets/MarketsListScreen';
 import MarketsMapScreen from '../screens/Markets/MarketsMapScreen';
-import MarketsFilterScreen from '../screens/Markets/MarketsFilterScreen';
 import MarketsLearnMoreScreen from '../screens/Markets/MarketsLearnMoreScreen';
 
 // Recipe Screen Group
 import RecipeGroup from './navigation-groups/RecipeGroup'
 // Parks Screen Group
-import ParksScreen from '../screens/Parks/ParksScreen'
+import ParksGroup from './navigation-groups/ParksGroup'
 // Active Screen Group
-import ActiveScreen from '../screens/Active/ActiveScreen'
+import ActiveGroup from './navigation-groups/ActiveGroup'
 // Events Screen Group
 import EventGroup from './navigation-groups/EventGroup'
 // Resource Screen Group
@@ -42,10 +39,14 @@ const AppStack = createStackNavigator({
   RecipesRecord: RecipeGroup.RecipesRecord,
 
   // Parks Group
-  Parks: ParksScreen,
+  Parks: ParksGroup.Parks,
+  ParksList: ParksGroup.ParksList,
+  ParksFilter: ParksGroup.ParksFilter,
 
   // Activities Group
-  Active: ActiveScreen,
+  Active: ActiveGroup.Active,
+  ActiveList: ActiveGroup.ActiveList,
+  ActiveFilter: ActiveGroup.ActiveFilter,
 
   // Events Group
   Events: EventGroup.Events,
