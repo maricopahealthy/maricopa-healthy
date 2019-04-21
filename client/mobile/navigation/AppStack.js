@@ -18,8 +18,10 @@ import ParksScreen from '../screens/Parks/ParksScreen'
 // Active Screen Group
 import ActiveScreen from '../screens/Active/ActiveScreen'
 // Events Screen Group
-import EventsScreen from '../screens/Events/EventsScreen'
+import EventGroup from './navigation-groups/EventGroup'
+// Resource Screen Group
 import ResourcesScreen from '../screens/Resources/ResourcesScreen'
+// Subscribe Screen Group
 import SubscribeScreen from '../screens/Settings/SubscribeScreen'
 
 /**
@@ -46,7 +48,9 @@ const AppStack = createStackNavigator({
   Active: ActiveScreen,
 
   // Events Group
-  Events: EventsScreen,
+  Events: EventGroup.Events,
+  EventsFilter: EventGroup.EventsFilter,
+  EventsRecord: EventGroup.EventsRecord,
 
   // Resources Group
   Resources: ResourcesScreen,

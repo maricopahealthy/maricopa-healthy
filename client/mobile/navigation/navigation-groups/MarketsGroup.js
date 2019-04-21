@@ -1,121 +1,32 @@
 import React from 'react'
 import MarketsScreen from "../../screens/Markets/MarketsScreen"
 import MarketsFilterScreen from "../../screens/Markets/MarketsFilterScreen";
-import { Body, Button, Header, Icon, Left, Right, Text } from "native-base";
 import MarketsListScreen from "../../screens/Markets/MarketsListScreen";
+
+import NavigationalHeaderHome from "../../components/navigation-headers/NavigationalHeaderHome";
+import NavigationalHeaderFilter from "../../components/navigation-headers/NavigationalHeaderFilter";
+import NavigationalHeaderRecord from "../../components/navigation-headers/NavigationalHeaderRecord";
 
 export default {
 
   MarketsList: {
     screen: MarketsListScreen,
     navigationOptions: {
-      header: ({ navigation }) => {
-        return (
-          <Header>
-            <Left style={{ flexDirection: 'row' }}>
-              <Button
-                transparent
-                onPress={() => { navigation.pop() }}
-              >
-                <Icon name="ios-arrow-back" />
-              </Button>
-              <Button
-                transparent
-                onPress={() => navigation.navigate("Home")}
-              >
-                <Icon name="ios-home" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Markets</Text>
-            </Body>
-            <Right>
-              <Button
-                transparent
-                onPress={() => navigation.navigate("MarketsFilter")}
-              >
-                <Icon name="ios-options" />
-              </Button>
-            </Right>
-          </Header>
-        )
-      }
+      header: <NavigationalHeaderHome title="Markets" filterScreenRoute="MarketsFilter" />
     }
   },
 
   MarketsFilter: {
     screen: MarketsFilterScreen,
     navigationOptions: {
-      header: ({ navigation }) => {
-        return (
-          <Header>
-            <Left style={{ flexDirection: 'row' }}>
-              <Button
-                transparent
-                onPress={() => { navigation.pop() }}
-              >
-                <Icon name="ios-arrow-back" />
-              </Button>
-              <Button
-                transparent
-                onPress={() => navigation.navigate("Home")}
-              >
-                <Icon name="ios-home" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Filter</Text>
-            </Body>
-            <Right>
-              <Button
-                transparent
-                // todo: implement action for Reset button
-                onPress={() => { }}
-              >
-                <Text>Reset</Text>
-              </Button>
-            </Right>
-          </Header>
-        )
-      }
+      header: <NavigationalHeaderFilter />
     }
   },
 
   Markets: {
     screen: MarketsScreen,
     navigationOptions: {
-      header: ({ navigation }) => {
-        return (
-          <Header>
-            <Left style={{ flexDirection: 'row' }}>
-              <Button
-                transparent
-                onPress={() => { navigation.pop() }}
-              >
-                <Icon name="ios-arrow-back" />
-              </Button>
-              <Button
-                transparent
-                onPress={() => navigation.navigate("Home")}
-              >
-                <Icon name="ios-home" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Markets</Text>
-            </Body>
-            <Right>
-              <Button
-                transparent
-                // todo: implement function for share icon
-                onPress={() => { }}
-              >
-                <Icon name="share" />
-              </Button>
-            </Right>
-          </Header>
-        )
-      }
+      header: <NavigationalHeaderRecord />
     }
   },
 
