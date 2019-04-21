@@ -1,121 +1,32 @@
 import React from 'react'
 import RecipesScreen from "../../screens/Recipes/RecipesScreen";
 import RecipesFilterScreen from "../../screens/Recipes/RecipesFilterScreen";
-import {Body, Button, Header, Icon, Left, Right, Text} from "native-base";
 import RecipesRecordScreen from "../../screens/Recipes/RecipesRecordScreen";
+
+import NavigationalHeaderHome from "../../components/navigation-headers/NavigationalHeaderHome";
+import NavigationalHeaderFilter from "../../components/navigation-headers/NavigationalHeaderFilter";
+import NavigationalHeaderRecord from "../../components/navigation-headers/NavigationalHeaderRecord";
 
 export default {
 
   Recipes: {
     screen: RecipesScreen,
     navigationOptions: {
-      header: ({ navigation }) => {
-        return (
-            <Header>
-              <Left style={{ flexDirection: 'row' }}>
-                <Button
-                    transparent
-                    onPress={() => {navigation.pop()}}
-                >
-                  <Icon name="ios-arrow-back" />
-                </Button>
-                <Button
-                    transparent
-                    onPress={() => navigation.navigate("Home")}
-                >
-                  <Icon name="ios-home" />
-                </Button>
-              </Left>
-              <Body>
-                <Text>Recipes</Text>
-              </Body>
-              <Right>
-                <Button
-                    transparent
-                    onPress={() => navigation.navigate("RecipesFilter")}
-                >
-                  <Icon name="ios-options"/>
-                </Button>
-              </Right>
-            </Header>
-        )
-      }
+      header: <NavigationalHeaderHome title="Recipes" filterScreenRoute="RecipesFilter" />
     }
   },
 
   RecipesFilter: {
     screen: RecipesFilterScreen,
     navigationOptions: {
-      header: ({ navigation }) => {
-        return (
-            <Header>
-              <Left style={{ flexDirection: 'row' }}>
-                <Button
-                    transparent
-                    onPress={() => {navigation.pop()}}
-                >
-                  <Icon name="ios-arrow-back" />
-                </Button>
-                <Button
-                    transparent
-                    onPress={() => navigation.navigate("Home")}
-                >
-                  <Icon name="ios-home" />
-                </Button>
-              </Left>
-              <Body>
-                <Text>Filter</Text>
-              </Body>
-              <Right>
-                <Button
-                    transparent
-                    // todo: implement action for Reset button
-                    onPress={() => {}}
-                >
-                  <Text>Reset</Text>
-                </Button>
-              </Right>
-            </Header>
-        )
-      }
+      header: <NavigationalHeaderFilter />
     }
   },
 
   RecipesRecord: {
     screen: RecipesRecordScreen,
     navigationOptions: {
-      header: ({ navigation }) => {
-        return (
-            <Header>
-              <Left style={{ flexDirection: 'row' }}>
-                <Button
-                    transparent
-                    onPress={() => {navigation.pop()}}
-                >
-                  <Icon name="ios-arrow-back" />
-                </Button>
-                <Button
-                    transparent
-                    onPress={() => navigation.navigate("Home")}
-                >
-                  <Icon name="ios-home" />
-                </Button>
-              </Left>
-              <Body>
-                <Text>Recipes</Text>
-              </Body>
-              <Right>
-                <Button
-                    transparent
-                    // todo: implement function for share icon
-                    onPress={() => {}}
-                >
-                  <Icon name="share"/>
-                </Button>
-              </Right>
-            </Header>
-        )
-      }
+      header: <NavigationalHeaderRecord />
     }
   },
 
