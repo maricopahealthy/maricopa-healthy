@@ -1,6 +1,7 @@
 // todo: EventsScreen
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
+import { Container, Content } from 'native-base';
 import EventListItem from '../../components/EventListItem';
 
 /**
