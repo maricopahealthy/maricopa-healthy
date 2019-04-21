@@ -25,7 +25,7 @@ const sortByData = [
 // Remove above ================================
 
 /**
- *  Display to add, modify, and delete filter categories for Recipes display results.
+ *  Display to add, modify, and delete filter categories for Markets display results.
  */
 export default class RecipesFilterScreen extends React.Component {
 
@@ -72,6 +72,7 @@ const sections = [
   Section('Zip Code', [{ id: 0 }], ({ item }) => {
     return (
       <Text>
+      {/* // todo add zip code slider */}
         zip code
       </Text>
     )
