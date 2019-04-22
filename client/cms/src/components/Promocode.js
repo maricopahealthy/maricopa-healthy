@@ -6,7 +6,7 @@ class Promocode extends React.Component {
         return (
             <div>
                 <table className="tables">
-
+                    <tr></tr>
                 </table>
             </div>
         );

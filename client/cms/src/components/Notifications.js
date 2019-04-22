@@ -6,8 +6,10 @@ class Notifications extends React.Component {
     render() {
         return (
             <div className='notifications'>
-                <div clsssName="note-form">
-                    <form ><input type="text" placeholder="Notification Content Here" required className="text-input" /><button type="submit">Send</button><button type="reset">Clear Fields</button></form>
+
+                <div className='note-form'>
+                    <h6>New Notification</h6>
+                    <form ><input type="text" placeholder="Notification Content Here" required className="text-input" /><button type="submit" className="notebutton">Send</button><button type="reset" className="notebutton">Clear Fields</button></form>
                 </div>
 
                 <Notification />
