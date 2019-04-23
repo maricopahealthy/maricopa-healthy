@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from "react-navigation";
 import { Header, Left, Right, Body, Icon, Text, Button } from 'native-base';
 // screens
-import HomeScreen from '../screens/HomeScreen'
+import HomeGroup from './navigation-groups/HomeGroup'
 //Markets Screen Group
 import MarketsGroup from './navigation-groups/MarketsGroup'
 import MarketsMapScreen from '../screens/Markets/MarketsMapScreen';
@@ -27,7 +27,9 @@ import SubscribeScreen from '../screens/Settings/SubscribeScreen'
  */
 const AppStack = createStackNavigator({
 
-  Home: HomeScreen,
+  //Home
+  Home: HomeGroup.Home,
+  Search: HomeGroup.Search,
 
   //Markets
   Markets: MarketsGroup.Markets,
