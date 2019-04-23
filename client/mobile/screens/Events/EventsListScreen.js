@@ -1,13 +1,13 @@
-// todo: EventsScreen
+// todo: EventsListScreen
 import React from 'react';
 import { FlatList, StyleSheet } from 'react-native';
 import { Container, Content } from 'native-base';
 import EventListItem from '../../components/EventListItem';
 
 /**
- * Events resource home page displaying upcoming events.
+ * Events resource home page displaying list of upcoming events.
  */
-export default class EventsScreen extends React.Component {
+export default class EventsListScreen extends React.Component {
 
   render() {
     return (

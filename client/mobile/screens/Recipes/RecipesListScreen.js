@@ -1,4 +1,4 @@
-// todo: RecipesScreen
+// todo: RecipesListScreen
 import React from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import { Container, Content, Text, Card, CardItem, ListItem, Thumbnail, Left, Body, Right, Icon } from 'native-base';
@@ -8,7 +8,7 @@ import RecipeListItem from "../../components/RecipeListItem";
 /**
  * Recipes resource home screen displaying a list view of available recipes.
  */
-export default class RecipesScreen extends React.Component {
+export default class RecipesListScreen extends React.Component {
 
   render() {
     return (
