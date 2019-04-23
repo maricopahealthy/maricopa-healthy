@@ -9,7 +9,8 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import LoadingScreen from "../screens/LoadingScreen";
 
 // Navigators
-import AuthNavigator from './AuthNavigator';
+import AuthStack from './AuthStack'
+import AppStack from './AppStack'
 
 /**
  * The purpose of SwitchNavigator is to only ever show one screen at a time. By, default
@@ -19,8 +20,8 @@ import AuthNavigator from './AuthNavigator';
 const switchNavigator = createSwitchNavigator(
     {
       AuthLoading: LoadingScreen,
-      Auth: AuthNavigator,
-      // todo: figure out how to add more routing.
+      Auth: AuthStack,
+      App: AppStack,
     },
     {
       initialRouteName: "AuthLoading",

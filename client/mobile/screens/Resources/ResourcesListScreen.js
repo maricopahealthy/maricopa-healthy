@@ -1,6 +1,8 @@
 // todo: ResourcesListScreen
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
+import { Container, Content } from 'native-base';
+import ResourceListItem from '../../components/ResourceListItem'
 
 /**
  * Default Resources view displaying list of Resources.
@@ -9,9 +11,18 @@ export default class ResourcesListScreen extends React.Component {
 
   render() {
     return (
-      <View>
-        <Text>Resources List Screen</Text>
-      </View>
+        <Container>
+          <Content>
+            <FlatList
+                data={[
+                  {key: 0, title: 'AZ Health Zone', description: 'Discover ways to stay active and eat healthy each and every day.'},
+                  {key: 1, title: 'Maricopa WIC', description: 'Teaser Text goes here and is truncated...'},
+                  {key: 2, title: 'Find Help Phoenix', description: 'Teaser Text goes here and is truncated...'},
+                ]}
+                renderItem={({item}) => <ResourceListItem item={item} />}
+            />
+          </Content>
+        </Container>
     )
   }
 };
