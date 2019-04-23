@@ -19,5 +19,5 @@ export default {
     navigationOptions: {
       header: <NavigationalHeaderFilter />
     }
-  }
+  },
 }

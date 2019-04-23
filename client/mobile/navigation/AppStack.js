@@ -20,6 +20,8 @@ import EventGroup from './navigation-groups/EventGroup'
 import ResourceGroup from './navigation-groups/ResourceGroup'
 // Subscribe Screen Group
 import SubscribeScreen from '../screens/Settings/SubscribeScreen'
+// Settings Screen Group
+import SettingsGroup from './navigation-groups/SettingsGroup'
 
 /**
  * AppStack is a stackNavigator used for the primary application flow.
@@ -65,6 +67,19 @@ const AppStack = createStackNavigator({
   // Subscription Group
   Subscribe: SubscribeScreen,
 
+  //Settings Group
+  Settings: SettingsGroup.Settings,
+  Profile: SettingsGroup.Profile,
+  EditProfile: SettingsGroup.EditProfile,
+  Contact: SettingsGroup.Contact,
+  About: SettingsGroup.About,
+  Favorites: SettingsGroup.Favorites,
+  Meetup: SettingsGroup.Meetup,
+  Notifications: SettingsGroup.Notifications,
+  PrivacyPolicy: SettingsGroup.PrivacyPolicy,
+  TermsOfService: SettingsGroup.TermsOfService,
+  Subscribe: SettingsGroup.Subscribe,
+  SubscribeRecipes: SettingsGroup.SubscribeRecipes
 });
 
 export default AppStack;
