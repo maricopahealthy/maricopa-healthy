@@ -1,6 +1,7 @@
 // todo: ResourcesScreen
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
+import { Container, Content, Text } from 'native-base';
 
 /**
  * Resources Screen for viewing individual resource records.
@@ -10,7 +11,7 @@ export default class ResourcesScreen extends React.Component {
   render() {
     return (
       <View>
-        <Text>Resources Screen</Text>
+        <Text>Resource Screen</Text>
       </View>
     )
   }
