@@ -1,4 +1,4 @@
-// todo: ResourcesScreen
+// todo: ResourcesRecordScreen
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import { Container, Content, Text } from 'native-base';
@@ -6,7 +6,7 @@ import { Container, Content, Text } from 'native-base';
 /**
  * Resources Screen for viewing individual resource records.
  */
-export default class ResourcesScreen extends React.Component {
+export default class ResourcesRecordScreen extends React.Component {
 
   render() {
     return (

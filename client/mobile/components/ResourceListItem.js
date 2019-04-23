@@ -7,13 +7,13 @@ const ResourceListItem = (props) => {
       <Card>
         <CardItem
             button
-            onPress={() => {}}
+            onPress={() => props.navigation.navigate("ResourcesRecord")}
         >
           <Left>
             <Thumbnail />
             <Body>
-              <Text>Text</Text>
-              <Text note>Text</Text>
+              <Text>{props.item.title}</Text>
+              <Text note>{props.item.description}</Text>
             </Body>
           </Left>
           <Right>

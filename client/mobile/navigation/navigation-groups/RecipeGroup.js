@@ -1,5 +1,5 @@
 import React from 'react'
-import RecipesScreen from "../../screens/Recipes/RecipesScreen";
+import RecipesListScreen from "../../screens/Recipes/RecipesListScreen";
 import RecipesFilterScreen from "../../screens/Recipes/RecipesFilterScreen";
 import RecipesRecordScreen from "../../screens/Recipes/RecipesRecordScreen";
 
@@ -9,8 +9,8 @@ import NavigationalHeaderRecord from "../../components/navigation-headers/Naviga
 
 export default {
 
-  Recipes: {
-    screen: RecipesScreen,
+  RecipesList: {
+    screen: RecipesListScreen,
     navigationOptions: {
       header: <NavigationalHeaderHome title="Recipes" filterScreenRoute="RecipesFilter" />
     }

@@ -35,7 +35,7 @@ const sections = [
 ];
 
 /**
- * Summary view for a single Event record.
+ * Summary view for viewing individual Event record.
  */
 export default class EventsRecordScreen extends React.Component {
 
