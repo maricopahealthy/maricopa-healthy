@@ -22,11 +22,12 @@ export default class HomeScreen extends React.Component {
             <FlatList
                 data={[
                   {key: 'resource-0', resource: 'MarketsList'},
-                  {key: 'resource-1', resource: 'Recipes'},
-                  {key: 'resource-2', resource: 'ActiveList'},
-                  {key: 'resource-3', resource: 'Events'},
-                  {key: 'resource-4', resource: 'Resources'},
-                  {key: 'resource-5', resource: 'Subscribe'},
+                  {key: 'resource-1', resource: 'RecipesList'},
+                  {key: 'resource-2', resource: 'ParksList'},
+                  {key: 'resource-3', resource: 'ActiveList'},
+                  {key: 'resource-4', resource: 'EventsList'},
+                  {key: 'resource-5', resource: 'ResourcesList'},
+                  {key: 'resource-6', resource: 'Subscribe'}
                 ]}
                 renderItem={({item}) => <ResourceCard item={item} />}
             />

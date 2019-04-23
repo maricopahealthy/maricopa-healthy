@@ -1,7 +1,7 @@
 // todo: RecipesRecordScreen
 import React from 'react';
 import { StyleSheet, SectionList } from 'react-native';
-import { Container, Content, Card, CardItem, Left, Thumbnail, Body, Text, Right, Icon, ListItem, Header } from "native-base";
+import { Container, Content, Card, CardItem, Left, Thumbnail, Body, Text, Right, Icon, ListItem } from "native-base";
 import Section from '../../utils/SectionsUtility';
 import SectionHeader from '../../components/SectionHeader';
 import RecipeReviews from '../../components/RecipeReviewsComponent';

@@ -1,16 +1,16 @@
 import React from 'react'
 import EventsRecordScreen from "../../screens/Events/EventsRecordScreen";
 import EventsFilterScreen from "../../screens/Events/EventsFilter";
-import EventsScreen from "../../screens/Events/EventsScreen";
-
+import EventsListScreen from "../../screens/Events/EventsListScreen";
+// navigation headers
 import NavigationalHeaderHome from "../../components/navigation-headers/NavigationalHeaderHome";
 import NavigationalHeaderFilter from "../../components/navigation-headers/NavigationalHeaderFilter";
 import NavigationalHeaderRecord from "../../components/navigation-headers/NavigationalHeaderRecord";
 
 export default {
 
-  Events: {
-    screen: EventsScreen,
+  EventsList: {
+    screen: EventsListScreen,
     navigationOptions: {
       header: <NavigationalHeaderHome title="Events" filterScreenRoute="EventsFilter"/>
     }

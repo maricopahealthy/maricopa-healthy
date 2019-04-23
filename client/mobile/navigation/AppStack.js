@@ -17,7 +17,7 @@ import ActiveGroup from './navigation-groups/ActiveGroup'
 // Events Screen Group
 import EventGroup from './navigation-groups/EventGroup'
 // Resource Screen Group
-import ResourcesScreen from '../screens/Resources/ResourcesScreen'
+import ResourceGroup from './navigation-groups/ResourceGroup'
 // Subscribe Screen Group
 import SubscribeScreen from '../screens/Settings/SubscribeScreen'
 
@@ -26,15 +26,18 @@ import SubscribeScreen from '../screens/Settings/SubscribeScreen'
  * @type {NavigationContainer}
  */
 const AppStack = createStackNavigator({
+
   Home: HomeScreen,
+
   //Markets
   Markets: MarketsGroup.Markets,
   MarketsList: MarketsGroup.MarketsList,
   MarketsMap: MarketsMapScreen,
   MarketsFilter: MarketsGroup.MarketsFilter,
   MarketsLearnMore: MarketsLearnMoreScreen,
+
   // Recipes Group
-  Recipes: RecipeGroup.Recipes,
+  RecipesList: RecipeGroup.RecipesList,
   RecipesFilter: RecipeGroup.RecipesFilter,
   RecipesRecord: RecipeGroup.RecipesRecord,
 
@@ -49,15 +52,17 @@ const AppStack = createStackNavigator({
   ActiveFilter: ActiveGroup.ActiveFilter,
 
   // Events Group
-  Events: EventGroup.Events,
+  EventsList: EventGroup.EventsList,
   EventsFilter: EventGroup.EventsFilter,
   EventsRecord: EventGroup.EventsRecord,
 
   // Resources Group
-  Resources: ResourcesScreen,
+  ResourcesList: ResourceGroup.ResourcesList,
+  ResourcesRecord: ResourceGroup.ResourcesRecord,
 
   // Subscription Group
   Subscribe: SubscribeScreen,
+
 });
 
 export default AppStack;
