@@ -1,7 +1,7 @@
 // todo: MarketsFilterScreen
 import React from 'react';
-import { SectionList, FlatList, View, StyleSheet } from 'react-native';
-import { Container, Content, ListItem, Text, Button, Item, Input, Icon, Badge } from 'native-base';
+import { SectionList, View, StyleSheet } from 'react-native';
+import { Container, Content, ListItem, Text, Button, Badge } from 'native-base';
 import { Rating } from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
@@ -13,8 +13,8 @@ const cityData = [
 ];
 
 const paymentData = [
-  { id: 0, city: 'Cash' },
-  { id: 1, city: 'Check' },
+  { id: 0, payment: 'Cash' },
+  { id: 1, payment: 'Check' },
 ];
 
 const sortByData = [
@@ -27,7 +27,7 @@ const sortByData = [
 /**
  *  Display to add, modify, and delete filter categories for Markets display results.
  */
-export default class RecipesFilterScreen extends React.Component {
+export default class MarketsFilterScreen extends React.Component {
 
   render() {
     return (
@@ -75,6 +75,13 @@ const sections = [
       {/* // todo add zip code slider */}
         zip code
       </Text>
+    )
+  }),
+  Section('Payment Options', paymentData, ({ item }) => {
+    return (
+      <Badge>
+        <Text>{item.payment}</Text>
+      </Badge>
     )
   }),
   Section('Rating', [{ id: 0 }], ({ item }) => {
