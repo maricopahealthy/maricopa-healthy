@@ -1,6 +1,7 @@
 // todo: ActiveListScreen
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
+import RecordTile from '../../components/RecordTile'
 
 /**
  * Default Active view displaying list of Active.
@@ -10,7 +11,12 @@ export default class ActiveListScreen extends React.Component {
   render() {
     return (
       <View>
-        <Text>Active List Screen</Text>
+        <FlatList
+          data={[
+            { key: 'Activity1', record: 'Activity 1' }
+          ]}
+          renderItem={({ item }) => <RecordTile item={item} type="Active" />}
+        />
       </View>
     )
   }
