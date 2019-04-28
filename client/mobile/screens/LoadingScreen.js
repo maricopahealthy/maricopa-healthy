@@ -19,7 +19,7 @@ export default class LoadingScreen extends React.Component {
   // }
   componentDidMount() {
     // currently being used to simulate loading, navigates to onboarding route after 2 seconds
-    setTimeout(() => {this.props.navigation.navigate("Onboarding")}, 8000);
+    setTimeout(() => {this.props.navigation.navigate("Carousel")}, 2000);
   }
 
   render() {
