@@ -1,11 +1,12 @@
 // todo: OnboardingScreen
 import React from "react";
-import { View, StyleSheet, ScrollView, Dimensions } from "react-native";
+import { View, StyleSheet, ScrollView, Dimensions, Image } from "react-native";
 import {
   Container,
   Content,
   Button,
   Text,
+  Icon,
   Form,
   Item,
   Input
@@ -28,15 +29,23 @@ class OnboardingFiltersScreen extends React.Component {
           backgroundColor: "#667747"
         }}
       >
+        {/* Page logo */}
         <View
           style={{
-            flex: 5,
+            flex: 1,
             justifyContent: "center",
             alignItems: "center"
           }}
         >
-          <Text>Filters</Text>
+          <Image source={require("../../assets/logos/onboarding/onboarding-mh-logo-white.png")} />
         </View>
+        {/* Page description */}
+        <View style={{ flex: 2, justifyContent: "center", alignItems: "center" }}>
+          <Icon name="options" style={{ color: '#fff', fontSize: '180' }} />
+          <Text style={{ color: '#fff', fontSize: '25', fontWeight: 'bold' }}>Filters</Text>
+          <Text style={{ color: '#fff', fontSize: '25', fontWeight: '300', textAlign: 'center' }}>Sort content to find just what you want.</Text>
+        </View>
+        {/* Login + Signup Buttons */}
         <View
           style={{
             flex: 1,
@@ -45,18 +54,21 @@ class OnboardingFiltersScreen extends React.Component {
           }}
         >
           <Button
-            danger
+            bordered
+            light
             onPress={() => this.props.navigation.navigate("SignUp")}
           >
             <Text>Sign Up</Text>
           </Button>
           <Button
-            danger
+            bordered
+            light
             onPress={() => this.props.navigation.navigate("Login")}
           >
             <Text>Login</Text>
           </Button>
         </View>
+        {/* Explore App */}
         <View
           style={{
             flex: 1,
@@ -64,7 +76,10 @@ class OnboardingFiltersScreen extends React.Component {
             justifyContent: "center"
           }}
         >
-          <Text onPress={() => this.props.navigation.navigate("App")}>
+          <Text
+            style={{ color: '#fff' }}
+            onPress={() => this.props.navigation.navigate("App")}
+          >
             Skip and explore the app.
           </Text>
         </View>
