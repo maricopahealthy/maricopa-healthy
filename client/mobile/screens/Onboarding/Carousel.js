@@ -16,6 +16,11 @@ export default class Carousel extends React.Component {
       screen: 1
     }
   }
+
+  static navigationOptions = {
+    header: null,
+  }
+
   componentDidMount(){
     this.activeInterval = setInterval(this.scrolling, 5000);
   }

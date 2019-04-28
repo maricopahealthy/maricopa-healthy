@@ -20,7 +20,14 @@ var Device_Width = Dimensions.get("window").width;
 class OnboardingFiltersScreen extends React.Component {
   render() {
     return (
-      <Content padder contentContainerStyle={{ flex: 1, width: Device_Width }}>
+      <Content
+        padder
+        contentContainerStyle={{
+          flex: 1,
+          width: Device_Width,
+          backgroundColor: "#667747"
+        }}
+      >
         <View
           style={{
             flex: 5,

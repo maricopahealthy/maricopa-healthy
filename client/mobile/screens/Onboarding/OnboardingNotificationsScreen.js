@@ -18,9 +18,22 @@ var Device_Width = Dimensions.get("window").width;
  * Landing page for Users with no active sign-in credentials.
  */
 class OnboardingNotificationsScreen extends React.Component {
+  static navigationOptions = {
+    headerStyle: {
+      backgroundColor: "#FBA208"
+    }
+  };
+
   render() {
     return (
-      <Content padder contentContainerStyle={{ flex: 1, width: Device_Width }}>
+      <Content
+        padder
+        contentContainerStyle={{
+          flex: 1,
+          width: Device_Width,
+          backgroundColor: "#FBA208"
+        }}
+      >
         <View
           style={{
             flex: 5,

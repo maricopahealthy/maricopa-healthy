@@ -27,7 +27,7 @@ export default class LoadingScreen extends React.Component {
         <Container>
           <Content
               padder
-              contentContainerStyle={{ flex: 1, backgroundColor: 'orange' }}
+              contentContainerStyle={{ flex: 1, backgroundColor: '#FBA208' }}
           >
             <View
                 style={{ flex: 2, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}
