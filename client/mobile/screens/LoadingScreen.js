@@ -19,7 +19,7 @@ export default class LoadingScreen extends React.Component {
   // }
   componentDidMount() {
     // currently being used to simulate loading, navigates to onboarding route after 2 seconds
-    setTimeout(() => {this.props.navigation.navigate("Onboarding")}, 8000);
+    setTimeout(() => {this.props.navigation.navigate("Carousel")}, 2000);
   }
 
   render() {
@@ -27,7 +27,7 @@ export default class LoadingScreen extends React.Component {
         <Container>
           <Content
               padder
-              contentContainerStyle={{ flex: 1, backgroundColor: 'orange' }}
+              contentContainerStyle={{ flex: 1, backgroundColor: '#FBA208' }}
           >
             <View
                 style={{ flex: 2, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}
