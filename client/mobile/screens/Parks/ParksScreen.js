@@ -4,8 +4,8 @@ import { SectionList, View, StyleSheet } from 'react-native';
 import { Container, Content, List, ListItem, Thumbnail, Text, Left, Body, H3 } from 'native-base';
 import Section from '../../utils/SectionsUtility';
 import SectionHeader from '../../components/SectionHeader';
-import ActionButton from '../../components/ActionButton';
 import RecipeReviews from '../../components/RecipeReviewsComponent';
+import ActionButtonRow from '../../components/ActionButtonRow';
 
 const hours = [
   {
@@ -49,12 +49,7 @@ export default class MarketsScreen extends React.Component {
               </Body>
             </ListItem>
           </List>
-          <View style={styles.buttons}>
-            {/* //todo Wire up action buttons */}
-            <ActionButton title="more info" />
-            <ActionButton title="directions" />
-            <ActionButton title="meetup" />
-          </View>
+          <ActionButtonRow />
           <SectionList
             sections={sections}
             renderSectionHeader={SectionHeader}

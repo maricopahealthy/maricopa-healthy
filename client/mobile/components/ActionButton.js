@@ -5,7 +5,7 @@ import { Button, Text } from "native-base";
 export default class ActionButton extends React.Component {
   render() {
     return (
-      <Button full danger>
+      <Button style={styles.button} full danger>
         <Text>{this.props.title}</Text>
       </Button>
     )
@@ -13,5 +13,7 @@ export default class ActionButton extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  
+  button : {
+    width: "33%"
+  }
 });
