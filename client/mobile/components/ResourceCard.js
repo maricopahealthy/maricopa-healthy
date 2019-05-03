@@ -1,6 +1,6 @@
 // todo: ResourceCard
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import { Card, CardItem, Body, Text } from 'native-base';
 import { withNavigation } from 'react-navigation';
 
@@ -10,16 +10,20 @@ import { withNavigation } from 'react-navigation';
 const ResourceCard = (props) => {
 
   return (
-      <Card>
-        <CardItem
-            button
-            onPress={() => props.navigation.navigate(props.item.resource)}
-        >
-          <Body>
-            <Text>This is a sample card for {props.item.resource}</Text>
-          </Body>
-        </CardItem>
-      </Card>
+    <Card>
+      <CardItem cardBody>
+        <Image source={props.item.image} />
+      </CardItem>
+      <CardItem
+        button
+        onPress={() => props.navigation.navigate(props.item.resource)}
+      >
+        <Image />
+        <Body>
+          <Text>This is a sample card for {props.item.resource}</Text>
+        </Body>
+      </CardItem>
+    </Card>
   );
 };
 
