@@ -13,7 +13,7 @@ import {Body, Button, Header, Icon, Left, Right, Text} from "native-base";
  */
 const NavigationalHeaderHome = ({ navigation, title, filterScreenRoute }) => {
   return (
-      <Header>
+      <Header style={styles.color}>
         <Left style={{ flexDirection: 'row' }}>
           <Button
               transparent
@@ -45,4 +45,8 @@ const NavigationalHeaderHome = ({ navigation, title, filterScreenRoute }) => {
 
 export default withNavigation(NavigationalHeaderHome);
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  color: {
+    backgroundColor: "#FBA208"
+  }
+});

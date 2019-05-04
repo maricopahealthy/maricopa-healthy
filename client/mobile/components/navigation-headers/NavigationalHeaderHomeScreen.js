@@ -13,7 +13,7 @@ import { Body, Button, Header, Icon, Left, Right, Text } from "native-base";
  */
 const NavigationalHeaderHomeScreen = ({ navigation, title, screenRoute }) => {
   return (
-    <Header>
+    <Header style={styles.color}>
       <Left>
         <Button
           transparent
@@ -23,7 +23,7 @@ const NavigationalHeaderHomeScreen = ({ navigation, title, screenRoute }) => {
         </Button>
       </Left>
       <Body>
-        <Text>{title}</Text>
+        <Text>Maricopa Healthy</Text>
       </Body>
       <Right>
         <Button
@@ -39,4 +39,8 @@ const NavigationalHeaderHomeScreen = ({ navigation, title, screenRoute }) => {
 
 export default withNavigation(NavigationalHeaderHomeScreen);
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  color: {
+    backgroundColor: "#FBA208"
+  }
+});

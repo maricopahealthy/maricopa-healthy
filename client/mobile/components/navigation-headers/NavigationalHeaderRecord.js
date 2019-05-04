@@ -10,9 +10,9 @@ import {Body, Button, Header, Icon, Left, Right, Text} from "native-base";
  * @param {string} title - the name of the resource to display in the center of the navbar.
  * @returns - a functional component wrapped by Higher-order component: withNavigation();
  */
-const NavigationalHeaderFilter = ({ navigation }) => {
+const NavigationalHeaderRecord = ({ navigation }) => {
   return (
-      <Header>
+      <Header style={styles.color}>
         <Left style={{ flexDirection: 'row' }}>
           <Button
               transparent
@@ -54,6 +54,10 @@ const NavigationalHeaderFilter = ({ navigation }) => {
   )
 };
 
-export default withNavigation(NavigationalHeaderFilter);
+export default withNavigation(NavigationalHeaderRecord);
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  color: {
+    backgroundColor: "#FBA208"
+  }
+});

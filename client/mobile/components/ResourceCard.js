@@ -11,7 +11,11 @@ const ResourceCard = (props) => {
 
   return (
     <Card>
-      <CardItem cardBody>
+      <CardItem
+        cardBody
+        button
+        onPress={() => props.navigation.navigate(props.item.resource)}
+      >
         <Image source={props.item.image} style={styles.cardImage} />
         <Body style={styles.cardContent}>
           <Text style={styles.textBadge}>{props.item.resource}</Text>
