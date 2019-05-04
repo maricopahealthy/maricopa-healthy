@@ -16,9 +16,6 @@ export default class HomeScreen extends React.Component {
     return (
         <Container>
           <Content style={{ flex: 1 }}>
-            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
-              <Text>Home Screen</Text>
-            </View>
             <FlatList
                 // HACK: react-native does not support dynamic paths in <Image source={...} />.
                 // Instead we must pass the entire module as a prop with the image coming from a static location.

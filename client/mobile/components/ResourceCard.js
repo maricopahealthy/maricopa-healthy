@@ -12,9 +12,12 @@ const ResourceCard = (props) => {
   return (
     <Card>
       <CardItem cardBody>
-        <Image source={props.item.image} />
+        <Image source={props.item.image} style={styles.cardImage} />
+        <Body style={styles.cardContent}>
+          <Text style={styles.textBadge}>{props.item.resource}</Text>
+        </Body>
       </CardItem>
-      <CardItem
+      {/* <CardItem
         button
         onPress={() => props.navigation.navigate(props.item.resource)}
       >
@@ -22,7 +25,7 @@ const ResourceCard = (props) => {
         <Body>
           <Text>This is a sample card for {props.item.resource}</Text>
         </Body>
-      </CardItem>
+      </CardItem> */}
     </Card>
   );
 };
@@ -32,5 +35,29 @@ const ResourceCard = (props) => {
 export default withNavigation(ResourceCard);
 
 const styles = StyleSheet.create({
-
-})
+  cardImage: {
+    flex: 1,
+    height: 150,
+    width: null
+  },
+  cardContent: {
+    // paddingVertical: 32.5,
+    // paddingHorizontal: 16,
+    //overlay efect
+    flex: 1,
+    height: 200,
+    width: null,
+    position: "absolute",
+    zIndex: 100,
+    left: 0,
+    top: 100,
+    right: 0,
+    backgroundColor: "transparent"
+  },
+  textBadge: {
+    paddingHorizontal: 16,
+    color: "#fff",
+    backgroundColor: "#B52126",
+    fontSize: "25",
+  }
+});
