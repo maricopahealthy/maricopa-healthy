@@ -19,24 +19,24 @@ const NavigationalHeaderHome = ({ navigation, title, filterScreenRoute }) => {
               transparent
               onPress={() => navigation.pop()}
           >
-            <Icon name="ios-arrow-back" />
+            <Icon name="ios-arrow-back" style={{ color: "white" }} />
           </Button>
           <Button
               transparent
               onPress={() => navigation.navigate("Home")}
           >
-            <Icon name="ios-home" />
+            <Icon name="ios-home" style={{ color: "white" }} />
           </Button>
         </Left>
         <Body>
-          <Text>{ title }</Text>
+          <Text style={{ color: "#fff", fontSize: "25", fontWeight: "400" }}>{ title }</Text>
         </Body>
         <Right>
           <Button
               transparent
               onPress={() => navigation.navigate(filterScreenRoute)}
           >
-            <Icon name="ios-options"/>
+            <Icon name="ios-options" style={{ color: "white" }} />
           </Button>
         </Right>
       </Header>
