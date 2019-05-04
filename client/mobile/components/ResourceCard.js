@@ -21,15 +21,6 @@ const ResourceCard = (props) => {
           <Text style={styles.textBadge}>{props.item.resource}</Text>
         </Body>
       </CardItem>
-      {/* <CardItem
-        button
-        onPress={() => props.navigation.navigate(props.item.resource)}
-      >
-        <Image />
-        <Body>
-          <Text>This is a sample card for {props.item.resource}</Text>
-        </Body>
-      </CardItem> */}
     </Card>
   );
 };
