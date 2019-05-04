@@ -11,6 +11,7 @@ const EventListItem = (props) => {
         onPress={() => props.navigation.navigate("EventsRecord")}
       >
         <Left>
+          {/* Event Date Badge */}
           <Card transparent>
             <CardItem
               style={{ backgroundColor: "#667747", borderRadius: "15" }}
@@ -22,6 +23,7 @@ const EventListItem = (props) => {
               </View>
             </CardItem>
           </Card>
+          {/* Event Description */}
           <Body>
             <Text style={{ fontSize: "20", fontWeight: "bold" }}>{props.item.title}</Text>
             <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
@@ -30,6 +32,7 @@ const EventListItem = (props) => {
             </View>
           </Body>
         </Left>
+        {/* Navigational Arrow */}
         <Right>
           <Icon name="ios-arrow-forward" />
         </Right>

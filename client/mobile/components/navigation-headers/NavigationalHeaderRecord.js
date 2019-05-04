@@ -18,13 +18,13 @@ const NavigationalHeaderRecord = ({ navigation }) => {
               transparent
               onPress={() => {navigation.pop()}}
           >
-            <Icon name="ios-arrow-back" />
+            <Icon name="ios-arrow-back" style={{ color: "white" }} />
           </Button>
           <Button
               transparent
               onPress={() => navigation.navigate("Home")}
           >
-            <Icon name="ios-home" />
+            <Icon name="ios-home" style={{ color: "white"}} />
           </Button>
         </Left>
         <Body style={{ flexDirection: 'row' }}>
@@ -32,13 +32,13 @@ const NavigationalHeaderRecord = ({ navigation }) => {
               transparent
               onPress={() => {}}
           >
-            <Icon name="ios-arrow-up"></Icon>
+            <Icon name="ios-arrow-up" style={{ color: "white" }} />
           </Button>
           <Button
               transparent
               onPress={() => {}}
           >
-            <Icon name="ios-arrow-down"></Icon>
+            <Icon name="ios-arrow-down" style={{ color: "white" }} />
           </Button>
         </Body>
         <Right>
@@ -47,7 +47,7 @@ const NavigationalHeaderRecord = ({ navigation }) => {
               // todo: implement function for share icon
               onPress={() => {}}
           >
-            <Icon name="share"/>
+            <Icon name="share" style={{ color: "white" }} />
           </Button>
         </Right>
       </Header>
