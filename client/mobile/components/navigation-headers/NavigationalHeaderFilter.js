@@ -11,7 +11,7 @@ import {Body, Button, Header, Icon, Left, Right, Text} from "native-base";
  */
 const NavigationalHeaderFilter = ({ navigation }) => {
   return (
-      <Header>
+      <Header style={styles.color}>
         <Left style={{ flexDirection: 'row' }}>
           <Button
               transparent
@@ -44,4 +44,8 @@ const NavigationalHeaderFilter = ({ navigation }) => {
 
 export default withNavigation(NavigationalHeaderFilter);
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  color: {
+    backgroundColor: "#FBA208"
+  }
+});
