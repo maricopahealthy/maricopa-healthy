@@ -24,7 +24,7 @@ const NavigationalHeaderRecord = ({ navigation }) => {
               transparent
               onPress={() => navigation.navigate("Home")}
           >
-            <Icon name="ios-home" style={{ color: "white"}} />
+            <Icon name="ios-home" style={{ color: "white" }} />
           </Button>
         </Left>
         <Body style={{ flexDirection: 'row' }}>
