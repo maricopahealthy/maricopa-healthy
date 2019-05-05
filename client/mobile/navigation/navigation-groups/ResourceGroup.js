@@ -6,7 +6,7 @@ import NavigationalHeaderHome from "../../components/navigation-headers/Navigati
 import NavigationalHeaderRecord from "../../components/navigation-headers/NavigationalHeaderRecord";
 
 export default {
-  
+
   ResourcesList: {
     screen: ResourcesListScreen,
     navigationOptions: {
@@ -16,7 +16,7 @@ export default {
 
   ResourcesRecord: {
     screen: ResourcesRecordScreen,
-    navigationalOptions: {
+    navigationOptions: {
       header: <NavigationalHeaderRecord />
     }
   }
