@@ -11,11 +11,13 @@ const ResourceListItem = (props) => {
         >
           <Left>
             <Thumbnail source={props.item.image} />
+            {/* Resource Description */}
             <Body>
               <Text>{props.item.title}</Text>
               <Text note>{props.item.description}</Text>
             </Body>
           </Left>
+          {/* Navigational Arrow */}
           <Right>
             <Icon name="ios-arrow-forward" />
           </Right>

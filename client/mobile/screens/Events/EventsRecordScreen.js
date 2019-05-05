@@ -43,7 +43,7 @@ export default class EventsRecordScreen extends React.Component {
     return (
         <Container>
           <Content>
-            <Card>
+            <Card transparent>
               <CardItem>
                 <Left>
                   <Thumbnail />
@@ -63,10 +63,11 @@ export default class EventsRecordScreen extends React.Component {
                 renderSectionHeader={SectionHeader}
                 keyExtractor={extractKey}
             />
+            {/* Button */}
             <View style={{ flex: 1 }}>
               <Button
                   block
-                  danger
+                  style={{ backgroundColor: "#B52126" }}
                   onPress={() => {}}
               >
                 <Text>Learn More</Text>

@@ -42,25 +42,25 @@ export default class EventsFilterScreen extends React.Component {
 
   render() {
     return (
-        <Container>
-          <Content padder>
-            <SectionList
-                sections={sections}
-                renderSectionHeader={SectionHeader}
-                keyExtractor={extractKey}
-            />
-            <View>
-              <Button
-                  block
-                  danger
-                  onPress={() => {}}
-              >
-                <Text>Apply Filter</Text>
-              </Button>
-            </View>
-          </Content>
-        </Container>
-    )
+      <Container>
+        <Content padder>
+          <SectionList
+            sections={sections}
+            renderSectionHeader={SectionHeader}
+            keyExtractor={extractKey}
+          />
+          <View>
+            <Button
+              block
+              style={{ backgroundColor: "#B52126" }}
+              onPress={() => {}}
+            >
+              <Text>Apply Filter</Text>
+            </Button>
+          </View>
+        </Content>
+      </Container>
+    );
   }
 }
 

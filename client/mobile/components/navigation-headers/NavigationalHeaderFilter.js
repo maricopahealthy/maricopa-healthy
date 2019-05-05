@@ -17,13 +17,13 @@ const NavigationalHeaderFilter = ({ navigation }) => {
               transparent
               onPress={() => {navigation.pop()}}
           >
-            <Icon name="ios-arrow-back" />
+            <Icon name="ios-arrow-back" style={{ color: "#fff" }} />
           </Button>
           <Button
               transparent
               onPress={() => navigation.navigate("Home")}
           >
-            <Icon name="ios-home" />
+            <Icon name="ios-home" style={{ color: "#fff" }} />
           </Button>
         </Left>
         <Body>
@@ -35,7 +35,7 @@ const NavigationalHeaderFilter = ({ navigation }) => {
               // todo: implement action for Reset button
               onPress={() => {}}
           >
-            <Text>Reset</Text>
+            <Text style={{ color: "#fff" }}>Reset</Text>
           </Button>
         </Right>
       </Header>
