@@ -10,7 +10,7 @@ const ResourceListItem = (props) => {
             onPress={() => props.navigation.navigate("ResourcesRecord")}
         >
           <Left>
-            <Thumbnail source={props.item.image} />
+            <Thumbnail large source={props.item.image} />
             {/* Resource Description */}
             <Body>
               <Text>{props.item.title}</Text>

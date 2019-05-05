@@ -15,7 +15,7 @@ export default class ResourcesRecordScreen extends React.Component {
           <Card transparent>
             <CardItem>
               <Left>
-                <Thumbnail source={require("../../assets/thumbnails/resources/resources-thumb-placeholder-01.png")} />
+                <Thumbnail large source={require("../../assets/thumbnails/resources/resources-thumb-placeholder-01.png")} />
                 <Body>
                   <Text>Az Health Zone</Text>
                 </Body>
