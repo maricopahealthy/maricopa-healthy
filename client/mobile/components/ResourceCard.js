@@ -10,7 +10,7 @@ import { withNavigation } from 'react-navigation';
 const ResourceCard = (props) => {
 
   return (
-    <Card>
+    <Card transparent>
       <CardItem
         cardBody
         button

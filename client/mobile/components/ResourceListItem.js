@@ -4,13 +4,13 @@ import { withNavigation } from 'react-navigation';
 
 const ResourceListItem = (props) => {
   return (
-      <Card>
+      <Card transparent>
         <CardItem
             button
             onPress={() => props.navigation.navigate("ResourcesRecord")}
         >
           <Left>
-            <Thumbnail />
+            <Thumbnail source={props.item.image} />
             <Body>
               <Text>{props.item.title}</Text>
               <Text note>{props.item.description}</Text>
