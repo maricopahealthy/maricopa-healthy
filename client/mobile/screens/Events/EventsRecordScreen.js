@@ -73,16 +73,16 @@ export default class EventsRecordScreen extends React.Component {
             {/* Action Buttons */}
             <View style={{ flex: 1, flexDirection: "row" }}>
               <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
-                <Icon name="print" />
-                <Text>Print</Text>
+                <Icon name="calendar" />
+                <Text>Reminder</Text>
               </Button>
               <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
-                <Icon name="restaurant" />
-                <Text>Eat Healthy</Text>
+                <Icon name="car" />
+                <Text>Directions</Text>
               </Button>
               <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
-                <Icon name="list" />
-                <Text>Subscribe</Text>
+                <Icon name="people" />
+                <Text>Meetup</Text>
               </Button>
             </View>
             {/* Section information */}

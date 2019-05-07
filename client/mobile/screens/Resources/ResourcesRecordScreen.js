@@ -11,7 +11,7 @@ export default class ResourcesRecordScreen extends React.Component {
   render() {
     return (
       <Container>
-        <Content>
+        <Content padder>
           <Card transparent>
             <CardItem>
               <Left>
