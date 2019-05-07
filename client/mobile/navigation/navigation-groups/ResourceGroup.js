@@ -16,9 +16,9 @@ export default {
 
   ResourcesRecord: {
     screen: ResourcesRecordScreen,
-    navigationalOptions: {
+    navigationOptions: {
       header: <NavigationalHeaderRecord />
     }
-  },
+  }
 
 };

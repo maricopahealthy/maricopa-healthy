@@ -11,23 +11,23 @@ import {Body, Button, Header, Icon, Left, Right, Text} from "native-base";
  */
 const NavigationalHeaderFilter = ({ navigation }) => {
   return (
-      <Header>
+      <Header style={styles.color}>
         <Left style={{ flexDirection: 'row' }}>
           <Button
               transparent
               onPress={() => {navigation.pop()}}
           >
-            <Icon name="ios-arrow-back" />
+            <Icon name="ios-arrow-back" style={{ color: "#fff" }} />
           </Button>
           <Button
               transparent
               onPress={() => navigation.navigate("Home")}
           >
-            <Icon name="ios-home" />
+            <Icon name="ios-home" style={{ color: "#fff" }} />
           </Button>
         </Left>
         <Body>
-          <Text>Filter</Text>
+          <Text style={{ color: "#fff", fontSize: "25", fontWeight: "400" }}>Filter</Text>
         </Body>
         <Right>
           <Button
@@ -35,7 +35,7 @@ const NavigationalHeaderFilter = ({ navigation }) => {
               // todo: implement action for Reset button
               onPress={() => {}}
           >
-            <Text>Reset</Text>
+            <Text style={{ color: "#fff" }}>Reset</Text>
           </Button>
         </Right>
       </Header>
@@ -44,4 +44,8 @@ const NavigationalHeaderFilter = ({ navigation }) => {
 
 export default withNavigation(NavigationalHeaderFilter);
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  color: {
+    backgroundColor: "#FBA208"
+  }
+});

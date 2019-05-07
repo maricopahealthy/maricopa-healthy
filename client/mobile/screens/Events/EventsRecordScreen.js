@@ -43,13 +43,26 @@ export default class EventsRecordScreen extends React.Component {
     return (
         <Container>
           <Content>
-            <Card>
+            <Card transparent>
               <CardItem>
                 <Left>
-                  <Thumbnail />
+                  <Card transparent>
+                    <CardItem
+                      style={{ backgroundColor: "#667747", borderRadius: "15" }}
+                    >
+                      <View style={{ alignItems: "center" }}>
+                        <Text style={{ color: "#fff" }}>SAT</Text>
+                        <Text style={{ color: "#fff", fontWeight: "bold", fontSize: "30" }}>09</Text>
+                        <Text style={{ color: "#fff" }}>JUN</Text>
+                      </View>
+                    </CardItem>
+                  </Card>
                   <Body>
                     <Text>Master Gardeners Series</Text>
-                    <Text note>Time</Text>
+                    <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                      <Text style={{ color: "#8E8E93"}}>Time</Text>
+                      <Text style={{ color: "#8E8E93", textAlign: "right"}}>Price</Text>
+                    </View>
                   </Body>
                 </Left>
                 <Right>
@@ -57,16 +70,32 @@ export default class EventsRecordScreen extends React.Component {
                 </Right>
               </CardItem>
             </Card>
+            {/* Action Buttons */}
+            <View style={{ flex: 1, flexDirection: "row" }}>
+              <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
+                <Icon name="calendar" />
+                <Text>Reminder</Text>
+              </Button>
+              <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
+                <Icon name="car" />
+                <Text>Directions</Text>
+              </Button>
+              <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
+                <Icon name="people" />
+                <Text>Meetup</Text>
+              </Button>
+            </View>
             {/* Section information */}
             <SectionList
                 sections={sections}
                 renderSectionHeader={SectionHeader}
                 keyExtractor={extractKey}
             />
+            {/* Button */}
             <View style={{ flex: 1 }}>
               <Button
                   block
-                  danger
+                  style={{ backgroundColor: "#B52126" }}
                   onPress={() => {}}
               >
                 <Text>Learn More</Text>

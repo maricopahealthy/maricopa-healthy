@@ -30,25 +30,25 @@ export default class RecipesFilterScreen extends React.Component {
 
   render() {
     return (
-        <Container>
-          <Content padder>
-            <SectionList
-                sections={sections}
-                renderSectionHeader={SectionHeader}
-                keyExtractor={extractKey}
-            />
-            <View>
-              <Button
-                  block
-                  danger
-                  onPress={() => {}}
-              >
-                <Text>Apply Filter</Text>
-              </Button>
-            </View>
-          </Content>
-        </Container>
-    )
+      <Container>
+        <Content>
+          <SectionList
+            sections={sections}
+            renderSectionHeader={SectionHeader}
+            keyExtractor={extractKey}
+          />
+          <View>
+            <Button
+              block
+              style={{ backgroundColor: "#B52126" }}
+              onPress={() => {}}
+            >
+              <Text>Apply Filter</Text>
+            </Button>
+          </View>
+        </Content>
+      </Container>
+    );
   }
 };
 
@@ -63,7 +63,7 @@ const extractKey = ({id}) => id;
 const sections= [
     Section('Ingredient', [{id: 0}], ({item}) => {
       return (
-          <ListItem>
+          <ListItem padder>
             <Item regular>
               <Icon name='search'/>
               <Input placeholder='Enter ingredient name'/>
@@ -80,7 +80,7 @@ const sections= [
     }),
     Section('Rating', [{id: 0}], ({item}) => {
       return (
-          <ListItem>
+          <ListItem padder>
             <Rating readonly />
           </ListItem>
       )

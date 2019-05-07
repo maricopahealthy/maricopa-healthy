@@ -41,7 +41,7 @@ export default class SignUpScreen extends React.Component {
             <View style={{ flex: 1 }}>
               <Button
                   block
-                  danger
+                  style={{ backgroundColor: "#B52126" }}
                   onPress={() => {this.props.navigation.navigate("Login")}}
               >
                 <Text>Create Account</Text>

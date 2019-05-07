@@ -11,3 +11,4 @@ npm-debug.*
 
 # misc
 .idea/
+.DS_Store
