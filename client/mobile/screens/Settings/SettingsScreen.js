@@ -3,9 +3,9 @@
 import React from 'react';
 import { withNavigation } from 'react-navigation';
 import {
-  View, FlatList
+  View, FlatList, StyleSheet
 } from "react-native";
-import { H3, ListItem, Icon, Left, Right } from 'native-base'
+import { Text, Container} from 'native-base'
 import SettingsTile from '../../components/SettingsTile';
 
 const loggedInSettings = [
@@ -35,9 +35,14 @@ const SettingsHomeScreen =({navigation}) => {
           <SettingsTile icon={item.icon} route={item.route} name={item.name} />
         }
       />
-      <View>
+      <View style={styles.container}>
         {/* //todo add prompt to login/make account */}
-        <H3>Login or make an account to access profile features.</H3>
+        <Text style={{ color: "#B52126", fontSize: 20, textAlign: "center"}}>Log In to Maricopa Healthy Account</Text>
+        <Text style={{textAlign: "center", marginTop: 10}}>
+          {/* //todo Link Text to Login/SignUp  */}
+          <Text>Don't have one?</Text> 
+          <Text style={{ color: "#B52126" }}> Sign up today.</Text>
+        </Text>
       </View>
       <FlatList
         data={loggedOutSettings}
@@ -50,3 +55,10 @@ const SettingsHomeScreen =({navigation}) => {
 }
 
 export default withNavigation(SettingsHomeScreen);
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#F6F6F6",
+    padding: 20,
+  }
+});
