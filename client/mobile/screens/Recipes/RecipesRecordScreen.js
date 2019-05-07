@@ -98,7 +98,10 @@ export default class RecipesRecordScreen extends React.Component {
             <Card transparent>
               <CardItem>
                 <Left>
-                  <Thumbnail />
+                  <Thumbnail
+                    large
+                    source={require("../../assets/thumbnails/recipes/apple-pecan-bars.png")}
+                  />
                   <Body>
                     <Text>Apple Pecan Bars</Text>
                   </Body>
