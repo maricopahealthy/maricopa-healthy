@@ -1,7 +1,7 @@
 // todo: MarketsScreen
 import React from 'react';
 import { SectionList, View, StyleSheet } from 'react-native';
-import { Container, Content, List, ListItem, Thumbnail, Text, Left, Body, H3 } from 'native-base';
+import { Container, Content, Card, CardItem, ListItem, Thumbnail, Text, Left, Body, Right, H3, Icon } from 'native-base';
 import Section from '../../utils/SectionsUtility';
 import SectionHeader from '../../components/SectionHeader';
 import ActionButtonRow from '../../components/ActionButtonRow';
@@ -63,17 +63,22 @@ export default class MarketsScreen extends React.Component {
     return (
       <Container>
         <Content>
-          <List>
-            <ListItem thumbnail>
+          <Card transparent>
+            <CardItem>
               <Left>
-                <Thumbnail square source={{ uri: 'URL' }} />
+                <Thumbnail
+                  large
+                  source={require("../../assets/thumbnails/markets/markets-thumb-placeholder-01.png")}
+                />
+                <Body>
+                  <Text>Market Name Goes Here</Text>
+                </Body>
               </Left>
-              <Body>
-                <Text>Market 1</Text>
-                <Text note numberOfLines={1}>Market 1 Description</Text>
-              </Body>
-            </ListItem>
-          </List>
+              <Right>
+                <Icon name='heart-empty' />
+              </Right>
+            </CardItem>
+          </Card>
           <ActionButtonRow />
           <SectionList
             sections={sections}

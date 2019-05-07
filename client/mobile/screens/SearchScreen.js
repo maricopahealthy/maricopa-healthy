@@ -1,7 +1,9 @@
 // todo: SearchScreen
 // note: SearchResultsList component
 import React from 'react';
+import { View, FlatList } from 'react-native';
 import { Container, Header, Item, Input, Icon, Button } from 'native-base';
+import RecordTile from '../components/RecordTile';
 
 const results = [
   { key: 'Market1', record: 'Market 1' },
