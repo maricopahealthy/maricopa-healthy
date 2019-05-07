@@ -18,8 +18,7 @@ export default class ResourcesListScreen extends React.Component {
               {
                 key: 0,
                 title: "AZ Health Zone",
-                description:
-                  "Discover ways to stay active and eat healthy each and every day.",
+                description: "Discover ways to stay active and eat healthy each and every day.",
                 image: require("../../assets/thumbnails/resources/resources-thumb-placeholder-01.png")
               },
               {

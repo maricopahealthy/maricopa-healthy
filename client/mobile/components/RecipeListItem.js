@@ -13,7 +13,7 @@ const RecipeListItem = (props) => {
             onPress={() => props.navigation.navigate("RecipesRecord")}
         >
           <Left>
-            <Thumbnail source={{uri: 'https://placekitten.com/g/200/200'}} />
+            <Thumbnail large source={props.item.image} />
             <Body>
               <Text>{props.item.title}</Text>
               <Text note>

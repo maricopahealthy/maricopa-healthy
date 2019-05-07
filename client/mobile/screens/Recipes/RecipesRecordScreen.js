@@ -1,7 +1,7 @@
 // todo: RecipesRecordScreen
 import React from 'react';
-import { StyleSheet, SectionList } from 'react-native';
-import { Container, Content, Card, CardItem, Left, Thumbnail, Body, Text, Right, Icon, ListItem } from "native-base";
+import { StyleSheet, SectionList, View } from 'react-native';
+import { Container, Content, Card, CardItem, Left, Thumbnail, Body, Text, Right, Icon, ListItem, Button } from "native-base";
 import Section from '../../utils/SectionsUtility';
 import SectionHeader from '../../components/SectionHeader';
 import RecipeReviews from '../../components/RecipeReviewsComponent';
@@ -95,10 +95,14 @@ export default class RecipesRecordScreen extends React.Component {
     return (
         <Container>
           <Content>
+            {/* Recipe Item Card */}
             <Card transparent>
               <CardItem>
                 <Left>
-                  <Thumbnail />
+                  <Thumbnail
+                    large
+                    source={require("../../assets/thumbnails/recipes/apple-pecan-bars.png")}
+                  />
                   <Body>
                     <Text>Apple Pecan Bars</Text>
                   </Body>
@@ -108,12 +112,27 @@ export default class RecipesRecordScreen extends React.Component {
                 </Right>
               </CardItem>
             </Card>
-          {/* Section information */}
-          <SectionList
-              sections={sections}
-              renderSectionHeader={SectionHeader}
-              keyExtractor={extractKey}
-          />
+            {/* Action Buttons */}
+            <View style={{ flex: 1, flexDirection: "row" }}>
+              <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
+                <Icon name="print" />
+                <Text>Print</Text>
+              </Button>
+              <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
+                <Icon name="restaurant" />
+                <Text>Eat Healthy</Text>
+              </Button>
+              <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
+                <Icon name="list" />
+                <Text>Subscribe</Text>
+              </Button>
+            </View>
+            {/* Section information */}
+            <SectionList
+                sections={sections}
+                renderSectionHeader={SectionHeader}
+                keyExtractor={extractKey}
+            />
           </Content>
         </Container>
     )

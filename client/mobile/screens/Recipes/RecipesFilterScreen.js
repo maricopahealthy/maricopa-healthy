@@ -31,7 +31,7 @@ export default class RecipesFilterScreen extends React.Component {
   render() {
     return (
       <Container>
-        <Content padder>
+        <Content>
           <SectionList
             sections={sections}
             renderSectionHeader={SectionHeader}
@@ -63,7 +63,7 @@ const extractKey = ({id}) => id;
 const sections= [
     Section('Ingredient', [{id: 0}], ({item}) => {
       return (
-          <ListItem>
+          <ListItem padder>
             <Item regular>
               <Icon name='search'/>
               <Input placeholder='Enter ingredient name'/>
@@ -80,7 +80,7 @@ const sections= [
     }),
     Section('Rating', [{id: 0}], ({item}) => {
       return (
-          <ListItem>
+          <ListItem padder>
             <Rating readonly />
           </ListItem>
       )
