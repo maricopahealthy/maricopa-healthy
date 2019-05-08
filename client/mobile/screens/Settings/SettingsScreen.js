@@ -5,7 +5,7 @@ import { withNavigation } from 'react-navigation';
 import {
   View, FlatList, StyleSheet
 } from "react-native";
-import { Text, Container} from 'native-base'
+import { Text, Container, Content} from 'native-base'
 import SettingsTile from '../../components/SettingsTile';
 
 const loggedInSettings = [
@@ -28,37 +28,39 @@ const loggedOutSettings = [
  */
 const SettingsHomeScreen =({navigation}) => {
   return (
-    <View>
-      <FlatList
-        data={loggedInSettings}
-        renderItem={({ item }) => 
-          <SettingsTile icon={item.icon} route={item.route} name={item.name} />
-        }
-      />
-      <View style={styles.container}>
-        <Text 
-          onPress={() => navigation.navigate("Login")} 
-          style={{ color: "#B52126", fontSize: 20, textAlign: "center"}}
-          >
-            Log In to Maricopa Healthy Account
-        </Text>
-        <Text style={{textAlign: "center", marginTop: 10}}>
-          <Text>Don't have one? </Text> 
-          <Text
-            onPress={() => navigation.navigate("SignUp")} 
-            style={{ color: "#B52126" }}
-            > 
-              Sign up today.
-            </Text>
-        </Text>
-      </View>
-      <FlatList
-        data={loggedOutSettings}
-        renderItem={({ item }) =>
-          <SettingsTile icon={item.icon} route={item.route} name={item.name} />
-        }
-      />
-    </View>
+    <Container>
+      <Content>
+        <FlatList
+          data={loggedInSettings}
+          renderItem={({ item }) => 
+            <SettingsTile icon={item.icon} route={item.route} name={item.name} />
+          }
+        />
+        <View style={styles.container}>
+          <Text 
+            onPress={() => navigation.navigate("Login")} 
+            style={{ color: "#B52126", fontSize: 20, textAlign: "center"}}
+            >
+              Log In to Maricopa Healthy Account
+          </Text>
+          <Text style={{textAlign: "center", marginTop: 10}}>
+            <Text>Don't have one? </Text> 
+            <Text
+              onPress={() => navigation.navigate("SignUp")} 
+              style={{ color: "#B52126" }}
+              > 
+                Sign up today.
+              </Text>
+          </Text>
+        </View>
+        <FlatList
+          data={loggedOutSettings}
+          renderItem={({ item }) =>
+            <SettingsTile icon={item.icon} route={item.route} name={item.name} />
+          }
+        />
+      </Content>
+    </Container>
   )
 }
 
