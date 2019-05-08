@@ -1,7 +1,7 @@
 // todo: MarketsFilterScreen
 import React from 'react';
 import { SectionList, View, StyleSheet } from 'react-native';
-import { Container, Content, ListItem, Text, Button, Badge } from 'native-base';
+import { Container, Content, ListItem, Text, Button, Input, Item } from 'native-base';
 import { Rating } from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
@@ -117,10 +117,9 @@ const sections = [
   }),
   Section('Zip Code', [{ id: 0 }], ({ item }) => {
     return (
-      <Text>
-      {/* // todo add zip code slider */}
-        zip code
-      </Text>
+      <Item regular>
+        <Input placeholder='Enter Zip Code' />
+      </Item>
     )
   }),
   Section('Day of Week', dayOfWeek, ({ item }) => {

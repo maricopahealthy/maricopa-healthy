@@ -20,7 +20,7 @@ export default class FilterButtons extends React.Component {
     const buttons = this.props.item.item.data.map(item => {
       active = this.state.filter.includes(item.text)
       return (
-        <Button style={active ? { backgroundColor: "grey", ...styles.button } : { backgroundColor: "#E5E5EA", ...styles.button}}
+        <Button disabled={this.props.disabled} style={active ? { backgroundColor: "grey", ...styles.button } : { backgroundColor: "#E5E5EA", ...styles.button}}
           key={item.id}
           onPress={() => {
             this._changeState(item.text)

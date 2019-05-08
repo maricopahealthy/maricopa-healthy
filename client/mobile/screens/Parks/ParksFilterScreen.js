@@ -1,36 +1,60 @@
 // todo: ParksFilterScreen
 import React from 'react';
 import { SectionList, View } from 'react-native';
-import { Container, Content, ListItem, Text, Button, Badge } from 'native-base';
+import { Container, Content, ListItem, Text, Button, Input, Item } from 'native-base';
 import { Rating } from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
+import FilterButtons from "../../components/FilterButtons";
 
 // Used for sample data ========================
 const cityData = [
-  { id: 0, city: 'Anthem' },
-  { id: 1, city: 'Avondale' },
+  {
+    data: [
+      { id: 0, text: 'Anthem' },
+      { id: 1, text: 'Avondale' },
+      { id: 2, text: 'Buckeye' },
+      { id: 3, text: 'Carefree' },
+      { id: 4, text: 'Chandler' },
+      { id: 5, text: 'Fountain Hills' },
+      { id: 6, text: 'Glendale' },
+      { id: 7, text: 'Goodyear' },
+    ]
+  }
 ];
+
 
 const timeOfDay = [
-  { id: 0, time: 'morning' },
-  { id: 1, time: 'afternoon' },
-  { id: 2, time: 'evening' },
-];
+  {
+    data: [
+      { id: 0, text: 'Morning' },
+      { id: 1, text: 'Afternoon' },
+      { id: 2, text: 'Evening' }
+    ]
+  }
+]
 
 const features = [
-  { id: 0, feature: 'ADA accessibility' },
-  { id: 1, feature: 'archery' },
-  { id: 2, feature: 'baseball' },
-  { id: 3, feature: 'basketball' },
-  { id: 4, feature: 'batting cages'},
-]
+  {
+    data: [
+      { id: 0, text: 'ADA accessibility' },
+      { id: 1, text: 'archery' },
+      { id: 2, text: 'baseball' },
+      { id: 3, text: 'basketball' },
+      { id: 4, text: 'batting cages'},
+    ]
+  }
+];
 
 const sortByData = [
-  { id: 0, category: 'Best Match' },
-  { id: 1, category: 'Most Popular' },
-  { id: 2, category: 'Near to Me' }
-]
+  {
+    data: [
+      { id: 0, text: 'Best Match' },
+      { id: 1, text: 'Most Popular' },
+      { id: 2, text: 'Near to Me' }
+    ]
+  }
+];
 // Remove above ================================
 
 /**
@@ -73,31 +97,24 @@ const extractKey = ({ id }) => id;
 const sections = [
   Section('City', cityData, ({ item }) => {
     return (
-      <Badge>
-        <Text>{item.city}</Text>
-      </Badge>
+      <FilterButtons item={{ item }} />
     )
   }),
   Section('Zip Code', [{ id: 0 }], ({ item }) => {
     return (
-      <Text>
-        {/* // todo add zip code slider */}
-        zip code
-      </Text>
+      <Item regular>
+        <Input placeholder='Enter Zip Code' />
+      </Item>
     )
   }),
   Section('Hours', timeOfDay, ({ item }) => {
     return (
-      <Badge>
-        <Text>{item.time}</Text>
-      </Badge>
+      <FilterButtons item={{ item }} />
     )
   }),
   Section('Features', features, ({ item }) => {
     return (
-      <Badge>
-        <Text>{item.feature}</Text>
-      </Badge>
+      <FilterButtons item={{ item }} />
     )
   }),
   Section('Rating', [{ id: 0 }], ({ item }) => {
@@ -109,9 +126,7 @@ const sections = [
   }),
   Section('Sort By', sortByData, ({ item }) => {
     return (
-      <Badge>
-        <Text>{item.category}</Text>
-      </Badge>
+      <FilterButtons item={{ item }} />
     )
   }),
 ];
