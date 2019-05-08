@@ -36,12 +36,20 @@ const SettingsHomeScreen =({navigation}) => {
         }
       />
       <View style={styles.container}>
-        {/* //todo add prompt to login/make account */}
-        <Text style={{ color: "#B52126", fontSize: 20, textAlign: "center"}}>Log In to Maricopa Healthy Account</Text>
+        <Text 
+          onPress={() => navigation.navigate("Login")} 
+          style={{ color: "#B52126", fontSize: 20, textAlign: "center"}}
+          >
+            Log In to Maricopa Healthy Account
+        </Text>
         <Text style={{textAlign: "center", marginTop: 10}}>
-          {/* //todo Link Text to Login/SignUp  */}
-          <Text>Don't have one?</Text> 
-          <Text style={{ color: "#B52126" }}> Sign up today.</Text>
+          <Text>Don't have one? </Text> 
+          <Text
+            onPress={() => navigation.navigate("SignUp")} 
+            style={{ color: "#B52126" }}
+            > 
+              Sign up today.
+            </Text>
         </Text>
       </View>
       <FlatList

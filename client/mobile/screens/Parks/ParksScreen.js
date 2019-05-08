@@ -30,6 +30,21 @@ const features = [
 
 const extractKey = ({ id }) => id
 
+const actionButtons = {
+  one: {
+    name: "more info",
+    icon: "ios-alert"
+  },
+  two: {
+    name: "directions",
+    icon: "ios-car"
+  },
+  three: {
+    name: "meetup",
+    icon: "ios-people"
+  },
+}
+
 /**
  * Parks Screen for viewing individual park records.
  */
@@ -54,7 +69,7 @@ export default class MarketsScreen extends React.Component {
               </Right>
             </CardItem>
           </Card>
-          <ActionButtonRow />
+          <ActionButtonRow {...actionButtons} />
           <SectionList
             sections={sections}
             renderSectionHeader={SectionHeader}

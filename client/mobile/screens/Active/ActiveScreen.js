@@ -32,7 +32,7 @@ export default class ActiveScreen extends React.Component {
               </Right>
             </CardItem>
           </Card>
-          <ActionButtonRow />
+          <ActionButtonRow {...actionButtons} />
           <SectionList
             sections={sections}
             renderSectionHeader={SectionHeader}
@@ -78,6 +78,17 @@ const sections = [
   })
 ];
 
-const styles = StyleSheet.create({
-  
-});
+const actionButtons = {
+  one: {
+    name: "leagues",
+    icon: "ios-trophy"
+  },
+  two: {
+    name: "subscribe",
+    icon: "list"
+  },
+  three: {
+    name: "meetup",
+    icon: "ios-people"
+  },
+}

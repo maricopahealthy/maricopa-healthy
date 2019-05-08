@@ -53,6 +53,21 @@ const paymentOptions = [
   }
 ]
 
+const actionButtons = {
+  one: {
+    name: "more info",
+    icon: "ios-alert"
+  },
+  two: {
+    name: "directions",
+    icon: "ios-car"
+  },
+  three: {
+    name: "meetup",
+    icon: "ios-people"
+  },
+}
+
 const extractKey = ({ id }) => id
 
 /**
@@ -79,7 +94,7 @@ export default class MarketsScreen extends React.Component {
               </Right>
             </CardItem>
           </Card>
-          <ActionButtonRow />
+          <ActionButtonRow {...actionButtons} />
           <SectionList
             sections={sections}
             renderSectionHeader={SectionHeader}

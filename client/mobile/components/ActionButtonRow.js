@@ -2,17 +2,15 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native'
 import ActionButton from "./ActionButton"
 
-export default class ActionButtonRow extends React.Component {
-  render() {
-    return (
-      <View style={styles.buttons}>
-        {/* //todo Wire up action buttons */}
-        <ActionButton title="more info" />
-        <ActionButton title="directions" />
-        <ActionButton title="meetup" />
-      </View>
-    )
-  }
+const ActionButtonRow = ({one, two, three}) => {
+  return (
+    <View style={styles.buttons}>
+      {/* //todo Wire up action buttons */}
+      <ActionButton title={one.name} icon={one.icon} />
+      <ActionButton title={two.name} icon={two.icon} />
+      <ActionButton title={three.name} icon={three.icon} />
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -21,3 +19,5 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   }
 });
+
+export default ActionButtonRow
