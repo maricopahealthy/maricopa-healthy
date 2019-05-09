@@ -9,7 +9,8 @@ export default class ParksMapScreen extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
+        {/* //todo Add map component and functionality */}
         <Text>Parks Map Screen</Text>
       </View>
     )

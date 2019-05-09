@@ -9,7 +9,8 @@ export default class MarketsMapScreen extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
+        {/* //todo Add map component and functionality */}
         <Text>Markets Map Screen</Text>
       </View>
     )

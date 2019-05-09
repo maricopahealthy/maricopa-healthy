@@ -2,39 +2,31 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { withNavigation } from 'react-navigation';
-import { Container, Content, List, ListItem, Thumbnail, Text, Left, Body, Right, Button } from 'native-base';
+import { Card, CardItem, Left, Body, Right, Icon, Text, Thumbnail } from 'native-base';
 
 /**
  * RecordTile is used for previewing different records.
  */
-class RecordTile extends React.Component {
-  render() {
-    return (
-      <Container>
-        <Content>
-          <List>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'URL' }} />
-              </Left>
-              <Body>
-                <Text>{this.props.item.record}</Text>
-                <Text note numberOfLines={1}>{this.props.item.record} Description</Text>
-              </Body>
-              <Right>
-                <Button 
-                  onPress={() => this.props.navigation.navigate(this.props.type)} 
-                  transparent
-                >
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-          </List>
-        </Content>
-      </Container>
-    );
-  }
+const RecordTile = (props) => {
+  return (
+    <Card transparent>
+      <CardItem
+        button
+        onPress={() => props.navigation.navigate(props.type)}
+      >
+        <Left>
+          <Thumbnail large source={props.item.image} />
+        </Left>
+        <Body style={{width: "80%"}}>
+          <Text>{props.item.title}</Text>
+          <Text note>{props.item.address}</Text>
+        </Body>
+        <Right>
+          <Icon name="ios-arrow-forward" />
+        </Right>
+      </CardItem>
+    </Card>
+  );
 }
 
 export default withNavigation(RecordTile);

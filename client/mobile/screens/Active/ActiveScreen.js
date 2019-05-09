@@ -1,11 +1,11 @@
 // todo: ActiveScreen
 import React from 'react';
 import { SectionList, View, StyleSheet } from 'react-native';
-import { Container, Content, List, ListItem, Thumbnail, Text, Left, Body, H3 } from 'native-base';
+import { Container, Content, Card, CardItem, ListItem, Thumbnail, Text, Left, Body, Right, H3, Icon } from 'native-base';
 import Section from '../../utils/SectionsUtility';
 import SectionHeader from '../../components/SectionHeader';
-import ActionButton from '../../components/ActionButton';
 import RecipeReviews from '../../components/RecipeReviewsComponent';
+import ActionButtonRow from '../../components/ActionButtonRow';
 
 /**
  * Active Screen for viewing individual Active records.
@@ -16,22 +16,23 @@ export default class ActiveScreen extends React.Component {
     return (
       <Container>
         <Content>
-          <List>
-            <ListItem thumbnail>
+          <Card transparent>
+            <CardItem>
               <Left>
-                <Thumbnail square source={{ uri: 'URL' }} />
+                <Thumbnail
+                  large
+                  source={require("../../assets/thumbnails/active/active-ada-accessibility-icon.png")}
+              />
+                <Body>
+                  <Text>Activity Name Goes Here</Text>
+                </Body>
               </Left>
-              <Body>
-                <Text>Activity 1</Text>
-              </Body>
-            </ListItem>
-          </List>
-          <View style={styles.buttons}>
-            {/* //todo Wire up action buttons */}
-            <ActionButton title="leagues" />
-            <ActionButton title="subscribe" />
-            <ActionButton title="meetup" />
-          </View>
+              <Right>
+                <Icon name='heart-empty' />
+              </Right>
+            </CardItem>
+          </Card>
+          <ActionButtonRow {...actionButtons} />
           <SectionList
             sections={sections}
             renderSectionHeader={SectionHeader}
@@ -77,9 +78,17 @@ const sections = [
   })
 ];
 
-const styles = StyleSheet.create({
-  buttons: {
-    flexDirection: "row",
-    justifyContent: 'space-between'
-  }
-});
+const actionButtons = {
+  one: {
+    name: "leagues",
+    icon: "ios-trophy"
+  },
+  two: {
+    name: "subscribe",
+    icon: "list"
+  },
+  three: {
+    name: "meetup",
+    icon: "ios-people"
+  },
+}
