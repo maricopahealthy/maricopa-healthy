@@ -10,7 +10,7 @@ import { Button, Header, Icon, Item, Input, Text } from "native-base";
  * @param {string} title - the name of the resource to display in the center of the navbar.
  * @returns - a functional component wrapped by Higher-order component: withNavigation().
  */
-export default class NavigationalHeaderSearch extends React.Component {
+class NavigationalHeaderSearch extends React.Component {
 
   state = {
     search: ""
@@ -33,6 +33,8 @@ export default class NavigationalHeaderSearch extends React.Component {
     )
   }
 };
+
+export default withNavigation(NavigationalHeaderSearch)
 
 const styles = StyleSheet.create({
   color: {
