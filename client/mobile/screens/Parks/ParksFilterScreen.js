@@ -96,9 +96,8 @@ const extractKey = ({ id }) => id;
 // sections to display for Filter headers
 const sections = [
   Section('City', cityData, ({ item }) => {
-    return (
-      <FilterButtons item={{ item }} />
-    )
+    const { data } = item;
+    return <FilterButtons data={data} />;
   }),
   Section('Zip Code', [{ id: 0 }], ({ item }) => {
     return (
@@ -108,14 +107,12 @@ const sections = [
     )
   }),
   Section('Hours', timeOfDay, ({ item }) => {
-    return (
-      <FilterButtons item={{ item }} />
-    )
+    const { data } = item;
+    return <FilterButtons data={data} />;
   }),
   Section('Features', features, ({ item }) => {
-    return (
-      <FilterButtons item={{ item }} />
-    )
+    const { data } = item;
+    return <FilterButtons data={data} />;
   }),
   Section('Rating', [{ id: 0 }], ({ item }) => {
     return (
@@ -125,8 +122,7 @@ const sections = [
     )
   }),
   Section('Sort By', sortByData, ({ item }) => {
-    return (
-      <FilterButtons item={{ item }} />
-    )
+    const { data } = item;
+    return <FilterButtons data={data} />;
   }),
 ];
