@@ -14,16 +14,12 @@ const RecordTile = (props) => {
         button
         onPress={() => props.navigation.navigate(props.type)}
       >
-        <Left>
           <Thumbnail large source={props.item.image} />
-        </Left>
-        <Body style={{width: "80%"}}>
+        <Body style={{justifyContent: "center", marginLeft: 15}}>
           <Text>{props.item.title}</Text>
           <Text note>{props.item.address}</Text>
         </Body>
-        <Right>
-          <Icon name="ios-arrow-forward" />
-        </Right>
+        <Icon style={{ color: "#8E8E93"}} name="ios-arrow-forward" />
       </CardItem>
     </Card>
   );
