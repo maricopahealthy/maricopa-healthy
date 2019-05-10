@@ -15,22 +15,23 @@ import {
 import { Rating } from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
+import FilterButtons from "../../components/FilterButtons";
 
 // Used for sample data ========================
 const mealTypeData = [
-  { id: 0, meal: "Breakfast" },
-  { id: 1, meal: "Lunch" },
-  { id: 2, meal: "Dinner" },
-  { id: 3, meal: "Dessert" },
-  { id: 4, meal: "Snack" },
-  { id: 5, meal: "Drinks" }
+  { id: 0, text: "Breakfast" },
+  { id: 1, text: "Lunch" },
+  { id: 2, text: "Dinner" },
+  { id: 3, text: "Dessert" },
+  { id: 4, text: "Snack" },
+  { id: 5, text: "Drinks" }
 ];
 
 const sortByData = [
-  { id: 0, category: "Recipe name (A to Z)" },
-  { id: 1, category: "Recipe Name (Z to A)" },
-  { id: 2, category: "Date Added (newest first)" },
-  { id: 3, category: "Date Added (oldest first)" }
+  { id: 0, text: "Recipe name (A to Z)" },
+  { id: 1, text: "Recipe Name (Z to A)" },
+  { id: 2, text: "Date Added (newest first)" },
+  { id: 3, text: "Date Added (oldest first)" }
 ];
 // Remove above ================================
 
@@ -81,12 +82,9 @@ const sections = [
       </ListItem>
     );
   }),
-  Section("Meal Type", mealTypeData, ({ item }) => {
-    return (
-      <Badge>
-        <Text>{item.meal}</Text>
-      </Badge>
-    );
+  Section("Meal Type", [{mealTypeData}], ({ item }) => {
+    const { mealTypeData } = item;
+    return <FilterButtons data={mealTypeData} />;
   }),
   Section("Rating", [{ id: 0 }], ({ item }) => {
     return (
@@ -95,12 +93,9 @@ const sections = [
       </ListItem>
     );
   }),
-  Section("Sort By", sortByData, ({ item }) => {
-    return (
-      <Badge>
-        <Text>{item.category}</Text>
-      </Badge>
-    );
+  Section("Sort By", [{sortByData}], ({ item }) => {
+    const { sortByData } = item;
+    return <FilterButtons data={sortByData} />;
   })
 ];
 

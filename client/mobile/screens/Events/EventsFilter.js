@@ -14,53 +14,54 @@ import {
 import { Rating } from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
+import FilterButtons from "../../components/FilterButtons";
 
 // Used for sample data ====================
 const cityData = [
-  { id: 0, city: "Avondale" },
-  { id: 1, city: "Buckeye" },
-  { id: 2, city: "Carefree" },
-  { id: 3, city: "Cave Creek" },
-  { id: 4, city: "Chandler" }
+  { id: 0, text: "Avondale" },
+  { id: 1, text: "Buckeye" },
+  { id: 2, text: "Carefree" },
+  { id: 3, text: "Cave Creek" },
+  { id: 4, text: "Chandler" }
 ];
 
 const dayData = [
-  { id: 0, day: "Sunday" },
-  { id: 1, day: "Monday" },
-  { id: 2, day: "Tuesday" },
-  { id: 3, day: "Wednesday" },
-  { id: 4, day: "Thursday" },
-  { id: 5, day: "Friday" },
-  { id: 6, day: "Saturday" }
+  { id: 0, text: "Sunday" },
+  { id: 1, text: "Monday" },
+  { id: 2, text: "Tuesday" },
+  { id: 3, text: "Wednesday" },
+  { id: 4, text: "Thursday" },
+  { id: 5, text: "Friday" },
+  { id: 6, text: "Saturday" }
 ];
 
 const timeData = [
-  { id: 0, time: "Morning" },
-  { id: 1, time: "Afternoon" },
-  { id: 2, time: "Evening" }
+  { id: 0, text: "Morning" },
+  { id: 1, text: "Afternoon" },
+  { id: 2, text: "Evening" }
 ];
 
 const costData = [
-  { id: 0, price: "FREE" },
-  { id: 1, price: "Up to $4.00" },
-  { id: 2, price: "$5.00 - 9.00" },
-  { id: 3, price: "$10.00+" }
+  { id: 0, text: "FREE" },
+  { id: 1, text: "Up to $4.00" },
+  { id: 2, text: "$5.00 - 9.00" },
+  { id: 3, text: "$10.00+" }
 ];
 
 const ageData = [
-  { id: 0, range: "All Ages" },
-  { id: 1, range: "5 and under" },
-  { id: 2, range: "6 to 10" },
-  { id: 3, range: "11 to 18" },
-  { id: 4, range: "Adults" },
-  { id: 5, range: "Family Friendly" },
-  { id: 6, range: "Seniors" }
+  { id: 0, text: "All Ages" },
+  { id: 1, text: "5 and under" },
+  { id: 2, text: "6 to 10" },
+  { id: 3, text: "11 to 18" },
+  { id: 4, text: "Adults" },
+  { id: 5, text: "Family Friendly" },
+  { id: 6, text: "Seniors" }
 ]
 
 const sortByData = [
-  { id: 0, category: "Best Match" },
-  { id: 1, category: "Most Popular" },
-  { id: 2, category: "Near to Me" }
+  { id: 0, text: "Best Match" },
+  { id: 1, text: "Most Popular" },
+  { id: 2, text: "Near to Me" }
 ];
 // Remove above ============================
 
@@ -101,12 +102,9 @@ const extractKey = ({ id }) => id;
 
 // sections to display for Filter headers
 const sections = [
-  Section("City", cityData, ({ item }) => {
-    return (
-      <Badge>
-        <Text>{item.city}</Text>
-      </Badge>
-    );
+  Section("City", [{cityData}], ({ item }) => {
+    const { cityData } = item;
+    return <FilterButtons data={cityData} />;;
   }),
   Section("Zip Code", [{ id: 0 }], ({ item }) => {
     return (
@@ -115,19 +113,13 @@ const sections = [
       </Item>
     );
   }),
-  Section("Day of Week", dayData, ({ item }) => {
-    return (
-      <Badge>
-        <Text>{item.day}</Text>
-      </Badge>
-    );
+  Section("Day of Week", [{dayData}], ({ item }) => {
+    const { dayData } = item;
+    return <FilterButtons data={dayData} />;
   }),
-  Section("Time of Day", timeData, ({ item }) => {
-    return (
-      <Badge>
-        <Text>{item.time}</Text>
-      </Badge>
-    );
+  Section("Time of Day", [{timeData}], ({ item }) => {
+    const { timeData } = item;
+    return <FilterButtons data={timeData} />;
   }),
   Section("Date Range", [{id: 0}], ({item}) => {
     return (
@@ -148,26 +140,17 @@ const sections = [
       </View>
     );
   }),
-  Section("Cost", costData, ({ item }) => {
-    return (
-      <Badge>
-        <Text>{item.price}</Text>
-      </Badge>
-    );
+  Section("Cost", [{costData}], ({ item }) => {
+    const { costData } = item;
+    return <FilterButtons data={costData} />;
   }),
-  Section("Ages", ageData, ({ item }) => {
-    return (
-      <Badge>
-        <Text>{item.range}</Text>
-      </Badge>
-    );
+  Section("Ages", [{ageData}], ({ item }) => {
+    const { ageData } = item;
+    return <FilterButtons data={ageData} />;
   }),
-  Section("Sort By", sortByData, ({ item }) => {
-    return (
-      <Badge>
-        <Text>{item.category}</Text>
-      </Badge>
-    );
+  Section("Sort By", [{sortByData}], ({ item }) => {
+    const { sortByData } = item;
+    return <FilterButtons data={sortByData} />;
   })
 ];
 
