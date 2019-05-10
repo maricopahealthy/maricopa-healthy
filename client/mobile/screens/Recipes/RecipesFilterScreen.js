@@ -82,7 +82,7 @@ const sections = [
       </ListItem>
     );
   }),
-  Section("Meal Type", [{mealTypeData}], ({ item }) => {
+  Section("Meal Type", [{ mealTypeData }], ({ item }) => {
     const { mealTypeData } = item;
     return <FilterButtons data={mealTypeData} />;
   }),
@@ -93,7 +93,7 @@ const sections = [
       </ListItem>
     );
   }),
-  Section("Sort By", [{sortByData}], ({ item }) => {
+  Section("Sort By", [{ sortByData }], ({ item }) => {
     const { sortByData } = item;
     return <FilterButtons data={sortByData} />;
   })

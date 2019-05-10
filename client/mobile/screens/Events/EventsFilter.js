@@ -56,7 +56,7 @@ const ageData = [
   { id: 4, text: "Adults" },
   { id: 5, text: "Family Friendly" },
   { id: 6, text: "Seniors" }
-]
+];
 
 const sortByData = [
   { id: 0, text: "Best Match" },
@@ -102,9 +102,9 @@ const extractKey = ({ id }) => id;
 
 // sections to display for Filter headers
 const sections = [
-  Section("City", [{cityData}], ({ item }) => {
+  Section("City", [{ cityData }], ({ item }) => {
     const { cityData } = item;
-    return <FilterButtons data={cityData} />;;
+    return <FilterButtons data={cityData} />;
   }),
   Section("Zip Code", [{ id: 0 }], ({ item }) => {
     return (
@@ -113,15 +113,15 @@ const sections = [
       </Item>
     );
   }),
-  Section("Day of Week", [{dayData}], ({ item }) => {
+  Section("Day of Week", [{ dayData }], ({ item }) => {
     const { dayData } = item;
     return <FilterButtons data={dayData} />;
   }),
-  Section("Time of Day", [{timeData}], ({ item }) => {
+  Section("Time of Day", [{ timeData }], ({ item }) => {
     const { timeData } = item;
     return <FilterButtons data={timeData} />;
   }),
-  Section("Date Range", [{id: 0}], ({item}) => {
+  Section("Date Range", [{ id: 0 }], ({ item }) => {
     return (
       <View
         style={{
@@ -140,15 +140,15 @@ const sections = [
       </View>
     );
   }),
-  Section("Cost", [{costData}], ({ item }) => {
+  Section("Cost", [{ costData }], ({ item }) => {
     const { costData } = item;
     return <FilterButtons data={costData} />;
   }),
-  Section("Ages", [{ageData}], ({ item }) => {
+  Section("Ages", [{ ageData }], ({ item }) => {
     const { ageData } = item;
     return <FilterButtons data={ageData} />;
   }),
-  Section("Sort By", [{sortByData}], ({ item }) => {
+  Section("Sort By", [{ sortByData }], ({ item }) => {
     const { sortByData } = item;
     return <FilterButtons data={sortByData} />;
   })
