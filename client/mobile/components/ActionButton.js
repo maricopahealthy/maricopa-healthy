@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native'
-import { Button, Text, Icon, Body } from "native-base";
+import { Button, Text, Icon } from "native-base";
 
 const ActionButton = (props) => {
   return (
