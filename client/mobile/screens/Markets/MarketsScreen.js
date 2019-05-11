@@ -124,7 +124,7 @@ const sections = [
   }),
   Section('Payment Options', paymentOptions, ({ item }) => {
     return (
-      <Text>
+      <Text style={{ margin: 10 }}>
         {item.text}
       </Text>
     );

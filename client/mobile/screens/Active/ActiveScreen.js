@@ -1,6 +1,6 @@
 // todo: ActiveScreen
 import React from 'react';
-import { SectionList, View, StyleSheet } from 'react-native';
+import { SectionList } from 'react-native';
 import { Container, Content, Card, CardItem, ListItem, Thumbnail, Text, Left, Body, Right, H3, Icon } from 'native-base';
 import Section from '../../utils/SectionsUtility';
 import SectionHeader from '../../components/SectionHeader';
@@ -56,7 +56,7 @@ const extractKey = ({ id }) => id
 const sections = [
   Section('How To', howto, ({ item }) => {
     return (
-      <Text>
+      <Text style={{ margin: 10 }}>
         {item.description}
       </Text>
     );

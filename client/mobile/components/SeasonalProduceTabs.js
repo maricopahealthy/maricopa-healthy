@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet } from 'react-native'
-import { Text, Segment, Button } from 'native-base';
+import { StyleSheet, View } from 'react-native'
+import { Text, Button } from 'native-base';
 
 export default class SeasonalProduceTabs extends React.Component {
   state = {
@@ -15,14 +15,12 @@ export default class SeasonalProduceTabs extends React.Component {
       return (
         <Button
           key={season.id}
-          first={season.text === 'Spring'}
-          last={season.text === 'Winter'}
-          active={this.state.produceTab === season.text}
+          style={this.state.produceTab === season.text ? { ...styles.button, backgroundColor: "#667747" } : { ...styles.button, backgroundColor: "#E5E5EA" }}
           onPress={() => {
             this._changeProduceTab(season.text)
           }}
         >
-          <Text>
+          <Text style={this.state.produceTab === season.text ? { color: "white" } : { color: "black" }}>
             {season.text}
           </Text>
         </Button>
@@ -31,10 +29,10 @@ export default class SeasonalProduceTabs extends React.Component {
     const produce = this.props.item.data.filter(season => season.text === this.state.produceTab)[0].produce
     return (
       <>
-        <Segment>
+        <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: 10 }}>
           {buttons}
-        </Segment>
-        <Text>
+        </View>
+        <Text style={{margin: 10}}>
           {produce}
         </Text>
       </>
@@ -43,5 +41,7 @@ export default class SeasonalProduceTabs extends React.Component {
 }
 
 const styles = StyleSheet.create({
-
+  button : {
+    height: 35
+  }
 });

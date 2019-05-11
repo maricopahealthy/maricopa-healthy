@@ -22,7 +22,7 @@ export default class ActiveListScreen extends React.Component {
             { key: 'Activity7', title: 'Boating', stars: '4 stars', reviews: '37 Reviews', image: require("../../assets/thumbnails/active/active-boating-icon.png") },
             { key: 'Activity8', title: 'Bocce Ball', stars: '3 stars', reviews: '26 Reviews', image: require("../../assets/thumbnails/active/active-bocce-ball-icon.png") },
           ]}
-          renderItem={({ item }) => <ActiveListItem item={item} />}
+          renderItem={({ item, index }) => <ActiveListItem item={item} index={index} />}
         />
       </View>
     )
