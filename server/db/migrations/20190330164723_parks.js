@@ -1,5 +1,5 @@
 exports.up = function (knex, Promise) {
-  return knex.schema.createTable("Parks", table => {
+  return knex.schema.createTable("parks", table => {
     table.increments();
     // todo: add table columns
     table.string("thumbnail");
@@ -18,5 +18,5 @@ exports.up = function (knex, Promise) {
 };
 
 exports.down = function (knex, Promise) {
-  return knex.schema.dropTable("Parks");
+  return knex.schema.dropTable("parks");
 };

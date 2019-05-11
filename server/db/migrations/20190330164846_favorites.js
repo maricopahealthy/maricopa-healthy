@@ -1,5 +1,5 @@
 exports.up = function (knex, Promise) {
-  return knex.schema.createTable("Favorites", table => {
+  return knex.schema.createTable("favorites", table => {
     table.increments();
     // todo: add table columns
     table.timestamps(true, true);
@@ -7,5 +7,5 @@ exports.up = function (knex, Promise) {
 };
 
 exports.down = function (knex, Promise) {
-  return knex.schema.dropTable("Favorites");
+  return knex.schema.dropTable("favorites");
 };
