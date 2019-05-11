@@ -18,7 +18,7 @@ export default class MarketsListScreen extends React.Component {
             { key: 'Market3', title: 'Anthem Farmers Market', address: '41703 N. Gavilan Peak Pkwy Anthem, AZ 85086', image: require("../../assets/thumbnails/markets/markets-thumb-placeholder-03.png") },
             { key: 'Market4', title: 'Market Names Goes Here', address: '5757 N. Central Ave Phoenix, AZ 85013', image: require("../../assets/thumbnails/markets/markets-thumb-placeholder-04.png") },
   ]}
-          renderItem={({ item }) => <RecordTile item={item} type="Markets" />}
+          renderItem={({ item, index }) => <RecordTile item={item} index={index} type="Markets" />}
         />
       </View>
     )

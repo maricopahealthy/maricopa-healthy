@@ -1,5 +1,5 @@
 import React from 'react';
-import { Body, Card, CardItem, Icon, Left, ListItem, Right, Text, Thumbnail } from "native-base";
+import { Body, CardItem, Icon, Left, Right, Text, Thumbnail } from "native-base";
 import { withNavigation } from 'react-navigation';
 
 /**
@@ -7,26 +7,25 @@ import { withNavigation } from 'react-navigation';
  */
 const ActiveListItem = (props) => {
   return (
-    <Card transparent>
+    <>
       <CardItem
+        style={props.index % 2 === 0 ? { backgroundColor: "white", margin: 0 } : { backgroundColor: "#F6F6F6", margin: 0 }}
         button
         onPress={() => props.navigation.navigate("Active")}
       >
-        <Left>
           <Thumbnail large source={props.item.image} />
-          <Body>
-            <Text>{props.item.title}</Text>
+          <Body style={{marginLeft: 20, justifyContent: "center"}}>
+            <Text style={{ fontSize: 20 }}>{props.item.title}</Text>
             <Text note>
               {props.item.stars} {props.item.reviews}
             </Text>
 
           </Body>
-        </Left>
         <Right>
           <Icon name="ios-arrow-forward" />
         </Right>
       </CardItem>
-    </Card>
+    </>
   )
 };
 

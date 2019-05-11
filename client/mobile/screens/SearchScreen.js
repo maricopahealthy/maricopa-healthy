@@ -25,7 +25,7 @@ export default class SearchScreen extends React.Component {
           {/* //todo Make search results bring you to individual record */}
           <FlatList
             data={results}
-            renderItem={({ item }) => <RecordTile item={item} type="Markets" />}
+            renderItem={({ item, index }) => <RecordTile index={index} item={item} type="Markets" />}
           />
         </View>
       </Container>

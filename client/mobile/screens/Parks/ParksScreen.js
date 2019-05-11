@@ -94,7 +94,7 @@ const sections = [
   }),
   Section('Features', features, ({ item }) => {
     return (
-      <Text>
+      <Text style={{marginLeft: 10}}>
         {`\u2022 ${item.feature}`}
       </Text>
     );

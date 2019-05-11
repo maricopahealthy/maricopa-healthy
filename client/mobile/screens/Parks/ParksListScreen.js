@@ -19,7 +19,7 @@ export default class ParksListScreen extends React.Component {
             { key: 'Park4', title: 'Park Name Goes Here', address: '2214 E. Pecos Rd Chandler, AZ 85225', image: require("../../assets/thumbnails/parks/parks-thumb-placeholder-04.png") },
             { key: 'Park5', title: 'Park Name Goes Here', address: '7858 S. 35th Ave Laveen Village, AZ 85339', image: require("../../assets/thumbnails/parks/parks-thumb-placeholder-05.png") },
           ]}
-          renderItem={({ item }) => <RecordTile item={item} type="Parks" />}
+          renderItem={({ item, index }) => <RecordTile item={item} index={index} type="Parks" />}
         />
       </View>
     )

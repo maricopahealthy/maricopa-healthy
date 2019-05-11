@@ -9,9 +9,10 @@ import { Card, CardItem, Left, Body, Right, Icon, Text, Thumbnail } from 'native
  */
 const RecordTile = (props) => {
   return (
-    <Card transparent>
+    <>
       <CardItem
         button
+        style={props.index % 2 === 0 ? { backgroundColor: "white", margin: 0 } : { backgroundColor: "#F6F6F6", margin: 0 }}
         onPress={() => props.navigation.navigate(props.type)}
       >
           <Thumbnail large source={props.item.image} />
@@ -21,7 +22,7 @@ const RecordTile = (props) => {
         </Body>
         <Icon style={{ color: "#8E8E93"}} name="ios-arrow-forward" />
       </CardItem>
-    </Card>
+    </>
   );
 }
 
