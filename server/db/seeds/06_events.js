@@ -4,10 +4,87 @@ exports.seed = function(knex, Promise) {
   return knex('events').del()
     .then(function () {
       // Inserts seed entries
-      return knex('events').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+      return knex("events").insert([
+        {
+          thumbnail: "",
+          name: "",
+          location: "",
+          address: "",
+          city: "",
+          state: "",
+          zipcode: "",
+          state_date: "",
+          end_date: "",
+          start_time: "",
+          end_time: "",
+          recurring: "",
+          frequency: "",
+          cost: "",
+          ages: "",
+          description: "",
+          phone: "",
+          website: ""
+        },
+        {
+          thumbnail: "",
+          name: "",
+          location: "",
+          address: "",
+          city: "",
+          state: "",
+          zipcode: "",
+          state_date: "",
+          end_date: "",
+          start_time: "",
+          end_time: "",
+          recurring: "",
+          frequency: "",
+          cost: "",
+          ages: "",
+          description: "",
+          phone: "",
+          website: ""
+        },
+        {
+          thumbnail: "",
+          name: "",
+          location: "",
+          address: "",
+          city: "",
+          state: "",
+          zipcode: "",
+          state_date: "",
+          end_date: "",
+          start_time: "",
+          end_time: "",
+          recurring: "",
+          frequency: "",
+          cost: "",
+          ages: "",
+          description: "",
+          phone: "",
+          website: ""
+        },
+        {
+          thumbnail: "",
+          name: "",
+          location: "",
+          address: "",
+          city: "",
+          state: "",
+          zipcode: "",
+          state_date: "",
+          end_date: "",
+          start_time: "",
+          end_time: "",
+          recurring: "",
+          frequency: "",
+          cost: "",
+          ages: "",
+          description: "",
+          phone: "",
+          website: ""
+        }
       ]);
     });
 };

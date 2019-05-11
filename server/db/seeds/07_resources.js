@@ -4,10 +4,39 @@ exports.seed = function(knex, Promise) {
   return knex('resources').del()
     .then(function () {
       // Inserts seed entries
-      return knex('resources').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+      return knex("resources").insert([
+        {
+          thumbnail: "",
+          name: "",
+          teaser: "",
+          phone_number: "",
+          website: "",
+          description: ""
+        },
+        {
+          thumbnail: "",
+          name: "",
+          teaser: "",
+          phone_number: "",
+          website: "",
+          description: ""
+        },
+        {
+          thumbnail: "",
+          name: "",
+          teaser: "",
+          phone_number: "",
+          website: "",
+          description: ""
+        },
+        {
+          thumbnail: "",
+          name: "",
+          teaser: "",
+          phone_number: "",
+          website: "",
+          description: ""
+        }
       ]);
     });
 };

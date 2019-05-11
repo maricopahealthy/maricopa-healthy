@@ -5,9 +5,7 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('markets').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+        { name: "", street_address: "", city: "", state: "", zipcode: "", phone_number: "", website_url: "", hours: "", produce: "", payment_methods: "", rating: "" }
       ]);
     });
 };
