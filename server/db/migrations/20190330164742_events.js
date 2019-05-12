@@ -17,7 +17,7 @@ exports.up = function (knex, Promise) {
     table.string("frequency");
     table.string("cost");
     table.string("ages"); // age range, string array?
-    table.string("description"); // description of event
+    table.string("description", 2000); // description of event
     table.string("phone");
     table.string("website"); // website url
     table.timestamps(true, true);

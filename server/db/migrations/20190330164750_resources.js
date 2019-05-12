@@ -7,7 +7,7 @@ exports.up = function (knex, Promise) {
     table.string("teaser");
     table.string("phone_number");
     table.string("website");
-    table.string("description");
+    table.string("description", 2000);
     table.timestamps(true, true);
   })
 };

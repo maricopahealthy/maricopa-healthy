@@ -4,7 +4,7 @@ exports.up = function (knex, Promise) {
     // todo: add table columns
     table.string("thumbnail");
     table.string("name");
-    table.string("description");
+    table.string("description", 2000);
     table.string("rating");
     table.timestamps(true, true);
   })
