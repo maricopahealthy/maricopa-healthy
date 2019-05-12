@@ -13,6 +13,7 @@ exports.up = function (knex, Promise) {
     table.string("hours");
     table.string("features");
     table.string("ratings");
+    table.string("reviews");
     table.timestamps(true, true);
   })
 };

@@ -2,6 +2,7 @@ exports.up = function (knex, Promise) {
   return knex.schema.createTable("markets", table => {
     table.increments();
     table.string("name");
+    table.string("thumbnail");
     table.string("street_address");
     table.string("city");
     table.string("state");
@@ -12,6 +13,7 @@ exports.up = function (knex, Promise) {
     table.string("produce");
     table.string("payment_methods");
     table.string("rating");
+    table.string("reviews");
     table.timestamps(true, true);
   })
 };

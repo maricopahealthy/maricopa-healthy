@@ -6,6 +6,7 @@ exports.up = function (knex, Promise) {
     table.string("name");
     table.string("description", 2000);
     table.string("rating");
+    table.string("reviews");
     table.timestamps(true, true);
   })
 };
