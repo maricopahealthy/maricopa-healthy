@@ -12,6 +12,7 @@ exports.up = function (knex, Promise) {
     table.string("attribution"); // attributes reicpe to Author
     table.boolean("featured"); // could be boolean
     table.string("rating"); // join table?
+    table.string("reviews");
     table.timestamps(true, true);
   })
 };
