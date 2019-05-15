@@ -56,13 +56,13 @@ module.exports = (app) => {
   // Routes for Favorites
   app.get("/favorites", favorites.find);
   app.get("/favorites/:id", favorites.findById);
-  app.get("/favorites/:userId", favorites.findByUserId);
+  app.get("/favorites/user/:userId", favorites.findByUserId);
   app.delete("/favorites/:id", favorites.findByIdAndDelete);
 
   // Routes for Subscriptions
   app.get("/subscriptions", subscriptions.find);
   app.get("/subscriptions/:id", subscriptions.findById);
-  app.get("/subscriptions/:userId", subscriptions.findByUserId);
+  app.get("/subscriptions/user/:userId", subscriptions.findByUserId);
   app.delete("/subscriptions/:id", subscriptions.findByIdAndDelete);
 
   // Routes for Notifications
