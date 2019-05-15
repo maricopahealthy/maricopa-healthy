@@ -67,4 +67,7 @@ module.exports = (app) => {
   app.get("/notifications/:id", notifications.findById);
   app.delete("/notifications/:id", notifications.findByIdAndDelete);
 
+  // Routes for SeasonalProduce
+  app.get("/produce", produce.find);
+
 };
