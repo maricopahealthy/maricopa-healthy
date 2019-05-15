@@ -26,13 +26,17 @@ module.exports = {
   },
 
   /**
-   * findByIdAndDelete deletes market from Markets table matching unique _id property.
+   * findByIdAndDelete deletes market from Markets table matching unique _id property and returns deleted item.
    * @param req
    * @param res
-   * @return {Void}
+   * @return {Market}
    */
   findByIdAndDelete: (req, res) => {
-
+    knex("markets")
+      .where("id", req.params.id)
+      .del("*")
+        .then(data => res.send(data))
+        .catch(err => console.error(err));
   },
 
 };

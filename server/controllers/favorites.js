@@ -38,13 +38,17 @@ module.exports = {
   },
 
   /**
-   * findByIdAndDelete deletes favorite from Favorites table matching unique _id property.
+   * findByIdAndDelete deletes favorite from Favorites table matching unique _id property and returns deleted item.
    * @param req
    * @param res
-   * @return {Void}
+   * @return {Favorite}
    */
   findByIdAndDelete: (req, res) => {
-
+    knex("favorites")
+      .where("id", req.params.id)
+      .del("*")
+        .then(data => res.send(data))
+        .catch(err => console.error(err));
   },
 
 };

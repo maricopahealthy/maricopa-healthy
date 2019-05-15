@@ -26,13 +26,17 @@ module.exports = {
   },
 
   /**
-   * findByIdAndDelete deletes activity from Activities table matching unique _id property.
+   * findByIdAndDelete deletes activity from Activities table matching unique _id property and returns deleted item.
    * @param req
    * @param res
-   * @return {Void}
+   * @return {Activity}
    */
   findByIdAndDelete: (req, res) => {
-
+    knex("activity")
+      .where("id", req.params.id)
+      .del("*")
+        .then(data => res.send(data))
+        .catch(err => console.error(err));
   },
 
 };
