@@ -10,6 +10,7 @@ const resources = require("./resources");
 const favorites = require("./favorites");
 const subscriptions = require("./subscriptions");
 const notifications = require("./notifications");
+const produce = require("./produce");
 
 module.exports = (app) => {
 
