@@ -8,7 +8,9 @@ module.exports = {
    * @return {Array<Subscription>}
    */
   find: (req, res) => {
-
+    knex("subscriptions")
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
   },
 
   /**
@@ -18,7 +20,21 @@ module.exports = {
    * @return {Subscription}
    */
   findById: (req, res) => {
+    knex("subscriptions").where("id", req.params.id)
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
+  },
 
+  /**
+     * findByUserId() returns all subscriptions from Subscriptions table matching unique user id property.
+     * @param {Object} req - Express request object.
+     * @param {Object} res - Express response object.
+     * @return {Array<Subscription>}
+     */
+  findByUserId: (req, res) => {
+    knex("subscriptions").where("user.id", req.params.id)
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
   },
 
   /**

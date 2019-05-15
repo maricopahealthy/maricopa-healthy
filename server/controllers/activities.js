@@ -20,7 +20,7 @@ module.exports = {
    * @return {Activity}
    */
   findById: (req, res) => {
-    knex("markets").where("id", req.params.id)
+    knex("active").where("id", req.params.id)
       .then(data => res.send(data))
       .catch(err => console.error(err));
   },
