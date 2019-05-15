@@ -8,7 +8,9 @@ module.exports = {
    * @return {Array<Market>}
    */
   find: (req, res) => {
-
+    knex("markets")
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
   },
 
   /**
@@ -18,7 +20,9 @@ module.exports = {
    * @return {Market}
    */
   findById: (req, res) => {
-
+    knex("markets").where("id", req.params.id)
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
   },
 
   /**
