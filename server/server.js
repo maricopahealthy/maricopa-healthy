@@ -23,7 +23,7 @@ app.use(passport.initialize());
 
 // makes routes available to express app
 const routes_setter = require('./controllers/routes.js');
-require('./config/passport')(passport);
+// require('./config/passport')(passport);
 routes_setter(app, passport);
 
 app.listen(PORT, function (err) {

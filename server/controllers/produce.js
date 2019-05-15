@@ -2,37 +2,36 @@ const knex = require("../db/knex");
 
 module.exports = {
   /**
-   * find returns all markets in Markets table.
+   * find returns all produce in Seasonal Produce table.
    * @param {Object} req - Express request object.
    * @param {Object} res - Express response object.
-   * @return {Array<Market>}
+   * @return {Array<Recipes>}
    */
   find: (req, res) => {
-    knex("markets")
+    knex("seasonal_produce")
       .then(data => res.send(data))
       .catch(err => console.error(err));
   },
 
   /**
-   * findById() returns market from Markets table matching unique _id property.
+   * findById() returns produce from Seasonal Produce table matching unique _id property.
    * @param {Object} req - Express request object.
    * @param {Object} res - Express response object.
-   * @return {Market}
+   * @return {Recipe}
    */
   findById: (req, res) => {
-    knex("markets").where("id", req.params.id)
+    knex("seasonal_produce")
+      .where("id", req.params.id)
       .then(data => res.send(data))
       .catch(err => console.error(err));
   },
 
   /**
-   * findByIdAndDelete deletes market from Markets table matching unique _id property.
+   * findByIdAndDelete deletes produce from Seasonal Produce table matching unique _id property.
    * @param req
    * @param res
    * @return {Void}
    */
-  findByIdAndDelete: (req, res) => {
-
-  },
-
+  findByIdAndDelete: (req, res) => {},
+  
 };

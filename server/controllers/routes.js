@@ -10,6 +10,7 @@ const resources = require("./resources");
 const favorites = require("./favorites");
 const subscriptions = require("./subscriptions");
 const notifications = require("./notifications");
+const produce = require("./produce");
 
 module.exports = (app) => {
 
@@ -66,5 +67,8 @@ module.exports = (app) => {
   app.get("/notifications", notifications.find);
   app.get("/notifications/:id", notifications.findById);
   app.delete("/notifications/:id", notifications.findByIdAndDelete);
+
+  // Routes for SeasonalProduce
+  app.get("/produce", produce.find);
 
 };
