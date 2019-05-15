@@ -32,7 +32,7 @@ module.exports = {
      * @return {Array<Favorite>}
      */
   findByUserId: (req, res) => {
-    knex("favorites").where("user.id", req.params.id)
+    knex("favorites").where("user.id", req.params.userId)
       .then(data => res.send(data))
       .catch(err => console.error(err));
   },

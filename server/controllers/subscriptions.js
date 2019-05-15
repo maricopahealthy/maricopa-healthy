@@ -32,7 +32,7 @@ module.exports = {
      * @return {Array<Subscription>}
      */
   findByUserId: (req, res) => {
-    knex("subscriptions").where("user.id", req.params.id)
+    knex("subscriptions").where("user.id", req.params.userId)
       .then(data => res.send(data))
       .catch(err => console.error(err));
   },
