@@ -4,7 +4,7 @@ const users = require("./users");
 const markets = require("./markets");
 const recipes = require("./recipes");
 const parks = require("./parks");
-const activities = require("./activities");
+const active = require("./active");
 const events = require("./events");
 const resources = require("./resources");
 const favorites = require("./favorites");
@@ -38,10 +38,10 @@ module.exports = (app) => {
   app.get("/parks/:id", parks.findById);
   app.delete("/parks/:id", parks.findByIdAndDelete);
 
-  // Routes for Activities
-  app.get("/activities", activities.find);
-  app.get("/activities/:id", activities.findById);
-  app.delete("/activities/:id", activities.findByIdAndDelete);
+  // Routes for active
+  app.get("/active", active.find);
+  app.get("/active/:id", active.findById);
+  app.delete("/active/:id", active.findByIdAndDelete);
 
   // Routes for Events
   app.get("/events", events.find);
