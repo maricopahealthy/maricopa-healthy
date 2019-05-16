@@ -20,19 +20,23 @@ module.exports = {
    * @return {Activity}
    */
   findById: (req, res) => {
-    knex("markets").where("id", req.params.id)
+    knex("active").where("id", req.params.id)
       .then(data => res.send(data))
       .catch(err => console.error(err));
   },
 
   /**
-   * findByIdAndDelete deletes activity from Activities table matching unique _id property.
+   * findByIdAndDelete deletes activity from Activities table matching unique _id property and returns deleted item.
    * @param req
    * @param res
-   * @return {Void}
+   * @return {Activity}
    */
   findByIdAndDelete: (req, res) => {
-
+    knex("activity")
+      .where("id", req.params.id)
+      .del("*")
+        .then(data => res.send(data))
+        .catch(err => console.error(err));
   },
 
 };
