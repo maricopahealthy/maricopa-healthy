@@ -20,19 +20,21 @@ module.exports = {
    * @return {Array<Favorite>}
    */
   findById: (req, res) => {
-    knex("favorites").where("id", req.params.id)
+    knex("favorites")
+      .where("id", req.params.id)
       .then(data => res.send(data))
       .catch(err => console.error(err));
   },
 
   /**
-     * findByUserId() returns all favorites from Favorites table matching unique user id property.
-     * @param {Object} req - Express request object.
-     * @param {Object} res - Express response object.
-     * @return {Array<Favorite>}
-     */
+   * findByUserId() returns all favorites from Favorites table matching unique user id property.
+   * @param {Object} req - Express request object.
+   * @param {Object} res - Express response object.
+   * @return {Array<Favorite>}
+   */
   findByUserId: (req, res) => {
-    knex("favorites").where("user.id", req.params.userId)
+    knex("favorites")
+      .where("user.id", req.params.userId)
       .then(data => res.send(data))
       .catch(err => console.error(err));
   },
@@ -47,8 +49,7 @@ module.exports = {
     knex("favorites")
       .where("id", req.params.id)
       .del("*")
-        .then(data => res.send(data))
-        .catch(err => console.error(err));
-  },
-
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
+  }
 };

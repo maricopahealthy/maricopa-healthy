@@ -32,6 +32,11 @@ module.exports = {
    * @param res
    * @return {Void}
    */
-  findByIdAndDelete: (req, res) => {},
-  
+  findByIdAndDelete: (req, res) => {
+    knex("seasonal_produce")
+      .where("id", req.params.id)
+      .del("*")
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
+  }
 };

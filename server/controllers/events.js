@@ -20,7 +20,8 @@ module.exports = {
    * @return {Event}
    */
   findById: (req, res) => {
-    knex("events").where("id", req.params.id)
+    knex("events")
+      .where("id", req.params.id)
       .then(data => res.send(data))
       .catch(err => console.error(err));
   },
@@ -32,7 +33,10 @@ module.exports = {
    * @return {Void}
    */
   findByIdAndDelete: (req, res) => {
-
-  },
-
+    knex("events")
+      .where("id", req.params.id)
+      .del("*")
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
+  }
 };
