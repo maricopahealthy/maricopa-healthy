@@ -1,3 +1,5 @@
+import {} from "../actions/marketsActions";
+
 const initState = {
   markets: []
 }

@@ -1,3 +1,5 @@
+import {} from "../actions/eventsActions";
+
 const initState = {
   events: []
 }
