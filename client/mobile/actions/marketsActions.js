@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 // ACTION TYPES and ACTION CREATORS
 export const FETCH_MARKETS_LOADING = "FETCH_MARKETS_LOADING";
 const fetchMarketsLoading = () => ({ 
@@ -17,3 +19,20 @@ const fetchMarketsError = (error) => ({
 })
 
 // ASYNC ACTION CREATORS
+
+export const fetchMarkets = () => dispatch => {
+  dispatch(
+    fetchMarketsLoading()
+  )
+  return axios.get(`${apiUrl}/markets`)
+    .then(response => {
+      dispatch(
+        fetchMarketsSuccess(response.data)
+      )
+    })
+    .catch(err => {
+      dispatch(
+        fetchMarketsError(err)
+      )
+    })
+}

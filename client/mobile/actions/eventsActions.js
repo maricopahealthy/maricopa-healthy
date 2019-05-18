@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 // ACTION TYPES and ACTION CREATORS
 export const FETCH_EVENTS_LOADING = "FETCH_EVENTS_LOADING";
 const fetchEventsLoading = () => ({
@@ -17,3 +19,20 @@ const fetchEventsError = (err) => ({
 })
 
 // ASYNC ACTION CREATORS
+
+export const fetchEvents = () => dispatch => {
+  dispatch(
+    fetchEventsLoading()
+  )
+  return axios.get(`${apiUrl}/events`)
+    .then(response => {
+      dispatch(
+        fetchEventsSuccess(response.data)
+      )
+    })
+    .catch(err => {
+      dispatch(
+        fetchEventsError(err)
+      )
+    })
+}

@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 // ACTION TYPES and ACTION CREATORS
 export const FETCH_FAVORITES_LOADING = "FETCH_FAVORITES_LOADING";
 const fetchFavoritesLoading = () => ({
@@ -17,3 +19,20 @@ const fetchFavoritesError = err => ({
 });
 
 // ASYNC ACTION CREATORS
+
+export const fetchFavorites = (id) => dispatch => {
+  dispatch(
+    fetchFavoritesLoading()
+  )
+  return axios.get(`${apiUrl}/favorites/user/${id}`)
+    .then(response => {
+      dispatch(
+        fetchFavoritesSuccess(response.data)
+      )
+    })
+    .catch(err => {
+      dispatch(
+        fetchFavoritesError(err)
+      )
+    })
+}

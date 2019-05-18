@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 // ACTION TYPES and ACTION CREATORS
 export const FETCH_PARKS_LOADING = "FETCH_PARKS_LOADING";
 const fetchParksLoading = () => ({
@@ -17,3 +19,20 @@ const fetchParksError = err => ({
 });
 
 // ASYNC ACTION CREATORS
+
+export const fetchParks = () => dispatch => {
+  dispatch(
+    fetchParksLoading()
+  )
+  return axios.get(`${apiUrl}/parks`)
+    .then(response => {
+      dispatch(
+        fetchParksSuccess(response.data)
+      )
+    })
+    .catch(err => {
+      dispatch(
+        fetchParksError(err)
+      )
+    })
+}

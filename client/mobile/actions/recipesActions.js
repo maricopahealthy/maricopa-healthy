@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 // ACTION TYPES and ACTION CREATORS
 export const FETCH_RECIPES_LOADING = "FETCH_RECIPES_LOADING";
 const fetchRecipesLoading = () => ({
@@ -17,3 +19,20 @@ const fetchRecipesError = err => ({
 });
 
 // ASYNC ACTION CREATORS
+
+export const fetchRecipes = () => dispatch => {
+  dispatch(
+    fetchRecipesLoading()
+  )
+  return axios.get(`${apiUrl}/recipes`)
+    .then(response => {
+      dispatch(
+        fetchRecipesSuccess(response.data)
+      )
+    })
+    .catch(err => {
+      dispatch(
+        fetchRecipesError(err)
+      )
+    })
+}
