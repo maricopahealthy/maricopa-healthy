@@ -10,7 +10,7 @@ const fetchResourcesSuccess = resources => ({
   payload: resources
 });
 
-FETCH_RESOURCES_ERROR = "FETCH_RESOURCES_ERROR";
+export const FETCH_RESOURCES_ERROR = "FETCH_RESOURCES_ERROR";
 const fetchResourcesError = err => ({
   type: FETCH_RESOURCES_ERROR,
   payload: err

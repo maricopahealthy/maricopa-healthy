@@ -10,7 +10,7 @@ const fetchRecipesSuccess = recipes => ({
   payload: recipes
 });
 
-FETCH_RECIPES_ERROR = "FETCH_RECIPES_ERROR";
+export const FETCH_RECIPES_ERROR = "FETCH_RECIPES_ERROR";
 const fetchRecipesError = err => ({
   type: FETCH_RECIPES_ERROR,
   payload: err

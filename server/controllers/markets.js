@@ -20,7 +20,8 @@ module.exports = {
    * @return {Market}
    */
   findById: (req, res) => {
-    knex("markets").where("id", req.params.id)
+    knex("markets")
+      .where("id", req.params.id)
       .then(data => res.send(data))
       .catch(err => console.error(err));
   },
@@ -35,8 +36,8 @@ module.exports = {
     knex("markets")
       .where("id", req.params.id)
       .del("*")
-        .then(data => res.send(data))
-        .catch(err => console.error(err));
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
   },
 
 };

@@ -10,7 +10,7 @@ const fetchFavoritesSuccess = favorites => ({
   payload: favorites
 });
 
-FETCH_FAVORITES_ERROR = "FETCH_FAVORITES_ERROR";
+export const FETCH_FAVORITES_ERROR = "FETCH_FAVORITES_ERROR";
 const fetchFavoritesError = err => ({
   type: FETCH_FAVORITES_ERROR,
   payload: err

@@ -10,7 +10,7 @@ const fetchParksSuccess = parks => ({
   payload: parks
 });
 
-FETCH_PARKS_ERROR = "FETCH_PARKS_ERROR";
+export const FETCH_PARKS_ERROR = "FETCH_PARKS_ERROR";
 const fetchParksError = err => ({
   type: FETCH_PARKS_ERROR,
   payload: err

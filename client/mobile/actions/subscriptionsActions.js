@@ -10,7 +10,7 @@ const fetchSubscriptionsSuccess = subscriptions => ({
   payload: subscriptions
 });
 
-FETCH_SUBSCRIPTIONS_ERROR = "FETCH_SUBSCRIPTIONS_ERROR";
+export const FETCH_SUBSCRIPTIONS_ERROR = "FETCH_SUBSCRIPTIONS_ERROR";
 const fetchSubscriptionsError = err => ({
   type: FETCH_SUBSCRIPTIONS_ERROR,
   payload: err

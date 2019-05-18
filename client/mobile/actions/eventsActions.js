@@ -10,7 +10,7 @@ const fetchEventsSuccess = (events) => ({
   payload: events
 })
 
-FETCH_EVENTS_ERROR = "FETCH_EVENTS_ERROR";
+export const FETCH_EVENTS_ERROR = "FETCH_EVENTS_ERROR";
 const fetchEventsError = (err) => ({
   type: FETCH_EVENTS_ERROR,
   payload: err

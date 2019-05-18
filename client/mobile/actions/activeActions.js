@@ -10,7 +10,7 @@ const fetchActiveSuccess = activities => ({
   payload: activities
 });
 
-FETCH_ACTIVE_ERROR = "FETCH_ACTIVE_ERROR";
+export const FETCH_ACTIVE_ERROR = "FETCH_ACTIVE_ERROR";
 const fetchActiveError = err => ({
   type: FETCH_ACTIVE_ERROR,
   payload: err

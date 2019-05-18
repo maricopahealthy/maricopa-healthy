@@ -20,9 +20,10 @@ module.exports = {
    * @return {Activity}
    */
   findById: (req, res) => {
-    knex("active").where("id", req.params.id)
-      .then(data => res.send(data))
-      .catch(err => console.error(err));
+    knex("active")
+    .where("id", req.params.id)
+    .then(data => res.send(data))
+    .catch(err => console.error(err));
   },
 
   /**
@@ -35,8 +36,8 @@ module.exports = {
     knex("active")
       .where("id", req.params.id)
       .del("*")
-        .then(data => res.send(data))
-        .catch(err => console.error(err));
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
   },
 
 };
