@@ -8,7 +8,7 @@ const EventListItem = (props) => {
     <Card transparent>
       <CardItem
         button
-        onPress={() => props.navigation.navigate("EventsRecord")}
+        onPress={() => props.navigation.navigate("EventsRecord", {id: props.item.id})}
       >
         <Left>
           {/* Event Date Badge */}

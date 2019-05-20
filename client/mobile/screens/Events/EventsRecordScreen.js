@@ -14,6 +14,7 @@ import {
   ListItem,
   Button
 } from "native-base";
+import { connect } from "react-redux";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
 
@@ -58,12 +59,10 @@ const sections = [
  * Summary view for viewing individual Event record.
  */
 class EventsRecordScreen extends React.Component {
-  componentDidMount() {
-    console.log("Mounting");
-    // this.props.fetchEventById();
-  }
-
+  
   render() {
+    const { event } = this.props;
+    console.log(event);
     return (
       <Container>
         <Content>
@@ -94,16 +93,16 @@ class EventsRecordScreen extends React.Component {
                   </CardItem>
                 </Card>
                 <Body>
-                  <Text>Master Gardeners Series</Text>
+                  <Text>{event.name}</Text>
                   <View
                     style={{
                       flexDirection: "row",
                       justifyContent: "space-between"
                     }}
                   >
-                    <Text style={{ color: "#8E8E93" }}>Time</Text>
+                    <Text style={{ color: "#8E8E93" }}>{event.start_time} - {event.end_time}</Text>
                     <Text style={{ color: "#8E8E93", textAlign: "right" }}>
-                      Price
+                      {event.cost}
                     </Text>
                   </View>
                 </Body>
@@ -115,22 +114,46 @@ class EventsRecordScreen extends React.Component {
           </Card>
           {/* Action Buttons */}
           <View style={{ flex: 1, flexDirection: "row" }}>
-            <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
+            <Button
+              iconLeft
+              style={{ flex: 1, backgroundColor: "#B52126" }}
+            >
               <Icon name="calendar" />
               <Text>Reminder</Text>
             </Button>
-            <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
+            <Button
+              iconLeft
+              style={{ flex: 1, backgroundColor: "#B52126" }}
+            >
               <Icon name="car" />
               <Text>Directions</Text>
             </Button>
-            <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
+            <Button
+              iconLeft
+              style={{ flex: 1, backgroundColor: "#B52126" }}
+            >
               <Icon name="people" />
               <Text>Meetup</Text>
             </Button>
           </View>
           {/* Section information */}
           <SectionList
-            sections={sections}
+            sections={[
+              Section("Details", [event], ({ item }) => {
+                return (
+                  <ListItem>
+                    <Text>{item.description}</Text>
+                  </ListItem>
+                );
+              }),
+              Section("Where", [event], ({ item }) => {
+                return (
+                  <ListItem>
+                    <Text>{item.location} {item.address}, {item.state} {item.zipcode}</Text>
+                  </ListItem>
+                );
+              })
+            ]}
             renderSectionHeader={SectionHeader}
             keyExtractor={extractKey}
           />
@@ -150,7 +173,14 @@ class EventsRecordScreen extends React.Component {
   }
 }
 
-export default EventsRecordScreen;
+function mapStateToProps({events}, ownProps) {
+  const { navigation } = ownProps;
+  return {
+    event: events.byId[navigation.getParam("id")]
+  }
+}
+
+export default connect(mapStateToProps, null)(EventsRecordScreen);
 
 /**
  * returns a unique id property for generating the necessary 'key' of a react list.

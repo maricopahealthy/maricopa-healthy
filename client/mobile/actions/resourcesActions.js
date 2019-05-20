@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // ACTION TYPES and ACTION CREATORS
-const FETCH_RESOURCES_LOADING = "FETCH_RESOURCES_LOADING";
+export const FETCH_RESOURCES_LOADING = "FETCH_RESOURCES_LOADING";
 const fetchResourcesLoading = () => ({
   type: FETCH_RESOURCES_LOADING
 });

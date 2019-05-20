@@ -36,7 +36,7 @@ class EventsListScreen extends React.Component {
 
 function mapStateToProps({ events }) {
   return {
-    events: events.events,
+    events: events.allIds.map(id => events.byId[id]),
     isFetching: events.isFetching
   };
 }

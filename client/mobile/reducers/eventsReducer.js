@@ -5,7 +5,8 @@ import {
 } from "../actions/eventsActions";
 
 const initState = {
-  events: [],
+  byId: {},
+  allIds: [],
   isFetching: false
 };
 
@@ -18,7 +19,7 @@ const eventsReducer = (state = initState, action) => {
       };
     case FETCH_EVENTS_SUCCESS:
       return {
-        events: action.payload,
+        ...normalizeData(state, action.payload),
         isFetching: false
       };
     case FETCH_EVENTS_ERROR:
@@ -28,3 +29,12 @@ const eventsReducer = (state = initState, action) => {
 };
 
 export default eventsReducer;
+
+function normalizeData(state, data) {
+  let newState = state;
+  for (let item of data) {
+    newState.byId[item.id] = item;
+    newState.allIds.push(item.id);
+  }
+  return newState;
+}
