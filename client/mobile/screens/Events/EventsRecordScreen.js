@@ -7,7 +7,6 @@ import {
   Card,
   CardItem,
   Left,
-  Thumbnail,
   Body,
   Text,
   Right,
@@ -58,7 +57,12 @@ const sections = [
 /**
  * Summary view for viewing individual Event record.
  */
-export default class EventsRecordScreen extends React.Component {
+class EventsRecordScreen extends React.Component {
+  componentDidMount() {
+    console.log("Mounting");
+    // this.props.fetchEventById();
+  }
+
   render() {
     return (
       <Container>
@@ -69,7 +73,10 @@ export default class EventsRecordScreen extends React.Component {
               <Left>
                 <Card transparent>
                   <CardItem
-                    style={{ backgroundColor: "#667747", borderRadius: "15" }}
+                    style={{
+                      backgroundColor: "#667747",
+                      borderRadius: "15"
+                    }}
                   >
                     <View style={{ alignItems: "center" }}>
                       <Text style={{ color: "#fff" }}>SAT</Text>
@@ -142,6 +149,8 @@ export default class EventsRecordScreen extends React.Component {
     );
   }
 }
+
+export default EventsRecordScreen;
 
 /**
  * returns a unique id property for generating the necessary 'key' of a react list.

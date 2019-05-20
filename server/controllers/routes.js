@@ -15,7 +15,7 @@ const produce = require("./produce");
 module.exports = (app) => {
 
   // Routes for Auth
-  app.post("/login");
+  app.post("/api/login");
   app.post("/register");
 
   // Routes for Users

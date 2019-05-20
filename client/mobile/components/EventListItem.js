@@ -25,10 +25,10 @@ const EventListItem = (props) => {
           </Card>
           {/* Event Description */}
           <Body>
-            <Text style={{ fontSize: "20", fontWeight: "bold" }}>{props.item.title}</Text>
+            <Text style={{ fontSize: "20", fontWeight: "bold" }}>{props.item.name}</Text>
             <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-              <Text style={{ color: "#8E8E93"}}>{props.item.time}</Text>
-              <Text style={{ color: "#8E8E93", textAlign: "right"}}>{props.item.price}</Text>
+              <Text style={{ color: "#8E8E93"}}>{props.item.start_time}</Text>
+              <Text style={{ color: "#8E8E93", textAlign: "right"}}>{props.item.cost}</Text>
             </View>
           </Body>
         </Left>

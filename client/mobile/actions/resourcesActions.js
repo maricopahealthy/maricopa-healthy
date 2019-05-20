@@ -1,17 +1,17 @@
 // ACTION TYPES and ACTION CREATORS
 export const FETCH_RESOURCES_LOADING = "FETCH_RESOURCES_LOADING";
-const fetchResourcesLoading = () => ({
+export const fetchResourcesLoading = () => ({
   type: FETCH_RESOURCES_LOADING
 });
 
 export const FETCH_RESOURCES_SUCCESS = "FETCH_RESOURCES_SUCCESS";
-const fetchResourcesSuccess = resources => ({
+export const fetchResourcesSuccess = resources => ({
   type: FETCH_RESOURCES_SUCCESS,
   payload: resources
 });
 
-FETCH_RESOURCES_ERROR = "FETCH_RESOURCES_ERROR";
-const fetchResourcesError = err => ({
+export const FETCH_RESOURCES_ERROR = "FETCH_RESOURCES_ERROR";
+export const fetchResourcesError = err => ({
   type: FETCH_RESOURCES_ERROR,
   payload: err
 });
