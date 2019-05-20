@@ -1,3 +1,5 @@
+import axios from "axios";
+
 // ACTION TYPES and ACTION CREATORS
 export const FETCH_ACTIVE_LOADING = "FETCH_ACTIVE_LOADING";
 export const fetchActiveLoading = () => ({
@@ -11,9 +13,26 @@ export const fetchActiveSuccess = activities => ({
 });
 
 export const FETCH_ACTIVE_ERROR = "FETCH_ACTIVE_ERROR";
-export const fetchActiveError = err => ({
+const fetchActiveError = err => ({
   type: FETCH_ACTIVE_ERROR,
   payload: err
 });
 
 // ASYNC ACTION CREATORS
+
+export const fetchActive = () => dispatch => {
+  dispatch(
+    fetchActiveLoading()
+  )
+  return axios.get(`${apiUrl}/active`)
+    .then(response => {
+      dispatch(
+        fetchActiveSuccess(response.data)
+      )
+    })
+    .catch(err => {
+      dispatch(
+        fetchActiveError(err)
+      )
+    })
+}

@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 // ACTION TYPES and ACTION CREATORS
 export const FETCH_SUBSCRIPTIONS_LOADING = "FETCH_SUBSCRIPTIONS_LOADING";
 export const fetchSubscriptionsLoading = () => ({
@@ -11,9 +13,26 @@ export const fetchSubscriptionsSuccess = subscriptions => ({
 });
 
 export const FETCH_SUBSCRIPTIONS_ERROR = "FETCH_SUBSCRIPTIONS_ERROR";
-export const fetchSubscriptionsError = err => ({
+const fetchSubscriptionsError = err => ({
   type: FETCH_SUBSCRIPTIONS_ERROR,
   payload: err
 });
 
 // ASYNC ACTION CREATORS
+
+export const fetchSubsriptions = (id) => dispatch => {
+  dispatch(
+    fetchSubsriptionsLoading()
+  )
+  return axios.get(`${apiUrl}/subsriptions/user/${id}`)
+    .then(response => {
+      dispatch(
+        fetchSubsriptionsSuccess(response.data)
+      )
+    })
+    .catch(err => {
+      dispatch(
+        fetchSubsriptionsError(err)
+      )
+    })
+}

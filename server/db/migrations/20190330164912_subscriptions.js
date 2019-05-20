@@ -6,7 +6,6 @@ exports.up = function (knex, Promise) {
       .inTable('users')
       .notNullable()
       .onDelete('CASCADE');
-    // todo make a join table "records" to be able to connect different types of records
     table.integer(record_id)
       .references('id')
       .inTable('records')
