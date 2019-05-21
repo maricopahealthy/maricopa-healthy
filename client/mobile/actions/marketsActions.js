@@ -20,19 +20,14 @@ const fetchMarketsError = (error) => ({
 
 // ASYNC ACTION CREATORS
 
-export const fetchMarkets = () => dispatch => {
-  dispatch(
-    fetchMarketsLoading()
-  )
-  return axios.get(`${apiUrl}/markets`)
-    .then(response => {
-      dispatch(
-        fetchMarketsSuccess(response.data)
-      )
-    })
-    .catch(err => {
-      dispatch(
-        fetchMarketsError(err)
-      )
-    })
+export const fetchMarkets = () => {
+  return async dispatch => {
+    dispatch(fetchMartketsLoading());
+    try {
+      const response = await axios.get("http://localhost:9000/martkets");
+      dispatch(fetchMartketsSuccess(response.data));
+    } catch (err) {
+      dispatch(fetchMartketsError(err));
+    }
+  };
 }
