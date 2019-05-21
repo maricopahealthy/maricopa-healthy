@@ -7,7 +7,8 @@ exports.seed = function(knex, Promise) {
       return knex('subscriptions').insert([
         {
           user_id: 1,
-          record_id: 3
+          record_type: "recipe",
+          recipe_id: 1
         },
       ]);
     });

@@ -6,10 +6,30 @@ exports.up = function (knex, Promise) {
       .inTable('users')
       .notNullable()
       .onDelete('CASCADE');
-    table.integer("record_id")
+    table.string("record_type");
+    table.integer("market_id")
       .references('id')
-      .inTable('records')
-      .notNullable()
+      .inTable('markets')
+      .onDelete('CASCADE');
+    table.integer("recipe_id")
+      .references('id')
+      .inTable('recipes')
+      .onDelete('CASCADE');
+    table.integer("park_id")
+      .references('id')
+      .inTable('parks')
+      .onDelete('CASCADE');
+    table.integer("active_id")
+      .references('id')
+      .inTable('active')
+      .onDelete('CASCADE');
+    table.integer("event_id")
+      .references('id')
+      .inTable('events')
+      .onDelete('CASCADE');
+    table.integer("resource_id")
+      .references('id')
+      .inTable('resources')
       .onDelete('CASCADE');
     table.timestamps(true, true);
   })
