@@ -16,6 +16,7 @@ import { withNavigation } from "react-navigation";
  * RecipeListItem is a presentational component for the Recipes home screen list view. It renders a stylistically relevant Card for the Recipe Home screen.
  */
 const RecipeListItem = props => {
+  const thumbnail = require("../assets/thumbnails/recipes/apple-pecan-bars.png");
   return (
     <Card transparent>
       <CardItem
@@ -25,7 +26,10 @@ const RecipeListItem = props => {
         }
       >
         <Left>
-          <Thumbnail large source={require(props.item.thumbnail)} />
+          <Thumbnail
+            large
+            source={thumbnail}
+          />
           <Body>
             <Text>{props.item.name}</Text>
             <Text note>

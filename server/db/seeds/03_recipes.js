@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
       return knex("recipes").insert([
         {
           thumbnail:
-            "../../assets/thumbnails/recipes/apple-pecan-bars.png",
+            "../assets/thumbnails/recipes/apple-pecan-bars.png",
           name: "Apple Pecan Bars",
           meal_type: "Dessert",
           ingredients:
@@ -24,7 +24,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           thumbnail:
-            "../../assets/thumbnails/recipes/apple-pecan-bars.png",
+            "../assets/thumbnails/recipes/apple-pecan-bars.png",
           name: "Banana Pops",
           meal_type: "Snacks",
           ingredients:
@@ -41,7 +41,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           thumbnail:
-            "../../assets/thumbnails/recipes/apple-pecan-bars.png",
+            "../assets/thumbnails/recipes/apple-pecan-bars.png",
           name: "Black Beans with Corn and Tomatoes",
           meal_type: "Dinner",
           ingredients:
@@ -58,7 +58,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           thumbnail:
-            "../../assets/thumbnails/recipes/apple-pecan-bars.png",
+            "../assets/thumbnails/recipes/apple-pecan-bars.png",
           name: "Cheesy Spaghetti Squash",
           meal_type: "Dinner",
           ingredients:
@@ -75,7 +75,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           thumbnail:
-            "../../assets/thumbnails/recipes/apple-pecan-bars.png",
+            "../assets/thumbnails/recipes/apple-pecan-bars.png",
           name: "Chipotle Apple Slaw",
           meal_type: "Lunch",
           ingredients:
@@ -92,7 +92,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           thumbnail:
-            "../../assets/thumbnails/recipes/apple-pecan-bars.png",
+            "../assets/thumbnails/recipes/apple-pecan-bars.png",
           name: "Chorizo Slaw Tacos",
           meal_type: "Dinner",
           ingredients:
@@ -109,7 +109,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           thumbnail:
-            "../../assets/thumbnails/recipes/apple-pecan-bars.png",
+            "../assets/thumbnails/recipes/apple-pecan-bars.png",
           name: "Citrus Kohlrabi Salad",
           meal_type: "Lunch",
           ingredients:
@@ -126,7 +126,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           thumbnail:
-            "../../assets/thumbnails/recipes/apple-pecan-bars.png",
+            "../assets/thumbnails/recipes/apple-pecan-bars.png",
           name: "Fruit and cheese Wands",
           meal_type: "Snacks",
           ingredients:
@@ -143,7 +143,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           thumbnail:
-            "../../assets/thumbnails/recipes/apple-pecan-bars.png",
+            "../assets/thumbnails/recipes/apple-pecan-bars.png",
           name: "Grapefruit Avocado Salad",
           meal_type: "Breakfast",
           ingredients:
@@ -160,7 +160,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           thumbnail:
-            "../../assets/thumbnails/recipes/apple-pecan-bars.png",
+            "../assets/thumbnails/recipes/apple-pecan-bars.png",
           name: "Orange Glazed Radishes and Spinach",
           meal_type: "Drinks",
           ingredients:

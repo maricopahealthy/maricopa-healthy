@@ -2,6 +2,7 @@
 import React from 'react';
 import { StyleSheet, SectionList, View } from 'react-native';
 import { Container, Content, Card, CardItem, Left, Thumbnail, Body, Text, Right, Icon, ListItem, Button } from "native-base";
+import { connect } from "react-redux";
 import Section from '../../utils/SectionsUtility';
 import SectionHeader from '../../components/SectionHeader';
 import RecipeReviews from '../../components/RecipeReviewsComponent';
@@ -89,9 +90,20 @@ const sections = [
 /**
  * RecipesRecord displays a detailed Screen for a single recipe from the RecipeList.
  */
-export default class RecipesRecordScreen extends React.Component {
+class RecipesRecordScreen extends React.Component {
+
+  componentDidMount(){
+    const { recipe } = this.props;
+    const ingredientData = recipe.ingredients.split(";");
+    const directionData = recipe.directions.split(";");
+    const nutritionData = recipe.nutrition_facts.split(";");
+    console.log("ingredient data: ", ingredientData);
+    console.log("direction data: ", directionData);
+    console.log("nutrition data: ", nutritionData);
+  }
 
   render() {
+    const { recipe } = this.props;
     return (
         <Container>
           <Content>
@@ -104,7 +116,7 @@ export default class RecipesRecordScreen extends React.Component {
                     source={require("../../assets/thumbnails/recipes/apple-pecan-bars.png")}
                   />
                   <Body>
-                    <Text>Apple Pecan Bars</Text>
+                    <Text>{recipe.name}</Text>
                   </Body>
                 </Left>
                 <Right>
@@ -138,6 +150,18 @@ export default class RecipesRecordScreen extends React.Component {
     )
   }
 };
+
+function mapStateToProps({ recipes }, ownProps) {
+  const { navigation } = ownProps;
+  return {
+    recipe: recipes.byId[navigation.getParam("id")]
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(RecipesRecordScreen);
 
 /**
  * returns a unique id property for generating the necessary 'key' of a react list.
