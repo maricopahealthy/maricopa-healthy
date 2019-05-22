@@ -2,12 +2,12 @@ import axios from 'axios'
 
 // ACTION TYPES and ACTION CREATORS
 export const FETCH_PARKS_LOADING = "FETCH_PARKS_LOADING";
-export const fetchParksLoading = () => ({
+const fetchParksLoading = () => ({
   type: FETCH_PARKS_LOADING
 });
 
 export const FETCH_PARKS_SUCCESS = "FETCH_PARKS_SUCCESS";
-export const fetchParksSuccess = parks => ({
+const fetchParksSuccess = parks => ({
   type: FETCH_PARKS_SUCCESS,
   payload: parks
 });
@@ -20,19 +20,14 @@ const fetchParksError = err => ({
 
 // ASYNC ACTION CREATORS
 
-export const fetchParks = () => dispatch => {
-  dispatch(
-    fetchParksLoading()
-  )
-  return axios.get(`${apiUrl}/parks`)
-    .then(response => {
-      dispatch(
-        fetchParksSuccess(response.data)
-      )
-    })
-    .catch(err => {
-      dispatch(
-        fetchParksError(err)
-      )
-    })
+export const fetchParks = () => {
+  return async dispatch => {
+    dispatch(fetchResourcesLoading());
+    try {
+      const response = await axios.get("http://localhost:9000/resources");
+      dispatch(fetchResourcesSuccess(response.data));
+    } catch (err) {
+      dispatch(fetchResourcesError(err));
+    }
+  };
 }
