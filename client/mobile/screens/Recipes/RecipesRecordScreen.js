@@ -17,6 +17,7 @@ import {
 } from "native-base";
 import {connect} from "react-redux";
 import Section from '../../utils/SectionsUtility';
+import SectionArray from '../../utils/SectionArrayUtility';
 import SectionHeader from '../../components/SectionHeader';
 import RecipeReviews from '../../components/RecipeReviewsComponent';
 
@@ -110,9 +111,9 @@ class RecipesRecordScreen extends React.Component {
     const ingredientData = recipe.ingredients.split(";");
     const directionData = recipe.directions.split(";");
     const nutritionData = recipe.nutrition_facts.split(";");
-    console.log("ingredient data: ", ingredientData);
-    console.log("direction data: ", directionData);
-    console.log("nutrition data: ", nutritionData);
+    console.log("ingredient data: ", SectionArray(ingredientData));
+    console.log("direction data: ", SectionArray(directionData));
+    console.log("nutrition data: ", SectionArray(nutritionData));
   }
 
   render() {
