@@ -5,11 +5,11 @@ import { Text, Button } from 'native-base';
 export default class SeasonalProduceTabs extends React.Component {
   state = {
     produceTab: 'Spring'
-  }
+  };
 
   _changeProduceTab = (season) => {
     this.setState({ produceTab: season })
-  }
+  };
   render() {
     const buttons = this.props.item.data.map(season => {
       return (
@@ -25,8 +25,8 @@ export default class SeasonalProduceTabs extends React.Component {
           </Text>
         </Button>
       )
-    })
-    const produce = this.props.item.data.filter(season => season.text === this.state.produceTab)[0].produce
+    });
+    const produce = this.props.item.data.filter(season => season.text === this.state.produceTab)[0].produce;
     return (
       <>
         <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: 10 }}>

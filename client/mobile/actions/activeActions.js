@@ -30,4 +30,4 @@ export const fetchActive = () => {
       dispatch(fetchActiveError(err));
     }
   };
-}
+};

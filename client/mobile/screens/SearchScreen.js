@@ -10,7 +10,7 @@ const results = [
   { key: 'Market2', title: 'Our Harvest/Nuestra Cosec', address: '3806 N. Brown Rd Scottsdale, AZ 85251', image: require("../assets/thumbnails/markets/markets-thumb-placeholder-02.png") },
   { key: 'Market3', title: 'Anthem Farmers Market', address: '41703 N. Gavilan Peak Pkwy Anthem, AZ 85086', image: require("../assets/thumbnails/markets/markets-thumb-placeholder-03.png") },
   { key: 'Market4', title: 'Market Names Goes Here', address: '5757 N. Central Ave Phoenix, AZ 85013', image: require("../assets/thumbnails/markets/markets-thumb-placeholder-04.png") },
-]
+];
 
 /**
  * Component corresponds to the App level search functionality. Results are shown for all text matches across all resources.

@@ -44,14 +44,14 @@ const seasonalProduce = [{
       produce: 'Artichokes, Asparagus, Beets, Bok Choy, Broccoli, Brussels Sprouts, Cabbage, Carrots, Cauliflower, Celery, Chard, Cucumbers, Eggplant, Grapefruit, Green Onions, Greens, Kale, Kohlrabi, Leeks, Lettuce, Onions, Oranges, Parsnips, Radishes, Spinach, Strawberries, Summer Squash, Tomatoes, Turnips'
     }
   ]
-}]
+}];
 
 const paymentOptions = [
   {
     id: 0,
     text: 'Cash, Check, Visa, Mastercard, American Express, SNAP, WIC, FMNP, Double Up Food Bucks'
   }
-]
+];
 
 const actionButtons = {
   one: {
@@ -66,9 +66,9 @@ const actionButtons = {
     name: "meetup",
     icon: "ios-people"
   },
-}
+};
 
-const extractKey = ({ id }) => id
+const extractKey = ({ id }) => id;
 
 /**
  * Markets Screen for viewing individual market records.

@@ -51,7 +51,7 @@ const howto = [
   }
 ];
 
-const extractKey = ({ id }) => id
+const extractKey = ({ id }) => id;
 
 const sections = [
   Section('How To', howto, ({ item }) => {
@@ -91,4 +91,4 @@ const actionButtons = {
     name: "meetup",
     icon: "ios-people"
   },
-}
+};

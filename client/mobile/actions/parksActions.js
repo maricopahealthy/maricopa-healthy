@@ -30,4 +30,4 @@ export const fetchParks = () => {
       dispatch(fetchResourcesError(err));
     }
   };
-}
+};

@@ -30,4 +30,4 @@ export const fetchFavorites = (id) => {
       dispatch(fetchFavoritesError(err));
     }
   };
-}
+};

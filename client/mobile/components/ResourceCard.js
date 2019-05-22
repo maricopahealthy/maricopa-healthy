@@ -1,4 +1,3 @@
-// todo: ResourceCard
 import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { Card, CardItem, Body, Text } from 'native-base';

@@ -89,7 +89,7 @@ const sections = [
   }),
 ];
 
-const extractKey = ({ id }) => id
+const extractKey = ({ id }) => id;
 
 /**
  * About Page for Maricopa Healthy Program.

@@ -1,8 +1,21 @@
 // todo: RecipesRecordScreen
 import React from 'react';
-import { StyleSheet, SectionList, View } from 'react-native';
-import { Container, Content, Card, CardItem, Left, Thumbnail, Body, Text, Right, Icon, ListItem, Button } from "native-base";
-import { connect } from "react-redux";
+import {StyleSheet, SectionList, View} from 'react-native';
+import {
+  Container,
+  Content,
+  Card,
+  CardItem,
+  Left,
+  Thumbnail,
+  Body,
+  Text,
+  Right,
+  Icon,
+  ListItem,
+  Button
+} from "native-base";
+import {connect} from "react-redux";
 import Section from '../../utils/SectionsUtility';
 import SectionHeader from '../../components/SectionHeader';
 import RecipeReviews from '../../components/RecipeReviewsComponent';
@@ -81,7 +94,7 @@ const sections = [
   Section('Reviews', [{id: 0}], ({item}) => {
     return (
         <ListItem>
-          <RecipeReviews />
+          <RecipeReviews/>
         </ListItem>
     );
   })
@@ -92,8 +105,8 @@ const sections = [
  */
 class RecipesRecordScreen extends React.Component {
 
-  componentDidMount(){
-    const { recipe } = this.props;
+  componentDidMount() {
+    const {recipe} = this.props;
     const ingredientData = recipe.ingredients.split(";");
     const directionData = recipe.directions.split(";");
     const nutritionData = recipe.nutrition_facts.split(";");
@@ -103,7 +116,7 @@ class RecipesRecordScreen extends React.Component {
   }
 
   render() {
-    const { recipe } = this.props;
+    const {recipe} = this.props;
     return (
         <Container>
           <Content>
@@ -112,30 +125,30 @@ class RecipesRecordScreen extends React.Component {
               <CardItem>
                 <Left>
                   <Thumbnail
-                    large
-                    source={require("../../assets/thumbnails/recipes/apple-pecan-bars.png")}
+                      large
+                      source={require("../../assets/thumbnails/recipes/apple-pecan-bars.png")}
                   />
                   <Body>
                     <Text>{recipe.name}</Text>
                   </Body>
                 </Left>
                 <Right>
-                  <Icon name='heart-empty' />
+                  <Icon name='heart-empty'/>
                 </Right>
               </CardItem>
             </Card>
             {/* Action Buttons */}
-            <View style={{ flex: 1, flexDirection: "row" }}>
-              <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
-                <Icon name="print" />
+            <View style={{flex: 1, flexDirection: "row"}}>
+              <Button iconLeft style={{flex: 1, backgroundColor: "#B52126"}}>
+                <Icon name="print"/>
                 <Text>Print</Text>
               </Button>
-              <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
-                <Icon name="restaurant" />
+              <Button iconLeft style={{flex: 1, backgroundColor: "#B52126"}}>
+                <Icon name="restaurant"/>
                 <Text>Eat Healthy</Text>
               </Button>
-              <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
-                <Icon name="list" />
+              <Button iconLeft style={{flex: 1, backgroundColor: "#B52126"}}>
+                <Icon name="list"/>
                 <Text>Subscribe</Text>
               </Button>
             </View>
@@ -149,18 +162,18 @@ class RecipesRecordScreen extends React.Component {
         </Container>
     )
   }
-};
+}
 
-function mapStateToProps({ recipes }, ownProps) {
-  const { navigation } = ownProps;
+function mapStateToProps({recipes}, ownProps) {
+  const {navigation} = ownProps;
   return {
     recipe: recipes.byId[navigation.getParam("id")]
   };
 }
 
 export default connect(
-  mapStateToProps,
-  null
+    mapStateToProps,
+    null
 )(RecipesRecordScreen);
 
 /**

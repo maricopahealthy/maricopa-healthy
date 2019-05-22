@@ -9,7 +9,7 @@ const AboutPageSection = ({title, text}) => {
       <Text>{text}</Text>
     </View>
   )
-}
+};
 
 const styles = StyleSheet.create({
   section: {

@@ -1,4 +1,3 @@
-// todo: ActiveFilterScreen
 import React from "react";
 import { SectionList, View, StyleSheet } from "react-native";
 import {
