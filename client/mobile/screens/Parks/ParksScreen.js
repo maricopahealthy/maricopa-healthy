@@ -28,7 +28,7 @@ const features = [
   { id: 4, feature: 'batting cages' },
 ];
 
-const extractKey = ({ id }) => id
+const extractKey = ({ id }) => id;
 
 const actionButtons = {
   one: {
@@ -43,7 +43,7 @@ const actionButtons = {
     name: "meetup",
     icon: "ios-people"
   },
-}
+};
 
 /**
  * Parks Screen for viewing individual park records.

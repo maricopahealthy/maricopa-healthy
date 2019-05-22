@@ -32,7 +32,7 @@ const timeOfDay = [
       { id: 2, text: 'Evening' }
     ]
   }
-]
+];
 
 const features = [
   {

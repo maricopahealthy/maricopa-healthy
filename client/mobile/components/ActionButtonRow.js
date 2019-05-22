@@ -11,7 +11,7 @@ const ActionButtonRow = ({one, two, three}) => {
       <ActionButton title={three.name} icon={three.icon} />
     </View>
   )
-}
+};
 
 const styles = StyleSheet.create({
   buttons: {

@@ -9,7 +9,7 @@ const ActionButton = (props) => {
       <Text>{props.title}</Text>
     </Button>
   )
-}
+};
 
 const styles = StyleSheet.create({
   button : {

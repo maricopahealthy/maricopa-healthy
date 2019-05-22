@@ -14,7 +14,7 @@ class NavigationalHeaderSearch extends React.Component {
 
   state = {
     search: ""
-  }
+  };
 
   render() {
     return (
@@ -32,7 +32,7 @@ class NavigationalHeaderSearch extends React.Component {
       </Header>
     )
   }
-};
+}
 
 export default withNavigation(NavigationalHeaderSearch)
 

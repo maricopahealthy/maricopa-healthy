@@ -9,7 +9,7 @@ const initState = {
   allIds: [],
   isFetching: false,
   isError: false
-}
+};
 
 const subscriptionsReducer = (state = initState, action) => {
   switch (action.type) {
@@ -29,11 +29,11 @@ const subscriptionsReducer = (state = initState, action) => {
         ...state,
         isFetching: false,
         isError: true
-      }
+      };
     default:
       return state;
   }
-}
+};
 
 export default subscriptionsReducer
 

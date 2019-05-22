@@ -1,4 +1,3 @@
-// todo: RecordTile
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { withNavigation } from 'react-navigation';
@@ -24,10 +23,10 @@ const RecordTile = (props) => {
       </CardItem>
     </>
   );
-}
+};
 
 export default withNavigation(RecordTile);
 
 const styles = StyleSheet.create({
 
-})
+});
