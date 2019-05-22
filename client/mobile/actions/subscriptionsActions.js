@@ -20,19 +20,14 @@ const fetchSubscriptionsError = err => ({
 
 // ASYNC ACTION CREATORS
 
-export const fetchSubsriptions = (id) => dispatch => {
-  dispatch(
-    fetchSubsriptionsLoading()
-  )
-  return axios.get(`${apiUrl}/subsriptions/user/${id}`)
-    .then(response => {
-      dispatch(
-        fetchSubsriptionsSuccess(response.data)
-      )
-    })
-    .catch(err => {
-      dispatch(
-        fetchSubsriptionsError(err)
-      )
-    })
+export const fetchSubsriptions = (id) => {
+  return async dispatch => {
+    dispatch(fetchSubscriptionsLoading());
+    try {
+      const response = await axios.get(`http://localhost:9000/Subscriptions/user/${id}`);
+      dispatch(fetchSubscriptionsSuccess(response.data));
+    } catch (err) {
+      dispatch(fetchSubscriptionsError(err));
+    }
+  };
 }
