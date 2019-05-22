@@ -36,3 +36,12 @@ const parksReducer = (state = initState, action) => {
 }
 
 export default parksReducer
+
+function normalizeData(state, data) {
+  let newState = state;
+  for (let item of data) {
+    newState.byId[item.id] = item;
+    newState.allIds.push(item.id);
+  }
+  return newState;
+}
