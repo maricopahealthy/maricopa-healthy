@@ -7,6 +7,7 @@ import SectionHeader from '../../components/SectionHeader';
 import ActionButtonRow from '../../components/ActionButtonRow';
 import SeasonalProduceTabs from '../../components/SeasonalProduceTabs';
 import RecipeReviews from '../../components/RecipeReviewsComponent';
+import { connect } from 'react-redux'
 
 const hours = [
   {
@@ -73,8 +74,43 @@ const extractKey = ({ id }) => id;
 /**
  * Markets Screen for viewing individual market records.
  */
-export default class MarketsScreen extends React.Component {
+class MarketsScreen extends React.Component {
   render() {
+    const { hours, id, name, payment_methods, rating, reviews, thumbnail, website_url } = this.props.market;
+
+
+    const sections = [
+      Section('Hours', hours, ({ item }) => {
+        return (
+          <ListItem>
+            <View>
+              <H3>{item.day}</H3>
+              <Text>{item.month}</Text>
+            </View>
+          </ListItem>
+        );
+      }),
+      Section('Seasonal Produce', seasonalProduce, ({ item }) => {
+        return (
+          <SeasonalProduceTabs item={item} />
+        );
+      }),
+        Section('Payment Options', [{ id: 0, text: payment_methods }], ({ item }) => {
+          return (
+            <Text style={{ margin: 10 }}>
+              {item.text}
+            </Text>
+          );
+        }),
+      Section('Reviews', [{ id: 0 }], ({ item }) => {
+        return (
+          <ListItem>
+            <RecipeReviews />
+          </ListItem>
+        );
+      })
+    ];
+
     return (
       <Container>
         <Content>
@@ -86,7 +122,7 @@ export default class MarketsScreen extends React.Component {
                   source={require("../../assets/thumbnails/markets/markets-thumb-placeholder-01.png")}
                 />
                 <Body>
-                  <Text>Market Name Goes Here</Text>
+                  <Text>{name}</Text>
                 </Body>
               </Left>
               <Right>
@@ -103,41 +139,15 @@ export default class MarketsScreen extends React.Component {
         </Content>
       </Container>
     )
+    }
+}
+
+
+
+const mapStateToProps = ({ markets }, props) => {
+  return {
+    market: markets.byId[props.navigation.state.params.id]
   }
 }
 
-const sections = [
-  Section('Hours', hours, ({ item }) => {
-    return (
-      <ListItem>
-        <View>
-          <H3>{item.day}</H3>
-          <Text>{item.month}</Text>
-        </View>
-      </ListItem>
-    );
-  }),
-  Section('Seasonal Produce', seasonalProduce, ({ item }) => {
-    return (
-      <SeasonalProduceTabs item={item} />
-    );
-  }),
-  Section('Payment Options', paymentOptions, ({ item }) => {
-    return (
-      <Text style={{ margin: 10 }}>
-        {item.text}
-      </Text>
-    );
-  }),
-  Section('Reviews', [{ id: 0 }], ({ item }) => {
-    return (
-      <ListItem>
-        <RecipeReviews />
-      </ListItem>
-    );
-  })
-];
-
-const styles = StyleSheet.create({
-
-});
+export default connect(mapStateToProps)(MarketsScreen)
