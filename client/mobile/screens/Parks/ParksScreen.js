@@ -21,14 +21,6 @@ const hours = [
   }
 ];
 
-const features = [
-  { id: 0, feature: 'ADA accessibility' },
-  { id: 1, feature: 'archery' },
-  { id: 2, feature: 'baseball' },
-  { id: 3, feature: 'basketball' },
-  { id: 4, feature: 'batting cages' },
-];
-
 const extractKey = ({ id }) => id;
 
 const actionButtons = {
@@ -51,7 +43,34 @@ const actionButtons = {
  */
 class ParksScreen extends React.Component {
   render() {
-    const { hours, id, name, rating, reviews, thumbnail, website_url } = this.props.park;
+    const { hours, id, name, rating, reviews, thumbnail, website_url, features } = this.props.park;
+
+    const sections = [
+      Section('Hours', hours, ({ item }) => {
+        return (
+          <ListItem>
+            <View>
+              <H3>{item.day}</H3>
+              <Text>{item.month}</Text>
+            </View>
+          </ListItem>
+        );
+      }),
+      Section('Features', features.map((feature, ind) => ({id: ind, feature})), ({ item }) => {
+        return (
+          <Text style={{ marginLeft: 10 }}>
+            {`\u2022 ${item.feature}`}
+          </Text>
+        );
+      }),
+      Section('Reviews', [{ id: 0 }], ({ item }) => {
+        return (
+          <ListItem>
+            <RecipeReviews />
+          </ListItem>
+        );
+      })
+    ];
 
     return (
       <Container>
@@ -92,33 +111,6 @@ const mapStateToProps = ({ parks }, props) => {
 }
 
 export default connect(mapStateToProps)(ParksScreen)
-
-const sections = [
-  Section('Hours', hours, ({ item }) => {
-    return (
-      <ListItem>
-        <View>
-          <H3>{item.day}</H3>
-          <Text>{item.month}</Text>
-        </View>
-      </ListItem>
-    );
-  }),
-  Section('Features', features, ({ item }) => {
-    return (
-      <Text style={{marginLeft: 10}}>
-        {`\u2022 ${item.feature}`}
-      </Text>
-    );
-  }),
-  Section('Reviews', [{ id: 0 }], ({ item }) => {
-    return (
-      <ListItem>
-        <RecipeReviews />
-      </ListItem>
-    );
-  })
-];
 
 const styles = StyleSheet.create({
   

@@ -8,7 +8,11 @@ module.exports = {
    * @return {Array<Park>}
    */
   find: (req, res) => {
-    knex("parks")
+    knex.select("parks.*", knex.raw("ARRAY_AGG(active.name) AS features"))
+      .from("parks")
+      .join("park_features", "park_features.park_id", "parks.id")
+      .join("active", "park_features.active_id", "active.id")
+      .groupBy("parks.id")
       .then(data => res.send(data))
       .catch(err => console.error(err));
   },
@@ -20,8 +24,12 @@ module.exports = {
    * @return {Park}
    */
   findById: (req, res) => {
-    knex("parks")
-      .where("id", req.params.id)
+    knex.select("parks.*", knex.raw("ARRAY_AGG(active.name) AS features"))
+      .from("parks")
+      .join("park_features", "park_features.park_id", "parks.id")
+      .join("active", "park_features.active_id", "active.id")
+      .groupBy("parks.id")
+      .where("parks.id", req.params.id)
       .then(data => res.send(data))
       .catch(err => console.error(err));
   },
