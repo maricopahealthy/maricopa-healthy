@@ -14,7 +14,7 @@ const RecordTile = (props) => {
         style={props.index % 2 === 0 ? { backgroundColor: "white", margin: 0 } : { backgroundColor: "#F6F6F6", margin: 0 }}
         onPress={() => props.navigation.navigate(props.type, {id: props.item.id})}
       >
-          <Thumbnail large source={{uri: props.item.thumbnail}} />
+          <Thumbnail large source={props.item.thumbnail} />
         <Body style={{ justifyContent: "center", marginLeft: 15 }}>
           <Text>{props.item.name}</Text>
           <Text note>{props.item.street_address}</Text>

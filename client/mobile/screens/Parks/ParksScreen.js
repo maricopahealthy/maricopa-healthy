@@ -6,6 +6,7 @@ import Section from '../../utils/SectionsUtility';
 import SectionHeader from '../../components/SectionHeader';
 import RecipeReviews from '../../components/RecipeReviewsComponent';
 import ActionButtonRow from '../../components/ActionButtonRow';
+import { connect } from 'react-redux'
 
 const hours = [
   {
@@ -48,8 +49,10 @@ const actionButtons = {
 /**
  * Parks Screen for viewing individual park records.
  */
-export default class MarketsScreen extends React.Component {
+class ParksScreen extends React.Component {
   render() {
+    const { hours, id, name, rating, reviews, thumbnail, website_url } = this.props.park;
+
     return (
       <Container>
         <Content>
@@ -61,7 +64,7 @@ export default class MarketsScreen extends React.Component {
                   source={require("../../assets/thumbnails/parks/parks-thumb-placeholder-01.png")}
                 />
                 <Body>
-                  <Text>Park Name Goes Here</Text>
+                  <Text>{name}</Text>
                 </Body>
               </Left>
               <Right>
@@ -80,6 +83,15 @@ export default class MarketsScreen extends React.Component {
     )
   }
 }
+
+
+const mapStateToProps = ({ parks }, props) => {
+  return {
+    park: parks.byId[props.navigation.state.params.id]
+  }
+}
+
+export default connect(mapStateToProps)(ParksScreen)
 
 const sections = [
   Section('Hours', hours, ({ item }) => {
