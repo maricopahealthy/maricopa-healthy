@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { Body, Button, Header, Icon, Left, Right, Text } from "native-base";
 
@@ -11,32 +11,54 @@ import { Body, Button, Header, Icon, Left, Right, Text } from "native-base";
  * @param {string} screenRoute - the named route to use when a user clicks the 'search' icon in the right-hand side.
  * @returns - a functional component wrapped by Higher-order component: withNavigation().
  */
-const NavigationalHeaderHomeScreen = ({ navigation, title, screenRoute }) => {
+const NavigationalHeaderHomeScreen = ({ navigation }) => {
   return (
-    <Header>
+    <Header style={styles.color}>
       <Left>
-        <Button
-          transparent
-          onPress={() => navigation.navigate("Settings")}
-        >
-          <Icon name="ios-settings" />
-        </Button>
+        <View style={{ flexDirection: "row" }}>
+          <Button
+            transparent
+            onPress={() => navigation.navigate("Settings")}
+          >
+            <Icon name="settings" style={{ color: "white" }} />
+          </Button>
+          <Button
+            transparent
+            onPress={() => navigation.navigate("Search")}
+          >
+            <Icon name="search" style={{ color: "white" }} />
+          </Button>
+        </View>
       </Left>
       <Body>
-        <Text>{title}</Text>
+        <Text style={{ color: "#fff", fontSize: "19", fontWeight: "380" }}>
+          Maricopa Healthy
+        </Text>
       </Body>
       <Right>
-        <Button
-          transparent
-          onPress={() => navigation.navigate(screenRoute)}
-        >
-          <Icon name="ios-search" />
-        </Button>
+        <View style={{ flexDirection: "row" }}>
+          <Button
+            transparent
+            onPress={() => navigation.navigate("Notifications")}
+          >
+            <Icon name="notifications" style={{ color: "white" }} />
+          </Button>
+          <Button
+            transparent
+            onPress={() => navigation.navigate("Favorites")}
+          >
+            <Icon name="heart" style={{ color: "white" }} />
+          </Button>
+        </View>
       </Right>
     </Header>
-  )
+  );
 };
 
 export default withNavigation(NavigationalHeaderHomeScreen);
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  color: {
+    backgroundColor: "#FBA208"
+  }
+});

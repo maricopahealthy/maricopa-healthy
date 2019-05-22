@@ -1,10 +1,10 @@
 // todo: MarketsScreen
 import React from 'react';
 import { SectionList, View, StyleSheet } from 'react-native';
-import { Container, Content, List, ListItem, Thumbnail, Text, Left, Body, H3 } from 'native-base';
+import { Container, Content, Card, CardItem, ListItem, Thumbnail, Text, Left, Body, Right, H3, Icon } from 'native-base';
 import Section from '../../utils/SectionsUtility';
 import SectionHeader from '../../components/SectionHeader';
-import ActionButton from '../../components/ActionButton';
+import ActionButtonRow from '../../components/ActionButtonRow';
 import SeasonalProduceTabs from '../../components/SeasonalProduceTabs';
 import RecipeReviews from '../../components/RecipeReviewsComponent';
 
@@ -53,6 +53,21 @@ const paymentOptions = [
   }
 ]
 
+const actionButtons = {
+  one: {
+    name: "more info",
+    icon: "ios-alert"
+  },
+  two: {
+    name: "directions",
+    icon: "ios-car"
+  },
+  three: {
+    name: "meetup",
+    icon: "ios-people"
+  },
+}
+
 const extractKey = ({ id }) => id
 
 /**
@@ -63,23 +78,23 @@ export default class MarketsScreen extends React.Component {
     return (
       <Container>
         <Content>
-          <List>
-            <ListItem thumbnail>
+          <Card transparent>
+            <CardItem>
               <Left>
-                <Thumbnail square source={{ uri: 'URL' }} />
+                <Thumbnail
+                  large
+                  source={require("../../assets/thumbnails/markets/markets-thumb-placeholder-01.png")}
+                />
+                <Body>
+                  <Text>Market Name Goes Here</Text>
+                </Body>
               </Left>
-              <Body>
-                <Text>Market 1</Text>
-                <Text note numberOfLines={1}>Market 1 Description</Text>
-              </Body>
-            </ListItem>
-          </List>
-          <View style={styles.buttons}>
-            {/* //todo Wire up action buttons */}
-            <ActionButton title="more info" />
-            <ActionButton title="directions" />
-            <ActionButton title="meetup" />
-          </View>
+              <Right>
+                <Icon name='heart-empty' />
+              </Right>
+            </CardItem>
+          </Card>
+          <ActionButtonRow {...actionButtons} />
           <SectionList
             sections={sections}
             renderSectionHeader={SectionHeader}
@@ -109,7 +124,7 @@ const sections = [
   }),
   Section('Payment Options', paymentOptions, ({ item }) => {
     return (
-      <Text>
+      <Text style={{ margin: 10 }}>
         {item.text}
       </Text>
     );
@@ -124,8 +139,5 @@ const sections = [
 ];
 
 const styles = StyleSheet.create({
-  buttons: { 
-    flexDirection: "row", 
-    justifyContent: 'space-between' 
-  }
+
 });

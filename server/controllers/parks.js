@@ -8,7 +8,9 @@ module.exports = {
    * @return {Array<Park>}
    */
   find: (req, res) => {
-
+    knex("parks")
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
   },
 
   /**
@@ -18,17 +20,23 @@ module.exports = {
    * @return {Park}
    */
   findById: (req, res) => {
-
+    knex("parks")
+      .where("id", req.params.id)
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
   },
 
   /**
-   * findByIdAndDelete deletes park from Parks table matching unique _id property.
+   * findByIdAndDelete deletes park from Parks table matching unique _id property and returns deleted item.
    * @param req
    * @param res
-   * @return {Void}
+   * @return {Park}
    */
   findByIdAndDelete: (req, res) => {
-
-  },
-
+    knex("parks")
+      .where("id", req.params.id)
+      .del("*")
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
+  }
 };

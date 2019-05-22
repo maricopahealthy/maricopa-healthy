@@ -8,7 +8,9 @@ module.exports = {
    * @return {Array<Resource>}
    */
   find: (req, res) => {
-
+    knex("notifications")
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
   },
 
   /**
@@ -18,7 +20,10 @@ module.exports = {
    * @return {Resource}
    */
   findById: (req, res) => {
-
+    knex("notifications")
+      .where("id", req.params.id)
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
   },
 
   /**
@@ -28,7 +33,10 @@ module.exports = {
    * @return {Void}
    */
   findByIdAndDelete: (req, res) => {
-
-  },
-
+    knex("notifications")
+      .where("id", req.params.id)
+      .del("*")
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
+  }
 };

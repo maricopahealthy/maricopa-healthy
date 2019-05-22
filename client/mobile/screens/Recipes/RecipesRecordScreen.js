@@ -1,7 +1,8 @@
 // todo: RecipesRecordScreen
 import React from 'react';
-import { StyleSheet, SectionList } from 'react-native';
-import { Container, Content, Card, CardItem, Left, Thumbnail, Body, Text, Right, Icon, ListItem } from "native-base";
+import { StyleSheet, SectionList, View } from 'react-native';
+import { Container, Content, Card, CardItem, Left, Thumbnail, Body, Text, Right, Icon, ListItem, Button } from "native-base";
+import { connect } from "react-redux";
 import Section from '../../utils/SectionsUtility';
 import SectionHeader from '../../components/SectionHeader';
 import RecipeReviews from '../../components/RecipeReviewsComponent';
@@ -89,18 +90,33 @@ const sections = [
 /**
  * RecipesRecord displays a detailed Screen for a single recipe from the RecipeList.
  */
-export default class RecipesRecordScreen extends React.Component {
+class RecipesRecordScreen extends React.Component {
+
+  componentDidMount(){
+    const { recipe } = this.props;
+    const ingredientData = recipe.ingredients.split(";");
+    const directionData = recipe.directions.split(";");
+    const nutritionData = recipe.nutrition_facts.split(";");
+    console.log("ingredient data: ", ingredientData);
+    console.log("direction data: ", directionData);
+    console.log("nutrition data: ", nutritionData);
+  }
 
   render() {
+    const { recipe } = this.props;
     return (
         <Container>
           <Content>
+            {/* Recipe Item Card */}
             <Card transparent>
               <CardItem>
                 <Left>
-                  <Thumbnail />
+                  <Thumbnail
+                    large
+                    source={require("../../assets/thumbnails/recipes/apple-pecan-bars.png")}
+                  />
                   <Body>
-                    <Text>Apple Pecan Bars</Text>
+                    <Text>{recipe.name}</Text>
                   </Body>
                 </Left>
                 <Right>
@@ -108,17 +124,44 @@ export default class RecipesRecordScreen extends React.Component {
                 </Right>
               </CardItem>
             </Card>
-          {/* Section information */}
-          <SectionList
-              sections={sections}
-              renderSectionHeader={SectionHeader}
-              keyExtractor={extractKey}
-          />
+            {/* Action Buttons */}
+            <View style={{ flex: 1, flexDirection: "row" }}>
+              <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
+                <Icon name="print" />
+                <Text>Print</Text>
+              </Button>
+              <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
+                <Icon name="restaurant" />
+                <Text>Eat Healthy</Text>
+              </Button>
+              <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
+                <Icon name="list" />
+                <Text>Subscribe</Text>
+              </Button>
+            </View>
+            {/* Section information */}
+            <SectionList
+                sections={sections}
+                renderSectionHeader={SectionHeader}
+                keyExtractor={extractKey}
+            />
           </Content>
         </Container>
     )
   }
 };
+
+function mapStateToProps({ recipes }, ownProps) {
+  const { navigation } = ownProps;
+  return {
+    recipe: recipes.byId[navigation.getParam("id")]
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(RecipesRecordScreen);
 
 /**
  * returns a unique id property for generating the necessary 'key' of a react list.

@@ -3,7 +3,7 @@ import HomeScreen from "../../screens/HomeScreen";
 import SearchScreen from "../../screens/SearchScreen";
 
 import NavigationalHeaderHomeScreen from "../../components/navigation-headers/NavigationalHeaderHomeScreen";
-import NavigationalHeaderFilter from "../../components/navigation-headers/NavigationalHeaderFilter";
+import NavigationalHeaderSearch from '../../components/navigation-headers/NavigationalHeaderSearch';
 
 export default {
 
@@ -17,7 +17,7 @@ export default {
   Search: {
     screen: SearchScreen,
     navigationOptions: {
-      header: <NavigationalHeaderFilter />
+      header: <NavigationalHeaderSearch />
     }
   },
 }
