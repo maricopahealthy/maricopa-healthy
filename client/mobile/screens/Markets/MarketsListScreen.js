@@ -1,4 +1,3 @@
-// todo: MarketsListScreen
 import React from 'react';
 import {View, StyleSheet, FlatList} from 'react-native';
 import RecordTile from '../../components/RecordTile'
