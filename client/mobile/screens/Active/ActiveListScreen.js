@@ -21,7 +21,6 @@ class ActiveListScreen extends React.Component {
         <Spinner color='red' />
       )
     }
-    console.log(this.props.active)
     return (
       <View>
         <FlatList

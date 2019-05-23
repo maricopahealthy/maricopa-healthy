@@ -8,6 +8,7 @@ import ActionButtonRow from '../../components/ActionButtonRow';
 import SeasonalProduceTabs from '../../components/SeasonalProduceTabs';
 import RecipeReviews from '../../components/RecipeReviewsComponent';
 import { connect } from 'react-redux'
+import axios from "axios";
 
 const hours = [
   {
@@ -47,13 +48,6 @@ const seasonalProduce = [{
   ]
 }];
 
-const paymentOptions = [
-  {
-    id: 0,
-    text: 'Cash, Check, Visa, Mastercard, American Express, SNAP, WIC, FMNP, Double Up Food Bucks'
-  }
-];
-
 const actionButtons = {
   one: {
     name: "more info",
@@ -71,10 +65,47 @@ const actionButtons = {
 
 const extractKey = ({ id }) => id;
 
+const getProduce = (id) => {
+  axios.get(`http://localhost:9000/produce/market/${id}`)
+    .then(response => { 
+      return response.data
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
+
 /**
  * Markets Screen for viewing individual market records.
  */
 class MarketsScreen extends React.Component {
+  componentDidMount() {
+    axios.get(`http://localhost:9000/produce/market/${this.props.navigation.state.params.id}`)
+      .then(response => {
+        let produce = {
+          "Spring": [],
+          "Summer": [],
+          "Fall": [],
+          "Winter": [],
+        }
+        for(let i = 0; i < response.data.length; i++) {
+          produce[response.data[i].season] = [...produce[response.data[i].season], response.data[i].name]
+        }
+        this.setState({produce: produce})
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
+  state = {
+    produce: {
+      Spring: [],
+      Summer: [],
+      Fall: [],
+      Winter: []
+    }
+  }
   render() {
     const { hours, id, name, payment_methods, rating, reviews, thumbnail, website_url } = this.props.market;
 
@@ -90,7 +121,7 @@ class MarketsScreen extends React.Component {
           </ListItem>
         );
       }),
-      Section('Seasonal Produce', seasonalProduce, ({ item }) => {
+      Section('Seasonal Produce', [this.state.produce], ({ item }) => {
         return (
           <SeasonalProduceTabs item={item} />
         );
