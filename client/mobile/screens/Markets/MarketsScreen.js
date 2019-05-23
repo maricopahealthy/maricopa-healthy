@@ -21,38 +21,6 @@ const hours = [
   }
 ];
 
-const seasonalProduce = [{
-  data: [
-    {
-      id: 0,
-      text: 'Spring',
-      produce: 'Artichokes, Asparagus, Beets, Bok Choy, Broccoli, Brussels Sprouts, Cabbage, Carrots, Cauliflower, Celery, Chard, Cucumbers, Eggplant, Grapefruit, Green Onions, Greens, Kale, Kohlrabi, Leeks, Lettuce, Onions, Oranges, Parsnips, Radishes, Spinach, Strawberries, Summer Squash, Tomatoes, Turnips'
-    },
-    {
-      id: 1,
-      text: 'Summer',
-      produce: 'Artichokes, Asparagus, Beets, Bok Choy, Broccoli, Brussels Sprouts, Cabbage, Carrots, Cauliflower, Celery, Chard, Cucumbers, Eggplant, Grapefruit, Green Onions, Greens, Kale, Kohlrabi, Leeks, Lettuce, Onions, Oranges, Parsnips, Radishes, Spinach, Strawberries, Summer Squash, Tomatoes, Turnips'
-    },
-    {
-      id: 2,
-      text: 'Autumn',
-      produce: 'Artichokes, Asparagus, Beets, Bok Choy, Broccoli, Brussels Sprouts, Cabbage, Carrots, Cauliflower, Celery, Chard, Cucumbers, Eggplant, Grapefruit, Green Onions, Greens, Kale, Kohlrabi, Leeks, Lettuce, Onions, Oranges, Parsnips, Radishes, Spinach, Strawberries, Summer Squash, Tomatoes, Turnips'
-    },
-    {
-      id: 3,
-      text: 'Winter',
-      produce: 'Artichokes, Asparagus, Beets, Bok Choy, Broccoli, Brussels Sprouts, Cabbage, Carrots, Cauliflower, Celery, Chard, Cucumbers, Eggplant, Grapefruit, Green Onions, Greens, Kale, Kohlrabi, Leeks, Lettuce, Onions, Oranges, Parsnips, Radishes, Spinach, Strawberries, Summer Squash, Tomatoes, Turnips'
-    }
-  ]
-}];
-
-const paymentOptions = [
-  {
-    id: 0,
-    text: 'Cash, Check, Visa, Mastercard, American Express, SNAP, WIC, FMNP, Double Up Food Bucks'
-  }
-];
-
 const actionButtons = {
   one: {
     name: "more info",
@@ -75,6 +43,41 @@ const extractKey = ({ id }) => id;
  */
 export default class MarketsScreen extends React.Component {
   render() {
+    const { id, name, payment_methods, rating, reviews, thumbnail, website_url } = this.props.market;
+
+
+    const sections = [
+      Section('Hours', hours, ({ item }) => {
+        return (
+          <ListItem>
+            <View>
+              <H3>{item.day}</H3>
+              <Text>{item.month}</Text>
+            </View>
+          </ListItem>
+        );
+      }),
+      Section('Seasonal Produce', [this.state.produce], ({ item }) => {
+        return (
+          <SeasonalProduceTabs item={item} />
+        );
+      }),
+        Section('Payment Options', [{ id: 0, text: payment_methods }], ({ item }) => {
+          return (
+            <Text style={{ margin: 10 }}>
+              {item.text}
+            </Text>
+          );
+        }),
+      Section('Reviews', [{ id: 0 }], ({ item }) => {
+        return (
+          <ListItem>
+            <RecipeReviews />
+          </ListItem>
+        );
+      })
+    ];
+
     return (
       <Container>
         <Content>
