@@ -30,7 +30,7 @@ class MarketsListScreen extends React.Component {
         </View>
     )
   }
-};
+}
 
 // map connect
 
@@ -39,7 +39,7 @@ const mapStateToProps = ({markets}) => {
     markets: markets.allIds.map(id => ({ key: id, ...markets.byId[id] })),
     isFetching: markets.isFetching
   }
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -49,11 +49,9 @@ const mapDispatchToProps = dispatch => {
       )
     }
   }
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(MarketsListScreen);
-
-
 
 const styles = StyleSheet.create({
   container: {
