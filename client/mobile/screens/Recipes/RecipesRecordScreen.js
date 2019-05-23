@@ -129,7 +129,7 @@ function mapStateToProps({recipes}, ownProps) {
   return {
     recipe: recipes.byId[navigation.getParam("id")]
   };
-}
+};
 
 export default connect(
     mapStateToProps,
