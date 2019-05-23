@@ -23,31 +23,6 @@ const hours = [
   }
 ];
 
-const seasonalProduce = [{
-  data: [
-    {
-      id: 0,
-      text: 'Spring',
-      produce: 'Artichokes, Asparagus, Beets, Bok Choy, Broccoli, Brussels Sprouts, Cabbage, Carrots, Cauliflower, Celery, Chard, Cucumbers, Eggplant, Grapefruit, Green Onions, Greens, Kale, Kohlrabi, Leeks, Lettuce, Onions, Oranges, Parsnips, Radishes, Spinach, Strawberries, Summer Squash, Tomatoes, Turnips'
-    },
-    {
-      id: 1,
-      text: 'Summer',
-      produce: 'Artichokes, Asparagus, Beets, Bok Choy, Broccoli, Brussels Sprouts, Cabbage, Carrots, Cauliflower, Celery, Chard, Cucumbers, Eggplant, Grapefruit, Green Onions, Greens, Kale, Kohlrabi, Leeks, Lettuce, Onions, Oranges, Parsnips, Radishes, Spinach, Strawberries, Summer Squash, Tomatoes, Turnips'
-    },
-    {
-      id: 2,
-      text: 'Autumn',
-      produce: 'Artichokes, Asparagus, Beets, Bok Choy, Broccoli, Brussels Sprouts, Cabbage, Carrots, Cauliflower, Celery, Chard, Cucumbers, Eggplant, Grapefruit, Green Onions, Greens, Kale, Kohlrabi, Leeks, Lettuce, Onions, Oranges, Parsnips, Radishes, Spinach, Strawberries, Summer Squash, Tomatoes, Turnips'
-    },
-    {
-      id: 3,
-      text: 'Winter',
-      produce: 'Artichokes, Asparagus, Beets, Bok Choy, Broccoli, Brussels Sprouts, Cabbage, Carrots, Cauliflower, Celery, Chard, Cucumbers, Eggplant, Grapefruit, Green Onions, Greens, Kale, Kohlrabi, Leeks, Lettuce, Onions, Oranges, Parsnips, Radishes, Spinach, Strawberries, Summer Squash, Tomatoes, Turnips'
-    }
-  ]
-}];
-
 const actionButtons = {
   one: {
     name: "more info",
@@ -107,7 +82,7 @@ class MarketsScreen extends React.Component {
     }
   }
   render() {
-    const { hours, id, name, payment_methods, rating, reviews, thumbnail, website_url } = this.props.market;
+    const { id, name, payment_methods, rating, reviews, thumbnail, website_url } = this.props.market;
 
 
     const sections = [
