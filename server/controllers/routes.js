@@ -72,5 +72,8 @@ module.exports = (app) => {
 
   // Routes for SeasonalProduce
   app.get("/produce", produce.find);
+  app.get("/produce/:id", produce.findById);
+  app.get("/produce/market/:marketId", produce.findByUserId);
+  app.delete("/produce/:id", produce.findByIdAndDelete);
 
 };

@@ -22,12 +22,13 @@ const fetchMarketsError = (error) => ({
 
 export const fetchMarkets = () => {
   return async dispatch => {
-    dispatch(fetchMartketsLoading());
+    dispatch(fetchMarketsLoading());
     try {
       const response = await axios.get("http://localhost:9000/markets");
-      dispatch(fetchMartketsSuccess(response.data));
+      dispatch(fetchMarketsSuccess(response.data));
     } catch (err) {
-      dispatch(fetchMartketsError(err));
+      console.log(err)
+      dispatch(fetchMarketsError(err));
     }
   };
 };
