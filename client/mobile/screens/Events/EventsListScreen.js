@@ -1,8 +1,8 @@
 import React from "react";
-import { FlatList, StyleSheet } from "react-native";
-import { Container, Content } from "native-base";
-import { connect } from "react-redux";
-import { fetchEvents } from "../../actions/eventsActions";
+import {FlatList, StyleSheet} from "react-native";
+import {Container, Content} from "native-base";
+import {connect} from "react-redux";
+import {fetchEvents} from "../../actions/eventsActions";
 import EventListItem from "../../components/EventListItem";
 
 /**
@@ -17,7 +17,7 @@ class EventsListScreen extends React.Component {
     console.log("EventsListScreen props: ", JSON.stringify(this.props.events));
     return (
       <Container>
-        <Content style={{ flex: 1 }}>
+        <Content style={{flex: 1}}>
           <FlatList
             // data={[
             //   {key: 0, title: 'Event Name 1', time: '10:00 AM', price: 'FREE'},
@@ -25,7 +25,7 @@ class EventsListScreen extends React.Component {
             //   {key: 2, title: 'Event Name 3', time: '8:00 PM', price: '$25.00'},
             // ]}
             data={this.props.events}
-            renderItem={({ item }) => <EventListItem item={item} />}
+            renderItem={({item, index}) => <EventListItem item={item} index={index}/>}
           />
         </Content>
       </Container>
@@ -33,7 +33,7 @@ class EventsListScreen extends React.Component {
   }
 }
 
-function mapStateToProps({ events }) {
+function mapStateToProps({events}) {
   return {
     events: events.allIds.map(id => events.byId[id]),
     isFetching: events.isFetching
