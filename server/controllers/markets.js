@@ -8,7 +8,7 @@ module.exports = {
    * @return {Array<Market>}
    */
   find: (req, res) => {
-    knex.select("markets.*", knex.raw("json_agg(hours.*) AS hours"))
+    knex.select("markets.*", knex.raw("JSON_AGG(hours.*) AS hours"))
       .from("markets")
       .join("hours", "hours.market_id", "markets.id")
       .groupBy("markets.id")
@@ -23,7 +23,7 @@ module.exports = {
    * @return {Market}
    */
   findById: (req, res) => {
-    knex.select("markets.*", knex.raw("json_agg(hours.*) AS hours"))
+    knex.select("markets.*", knex.raw("JSON_AGG(hours.*) AS hours"))
       .from("markets")
       .join("hours", "hours.market_id", "markets.id")
       .groupBy("markets.id")

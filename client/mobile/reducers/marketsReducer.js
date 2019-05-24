@@ -38,10 +38,13 @@ const marketsReducer = (state = initState, action) => {
 export default marketsReducer
 
 function normalizeData(state, data) {
-  let newState = state;
+  let newState = initState;
   for (let item of data) {
     newState.byId[item.id] = item;
-    newState.allIds.push(item.id);
+    if(!newState.allIds.includes(item.id)){
+      newState.allIds.push(item.id);
+    }
   }
+  console.log(newState)
   return newState;
 }
