@@ -8,7 +8,10 @@ module.exports = {
    * @return {Array<Market>}
    */
   find: (req, res) => {
-    knex("markets")
+    knex.select("markets.*", knex.raw("ARRAY_AGG(hours.header) AS days"))
+      .from("markets")
+      .join("hours", "hours.market_id", "markets.id")
+      .groupBy("markets.id")
       .then(data => res.send(data))
       .catch(err => console.error(err));
   },
