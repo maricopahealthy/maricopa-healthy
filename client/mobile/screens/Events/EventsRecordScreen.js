@@ -17,11 +17,22 @@ import {
 import { connect } from "react-redux";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
+import ActionButtonRow from "../../components/ActionButtonRow";
 
 /**
  * Summary view for viewing individual Event record.
  */
 class EventsRecordScreen extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.actionButtons = {
+      one: {name: "Reminder", icon: "calendar"},
+      two: {name: "Directions", icon: "car"},
+      three: {name: "Meetup", icon: "people"}
+    }
+  }
+
   render() {
     const { event } = this.props;
     console.log(event);
@@ -77,20 +88,7 @@ class EventsRecordScreen extends React.Component {
             </CardItem>
           </Card>
           {/* Action Buttons */}
-          <View style={{ flex: 1, flexDirection: "row" }}>
-            <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
-              <Icon name="calendar" />
-              <Text>Reminder</Text>
-            </Button>
-            <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
-              <Icon name="car" />
-              <Text>Directions</Text>
-            </Button>
-            <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
-              <Icon name="people" />
-              <Text>Meetup</Text>
-            </Button>
-          </View>
+          <ActionButtonRow {...this.actionButtons} />
           {/* Section information */}
           <SectionList
             sections={[

@@ -10,7 +10,7 @@ import {
   Text,
   Thumbnail
 } from "native-base";
-import { withNavigation } from "react-navigation";
+import {withNavigation} from "react-navigation";
 
 /**
  * RecipeListItem is a presentational component for the Recipes home screen list view. It renders a stylistically relevant Card for the Recipe Home screen.
@@ -21,25 +21,22 @@ const RecipeListItem = props => {
     <Card transparent>
       <CardItem
         button
+        style={props.index % 2 === 0 ? {backgroundColor: "white", margin: 0} : {backgroundColor: "#F6F6F6", margin: 0}}
         onPress={() =>
-          props.navigation.navigate("RecipesRecord", { id: props.item.id })
+          props.navigation.navigate("RecipesRecord", {id: props.item.id})
         }
       >
-        <Left>
-          <Thumbnail
-            large
-            source={thumbnail}
-          />
-          <Body>
-            <Text>{props.item.name}</Text>
-            <Text note>
-              {props.item.stars} {props.item.reviews}
-            </Text>
-          </Body>
-        </Left>
-        <Right>
-          <Icon name="ios-arrow-forward" />
-        </Right>
+        <Thumbnail
+          large
+          source={thumbnail}
+        />
+        <Body style={{justifyContent: "center", marginLeft: 15}}>
+          <Text>{props.item.name}</Text>
+          <Text note>
+            {props.item.stars} {props.item.reviews}
+          </Text>
+        </Body>
+        <Icon name="ios-arrow-forward"/>
       </CardItem>
     </Card>
   );
