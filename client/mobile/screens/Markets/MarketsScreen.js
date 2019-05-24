@@ -1,6 +1,5 @@
-// todo: MarketsScreen
 import React from "react";
-import { SectionList, View, StyleSheet } from "react-native";
+import {SectionList, View, StyleSheet} from "react-native";
 import {
   Container,
   Content,
@@ -20,7 +19,7 @@ import SectionHeader from "../../components/SectionHeader";
 import ActionButtonRow from "../../components/ActionButtonRow";
 import SeasonalProduceTabs from "../../components/SeasonalProduceTabs";
 import RecipeReviews from "../../components/RecipeReviewsComponent";
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import axios from "axios";
 
 const hours = [
@@ -52,7 +51,7 @@ const actionButtons = {
   }
 };
 
-const extractKey = ({ id }) => id;
+const extractKey = ({id}) => id;
 
 const getProduce = id => {
   axios
@@ -74,7 +73,7 @@ class MarketsScreen extends React.Component {
       .get(
         `http://localhost:9000/produce/market/${
           this.props.navigation.state.params.id
-        }`
+          }`
       )
       .then(response => {
         let produce = {
@@ -89,7 +88,7 @@ class MarketsScreen extends React.Component {
             response.data[i].name
           ];
         }
-        this.setState({ produce: produce });
+        this.setState({produce: produce});
       })
       .catch(err => {
         console.log(err);
@@ -104,6 +103,7 @@ class MarketsScreen extends React.Component {
       Winter: []
     }
   };
+
   render() {
     const {
       id,
@@ -116,7 +116,7 @@ class MarketsScreen extends React.Component {
     } = this.props.market;
 
     const sections = [
-      Section("Hours", hours, ({ item }) => {
+      Section("Hours", hours, ({item}) => {
         return (
           <ListItem>
             <View>
@@ -126,20 +126,20 @@ class MarketsScreen extends React.Component {
           </ListItem>
         );
       }),
-      Section("Seasonal Produce", [this.state.produce], ({ item }) => {
-        return <SeasonalProduceTabs item={item} />;
+      Section("Seasonal Produce", [this.state.produce], ({item}) => {
+        return <SeasonalProduceTabs item={item}/>;
       }),
       Section(
         "Payment Options",
-        [{ id: 0, text: payment_methods }],
-        ({ item }) => {
-          return <Text style={{ margin: 10 }}>{item.text}</Text>;
+        [{id: 0, text: payment_methods}],
+        ({item}) => {
+          return <Text style={{margin: 10}}>{item.text}</Text>;
         }
       ),
-      Section("Reviews", [{ id: 0 }], ({ item }) => {
+      Section("Reviews", [{id: 0}], ({item}) => {
         return (
           <ListItem>
-            <RecipeReviews />
+            <RecipeReviews/>
           </ListItem>
         );
       })
@@ -160,7 +160,7 @@ class MarketsScreen extends React.Component {
                 </Body>
               </Left>
               <Right>
-                <Icon name="heart-empty" />
+                <Icon name="heart-empty"/>
               </Right>
             </CardItem>
           </Card>
@@ -176,7 +176,7 @@ class MarketsScreen extends React.Component {
   }
 }
 
-const mapStateToProps = ({ markets }, props) => {
+const mapStateToProps = ({markets}, props) => {
   return {
     market: markets.byId[props.navigation.state.params.id]
   };

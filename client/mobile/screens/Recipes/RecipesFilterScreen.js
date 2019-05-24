@@ -1,4 +1,3 @@
-// todo: RecipesFilterScreen
 import React from "react";
 import { SectionList, View, StyleSheet } from "react-native";
 import {
@@ -16,7 +15,7 @@ import { Rating } from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
 import FilterButtons from "../../components/FilterButtons";
-
+// todo: refactor into store
 // Used for sample data ========================
 const mealTypeData = [
   { id: 0, text: "Breakfast" },

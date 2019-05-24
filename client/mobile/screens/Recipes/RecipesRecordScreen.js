@@ -41,6 +41,7 @@ class RecipesRecordScreen extends React.Component {
   }
 
   componentWillMount() {
+    // note: figure out if there's a better way to store this data for retrieval from DB
     const {recipe} = this.props;
     const ingredientData = recipe.ingredients.split(";");
     const directionData = recipe.directions.split(";");

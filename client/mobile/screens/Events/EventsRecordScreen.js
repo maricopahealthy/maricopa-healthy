@@ -1,4 +1,3 @@
-// todo: EventsRecordScreen
 import React from "react";
 import { View, SectionList, StyleSheet } from "react-native";
 import {
@@ -32,7 +31,7 @@ class EventsRecordScreen extends React.Component {
       three: {name: "Meetup", icon: "people"}
     }
   }
-
+// todo: figure out how to programmatically assign date badge
   render() {
     const { event } = this.props;
     return (

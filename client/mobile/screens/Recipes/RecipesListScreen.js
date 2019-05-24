@@ -1,4 +1,3 @@
-// todo: RecipesListScreen
 import React from "react";
 import { View, StyleSheet, FlatList } from "react-native";
 import {
@@ -27,7 +26,6 @@ class RecipesListScreen extends React.Component {
   }
 
   render() {
-    console.log("RecipesListScreen: ", JSON.stringify(this.props.recipes));
     return (
       <Container>
         <Content style={{ flex: 1 }}>
