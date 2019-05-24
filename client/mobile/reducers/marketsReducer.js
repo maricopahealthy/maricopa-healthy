@@ -45,6 +45,5 @@ function normalizeData(state, data) {
       newState.allIds.push(item.id);
     }
   }
-  console.log(newState)
   return newState;
 }
