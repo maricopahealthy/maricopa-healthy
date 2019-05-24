@@ -8,47 +8,43 @@ const EventListItem = props => {
     <Card transparent>
       <CardItem
         button
-        style={props.index % 2 === 0 ? { backgroundColor: "white", margin: 0 } : { backgroundColor: "#F6F6F6", margin: 0 }}
+        style={props.index % 2 === 0 ? {backgroundColor: "white", margin: 0} : {backgroundColor: "#F6F6F6", margin: 0}}
         onPress={() =>
           props.navigation.navigate("EventsRecord", {id: props.item.id})
         }
       >
-        <Left>
-          {/* Event Date Badge */}
-          <Card transparent>
-            <CardItem
-              style={{backgroundColor: "#667747", borderRadius: "15"}}
-            >
-              <View style={{alignItems: "center"}}>
-                <Text style={{color: "#fff"}}>SAT</Text>
-                <Text
-                  style={{color: "#fff", fontWeight: "bold", fontSize: "30"}}
-                >
-                  09
-                </Text>
-                <Text style={{color: "#fff"}}>JUN</Text>
-              </View>
-            </CardItem>
-          </Card>
-          {/* Event Description */}
-          <Body>
-            <Text style={{fontSize: "20", fontWeight: "bold"}}>
-              {props.item.name}
-            </Text>
-            <View
-              style={{flexDirection: "row", justifyContent: "space-between"}}
-            >
-              <Text style={{color: "#8E8E93"}}>{props.item.start_time}</Text>
-              <Text style={{color: "#8E8E93", textAlign: "right"}}>
-                {props.item.cost}
+        {/* Event Date Badge */}
+        <Card transparent>
+          <CardItem
+            style={{backgroundColor: "#667747", borderRadius: "15"}}
+          >
+            <View style={{alignItems: "center"}}>
+              <Text style={{color: "#fff"}}>SAT</Text>
+              <Text
+                style={{color: "#fff", fontWeight: "bold", fontSize: "30"}}
+              >
+                09
               </Text>
+              <Text style={{color: "#fff"}}>JUN</Text>
             </View>
-          </Body>
-        </Left>
+          </CardItem>
+        </Card>
+        {/* Event Description */}
+        <Body style={{justifyContent: "center", marginLeft: 15}}>
+          <Text style={{fontSize: "20", fontWeight: "bold"}}>
+            {props.item.name}
+          </Text>
+          <View
+            style={{flexDirection: "row", justifyContent: "space-between"}}
+          >
+            <Text style={{color: "#8E8E93"}}>{props.item.start_time}</Text>
+            <Text style={{color: "#8E8E93", textAlign: "right"}}>
+              {props.item.cost}
+            </Text>
+          </View>
+        </Body>
         {/* Navigational Arrow */}
-        <Right>
-          <Icon name="ios-arrow-forward"/>
-        </Right>
+        <Icon name="ios-arrow-forward"/>
       </CardItem>
     </Card>
   );

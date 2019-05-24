@@ -14,16 +14,10 @@ class EventsListScreen extends React.Component {
   }
 
   render() {
-    console.log("EventsListScreen props: ", JSON.stringify(this.props.events));
     return (
       <Container>
         <Content style={{flex: 1}}>
           <FlatList
-            // data={[
-            //   {key: 0, title: 'Event Name 1', time: '10:00 AM', price: 'FREE'},
-            //   {key: 1, title: 'Event Name 2', time: '6:30 PM', price: '$25.00'},
-            //   {key: 2, title: 'Event Name 3', time: '8:00 PM', price: '$25.00'},
-            // ]}
             data={this.props.events}
             renderItem={({item, index}) => <EventListItem item={item} index={index}/>}
           />

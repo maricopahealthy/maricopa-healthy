@@ -19,7 +19,7 @@ class ResourcesRecordScreen extends React.Component {
                 large
                 source={require("../../assets/thumbnails/resources/resources-thumb-placeholder-01.png")}
               />
-              <Body style={{ justifyContent: "center", marginLeft: 15 }}>
+              <Body style={{justifyContent: "center", marginLeft: 15}}>
                 <Text>{resource.name}</Text>
               </Body>
               <Icon name='heart-empty'/>

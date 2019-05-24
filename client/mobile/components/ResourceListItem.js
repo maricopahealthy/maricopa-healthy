@@ -8,12 +8,12 @@ const ResourceListItem = (props) => {
     <Card transparent>
       <CardItem
         button
-        style={props.index % 2 === 0 ? { backgroundColor: "white", margin: 0 } : { backgroundColor: "#F6F6F6", margin: 0 }}
+        style={props.index % 2 === 0 ? {backgroundColor: "white", margin: 0} : {backgroundColor: "#F6F6F6", margin: 0}}
         onPress={() => props.navigation.navigate("ResourcesRecord", {id: props.item.id})}
       >
         <Thumbnail large source={thumbnail}/>
         {/* Resource Description */}
-        <Body style={{ justifyContent: "center", marginLeft: 15}}>
+        <Body style={{justifyContent: "center", marginLeft: 15}}>
           <Text>{props.item.name}</Text>
           <Text note>{props.item.teaser}</Text>
         </Body>

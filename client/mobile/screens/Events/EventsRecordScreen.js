@@ -35,7 +35,6 @@ class EventsRecordScreen extends React.Component {
 
   render() {
     const { event } = this.props;
-    console.log(event);
     return (
       <Container>
         <Content>

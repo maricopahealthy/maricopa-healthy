@@ -19,6 +19,7 @@ import Section from '../../utils/SectionsUtility';
 import SectionArray from '../../utils/SectionArrayUtility';
 import SectionHeader from '../../components/SectionHeader';
 import RecipeReviews from '../../components/RecipeReviewsComponent';
+import ActionButtonRow from "../../components/ActionButtonRow";
 
 /**
  * RecipesRecord displays a detailed Screen for a single recipe from the RecipeList.
@@ -30,6 +31,12 @@ class RecipesRecordScreen extends React.Component {
       ingredients: [],
       directions: [],
       nutrients: []
+    }
+
+    this.actionButtons = {
+      one: {name: "print", icon: "print"},
+      two: {name: "eat healthy", icon: "restaurant"},
+      three: {name: "subscribe", icon: "list"},
     }
   }
 
@@ -65,20 +72,7 @@ class RecipesRecordScreen extends React.Component {
             </CardItem>
           </Card>
           {/* Action Buttons */}
-          <View style={{flex: 1, flexDirection: "row"}}>
-            <Button iconLeft style={{flex: 1, backgroundColor: "#B52126"}}>
-              <Icon name="print"/>
-              <Text>Print</Text>
-            </Button>
-            <Button iconLeft style={{flex: 1, backgroundColor: "#B52126"}}>
-              <Icon name="restaurant"/>
-              <Text>Eat Healthy</Text>
-            </Button>
-            <Button iconLeft style={{flex: 1, backgroundColor: "#B52126"}}>
-              <Icon name="list"/>
-              <Text>Subscribe</Text>
-            </Button>
-          </View>
+          <ActionButtonRow {...this.actionButtons} />
           {/* Section information */}
           <SectionList
             sections={[
