@@ -18,26 +18,6 @@ class ResourcesListScreen extends React.Component {
       <Container>
         <Content>
           <FlatList
-            // data={[
-            //   {
-            //     key: 0,
-            //     title: "AZ Health Zone",
-            //     description: "Discover ways to stay active and eat healthy each and every day.",
-            //     image: require("../../assets/thumbnails/resources/resources-thumb-placeholder-01.png")
-            //   },
-            //   {
-            //     key: 1,
-            //     title: "Maricopa WIC",
-            //     description: "Teaser Text goes here and is truncated...",
-            //     image: require("../../assets/thumbnails/resources/resources-thumb-placeholder-02.png")
-            //   },
-            //   {
-            //     key: 2,
-            //     title: "Find Help Phoenix",
-            //     description: "Teaser Text goes here and is truncated...",
-            //     image: require("../../assets/thumbnails/resources/resources-thumb-placeholder-03.png")
-            //   }
-            // ]}
             data={this.props.resources}
             renderItem={({item, index}) => <ResourceListItem item={item} index={index}/>}
           />

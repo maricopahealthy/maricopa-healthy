@@ -49,77 +49,73 @@ class RecipesRecordScreen extends React.Component {
     const {recipe} = this.props;
     const {ingredients, directions, nutrients} = this.state;
     return (
-        <Container>
-          <Content>
-            {/* Recipe Item Card */}
-            <Card transparent>
-              <CardItem>
-                <Left>
-                  <Thumbnail
-                      large
-                      source={require("../../assets/thumbnails/recipes/apple-pecan-bars.png")}
-                  />
-                  <Body>
-                    <Text>{recipe.name}</Text>
-                  </Body>
-                </Left>
-                <Right>
-                  <Icon name='heart-empty'/>
-                </Right>
-              </CardItem>
-            </Card>
-            {/* Action Buttons */}
-            <View style={{flex: 1, flexDirection: "row"}}>
-              <Button iconLeft style={{flex: 1, backgroundColor: "#B52126"}}>
-                <Icon name="print"/>
-                <Text>Print</Text>
-              </Button>
-              <Button iconLeft style={{flex: 1, backgroundColor: "#B52126"}}>
-                <Icon name="restaurant"/>
-                <Text>Eat Healthy</Text>
-              </Button>
-              <Button iconLeft style={{flex: 1, backgroundColor: "#B52126"}}>
-                <Icon name="list"/>
-                <Text>Subscribe</Text>
-              </Button>
-            </View>
-            {/* Section information */}
-            <SectionList
-                sections={[
-                  Section('Ingredients', ingredients, ({item}) => {
-                    return (
-                        <ListItem>
-                          <Text>{item.data}</Text>
-                        </ListItem>
-                    );
-                  }),
-                  Section('Directions', directions, ({item, index}) => {
-                    return (
-                        <ListItem>
-                          <Text>{index + 1}. {item.data}</Text>
-                        </ListItem>
-                    );
-                  }),
-                  Section('Nutrition Facts (Per Serving)', nutrients, ({item}) => {
-                    return (
-                        <ListItem>
-                          <Text>{item.data}</Text>
-                        </ListItem>
-                    );
-                  }),
-                  Section('Reviews', [{id: 0}], ({item}) => {
-                    return (
-                        <ListItem>
-                          <RecipeReviews/>
-                        </ListItem>
-                    );
-                  })
-                ]}
-                renderSectionHeader={SectionHeader}
-                keyExtractor={extractKey}
-            />
-          </Content>
-        </Container>
+      <Container>
+        <Content>
+          {/* Recipe Item Card */}
+          <Card transparent>
+            <CardItem>
+              <Thumbnail
+                large
+                source={require("../../assets/thumbnails/recipes/apple-pecan-bars.png")}
+              />
+              <Body style={{justifyContent: "center", marginLeft: 15}}>
+                <Text>{recipe.name}</Text>
+              </Body>
+              <Icon name='heart-empty'/>
+            </CardItem>
+          </Card>
+          {/* Action Buttons */}
+          <View style={{flex: 1, flexDirection: "row"}}>
+            <Button iconLeft style={{flex: 1, backgroundColor: "#B52126"}}>
+              <Icon name="print"/>
+              <Text>Print</Text>
+            </Button>
+            <Button iconLeft style={{flex: 1, backgroundColor: "#B52126"}}>
+              <Icon name="restaurant"/>
+              <Text>Eat Healthy</Text>
+            </Button>
+            <Button iconLeft style={{flex: 1, backgroundColor: "#B52126"}}>
+              <Icon name="list"/>
+              <Text>Subscribe</Text>
+            </Button>
+          </View>
+          {/* Section information */}
+          <SectionList
+            sections={[
+              Section('Ingredients', ingredients, ({item}) => {
+                return (
+                  <ListItem>
+                    <Text>{item.data}</Text>
+                  </ListItem>
+                );
+              }),
+              Section('Directions', directions, ({item, index}) => {
+                return (
+                  <ListItem>
+                    <Text>{index + 1}. {item.data}</Text>
+                  </ListItem>
+                );
+              }),
+              Section('Nutrition Facts (Per Serving)', nutrients, ({item}) => {
+                return (
+                  <ListItem>
+                    <Text>{item.data}</Text>
+                  </ListItem>
+                );
+              }),
+              Section('Reviews', [{id: 0}], ({item}) => {
+                return (
+                  <ListItem>
+                    <RecipeReviews/>
+                  </ListItem>
+                );
+              })
+            ]}
+            renderSectionHeader={SectionHeader}
+            keyExtractor={extractKey}
+          />
+        </Content>
+      </Container>
     )
   }
 }
@@ -132,8 +128,8 @@ function mapStateToProps({recipes}, ownProps) {
 };
 
 export default connect(
-    mapStateToProps,
-    null
+  mapStateToProps,
+  null
 )(RecipesRecordScreen);
 
 /**
