@@ -22,20 +22,6 @@ import RecipeReviews from "../../components/RecipeReviewsComponent";
 import {connect} from "react-redux";
 import axios from "axios";
 
-const hours = [
-  {
-    id: 0,
-    day: "Wednesday",
-    month: "May - June: 8:00 am - 12:00 pm, October - April: 8:00 am - 12:00 pm"
-  },
-  {
-    id: 1,
-    day: "Saturday",
-    month:
-      "May - September: 8:00 am - 12:00 pm October - April: 9:00 am - 1:00 pm"
-  }
-];
-
 const actionButtons = {
   one: {
     name: "more info",
@@ -109,6 +95,7 @@ class MarketsScreen extends React.Component {
       id,
       name,
       payment_methods,
+      hours,
       rating,
       reviews,
       thumbnail,
@@ -120,8 +107,8 @@ class MarketsScreen extends React.Component {
         return (
           <ListItem>
             <View>
-              <H3>{item.day}</H3>
-              <Text>{item.month}</Text>
+              <H3>{item.header}</H3>
+              <Text>{item.body}</Text>
             </View>
           </ListItem>
         );

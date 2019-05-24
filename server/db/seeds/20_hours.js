@@ -25,6 +25,26 @@ exports.seed = function(knex, Promise) {
           header: "Saturday",
           body: "May - September: 8:00 am - 12:00 pm October - April: 9:00 am - 1:00 pm"
         },
+        {
+          park_id: 1,
+          header: "Monday - Friday",
+          body: "8:00 am - 10:00 pm"
+        },
+        {
+          park_id: 1,
+          header: "Saturday - Sunday",
+          body: "7:00 am - 10:00 pm"
+        },
+        {
+          park_id: 2,
+          header: "Monday - Friday",
+          body: "8:00 am - 10:00 pm"
+        },
+        {
+          park_id: 3,
+          header: "Monday - Friday",
+          body: "8:00 am - 10:00 pm"
+        },
       ]);
     });
 };

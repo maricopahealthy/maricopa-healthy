@@ -14,8 +14,6 @@ exports.seed = function(knex, Promise) {
           zipcode: "85339",
           phone: "555-555-5555",
           website: "https://placeholder.com/",
-          hours: "",
-          features: "",
           rating: "4.2 stars",
           reviews: "37 reviews"
         },
@@ -28,8 +26,6 @@ exports.seed = function(knex, Promise) {
           zipcode: "85225",
           phone: "111-111-1111",
           website: "https://placeholder.com/",
-          hours: "",
-          features: "",
           rating: "3.6 stars",
           reviews: "16 reviews"
         },
@@ -42,8 +38,6 @@ exports.seed = function(knex, Promise) {
           zipcode: "85342",
           phone: "222-222-2222",
           website: "https://placeholder.com/",
-          hours: "",
-          features: "",
           rating: "4.2 stars",
           reviews: "37 reviews"
         },
