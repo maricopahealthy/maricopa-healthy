@@ -10,7 +10,6 @@ exports.up = function (knex, Promise) {
     table.string("phone_number");
     table.string("website_url");
     table.string("hours");
-    table.string("produce"); // join table for produce and market (will get really big)
     table.string("payment_methods");
     table.string("rating");
     table.string("reviews");
