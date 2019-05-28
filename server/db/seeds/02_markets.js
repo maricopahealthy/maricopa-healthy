@@ -14,8 +14,6 @@ exports.seed = function(knex, Promise) {
           zipcode: "85268", 
           phone_number: "555-555-5555", 
           website_url: "https://placeholder.com/", 
-          hours: "", 
-          produce: "", 
           payment_methods: "Cash, Check, Visa", 
           rating: "4.2 stars",
           reviews: "37 reviews"
@@ -29,8 +27,6 @@ exports.seed = function(knex, Promise) {
           zipcode: "85251",
           phone_number: "111-111-1111",
           website_url: "https://placeholder.com/",
-          hours: "",
-          produce: "",
           payment_methods: "Mastercard, American Express, SNAP",
           rating: "3.6 stars",
           reviews: "16 reviews"
@@ -44,8 +40,6 @@ exports.seed = function(knex, Promise) {
           zipcode: "85086",
           phone_number: "222-222-2222",
           website_url: "https://placeholder.com/",
-          hours: "",
-          produce: "",
           payment_methods: "WIC, FMNP, Double Up Food Bucks",
           rating: "4.2 stars",
           reviews: "37 reviews"

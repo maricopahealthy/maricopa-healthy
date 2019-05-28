@@ -21,19 +21,6 @@ import RecipeReviews from "../../components/RecipeReviewsComponent";
 import ActionButtonRow from "../../components/ActionButtonRow";
 import { connect } from "react-redux";
 
-const hours = [
-  {
-    id: 0,
-    day: "Monday - Friday",
-    month: "8:00 am - 10:00pm"
-  },
-  {
-    id: 1,
-    day: "Saturday - Sunday",
-    month: "7:00 am - 10:00 pm"
-  }
-];
-
 const extractKey = ({ id }) => id;
 
 const actionButtons = {
@@ -72,8 +59,8 @@ class ParksScreen extends React.Component {
         return (
           <ListItem>
             <View>
-              <H3>{item.day}</H3>
-              <Text>{item.month}</Text>
+              <H3>{item.header}</H3>
+              <Text>{item.body}</Text>
             </View>
           </ListItem>
         );

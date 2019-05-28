@@ -8,8 +8,9 @@ module.exports = {
    * @return {Array<Park>}
    */
   find: (req, res) => {
-    knex.select("parks.*", knex.raw("ARRAY_AGG(active.name) AS features"))
+    knex.select("parks.*", knex.raw("ARRAY_AGG(DISTINCT active.name) AS features"), knex.raw("JSON_AGG(DISTINCT hours.*) AS hours"))
       .from("parks")
+      .join("hours", "hours.park_id", "parks.id")
       .join("park_features", "park_features.park_id", "parks.id")
       .join("active", "park_features.active_id", "active.id")
       .groupBy("parks.id")
@@ -24,8 +25,9 @@ module.exports = {
    * @return {Park}
    */
   findById: (req, res) => {
-    knex.select("parks.*", knex.raw("ARRAY_AGG(active.name) AS features"))
+    knex.select("parks.*", knex.raw("ARRAY_AGG(DISTINCT active.name) AS features"), knex.raw("JSON_AGG(DISTINCT hours.*) AS hours"))
       .from("parks")
+      .join("hours", "hours.park_id", "parks.id")
       .join("park_features", "park_features.park_id", "parks.id")
       .join("active", "park_features.active_id", "active.id")
       .groupBy("parks.id")

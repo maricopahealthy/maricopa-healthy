@@ -16,7 +16,6 @@ class ParksListScreen extends React.Component {
   }
 
   render() {
-    console.log(this.props.parks)
     if (this.props.isFetching) {
       return (
         <Spinner color='red' />

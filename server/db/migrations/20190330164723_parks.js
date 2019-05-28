@@ -10,8 +10,6 @@ exports.up = function (knex, Promise) {
     table.string("zipcode");
     table.string("phone");
     table.string("website");
-    table.string("hours");
-    table.string("features");
     table.string("rating");
     table.string("reviews");
     table.timestamps(true, true);
