@@ -3,8 +3,11 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      database: 'maricopa-healthy',
-      host: process.env.DB_HOST,
+      database: process.env.RDS_DB_NAME,
+      host: process.env.RDS_HOSTNAME,
+      port: process.env.RDS_PORT,
+      username: process.env.RDS_USERNAME,
+      password: process.env.RDS_PASSWORD
     },
     migrations: {
       directory: __dirname + '/db/migrations',
