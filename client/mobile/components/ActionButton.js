@@ -12,7 +12,7 @@ import { Button, Text, Icon } from "native-base";
 const ActionButton = (props) => {
   return (
     <Button style={styles.button} full iconLeft>
-      <Icon name={props.icon} />
+      <Icon name={props.icon}/>
       <Text>{props.title}</Text>
     </Button>
   )

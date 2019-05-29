@@ -76,8 +76,6 @@ module.exports = (app) => {
   app.get("/produce/market/:marketId", produce.findByUserId);
   app.delete("/produce/:id", produce.findByIdAndDelete);
 
-  app.get('/test', ( req, res ) => {
-    res.send('hello world')
-  })
+  app.get("/test", (req, res) => {res.send('hello world')});
 
 };
