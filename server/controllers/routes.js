@@ -14,6 +14,11 @@ const produce = require("./produce");
 
 module.exports = (app) => {
 
+  // note: delete after testing
+  app.get("/", (req, res) => {
+    res.send("hello world")
+  });
+
   // Routes for Auth
   app.post("/api/login");
   app.post("/register");
@@ -75,10 +80,5 @@ module.exports = (app) => {
   app.get("/produce/:id", produce.findById);
   app.get("/produce/market/:marketId", produce.findByUserId);
   app.delete("/produce/:id", produce.findByIdAndDelete);
-
-  // note: delete after testing
-  app.get("/test", (req, res) => {
-    res.send("hello world")
-  });
 
 };
