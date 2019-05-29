@@ -3,11 +3,8 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      database: process.env.RDS_DB_NAME,
-      host: process.env.RDS_HOSTNAME,
-      port: process.env.RDS_PORT,
-      username: process.env.RDS_USERNAME,
-      password: process.env.RDS_PASSWORD
+      database: 'maricopa-healthy',
+      host: process.env.DB_HOST,
     },
     migrations: {
       directory: __dirname + '/db/migrations',
@@ -19,11 +16,11 @@ module.exports = {
   production: {
     client: 'pg',
     connection: {
-      database: process.env.RDS_DB_NAME,
-      host: process.env.RDS_HOSTNAME,
-      port: process.env.RDS_PORT,
-      username: process.env.RDS_USERNAME,
-      password: process.env.RDS_PASSWORD
+      database: os.environ['RDS_DB_NAME'],
+      host: os.environ['RDS_HOSTNAME'],
+      port: os.environ['RDS_PORT'],
+      username: os.environ['RDS_USERNAME'],
+      password: os.environ['RDS_PASSWORD']
     },
     migrations: {
       directory: __dirname + '/db/migrations',
