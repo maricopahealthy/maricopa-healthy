@@ -4,7 +4,7 @@ import ContactInfoScreen from "../../screens/Settings/ContactInfoScreen";
 import EditProfileScreen from "../../screens/Settings/EditProfileScreen";
 import FavoritesScreen from "../../screens/Settings/FavoritesScreen";
 import MeetupScreen from "../../screens/Settings/MeetupScreen";
-import NotificationsScreen from "../../screens/Settings/NotificationsScreen";
+import NotificationsSettingsScreen from "../../screens/Settings/NotificationsSettingsScreen";
 import PrivacyPolicyScreen from "../../screens/Settings/PrivacyPolicyScreen";
 import ProfileScreen from "../../screens/Settings/ProfileScreen";
 import SettingsScreen from "../../screens/Settings/SettingsScreen";
@@ -66,8 +66,8 @@ export default {
     }
   },
 
-  Notifications: {
-    screen: NotificationsScreen,
+  NotificationsSettings: {
+    screen: NotificationsSettingsScreen,
     navigationOptions: {
       header: <NavigationalHeaderBasic title="Notifications" />
     }

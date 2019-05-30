@@ -1,6 +1,5 @@
 import React from 'react';
 import { createStackNavigator } from "react-navigation";
-import { Header, Left, Right, Body, Icon, Text, Button } from 'native-base';
 // screens
 import HomeGroup from './navigation-groups/HomeGroup'
 //Markets Screen Group
@@ -32,6 +31,7 @@ const AppStack = createStackNavigator({
   //Home
   Home: HomeGroup.Home,
   Search: HomeGroup.Search,
+  Notifications: HomeGroup.Notifications,
 
   //Markets
   Markets: MarketsGroup.Markets,
@@ -65,7 +65,7 @@ const AppStack = createStackNavigator({
   ResourcesRecord: ResourceGroup.ResourcesRecord,
 
   // Subscription Group
-  Subscribe: SubscribeScreen,
+  // Subscribe: SubscribeScreen,
 
   //Settings Group
   Settings: SettingsGroup.Settings,
@@ -75,7 +75,7 @@ const AppStack = createStackNavigator({
   About: SettingsGroup.About,
   Favorites: SettingsGroup.Favorites,
   Meetup: SettingsGroup.Meetup,
-  Notifications: SettingsGroup.Notifications,
+  NotificationsSettings: SettingsGroup.NotificationsSettings,
   PrivacyPolicy: SettingsGroup.PrivacyPolicy,
   TermsOfService: SettingsGroup.TermsOfService,
   Subscribe: SettingsGroup.Subscribe,

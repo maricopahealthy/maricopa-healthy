@@ -1,5 +1,3 @@
-// todo: SettingsHomeScreen
-// note: NavigationCard component
 import React from 'react';
 import { withNavigation } from 'react-navigation';
 import {
@@ -11,7 +9,7 @@ import SettingsTile from '../../components/SettingsTile';
 const loggedInSettings = [
   { key: 'profile', name: 'Profile', route: "Profile", icon: "ios-person" },
   { key: 'favorites', name: 'Favorites', route: "Favorites", icon: "ios-heart" },
-  { key: 'notifications', name: 'Notifications', route: "Notifications", icon: "ios-notifications" },
+  { key: 'notifications', name: 'Notifications', route: "NotificationsSettings", icon: "ios-notifications" },
   { key: 'meetup', name: 'Meetup', route: "Meetup", icon: "ios-people" },
   { key: 'subscribe', name: 'Subscribe', route: "Subscribe", icon: "ios-list" }
 ];
