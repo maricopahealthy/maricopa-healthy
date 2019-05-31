@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { AWS_URL } from "../utils/config"
 
 // ACTION TYPES and ACTION CREATORS
 export const FETCH_RESOURCES_LOADING = "FETCH_RESOURCES_LOADING";
@@ -23,7 +24,7 @@ export const fetchResources = () => {
   return async dispatch => {
     dispatch(fetchResourcesLoading());
     try {
-      const response = await axios.get("http://localhost:9000/resources");
+      const response = await axios.get(AWS_URL + "/resources");
       dispatch(fetchResourcesSuccess(response.data));
     } catch (err) {
       dispatch(fetchResourcesError(err));
