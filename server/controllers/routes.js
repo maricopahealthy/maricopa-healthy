@@ -11,12 +11,20 @@ const favorites = require("./favorites");
 const subscriptions = require("./subscriptions");
 const notifications = require("./notifications");
 const produce = require("./produce");
+// note: delete after testing
+const knex = require("../db/knex");
 
 module.exports = (app) => {
 
   // note: delete after testing
   app.get("/", (req, res) => {
     res.send("hello world")
+  });
+
+  app.get("/test", (req, res) => {
+    knex.select("*").from("test")
+      .then(data => res.send(data))
+      .catch(err => res.send(err));
   });
 
   // Routes for Auth
