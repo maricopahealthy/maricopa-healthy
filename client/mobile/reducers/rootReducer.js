@@ -7,6 +7,8 @@ import parksReducer from "./parksReducer";
 import recipesReducer from "./recipesReducer";
 import resourcesReducer from "./resourcesReducer";
 import subscriptionsReducer from "./subscriptionsReducer";
+import searchReducer from "./searchReducer";
+
 
 const rootReducer = combineReducers({
   active: activeReducer,
@@ -16,7 +18,8 @@ const rootReducer = combineReducers({
   parks: parksReducer,
   recipes: recipesReducer,
   resources: resourcesReducer,
-  subscriptions: subscriptionsReducer
+  subscriptions: subscriptionsReducer,
+  search: searchReducer
 });
 
 export default rootReducer;
