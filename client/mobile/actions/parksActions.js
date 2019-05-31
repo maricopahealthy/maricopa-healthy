@@ -22,12 +22,12 @@ const fetchParksError = err => ({
 
 export const fetchParks = () => {
   return async dispatch => {
-    dispatch(fetchResourcesLoading());
+    dispatch(fetchParksLoading());
     try {
-      const response = await axios.get("http://localhost:9000/resources");
-      dispatch(fetchResourcesSuccess(response.data));
+      const response = await axios.get("http://localhost:9000/parks");
+      dispatch(fetchParksSuccess(response.data));
     } catch (err) {
-      dispatch(fetchResourcesError(err));
+      dispatch(fetchParksError(err));
     }
   };
-}
+};

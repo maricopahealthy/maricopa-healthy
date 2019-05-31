@@ -1,4 +1,3 @@
-// todo: SignUpScreen
 import React from 'react';
 import { View, StyleSheet, FlatList } from "react-native";
 import {Container, Content, Button, Text, Item, Input, Form } from "native-base";

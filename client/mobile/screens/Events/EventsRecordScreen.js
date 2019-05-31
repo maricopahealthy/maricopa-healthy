@@ -1,6 +1,5 @@
-// todo: EventsRecordScreen
 import React from "react";
-import { View, SectionList, StyleSheet } from "react-native";
+import {View, SectionList, StyleSheet} from "react-native";
 import {
   Container,
   Content,
@@ -14,17 +13,28 @@ import {
   ListItem,
   Button
 } from "native-base";
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
+import ActionButtonRow from "../../components/ActionButtonRow";
 
 /**
  * Summary view for viewing individual Event record.
  */
 class EventsRecordScreen extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.actionButtons = {
+      one: {name: "Reminder", icon: "calendar"},
+      two: {name: "Directions", icon: "car"},
+      three: {name: "Meetup", icon: "people"}
+    }
+  }
+
+// todo: figure out how to programmatically assign date badge
   render() {
-    const { event } = this.props;
-    console.log(event);
+    const {event} = this.props;
     return (
       <Container>
         <Content>
@@ -39,8 +49,8 @@ class EventsRecordScreen extends React.Component {
                       borderRadius: "15"
                     }}
                   >
-                    <View style={{ alignItems: "center" }}>
-                      <Text style={{ color: "#fff" }}>SAT</Text>
+                    <View style={{alignItems: "center"}}>
+                      <Text style={{color: "#fff"}}>SAT</Text>
                       <Text
                         style={{
                           color: "#fff",
@@ -50,7 +60,7 @@ class EventsRecordScreen extends React.Component {
                       >
                         09
                       </Text>
-                      <Text style={{ color: "#fff" }}>JUN</Text>
+                      <Text style={{color: "#fff"}}>JUN</Text>
                     </View>
                   </CardItem>
                 </Card>
@@ -62,46 +72,33 @@ class EventsRecordScreen extends React.Component {
                       justifyContent: "space-between"
                     }}
                   >
-                    <Text style={{ color: "#8E8E93" }}>
+                    <Text style={{color: "#8E8E93"}}>
                       {event.start_time} - {event.end_time}
                     </Text>
-                    <Text style={{ color: "#8E8E93", textAlign: "right" }}>
+                    <Text style={{color: "#8E8E93", textAlign: "right"}}>
                       {event.cost}
                     </Text>
                   </View>
                 </Body>
               </Left>
               <Right>
-                <Icon name="heart-empty" />
+                <Icon name="heart-empty"/>
               </Right>
             </CardItem>
           </Card>
           {/* Action Buttons */}
-          <View style={{ flex: 1, flexDirection: "row" }}>
-            <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
-              <Icon name="calendar" />
-              <Text>Reminder</Text>
-            </Button>
-            <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
-              <Icon name="car" />
-              <Text>Directions</Text>
-            </Button>
-            <Button iconLeft style={{ flex: 1, backgroundColor: "#B52126" }}>
-              <Icon name="people" />
-              <Text>Meetup</Text>
-            </Button>
-          </View>
+          <ActionButtonRow {...this.actionButtons} />
           {/* Section information */}
           <SectionList
             sections={[
-              Section("Details", [event], ({ item }) => {
+              Section("Details", [event], ({item}) => {
                 return (
                   <ListItem>
                     <Text>{item.description}</Text>
                   </ListItem>
                 );
               }),
-              Section("Where", [event], ({ item }) => {
+              Section("Where", [event], ({item}) => {
                 return (
                   <ListItem>
                     <Text>
@@ -116,11 +113,12 @@ class EventsRecordScreen extends React.Component {
             keyExtractor={extractKey}
           />
           {/* Button */}
-          <View style={{ flex: 1 }}>
+          <View style={{flex: 1}}>
             <Button
               block
-              style={{ backgroundColor: "#B52126" }}
-              onPress={() => {}}
+              style={{backgroundColor: "#B52126"}}
+              onPress={() => {
+              }}
             >
               <Text>Learn More</Text>
             </Button>
@@ -131,8 +129,8 @@ class EventsRecordScreen extends React.Component {
   }
 }
 
-function mapStateToProps({ events }, ownProps) {
-  const { navigation } = ownProps;
+function mapStateToProps({events}, ownProps) {
+  const {navigation} = ownProps;
   return {
     event: events.byId[navigation.getParam("id")]
   };
@@ -148,7 +146,7 @@ export default connect(
  * @param id
  * @returns {*}
  */
-const extractKey = ({ id }) => id;
+const extractKey = ({id}) => id;
 
 const styles = StyleSheet.create({
   container: {

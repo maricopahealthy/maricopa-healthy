@@ -4,6 +4,8 @@ import SearchScreen from "../../screens/SearchScreen";
 
 import NavigationalHeaderHomeScreen from "../../components/navigation-headers/NavigationalHeaderHomeScreen";
 import NavigationalHeaderSearch from '../../components/navigation-headers/NavigationalHeaderSearch';
+import NotificationsScreen from "../../screens/NotificationsScreen";
+import NavigationalHeaderBasic from "../../components/navigation-headers/NavigationalHeaderBasic";
 
 export default {
 
@@ -20,4 +22,11 @@ export default {
       header: <NavigationalHeaderSearch />
     }
   },
+
+  Notifications: {
+    screen: NotificationsScreen,
+    navigationOptions: {
+      header: <NavigationalHeaderBasic title="Notifications" />
+    }
+  }
 }

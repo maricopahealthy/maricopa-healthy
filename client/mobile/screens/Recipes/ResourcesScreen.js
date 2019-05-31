@@ -1,4 +1,4 @@
-// todo:
+// todo: figure out deep linking resources
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 

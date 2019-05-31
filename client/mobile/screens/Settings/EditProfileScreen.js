@@ -1,4 +1,3 @@
-// todo: EditProfileScreen
 import React from 'react';
 import {
   View, Text, StyleSheet
@@ -11,9 +10,9 @@ export default class EditProfileScreen extends React.Component {
 
   render() {
     return (
-        <View>
-          <Text>Edit Profile Screen</Text>
-        </View>
+      <View>
+        <Text>Edit Profile Screen</Text>
+      </View>
     )
   }
 }

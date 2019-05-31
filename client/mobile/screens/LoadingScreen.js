@@ -1,4 +1,3 @@
-// todo: LoadingScreen
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { Container, Header, Content, Spinner } from "native-base";
@@ -7,11 +6,6 @@ import { Container, Header, Content, Spinner } from "native-base";
  * Loading Screen displayed during application 'Open'.
  */
 export default class LoadingScreen extends React.Component {
-  // static navigationOptions = {
-  //   headerStyle: {
-  //     backgroundColor: '#FBA208'
-  //   }
-  // }
   // Fetch the token from storage then navigate to the appropriate place.
   // _bootstrapAsync = async () => {
   //  todo: Implement logic for token based Auth

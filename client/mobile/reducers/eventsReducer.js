@@ -34,7 +34,9 @@ function normalizeData(state, data) {
   let newState = state;
   for (let item of data) {
     newState.byId[item.id] = item;
-    newState.allIds.push(item.id);
+    if (!newState.allIds.includes(item.id)) {
+      newState.allIds.push(item.id);
+    }
   }
   return newState;
 }

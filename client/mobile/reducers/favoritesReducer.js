@@ -9,7 +9,7 @@ const initState = {
   allIds: [],
   isFetching: false,
   isError: false
-}
+};
 
 const favoritesReducer = (state = initState, action) => {
   switch (action.type) {
@@ -29,11 +29,11 @@ const favoritesReducer = (state = initState, action) => {
         ...state,
         isFetching: false,
         isError: true
-      }
+      };
     default:
       return state;
   }
-}
+};
 
 export default favoritesReducer
 
@@ -41,7 +41,9 @@ function normalizeData(state, data) {
   let newState = state;
   for (let item of data) {
     newState.byId[item.id] = item;
-    newState.allIds.push(item.id);
+    if (!newState.allIds.includes(item.id)) {
+      newState.allIds.push(item.id);
+    }
   }
   return newState;
 }

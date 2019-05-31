@@ -13,7 +13,7 @@ class Main extends React.Component {
     state = {
         selected: 'analytics',
 
-    }
+    };
 
     menuSelect = (selection) => {
         const selected = this.state.selected;
@@ -36,7 +36,7 @@ class Main extends React.Component {
         }
 
 
-    }
+    };
 
     render() {
         return (

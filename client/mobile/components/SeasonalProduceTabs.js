@@ -5,35 +5,43 @@ import { Text, Button } from 'native-base';
 export default class SeasonalProduceTabs extends React.Component {
   state = {
     produceTab: 'Spring'
-  }
+  };
 
   _changeProduceTab = (season) => {
     this.setState({ produceTab: season })
-  }
+  };
+  
   render() {
-    const buttons = this.props.item.data.map(season => {
+
+    const produce = this.props.item;
+    const tab = this.state.produceTab;
+
+    const buttons = ["Spring", "Summer", "Fall", "Winter"].map((season, ind) => {
       return (
         <Button
-          key={season.id}
-          style={this.state.produceTab === season.text ? { ...styles.button, backgroundColor: "#667747" } : { ...styles.button, backgroundColor: "#E5E5EA" }}
+          key={ind}
+          style={tab === season ? { ...styles.button, backgroundColor: "#667747" } : { ...styles.button, backgroundColor: "#E5E5EA" }}
           onPress={() => {
-            this._changeProduceTab(season.text)
+            this._changeProduceTab(season)
           }}
         >
-          <Text style={this.state.produceTab === season.text ? { color: "white" } : { color: "black" }}>
-            {season.text}
+          <Text style={tab === season ? { color: "white" } : { color: "black" }}>
+            {season}
           </Text>
         </Button>
       )
-    })
-    const produce = this.props.item.data.filter(season => season.text === this.state.produceTab)[0].produce
+    });
+    let produceText = "";
+    for (let i = 0; i < produce[tab].length; i++) {
+      i === 0 ? produceText += produce[tab][0] : produceText += ", " + produce[tab][i]
+    }
     return (
       <>
         <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: 10 }}>
           {buttons}
         </View>
         <Text style={{margin: 10}}>
-          {produce}
+          {produceText}
         </Text>
       </>
     );

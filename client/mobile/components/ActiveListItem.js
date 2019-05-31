@@ -11,13 +11,13 @@ const ActiveListItem = (props) => {
       <CardItem
         style={props.index % 2 === 0 ? { backgroundColor: "white", margin: 0 } : { backgroundColor: "#F6F6F6", margin: 0 }}
         button
-        onPress={() => props.navigation.navigate("Active")}
+        onPress={() => props.navigation.navigate("Active", { id: props.item.id })}
       >
-          <Thumbnail large source={props.item.image} />
+          <Thumbnail large source={props.item.thumbnail} />
           <Body style={{marginLeft: 20, justifyContent: "center"}}>
-            <Text style={{ fontSize: 20 }}>{props.item.title}</Text>
+            <Text style={{ fontSize: 20 }}>{props.item.name}</Text>
             <Text note>
-              {props.item.stars} {props.item.reviews}
+              {props.item.rating} {props.item.reviews}
             </Text>
 
           </Body>

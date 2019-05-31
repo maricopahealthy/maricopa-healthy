@@ -1,14 +1,14 @@
 // todo: NotificationsScreen
 import React from 'react';
-import { View, StyleSheet } from "react-native";
-import { Button, Container, Content, List, ListItem, Text, Icon, Left, Body, Right, Separator } from 'native-base';
+import { StyleSheet } from "react-native";
+import { Container, Content, ListItem, Text } from 'native-base';
 import SettingsSlider from '../../components/SettingsSlider'
 import SettingsListButton from '../../components/SettingsListButton'
 
 /**
  * Displays User's active notifications.
  */
-export default class NotificationsScreen extends React.Component {
+export default class NotificationsSettingsScreen extends React.Component {
 
   render() {
     return (

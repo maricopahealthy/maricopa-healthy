@@ -1,4 +1,3 @@
-// todo: RecipesListScreen
 import React from "react";
 import { View, StyleSheet, FlatList } from "react-native";
 import {
@@ -27,36 +26,12 @@ class RecipesListScreen extends React.Component {
   }
 
   render() {
-    console.log("RecipesListScreen: ", JSON.stringify(this.props.recipes));
     return (
       <Container>
         <Content style={{ flex: 1 }}>
           <FlatList
-            // data={[
-            //   {
-            //     key: 0,
-            //     title: "Recipe 1",
-            //     stars: "4 stars",
-            //     reviews: "37 Reviews",
-            //     image: require("../../assets/thumbnails/recipes/apple-pecan-bars.png")
-            //   },
-            //   {
-            //     key: 1,
-            //     title: "Recipe 2",
-            //     stars: "4.5 stars",
-            //     reviews: "25 Reviews",
-            //     image: require("../../assets/thumbnails/recipes/apple-pecan-bars.png")
-            //   },
-            //   {
-            //     key: 2,
-            //     title: "Recipe 3",
-            //     stars: "4.3 stars",
-            //     reviews: "10 Reviews",
-            //     image: require("../../assets/thumbnails/recipes/apple-pecan-bars.png")
-            //   }
-            // ]}
             data={this.props.recipes}
-            renderItem={({ item }) => <RecipeListItem item={item} />}
+            renderItem={({ item, index }) => <RecipeListItem item={item} index={index} />}
           />
         </Content>
       </Container>
