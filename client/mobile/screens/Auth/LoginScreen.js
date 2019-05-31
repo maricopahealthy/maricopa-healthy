@@ -1,4 +1,3 @@
-// todo: LoginScreen
 import React from 'react';
 import { View, StyleSheet } from "react-native";
 import { Container, Content, Button, Text, Form, Item, Input } from "native-base";

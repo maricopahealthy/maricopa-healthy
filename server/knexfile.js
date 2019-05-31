@@ -3,7 +3,7 @@ module.exports = {
   development: {
     client: "pg",
     connection: {
-      database: 'maricopa_healthy',
+      database: 'maricopa-healthy',
       host: process.env.DB_HOST,
     },
     migrations: {
