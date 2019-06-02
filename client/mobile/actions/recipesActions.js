@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { AWS_URL } from "../utils/config"
 
 // ACTION TYPES and ACTION CREATORS
 export const FETCH_RECIPES_LOADING = "FETCH_RECIPES_LOADING";
@@ -23,7 +24,7 @@ export const fetchRecipes = () => {
   return async dispatch => {
     dispatch(fetchRecipesLoading());
     try {
-      const response = await axios.get("http://localhost:9000/recipes");
+      const response = await axios.get(AWS_URL + "/recipes");
       dispatch(fetchRecipesSuccess(response.data));
     } catch (err) {
       dispatch(fetchRecipesError(err));

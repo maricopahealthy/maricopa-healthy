@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { AWS_URL } from "../utils/config"
 
 // ACTION TYPES and ACTION CREATORS
 export const FETCH_PARKS_LOADING = "FETCH_PARKS_LOADING";
@@ -24,7 +25,7 @@ export const fetchParks = () => {
   return async dispatch => {
     dispatch(fetchParksLoading());
     try {
-      const response = await axios.get("http://localhost:9000/parks");
+      const response = await axios.get(AWS_URL + "/parks");
       dispatch(fetchParksSuccess(response.data));
     } catch (err) {
       dispatch(fetchParksError(err));

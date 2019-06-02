@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { AWS_URL } from "../utils/config"
 
 // ACTION TYPES and ACTION CREATORS
 export const FETCH_SUBSCRIPTIONS_LOADING = "FETCH_SUBSCRIPTIONS_LOADING";
@@ -24,7 +25,7 @@ export const fetchSubsriptions = (id) => {
   return async dispatch => {
     dispatch(fetchSubscriptionsLoading());
     try {
-      const response = await axios.get(`http://localhost:9000/Subscriptions/user/${id}`);
+      const response = await axios.get(AWS_URL + `/Subscriptions/user/${id}`);
       dispatch(fetchSubscriptionsSuccess(response.data));
     } catch (err) {
       dispatch(fetchSubscriptionsError(err));
