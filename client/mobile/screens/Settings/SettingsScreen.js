@@ -11,7 +11,8 @@ const loggedInSettings = [
   { key: 'favorites', name: 'Favorites', route: "Favorites", icon: "ios-heart" },
   { key: 'notifications', name: 'Notifications', route: "NotificationsSettings", icon: "ios-notifications" },
   { key: 'meetup', name: 'Meetup', route: "Meetup", icon: "ios-people" },
-  { key: 'subscribe', name: 'Subscribe', route: "Subscribe", icon: "ios-list" }
+  { key: 'subscribe', name: 'Subscribe', route: "Subscribe", icon: "ios-list" },
+  { key: 'subscribeRecipes', name: 'Subscribe Recipes', route: "SubscribeRecipes", icon: "ios-list" },
 ];
 
 const loggedOutSettings = [
