@@ -39,17 +39,6 @@ const actionButtons = {
 
 const extractKey = ({id}) => id;
 
-const getProduce = id => {
-  axios
-    .get(`http://localhost:9000/produce/market/${id}`)
-    .then(response => {
-      return response.data;
-    })
-    .catch(err => {
-      console.log(err);
-    });
-};
-
 /**
  * Markets Screen for viewing individual market records.
  */

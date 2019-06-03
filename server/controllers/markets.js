@@ -27,7 +27,7 @@ module.exports = {
       .from("markets")
       .join("hours", "hours.market_id", "markets.id")
       .groupBy("markets.id")
-      .where("id", req.params.id)
+      .where("markets.id", req.params.id)
       .then(data => res.send(data))
       .catch(err => console.error(err));
   },
