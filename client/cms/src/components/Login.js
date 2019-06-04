@@ -1,23 +1,25 @@
 import React from 'react'
 
 class Login extends React.Component {
-    constructor(){
-        super()
+    constructor() {
+        super();
         this.state = {
             username: '',
             password: ''
         }
     }
+
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
     handleSubmit = () => {
-
+        //send auth request to server
     }
-    render(){
-        return(
+
+    render() {
+        return (
             <div>
                 <h3>Log in to Maricopa Healthy</h3>
                 <form onSubmit={this.handleSubmit}>
