@@ -37,7 +37,7 @@ export default class LoadingScreen extends React.Component {
               source={require("../assets/logos/loading/about-mh-logo-color.png")}
             />
             <Text
-              style={{ color: "#B52126", fontSize: "25", fontWeight: "bold" }}
+              style={{ color: "#B52126", fontSize: 25, fontWeight: "bold" }}
             >
               Find your healthy adventure.
             </Text>

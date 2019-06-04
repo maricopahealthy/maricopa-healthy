@@ -1,4 +1,3 @@
-// todo: OnboardingScreen
 import React from "react";
 import { View, StyleSheet, ScrollView, Dimensions, Image } from "react-native";
 import {
@@ -41,9 +40,9 @@ class OnboardingFavoritesScreen extends React.Component {
         </View>
         {/* Page description */}
         <View style={{ flex: 2, justifyContent: "center", alignItems: "center" }}>
-          <Icon name="heart" style={{ color: '#fff', fontSize: '180' }} />
-          <Text style={{ color: '#fff', fontSize: '25', fontWeight: 'bold' }}>Favorites</Text>
-          <Text style={{ color: '#fff', fontSize: '25', fontWeight: '300', textAlign: 'center' }}>Tap to add something to your list of Favs.</Text>
+          <Icon name="heart" style={{ color: '#fff', fontSize: 180 }} />
+          <Text style={{ color: '#fff', fontSize: 25, fontWeight: 'bold' }}>Favorites</Text>
+          <Text style={{ color: '#fff', fontSize: 25, fontWeight: '300', textAlign: 'center' }}>Tap to add something to your list of Favs.</Text>
         </View>
         {/* Login + Signup Buttons */}
         <View

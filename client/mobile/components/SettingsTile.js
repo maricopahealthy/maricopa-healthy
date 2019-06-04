@@ -12,7 +12,7 @@ class SettingsTile extends React.Component {
       <ListItem onPress={() => this.props.navigation.navigate(this.props.route)}>
         <Left>
           <Icon style={{fontSize: 40, height: "100%", width: "12%"}} name={this.props.icon} />
-          <Text style={{ marginLeft: 20, color: "black", fontSize: "25", fontWeight: "400" }} >{this.props.name}</Text>
+          <Text style={{ marginLeft: 20, color: "black", fontSize: 25, fontWeight: "400" }} >{this.props.name}</Text>
         </Left>
         <Right>
           <Icon style={{ fontSize: 40 }} name="ios-arrow-forward" />

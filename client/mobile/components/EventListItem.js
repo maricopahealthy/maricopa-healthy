@@ -2,8 +2,10 @@ import React from "react";
 import {View} from "react-native";
 import {Card, CardItem, Left, Body, Right, Icon, Text} from "native-base";
 import {withNavigation} from "react-navigation";
+import moment from "moment";
 
 const EventListItem = props => {
+  const day = moment(props.item.start_date, "MM-DD-YYYY");
   return (
     <Card transparent>
       <CardItem
@@ -19,19 +21,19 @@ const EventListItem = props => {
             style={{backgroundColor: "#667747", borderRadius: "15"}}
           >
             <View style={{alignItems: "center"}}>
-              <Text style={{color: "#fff"}}>SAT</Text>
+              <Text style={{color: "#fff"}}>{day.format("ddd")}</Text>
               <Text
-                style={{color: "#fff", fontWeight: "bold", fontSize: "30"}}
+                style={{color: "#fff", fontWeight: "bold", fontSize: 30}}
               >
-                09
+                {day.date()}
               </Text>
-              <Text style={{color: "#fff"}}>JUN</Text>
+              <Text style={{color: "#fff"}}>{day.format("MMM")}</Text>
             </View>
           </CardItem>
         </Card>
         {/* Event Description */}
         <Body style={{justifyContent: "center", marginLeft: 15}}>
-          <Text style={{fontSize: "20", fontWeight: "bold"}}>
+          <Text style={{fontSize: 20, fontWeight: "bold"}}>
             {props.item.name}
           </Text>
           <View
