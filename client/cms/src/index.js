@@ -5,15 +5,12 @@ import * as serviceWorker from './serviceWorker.js'
 import {Provider} from 'react-redux';
 import store from './store.js'
 // import rootReducer from './reducers/rootReducer'
-import {BrowserRouter as Router} from "react-router-dom";
 
 // const store = createStore(rootReducer)
 
 ReactDOM.render(
     <Provider store={store()}>
-        <Router>
-            <App/>
-        </Router>
+        <App/>
     </Provider>,
     document.getElementById('root')
 );

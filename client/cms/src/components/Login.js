@@ -13,10 +13,12 @@ class Login extends React.Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-    }
-    handleSubmit = () => {
+    };
+    handleSubmit = (e) => {
+        e.preventDefault();
         //send auth request to server
-    }
+        fetch('/dashboard')
+    };
 
     render() {
         return (
