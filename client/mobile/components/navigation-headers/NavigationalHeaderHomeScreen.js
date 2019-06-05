@@ -31,7 +31,7 @@ const NavigationalHeaderHomeScreen = ({ navigation }) => {
         </View>
       </Left>
       <Body>
-        <Text style={{ color: "#fff", fontSize: "19", fontWeight: "380" }}>
+        <Text style={{ color: "#fff", fontSize: 19, fontWeight: "300" }}>
           Maricopa Healthy
         </Text>
       </Body>

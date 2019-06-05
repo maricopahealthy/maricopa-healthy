@@ -55,7 +55,7 @@ class EventsRecordScreen extends React.Component {
                         style={{
                           color: "#fff",
                           fontWeight: "bold",
-                          fontSize: "30"
+                          fontSize: 30
                         }}
                       >
                         09

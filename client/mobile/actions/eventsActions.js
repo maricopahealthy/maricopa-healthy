@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { AWS_URL } from "../utils/config"
 
 // ACTION TYPES and ACTION CREATORS
 export const FETCH_EVENTS_LOADING = "FETCH_EVENTS_LOADING";
@@ -23,7 +24,7 @@ export const fetchEvents = () => {
   return async dispatch => {
     dispatch(fetchEventsLoading());
     try {
-      const response = await axios.get("http://localhost:9000/events");
+      const response = await axios.get(AWS_URL + "/events");
       dispatch(fetchEventsSuccess(response.data));
     } catch(err) {
       dispatch(fetchEventsError(err));
