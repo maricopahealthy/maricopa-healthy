@@ -28,7 +28,7 @@ const NavigationalHeaderHomeScreen = ({ navigation, title }) => {
         </Button>
       </Left>
       <Body>
-        <Text style={{ color: "black", fontSize: "25", fontWeight: "400" }}>{title}</Text>
+        <Text style={{ color: "black", fontSize: 25, fontWeight: "400" }}>{title}</Text>
       </Body>
       <Right>
       </Right>
