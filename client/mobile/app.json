@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Maricopa Healthy",
-    "slug": "mobile",
+    "slug": "maricopa-healthy",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
