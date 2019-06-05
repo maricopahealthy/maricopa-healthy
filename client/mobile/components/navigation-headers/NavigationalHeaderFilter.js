@@ -27,7 +27,7 @@ const NavigationalHeaderFilter = ({ navigation }) => {
           </Button>
         </Left>
         <Body>
-          <Text style={{ color: "#fff", fontSize: "25", fontWeight: "400" }}>Filter</Text>
+          <Text style={{ color: "#fff", fontSize: 25, fontWeight: "400" }}>Filter</Text>
         </Body>
         <Right>
           <Button
