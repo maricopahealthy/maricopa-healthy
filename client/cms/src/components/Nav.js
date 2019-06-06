@@ -13,7 +13,7 @@ class Nav extends React.Component {
     e.persist();
     let dropdown = e.target.id;
     this.setState(prevState => ({
-      [dropdown]: !prevState.dropdown
+      [dropdown]: !prevState[dropdown]
     }));
     console.log(this.state);
   };
@@ -54,6 +54,30 @@ class Nav extends React.Component {
             onClick={this.handleDropdown}
           >
             <span className={"nav-dashboard-link"}>Manage</span>
+            {this.state.manageDropdown ? (
+                <span>
+                <div className={"nav-dashboard-container"}>
+                  <Link to={"/analytics"} className={"nav-dashboard-link"}>
+                    App Analytics
+                  </Link>
+                </div>
+                <div className={"nav-dashboard-container"}>
+                  <Link to={"/customers"} className={"nav-dashboard-link"}>
+                    Customers
+                  </Link>
+                </div>
+                <div className={"nav-dashboard-container"}>
+                  <Link to={"/notifications"} className={"nav-dashboard-link"}>
+                    Push Notifications
+                  </Link>
+                </div>
+                <div className={"nav-dashboard-container"}>
+                  <Link to={"/transactions"} className={"nav-dashboard-link"}>
+                    Transactions
+                  </Link>
+                </div>
+              </span>
+            ) : null}
           </div>
           <div className={"nav-dashboard-container"}>
             <Link to={"/settings"} className={"nav-dashboard-link"}>
