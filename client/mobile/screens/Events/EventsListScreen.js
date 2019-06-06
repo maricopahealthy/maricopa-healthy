@@ -20,6 +20,7 @@ class EventsListScreen extends React.Component {
           <FlatList
             data={this.props.events}
             renderItem={({item, index}) => <EventListItem item={item} index={index}/>}
+            keyExtractor={(item) => item.id.toString() }
           />
         </Content>
       </Container>

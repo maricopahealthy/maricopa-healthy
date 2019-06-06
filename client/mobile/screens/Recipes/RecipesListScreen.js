@@ -32,6 +32,7 @@ class RecipesListScreen extends React.Component {
           <FlatList
             data={this.props.recipes}
             renderItem={({ item, index }) => <RecipeListItem item={item} index={index} />}
+            keyExtractor={(item) => item.id.toString() }
           />
         </Content>
       </Container>
