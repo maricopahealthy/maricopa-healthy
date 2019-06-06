@@ -1,39 +1,45 @@
 *, html {
     font-family: helvetica, arial;
 }
-.analytics-container{
+
+.analytics-container {
     grid-column: 2/4;
-    grid-row:3/4;
-    background-color:white;
+    grid-row: 3/4;
+    background-color: white;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
 }
-.analytics-placeholder{
-    width:90%;
-    margin:20px;
+
+.analytics-placeholder {
+    width: 90%;
+    margin: 20px;
     grid-column: 1/3;
     grid-row: 1/2;
 }
-.analytics-placeholder-apptype{
-    width:90%;
-    margin:20px;
-    grid-column:1/2;
+
+.analytics-placeholder-apptype {
+    width: 90%;
+    margin: 20px;
+    grid-column: 1/2;
     grid-row: 2/3;
 }
-.analytics-placeholder-push{
-    width:90%;
-    margin:20px;
+
+.analytics-placeholder-push {
+    width: 90%;
+    margin: 20px;
     grid-column: 2/3;
     grid-row: 2/3;
 }
+
 .dashboard-container {
     background-color: #F8F8F8;
     display: grid;
     grid-template-columns: 200px 4fr 4fr;
     grid-template-rows: 35px 50px 5fr 5fr;
 }
-.headerNav-container{
+
+.headerNav-container {
     grid-column: 1/4;
     grid-row: 1/2;
     background-color: #1F1F1F;
@@ -41,7 +47,8 @@
     font-size: 8px;
     padding: 10px;
 }
-.login-container{
+
+.login-container {
     margin: 100px;
     padding: 20px;
     outline: 1px solid grey;
@@ -51,31 +58,47 @@
     align-items: center;
     flex-direction: column;
 }
-.login-password{
+
+.login-password {
     margin: 10px;
     width: 100%;
     height: 20px;
     display: flex;
 }
-.login-username{
+
+.login-username {
     margin: 10px;
     width: 100%;
     height: 20px;
     display: flex;
 }
-.login-submit{
+
+.login-submit {
     margin: 10px;
     width: 100%;
     height: 20px;
-    display:flex;
+    display: flex;
 }
-.nav-container{
+
+.nav-container {
     text-align: center;
     grid-column: 1/2;
     grid-row: 2/4;
     background-color: #3287B8;
 }
-.overview-container{
+
+.nav-dashboard-container {
+    margin: 5px;
+    margin-top: 15px;
+}
+
+.nav-dashboard-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+}
+
+.overview-container {
     color: #868686;
     font-size: 12px;
     padding: 15px;

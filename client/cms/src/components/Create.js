@@ -1,4 +1,6 @@
 import React from 'react'
+import HeaderNav from './HeaderNav'
+import Nav from './Nav'
 
 class Create extends React.Component {
     constructor() {
@@ -9,7 +11,9 @@ class Create extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="">
+                <HeaderNav/>
+                <Nav/>
             </div>
         )
     }
