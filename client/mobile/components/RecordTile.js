@@ -7,6 +7,8 @@ import { Card, CardItem, Left, Body, Right, Icon, Text, Thumbnail } from 'native
  * RecordTile is used for previewing different records.
  */
 const RecordTile = (props) => {
+  const marketThumbnail = require("../assets/thumbnails/markets/markets-thumb-placeholder-01.png");
+  const parkThumbnail = require("../assets/thumbnails/parks/parks-thumb-placeholder-01.png");
   return (
     <>
       <CardItem
@@ -14,7 +16,7 @@ const RecordTile = (props) => {
         style={props.index % 2 === 0 ? { backgroundColor: "white", margin: 0 } : { backgroundColor: "#F6F6F6", margin: 0 }}
         onPress={() => props.navigation.navigate(props.type, {id: props.item.id})}
       >
-          <Thumbnail large source={props.item.thumbnail} />
+          <Thumbnail large source={props.type === "Markets" ? marketThumbnail : parkThumbnail} />
         <Body style={{ justifyContent: "center", marginLeft: 15 }}>
           <Text>{props.item.name}</Text>
           <Text note>{props.item.street_address}</Text>
