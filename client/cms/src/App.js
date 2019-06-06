@@ -11,6 +11,14 @@ function App() {
             <Route path="/" exact component={Login} />
             <Route path="/dashboard" component={Dashboard}/>
             <Route path="/create" component={Create}/>
+            <Route path="/design" component={Create}/>
+            <Route path="/build" component={Create}/>
+            <Route path="/manage" component={Create}/>
+            <Route path="/analytics" component={Create}/>
+            <Route path="/customers" component={Create}/>
+            <Route path="/notifications" component={Create}/>
+            <Route path="/transactions" component={Create}/>
+            <Route path="/settings" component={Create}/>
         </Router>
     </div>
   );

@@ -1,18 +1,13 @@
 import React from 'react'
+import Nav from './Nav'
 
-class Dashboard extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-        }
-    }
+const Dashboard = () => {
+    return (
+        <div>
+            <Nav/>
+        </div>
 
-    render() {
-        return (
-            <div>hello am dashboard
-            </div>
-        )
-    }
+    )
 }
 
 export default Dashboard
