@@ -4,11 +4,17 @@ import Create from "./Create"
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 
 const Nav = () => {
-    return (<div>
+    return (<div className={"nav-container"}>
         <Route>
-        <div><Link to={'/dashboard'}>Dashboard</Link></div>
-            <div><Link to={'/create'}>Create</Link></div>
-            <div><Link to={'/settings'}>Settings</Link></div>
+        <div className={'nav-dashboard'}>
+            <Link to={'/dashboard'}>Dashboard</Link>
+        </div>
+        <div className={'nav-create'}>
+            <Link to={'/create'}>Create</Link>
+        </div>
+        <div className={'nav-settings'}>
+            <Link to={'/settings'}>Settings</Link>
+        </div>
         </Route>
     </div>)
 

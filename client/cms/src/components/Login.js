@@ -22,12 +22,12 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={'login-container'}>
                 <h3>Log in to Maricopa Healthy</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <input name={'username'} type={'text'} placeholder={'username'} onChange={this.handleChange}/>
-                    <input name={'password'} type={'password'} placeholder={'password'} onChange={this.handleChange}/>
-                    <button>Submit</button>
+                    <input className={"login-username"} name={'username'} type={'text'} placeholder={'username'} onChange={this.handleChange}/>
+                    <input className={"login-password"} name={'password'} type={'password'} placeholder={'password'} onChange={this.handleChange}/>
+                    <button className={"login-submit"} >Submit</button>
                 </form>
             </div>
         )
