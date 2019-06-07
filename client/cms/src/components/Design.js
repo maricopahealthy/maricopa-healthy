@@ -2,7 +2,7 @@ import React from 'react'
 import HeaderNav from './HeaderNav'
 import Nav from './Nav'
 
-class Create extends React.Component {
+class Design extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -11,12 +11,13 @@ class Create extends React.Component {
 
     render() {
         return (
-            <div className="">
+            <div className="design-container">
                 <HeaderNav/>
                 <Nav/>
+                this is the design component
             </div>
         )
     }
 }
 
-export default Create
+export default Design
