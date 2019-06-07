@@ -25,6 +25,7 @@ class MarketsListScreen extends React.Component {
           <FlatList
               data={this.props.markets}
               renderItem={({item, index}) => <RecordTile item={item} index={index} type="Markets"/>}
+              keyExtractor={(item) => item.id.toString() }
           />
         </View>
     )

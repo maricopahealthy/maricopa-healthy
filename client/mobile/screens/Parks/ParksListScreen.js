@@ -26,6 +26,7 @@ class ParksListScreen extends React.Component {
         <FlatList
           data={this.props.parks}
           renderItem={({ item, index }) => <RecordTile item={item} index={index} type="Parks" />}
+          keyExtractor={(item) => item.id.toString() }
         />
       </View>
     )
