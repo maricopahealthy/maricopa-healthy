@@ -2,22 +2,28 @@ import React from 'react';
 import Login from "./components/Login";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import Dashboard from "./components/Dashboard";
-import Create from "./components/Design";
+import Build from "./components/Build";
+import Markets from './components/Markets'
+import Design from './components/Design'
+
 import Manage from "./components/Manage"
+import styles from './styles.css'
 
 function App() {
     return (
         <div className="App">
             <Router>
+                <div className={"login-container-outer"}>
                 <Route path="/" exact component={Login}/>
+                </div>
                 <Route path="/dashboard" component={Dashboard}/>
-                <Route path="/design" component={Create}/>
-                <Route path="/build" component={Create}/>
-                <Route path="/analytics" component={Create}/>
-                <Route path="/customers" component={Create}/>
-                <Route path="/notifications" component={Create}/>
-                <Route path="/transactions" component={Create}/>
-                <Route path="/settings" component={Create}/>
+                <Route path="/design" component={Design}/>
+                <Route exact path="/build" component={Build}/>
+                <Route path="/analytics"  component={Build}/>
+                <Route path="/customers" component={Build}/>
+                <Route path="/notifications" component={Build}/>
+                <Route path="/transactions" component={Build}/>
+                <Route path="/settings" component={Build}/>
             </Router>
         </div>
     );
