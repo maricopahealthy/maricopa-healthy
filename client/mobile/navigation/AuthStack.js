@@ -1,9 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from "react-navigation";
 // screens
-import LoginScreen from "../screens/Auth/LoginScreen";
-import SignUpScreen from "../screens/Auth/SignUpScreen";
-import ResetPasswordScreen from "../screens/Auth/ResetPasswordScreen";
+import AuthGroup from "./navigation-groups/AuthGroup"
 import Carousel from "../screens/Onboarding/Carousel";
 
 /**
@@ -12,9 +10,10 @@ import Carousel from "../screens/Onboarding/Carousel";
  */
 const AuthStack = createStackNavigator({
   Carousel: Carousel,
-  SignUp: SignUpScreen,
-  Login: LoginScreen,
-  ResetPassword: ResetPasswordScreen,
+  SignUp: AuthGroup.SignUp,
+  Login: AuthGroup.Login,
+  ResetPassword: AuthGroup.ResetPassword,
+  ForgotPassword: AuthGroup.ForgotPassword,
 });
 
 export default AuthStack;
