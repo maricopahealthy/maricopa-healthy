@@ -4,6 +4,7 @@ import {View, StyleSheet, SectionList} from 'react-native';
 import Section from "../../utils/SectionsUtility";
 import {Container, Content, Icon, Button, Text} from "native-base";
 import SectionHeader from "../../components/SectionHeader";
+import {withNavigation} from "react-navigation";
 
 const weeklyRecipe = [
   {
@@ -25,7 +26,7 @@ const extractKey = ({ id }) => id;
 /**
  * Primary Screen for managing User's subscriptions.
  */
-export default class SubscribeScreen extends React.Component {
+class SubscribeScreen extends React.Component {
 
   render() {
     return (
@@ -41,7 +42,12 @@ export default class SubscribeScreen extends React.Component {
             keyExtractor={extractKey}
           />
           <View style={styles.container}>
-            <Button style={styles.button} full iconRight>
+            <Button
+              style={styles.button}
+              full
+              iconRight
+              onPress={() => this.props.navigation.navigate("SubscribeRecipes")}
+            >
               <Text>Subscribe</Text>
               <Icon name={"ios-lock"}/>
             </Button>
@@ -51,6 +57,8 @@ export default class SubscribeScreen extends React.Component {
     );
   }
 }
+
+export default withNavigation(SubscribeScreen);
 
 const styles = StyleSheet.create({
   container: {
