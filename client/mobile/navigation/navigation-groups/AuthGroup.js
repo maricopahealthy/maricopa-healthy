@@ -5,35 +5,35 @@ import ResetPasswordScreen from "../../screens/Auth/ResetPasswordScreen"
 import SignUpScreen from "../../screens/Auth/SignUpScreen"
 
 // navigation headers
-import NavigationalHeaderBasic from "../../components/navigation-headers/NavigationalHeaderBasic";
+import NavigationalHeaderAuth from "../../components/navigation-headers/NavigationalHeaderAuth";
 
 export default {
 
   ForgotPassword: {
     screen: ForgotPasswordScreen,
     navigationOptions: {
-      header: <NavigationalHeaderBasic title="Forgot Password"/>
+      header: <NavigationalHeaderAuth title="Forgot Password"/>
     }
   },
 
   Login: {
     screen: LoginScreen,
     navigationOptions: {
-      header: <NavigationalHeaderBasic title="Login"/>
+      header: <NavigationalHeaderAuth title="Login"/>
     }
   },
 
   ResetPassword: {
     screen: ResetPasswordScreen,
     navigationOptions: {
-      header: <NavigationalHeaderBasic title="Reset Password"/>
+      header: <NavigationalHeaderAuth title="Reset Password"/>
     }
   },
 
   SignUp: {
     screen: SignUpScreen,
     navigationOptions: {
-      header: <NavigationalHeaderBasic title="Sign Up"/>
+      header: <NavigationalHeaderAuth title="Sign Up"/>
     }
   },
 

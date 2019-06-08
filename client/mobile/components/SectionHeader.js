@@ -8,7 +8,7 @@ import { ListItem, Text } from 'native-base';
 const SectionHeader =({section}) => {
   return (
       <ListItem itemDivider>
-        <Text>{section.title}</Text>
+        <Text style={styles.header}>{section.title}</Text>
       </ListItem>
   )
 };
@@ -17,8 +17,7 @@ export default SectionHeader;
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: "#E5E5EA",
-    fontSize: 20,
-    padding: "2%",
+    fontSize: 24,
+    fontWeight: "600"
   },
 });
