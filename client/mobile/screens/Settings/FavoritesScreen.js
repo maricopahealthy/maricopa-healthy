@@ -1,40 +1,47 @@
 import React from 'react';
 import { View, StyleSheet} from 'react-native';
-import { Container, Content, Button, Text, Icon } from "native-base";
+import { Container, Content, Button, Text, Icon, Left, Body, Right } from "native-base";
+import { withNavigation } from 'react-navigation';
+
 
 /**
  * Primary screen for accessing User's 'Favorite-d' content.
  */
-export default class FavoritesScreen extends React.Component {
+class FavoritesScreen extends React.Component {
 
   render() {
     return (
       <Container>
         <Content padder>
           {/* Content */}
-          <View style={{flex: 1}}>
-            <Text>You don't have any favorites.</Text>
+          <View style={{margin: 10, marginTop: 20}}>
+            <Text style={{fontSize: 24}}>You don't have any favorites.</Text>
           </View>
-          <View style={{flex: 1}}>
-            <Text>To save favorites, you need to create an account.</Text>
+          <View style={{margin: 10}}>
+            <Text style={{fontSize: 16}}>To save favorites, you need to create an account.</Text>
           </View>
-          {/* Button */}
-          <View style={{flex: 1}}>
-            <Button block style={{backgroundColor: "#B52126"}} iconRight onPress={()=>{}}>
-              <Text>Sign Up</Text>
-              <Icon name="lock"/>
-            </Button>
-          </View>
+          <Button large block style={styles.button} iconRight onPress={() => this.props.navigation.navigate("SignUp")} >
+            <Left style={{flex: 1}}></Left>
+            <Body style={{flex: 4}}>
+              <Text style={{color: "white", fontSize: 24}}>Sign Up</Text>
+            </Body>
+            <Right style={{flex: 1, marginRight: 10}}>
+              <Icon style={{color: "white"}} name="lock"/>
+            </Right>
+          </Button>
         </Content>
       </Container>
     )
   }
 }
 
+export default withNavigation(FavoritesScreen)
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 15,
-    backgroundColor: '#fff',
-  },
+  button: {
+    backgroundColor: "#B52126",
+    margin: 10,
+    marginTop: 30,
+    paddingRight: 10
+  }
 });
