@@ -1,46 +1,58 @@
+
 const featureList = [
     {
-        name: 'markets',
-        thumbnail: null
+        name: 'Markets',
+        id: 'markets',
+        thumbnail: null,
     },
     {
-        name: 'recipes',
+        name: 'Recipes',
+        id: 'recipes',
         thumnail: null
     },
     {
-        name: 'parks',
+        name: 'Parks',
+        id: 'parks',
         thumnail: null
     },
     {
-        name: 'events',
+        name: 'Events',
+        id: 'events',
         thumnail: null
     },
     {
-        name: 'active',
+        name: 'Active',
+        id: 'active',
         thumnail: null
     },
     {
-        name: 'games',
+        name: 'Games',
+        id: 'games',
         thumnail: null
     },
     {
-        name: 'biking',
+        name: 'Biking',
+        id: 'biking',
         thumnail: null
     },
     {
-        name: 'rides',
+        name: 'Rides',
+        id: 'rides',
         thumnail: null
     },
     {
-        name: 'alerts',
+        name: 'Alerts',
+        id: 'alerts',
         thumnail: null
     },
     {
-        name: 'contact',
+        name: 'Contact',
+        id: 'contact',
         thumnail: null
     },
     {
-        name: 'privacy',
+        name: 'Privacy',
+        id: 'privacy',
         thumnail: null
     }
 ]

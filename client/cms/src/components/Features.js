@@ -1,15 +1,20 @@
 import React from 'react'
+import featureList from '../utils/featureList'
 import {BrowserRouter as Route, Link} from "react-router-dom";
 import Markets from './Markets.js'
 
 const Features = () => {
     return (<div>
         <h6 className={"features-heading"}>FEATURES</h6>
-        <Link to={"/build/markets"} className={"features-link"}>
-            Markets
-        </Link>
+        <ul>
+            {featureList.map(({name, id}) => (
+                <li key={id}>
+                    <Link to={`/build/${id}`}>{name}</Link>
+                </li>
+            ))}
 
-        <Route exact path={"/build/markets"} component={Markets} />
+        </ul>
+        {/*<Route path={`/build/:id`} component={Markets}/>*/}
 
     </div>)
 }

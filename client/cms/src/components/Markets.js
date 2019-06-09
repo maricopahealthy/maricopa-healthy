@@ -4,14 +4,21 @@ class Markets extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            view: 'Markets'
+            markets:[]
         }
     }
+    componentDidMount(){
+        fetch('http://localhost:9000/markets')
+            .then(res => res.json())
+            .then(markets => this.setState({markets}))
+    }
+
     render(){
-        return(<div className={"markets-container"}>
-                marketsssssss
+        return (<div>
+            THIS IS WHERE THE MARKETS IS
         </div>)
     }
+
 }
 
 export default Markets

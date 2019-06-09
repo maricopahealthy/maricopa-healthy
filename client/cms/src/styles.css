@@ -36,7 +36,7 @@
     background-color: #F8F8F8;
     display: grid;
     grid-template-columns: 200px 1fr 4fr;
-    grid-template-rows: 35px 50px 5fr 5fr;
+    grid-template-rows: 35px 50px 200%;
 }
 
 
@@ -130,6 +130,10 @@
     background-color: #677647;
     color: white;
     border-radius: 5px;
+}
+
+.markets-container {
+
 }
 
 .nav-container {
