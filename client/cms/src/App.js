@@ -18,8 +18,10 @@ function App() {
                 </div>
                 <Route path="/dashboard" component={Dashboard}/>
                 <Route path="/design" component={Design}/>
+                <div className={"build-container"}>
                 <Route path="/build" component={Build}/>
                     <Route path='/build/markets' component={Markets} />
+                </div>
                 <Route path="/analytics"  component={Build}/>
                 <Route path="/customers" component={Build}/>
                 <Route path="/notifications" component={Build}/>

@@ -34,8 +34,17 @@
 
 .build-container{
     background-color: #F8F8F8;
+    display:grid;
+    grid-template-columns: 200px 4fr 4fr;
+    grid-template-rows: 35px 50px 200%;
+}
+
+.build-container-inner{
+    background-color: #F8F8F8;
+    grid-row: 1/4;
+    grid-column: 1/4;
     display: grid;
-    grid-template-columns: 200px 1fr 4fr;
+    grid-template-columns: 200px 4fr 4fr;
     grid-template-rows: 35px 50px 200%;
 }
 
@@ -133,7 +142,8 @@
 }
 
 .markets-container {
-
+    grid-column: 3/4;
+    grid-row: 2/3;
 }
 
 .nav-container {

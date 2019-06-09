@@ -14,14 +14,13 @@ class Build extends React.Component {
     }
 
     render() {
-        return (<div className={"build-container"}>
+        return (<span className={"build-container-inner"}>
             <HeaderNav/>
             <Nav/>
             <div className={"features-container"}>
                 <Features/>
             </div>
-            <div className={"example-contaner"}>EXAMPLE</div>
-        </div>)
+        </span>)
     }
 }
 

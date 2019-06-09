@@ -1,11 +1,23 @@
 import React from 'react'
+import CurrentMarkets from './CurrentMarkets'
+import EditMarkets from './EditMarkets'
+import featureList from "../utils/featureList";
+import {Link} from "react-router-dom";
 
 class Markets extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            markets:[]
+            markets:[],
+            editId: null
         }
+        this.editMarket = this.editMarket.bind(this)
+    }
+
+    editMarket(e){
+        this.setState({
+            editId: e.target.id
+        })
     }
     componentDidMount(){
         fetch('http://localhost:9000/markets')
@@ -14,8 +26,8 @@ class Markets extends React.Component {
     }
 
     render(){
-        return (<div>
-            THIS IS WHERE THE MARKETS IS
+        return (<div className={"markets-container"}>
+            <CurrentMarkets markets={this.state.markets} editMarket={this.editMarket} />
         </div>)
     }
 
