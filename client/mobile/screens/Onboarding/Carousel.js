@@ -21,7 +21,7 @@ export default class Carousel extends React.Component {
   };
 
   componentDidMount() {
-    this.activeInterval = setInterval(this.scrolling, 5000);
+    this.activeInterval = setInterval(this.scrolling, 50000);
   }
 
   componentWillUnmount() {

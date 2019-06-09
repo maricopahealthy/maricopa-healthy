@@ -1,4 +1,3 @@
-// todo: OnboardingScreen
 import React from "react";
 import { View, StyleSheet, ScrollView, Dimensions, Image } from "react-native";
 import {
@@ -41,9 +40,9 @@ class OnboardingFiltersScreen extends React.Component {
         </View>
         {/* Page description */}
         <View style={{ flex: 2, justifyContent: "center", alignItems: "center" }}>
-          <Icon name="options" style={{ color: '#fff', fontSize: 180 }} />
-          <Text style={{ color: '#fff', fontSize: 25, fontWeight: 'bold' }}>Filters</Text>
-          <Text style={{ color: '#fff', fontSize: 25, fontWeight: '300', textAlign: 'center' }}>Sort content to find just what you want.</Text>
+          <Icon name="options" style={{ color: '#fff', fontSize: 110 }} />
+          <Text style={{ color: '#fff', fontSize: 32, fontWeight: 'bold' }}>Filters</Text>
+          <Text style={{ color: '#fff', fontSize: 24, fontWeight: '300', textAlign: 'center' }}>Sort content to find just what you want.</Text>
         </View>
         {/* Login + Signup Buttons */}
         <View
