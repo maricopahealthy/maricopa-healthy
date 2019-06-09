@@ -49,45 +49,39 @@ class OnboardingNotificationsScreen extends React.Component {
         <View style={{ flex: 2, justifyContent: "center", alignItems: "center" }}>
           <Icon name="notifications" style={{ color: '#fff', fontSize: 110 }} />
           <Text style={{ color: '#fff', fontSize: 32, fontWeight: 'bold' }}>Notifications</Text>
-          <Text style={{ color: '#fff', fontSize: 24, fontWeight: '300', textAlign: 'center' }}>Stay informed and get alerts about upcoming events.</Text>
+          <Text style={{ color: '#fff', fontSize: 24, fontWeight: '300', textAlign: 'center', width: 300 }}>Stay informed and get alerts about upcoming events.</Text>
         </View>
-        {/* Login + Signup buttons */}
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-evenly"
-          }}
-        >
-          <Button
-            bordered
-            light
-            onPress={() => this.props.navigation.navigate("SignUp")}
-          >
-            <Text>Sign Up</Text>
-          </Button>
-          <Button
-            bordered
-            light
-            onPress={() => this.props.navigation.navigate("Login")}
-          >
-            <Text>Login</Text>
-          </Button>
-        </View>
-        {/* Explore App */}
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "center"
-          }}
-        >
-          <Text
-            style={{ color: '#fff' }}
-            onPress={() => this.props.navigation.navigate("App")}
-          >
-            Skip and explore the app.
-          </Text>
+        {/* Carousel Indicators */}
+        <View style={{flex: 1}}></View>
+        {/* Login + Signup Buttons */}
+        <View style={{flex: 1}}>
+          <View style={{flex: 1, flexDirection: "row", justifyContent: "space-evenly"}}>
+            <Button
+              bordered
+              light
+              style={{width: 150, justifyContent: "center"}}
+              onPress={() => this.props.navigation.navigate("SignUp")}
+            >
+              <Text>Sign Up</Text>
+            </Button>
+            <Button
+              bordered
+              light
+              style={{width: 150, justifyContent: "center"}}
+              onPress={() => this.props.navigation.navigate("Login")}
+            >
+              <Text>Login</Text>
+            </Button>
+          </View>
+          {/* Explore App */}
+          <View style={{flex: 1, flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
+            <Text
+              style={{color: '#fff', fontSize: 16}}
+              onPress={() => this.props.navigation.navigate("App")}
+            >
+              Skip and explore the app.
+            </Text>
+          </View>
         </View>
       </Content>
     );
