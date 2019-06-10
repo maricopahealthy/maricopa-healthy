@@ -17,7 +17,7 @@ const ResourceCard = (props) => {
       >
         <Image source={props.item.image} style={styles.cardImage} />
         <Body style={styles.cardContent}>
-          <Text style={styles.textBadge}>{props.item.resource}</Text>
+          <Text style={styles.textBadge}>{props.item.title}</Text>
         </Body>
       </CardItem>
     </Card>
