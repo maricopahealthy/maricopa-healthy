@@ -1,6 +1,7 @@
 import React from 'react'
 import CurrentMarkets from './CurrentMarkets'
-import EditMarkets from './EditMarkets'
+import EditMarket from './EditMarket'
+import AddMarket from './AddMarket'
 import featureList from "../utils/featureList";
 import {Link} from "react-router-dom";
 
@@ -28,7 +29,8 @@ class Markets extends React.Component {
     render(){
         return (<div className={"markets-container"}>
             <CurrentMarkets markets={this.state.markets} editMarket={this.editMarket} />
-        </div>)
+        </div>
+        )
     }
 
 }
