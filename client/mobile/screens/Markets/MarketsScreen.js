@@ -92,7 +92,7 @@ class MarketsScreen extends React.Component {
     } = this.props.market;
 
     const sections = [
-      Section("Hours", hours, ({item}) => {
+      Section("Time of Day", hours, ({item}) => {
         return (
           <ListItem>
             <View>
