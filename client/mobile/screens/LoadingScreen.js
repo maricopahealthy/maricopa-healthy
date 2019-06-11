@@ -22,7 +22,6 @@ export default class LoadingScreen extends React.Component {
     return (
       <Container>
         <Content
-          padder
           contentContainerStyle={{ flex: 1, backgroundColor: "#FBA208" }}
         >
           <View
@@ -34,10 +33,12 @@ export default class LoadingScreen extends React.Component {
             }}
           >
             <Image
+              style={{width: 320, height: 200}}
               source={require("../assets/logos/loading/about-mh-logo-color.png")}
+              resizeMode="contain"
             />
             <Text
-              style={{ color: "#B52126", fontSize: "25", fontWeight: "bold" }}
+              style={{ color: "#B52126", fontSize: 25, fontWeight: "400" }}
             >
               Find your healthy adventure.
             </Text>
@@ -45,7 +46,7 @@ export default class LoadingScreen extends React.Component {
           <View
             style={{ flex: 1, flexDirection: "row", justifyContent: "center" }}
           >
-            <Spinner color="red" />
+            <Spinner color="#B52126" size="large" />
           </View>
         </Content>
       </Container>

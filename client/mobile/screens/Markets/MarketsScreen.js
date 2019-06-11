@@ -39,17 +39,6 @@ const actionButtons = {
 
 const extractKey = ({id}) => id;
 
-const getProduce = id => {
-  axios
-    .get(`http://localhost:9000/produce/market/${id}`)
-    .then(response => {
-      return response.data;
-    })
-    .catch(err => {
-      console.log(err);
-    });
-};
-
 /**
  * Markets Screen for viewing individual market records.
  */
@@ -103,7 +92,7 @@ class MarketsScreen extends React.Component {
     } = this.props.market;
 
     const sections = [
-      Section("Hours", hours, ({item}) => {
+      Section("Time of Day", hours, ({item}) => {
         return (
           <ListItem>
             <View>

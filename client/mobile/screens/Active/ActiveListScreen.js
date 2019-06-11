@@ -26,6 +26,7 @@ class ActiveListScreen extends React.Component {
         <FlatList
           data={this.props.active}
           renderItem={({ item, index }) => <ActiveListItem item={item} index={index} />}
+          keyExtractor={(item) => item.id.toString() }
         />
       </View>
     )

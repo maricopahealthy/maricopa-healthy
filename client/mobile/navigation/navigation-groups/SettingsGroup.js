@@ -97,7 +97,7 @@ export default {
   SubscribeRecipes: {
     screen: SubscribeRecipesScreen,
     navigationOptions: {
-      header: <NavigationalHeaderBasic title="Subscribe Recipes" />
+      header: <NavigationalHeaderBasic title="Weekly Recipes" />
     }
   },
 

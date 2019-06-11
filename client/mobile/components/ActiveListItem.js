@@ -6,6 +6,8 @@ import { withNavigation } from 'react-navigation';
  * ActiveListItem is a presentational component for the Actives records.
  */
 const ActiveListItem = (props) => {
+  const thumbnail = require("../assets/thumbnails/active/active-ada-accessibility-icon.png");
+
   return (
     <>
       <CardItem
@@ -13,7 +15,7 @@ const ActiveListItem = (props) => {
         button
         onPress={() => props.navigation.navigate("Active", { id: props.item.id })}
       >
-          <Thumbnail large source={props.item.thumbnail} />
+          <Thumbnail large source={thumbnail} />
           <Body style={{marginLeft: 20, justifyContent: "center"}}>
             <Text style={{ fontSize: 20 }}>{props.item.name}</Text>
             <Text note>

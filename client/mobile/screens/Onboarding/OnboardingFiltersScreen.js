@@ -41,9 +41,9 @@ class OnboardingFiltersScreen extends React.Component {
         </View>
         {/* Page description */}
         <View style={{ flex: 2, justifyContent: "center", alignItems: "center" }}>
-          <Icon name="options" style={{ color: '#fff', fontSize: '180' }} />
-          <Text style={{ color: '#fff', fontSize: '25', fontWeight: 'bold' }}>Filters</Text>
-          <Text style={{ color: '#fff', fontSize: '25', fontWeight: '300', textAlign: 'center' }}>Sort content to find just what you want.</Text>
+          <Icon name="options" style={{ color: '#fff', fontSize: 180 }} />
+          <Text style={{ color: '#fff', fontSize: 25, fontWeight: 'bold' }}>Filters</Text>
+          <Text style={{ color: '#fff', fontSize: 25, fontWeight: '300', textAlign: 'center' }}>Sort content to find just what you want.</Text>
         </View>
         {/* Login + Signup Buttons */}
         <View

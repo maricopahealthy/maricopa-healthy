@@ -55,7 +55,7 @@ class ParksScreen extends React.Component {
     } = this.props.park;
 
     const sections = [
-      Section("Hours", hours, ({ item }) => {
+      Section("Time of Day", hours, ({ item }) => {
         return (
           <ListItem>
             <View>

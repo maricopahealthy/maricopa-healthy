@@ -29,7 +29,7 @@ const NavigationalHeaderHome = ({ navigation, title, filterScreenRoute }) => {
           </Button>
         </Left>
         <Body>
-          <Text style={{ color: "#fff", fontSize: "25", fontWeight: "400" }}>{ title }</Text>
+          <Text style={{ color: "#fff", fontSize: 25, fontWeight: "400" }}>{ title }</Text>
         </Body>
         <Right>
           <Button
