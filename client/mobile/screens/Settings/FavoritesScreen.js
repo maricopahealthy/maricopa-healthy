@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#B52126",
     margin: 10,
     marginTop: 30,
-    paddingRight: 10
+    paddingRight: 10,
+    height: 48
   }
 });

@@ -1,17 +1,32 @@
 // todo: ForgotPasswordScreen
 import React from 'react';
-import {
-  View,
-  Text, StyleSheet
-} from "react-native";
+import {View, StyleSheet} from "react-native";
+import {Container, Content, Button, Text, Item, Input, Form } from "native-base";
+import BlockButton from "../../components/BlockButton";
 
 export default class ForgotPasswordScreen extends React.Component {
 
   render() {
     return (
-        <View style={styles.container}>
-          <Text>Forgot Password Screen</Text>
-        </View>
+      <Container>
+        <Content padder style={{flex: 1}}>
+          <View style={{flex: 1}}>
+            <Text>Submit your email address and we’ll send you you a code to reset your password.</Text>
+          </View>
+          <Form>
+            <Item regular>
+              <Input placeholder="Email Address" />
+            </Item>
+          </Form>
+          <View style={{flex: 1}}>
+            <BlockButton
+              title="Submit"
+              icon="lock"
+              onPress={() => {this.props.navigation.navigate("ResetPassword")}}
+            />
+          </View>
+        </Content>
+      </Container>
     )
   }
 }

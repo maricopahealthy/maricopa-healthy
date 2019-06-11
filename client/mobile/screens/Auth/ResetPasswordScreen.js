@@ -2,18 +2,19 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Container, Content, Button, Text, Form, Item, Input } from "native-base";
+import BlockButton from "../../components/BlockButton";
+
 
 export default class ResetPasswordScreen extends React.Component {
 
   render() {
     return (
         <Container>
-          <Content
-              padder
-              style={{ flex: 1 }}
-          >
+          <Content padder style={{flex: 1}}>
             <View style={{ flex: 1 }}>
-              <Text>Submit your email address and we'll send you a code to reset your password.</Text>
+              <Text>
+                You can now reset the password for your account. A good password will be at least 8 characters long and include letters (both upper and lower case), digits and symbols. Please enter a new password.
+              </Text>
             </View>
             <Form>
               <Item regular>
@@ -21,13 +22,17 @@ export default class ResetPasswordScreen extends React.Component {
               </Item>
             </Form>
             <View style={{ flex: 1 }}>
-              <Button
-                  block
-                  danger
+              <BlockButton
+                  title="Submit"
+                  icon="lock"
                   onPress={() => {this.props.navigation.navigate("Login")}}
-              >
-                <Text>Submit</Text>
-              </Button>
+              />
+            </View>
+            <View style={{flex: 1, alignItems: "center"}}>
+              <Text>
+                Still having trouble?
+                <Text style={{color: "#B52126"}}> Contact us.</Text>
+              </Text>
             </View>
           </Content>
         </Container>

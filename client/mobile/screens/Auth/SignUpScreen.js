@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, FlatList } from "react-native";
 import {Container, Content, Button, Text, Item, Input, Form } from "native-base";
+import BlockButton from "../../components/BlockButton";
 
 export default class SignUpScreen extends React.Component {
 
@@ -38,13 +39,11 @@ export default class SignUpScreen extends React.Component {
               </Item>
             </Form>
             <View style={{ flex: 1 }}>
-              <Button
-                  block
-                  style={{ backgroundColor: "#B52126" }}
-                  onPress={() => {this.props.navigation.navigate("Login")}}
-              >
-                <Text>Create Account</Text>
-              </Button>
+              <BlockButton
+                title="Sign Up"
+                icon="lock"
+                onPress={() => this.props.navigation.navigate("Login")}
+              />
             </View>
           </Content>
         </Container>
@@ -57,5 +56,5 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 15,
     backgroundColor: '#fff',
-  },
+  }
 });
