@@ -1,47 +1,99 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 class AddMarket extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
-            name: '',
-            thumbnail: '',
-            street_address: '',
+            city: '',
             created_at: '',
+            hours: [],
+            name: '',
             payment_methods: '',
             phone_number: '',
+            rating: '',
+            reviews: '',
             state: '',
-            website: '',
+            street_address: '',
+            thumbnail: '',
+            updated_at: '',
+            website_url: '',
             zipcode: ''
         }
+        this.addMoreHours = this.addMoreHours.bind(this)
         this.handleAdd = this.handleAdd.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
-    handleAdd(){
-        this.setState({
-            created_at: new Date()
+    addMoreHours(){
 
+    }
+
+    handleAdd() {
+        this.setState({
+
+            created_at: new Date(),
+            updated_at: new Date()
         })
 
     }
-    handleChange(e){
+
+    handleChange(e) {
         this.setState({
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
+            created_at: new Date(),
+            updated_at: new Date()
         })
     }
-    render(){
-        return(<div>
+
+    render() {
+        return (<div>
+            <h3>Add New Market</h3>
+            <Link to={'/build/markets'}>
+                <button>
+                    X
+                </button>
+            </Link>
             <form onSubmit={this.handleAdd}>
-                <input type={"text"} name={"name"} placeholder={"Name of Market"} onChange={this.handleChange}/>
-                <input type={"text"} name={"thumbnail"} placeholder={"Thumbnail Image"} onChange={this.handleChange}/>
-                <input type={"text"} name={"street_address"} placeholder={"Street Address"} onChange={this.handleChange}/>
+                Name of Event:
+                <input type={"text"} name={"name"} onChange={this.handleChange}/>
+                <br/>
+                Thumbnail Image:
+                <input type={"text"} name={"thumbnail"}
+                       onChange={this.handleChange}/>
+                <img alt="markets thumbnail" src={this.state.thumbnail}/>
+                <br/>
+                Address:
+                <input type={"text"} name={"street_address"} onChange={this.handleChange}/>
+                <br/>
+                Zip Code:
+                <input type={"text"} name={"zipcode"} onChange={this.handleChange}/>
+                State:
+                <input type={"text"} name={"state"} onChange={this.handleChange}/>
+                <br/>
+                <hr/>
+                Hours
+                <br/>
+                Header:
+                <input type={"text"} name={'header'}
+                       onChange={this.handleChange}/>
+                <br/>
+                Body:
+                <input type={"text"} name={'body'}
+                       onChange={this.handleChange}/>
+                <br/>
 
-                <input type={"text"} name={"payment_methods"} placeholder={"payment_methods"} onChange={this.handleChange}/>
+                <button onClick={this.addMoreHours}>Add More Hours</button>
+                <hr/>
+                Contact Phone:
                 <input type={"tel"} name={"phone_number"} onChange={this.handleChange}/>
-                <input type={"text"} name={"state"} value={"AZ"} onChange={this.handleChange}/>
-                <input type={"text"} name={"website"} placeholder={"Website URL"} onChange={this.handleChange}/>
-                <input type={"text"} name={"zipcode"} placeholder={"zipcode"} onChange={this.handleChange}/>
-                <button type={"submit"}>Add Market</button>
+                <br/>
+                Website Url:
+                <input type={"text"} name={"website"} onChange={this.handleChange}/>
+                <br/>
+                Payment Methods:
+                <input type={"text"} name={"payment_methods"} onChange={this.handleChange}/>
+                <br/>
+                <button type={"submit"}>Add</button>
             </form>
         </div>)
     }

@@ -36,7 +36,7 @@
     background-color: #F8F8F8;
     display:grid;
     grid-template-columns: 200px 4fr 4fr;
-    grid-template-rows: 35px 50px 200%;
+    /*grid-template-rows: 35px 50px 200%;*/
 }
 
 .build-container-inner{
@@ -65,6 +65,11 @@
 .dashboard-logo{
     width: 30px;
     padding-right: 10px;
+}
+
+.editMarket-container {
+    z-index: 2;
+    background: white;
 }
 
 .features-container{

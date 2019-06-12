@@ -1,7 +1,8 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
 class EditMarket extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             city: '',
@@ -24,7 +25,8 @@ class EditMarket extends React.Component {
         this.handleDelete = this.handleDelete.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
-    fetchMarket(marketId = this.props.match.params.id){
+
+    fetchMarket(marketId = this.props.match.params.id) {
         fetch(`http://localhost:9000/markets/${marketId}`)
             .then(res => res.json())
             .then(markets => {
@@ -33,7 +35,7 @@ class EditMarket extends React.Component {
                 this.setState({
                     city: market.city,
                     created_at: market.created_at,
-                    hours: [],
+                    hours: market.hours,
                     name: market.name,
                     payment_methods: market.payment_methods,
                     phone_number: market.phone_number,
@@ -48,59 +50,107 @@ class EditMarket extends React.Component {
                 })
             })
     }
-    handleDelete(){
+
+    handleDelete() {
         //run some sort of alert asking for confirmation
         //send delete request to server
     }
-    handleChange(e){
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-        console.log(this.state, 'state')
+
+    handleChange(e, index) {
+        e.persist()
+        index !== undefined ?
+            this.setState(prevState => {
+                const hours = [...prevState.hours];
+                hours[index] = {...hours[index], [e.target.name]: e.target.value}
+                return {hours}
+            })
+            :
+            this.setState({
+                [e.target.name]: e.target.value,
+                updated_at: new Date()
+            })
     }
-    handleEdit(){
+
+    handleEdit() {
         //build out update functionality for server --patch or post?
         fetch('http://localhost:9000/markets/patch')
     }
-    componentDidMount(){
+
+    componentDidMount() {
         this.fetchMarket()
     }
+
     componentDidUpdate(prevProps) {
         const currentMarketId = this.props.match.params.id;
         const prevMarketId = prevProps.match.params.id
-        if(currentMarketId !== prevMarketId){
+        if (currentMarketId !== prevMarketId) {
             this.fetchMarket(currentMarketId)
         }
     }
-    render(){
-        return(<div className={"editMarket-container"}>
-            {/*{this.state.length ? () : null }*/}
+
+    render() {
+        return (<div className={"editMarket-container"}>
+            <h3>Edit Market</h3>
+            <Link to={'/build/markets'}>
+                <button>
+                    X
+                </button>
+            </Link>
             <form onSubmit={this.handleEdit}>
                 Name of Event:
                 <input type={"text"} name={"name"} defaultValue={this.state.name} onChange={this.handleChange}/>
+                <br/>
                 Thumbnail Image:
-                <input type={"text"} name={"thumbnail"} defaultValue={this.state.thumbnail} onChange={this.handleChange}/>
-                <img alt="markets-thumbnail" src={this.state.thumbnail}/>
+                <input type={"text"} name={"thumbnail"} defaultValue={this.state.thumbnail}
+                       onChange={this.handleChange}/>
+                <img alt="markets thumbnail" src={this.state.thumbnail}/>
+                <br/>
                 Address:
                 <input type={"text"} name={"street_address"} defaultValue={this.state.street_address}/>
-                Created at:
-                <div className={"markets-created-at"}>{this.state.created_at}</div>
-                Last Updated:
-                <div className={"markets-updated-at"}>{this.state.updated_at}</div>
-                {/*{this.state.hours.map(hour => {*/}
-                {/*    {<input type={"text"} name="hours" value={hour}/>}*/}
-                {/*})}*/}
-                Payment Methods:
-                <input type={"text"} name={"payment_methods"} defaultValue={this.state.payment_methods}/>
-                Contact Phone:
-                <input type={"tel"} name={"phone_number"} defaultValue={this.state.phone_number}/>
-                State:
-                <input type={"text"} name={"state"} defaultValue={this.state.state}/>
-                Website Url:
-                <input type={"text"} name={"website"} defaultValue={this.state.website_url}/>
+                <br/>
                 Zip Code:
                 <input type={"text"} name={"zipcode"} defaultValue={this.state.zipcode}/>
+                State:
+                <input type={"text"} name={"state"} defaultValue={this.state.state}/>
+                <br/>
+                <hr/>
+                {this.state.hours.length ? (<div>
+                    Hours
+                    <br/>
+                    {this.state.hours.map((hour, id) => {
+                        return (<span key={id}>
+                            Header:
+                            <input type={"text"} name={'header'} defaultValue={hour.header}
+                                   onChange={(e) => {
+                                       this.handleChange(e, id)
+                                   }}/>
+                                   <br/>
+                            Body:
+                            <input type={"text"} name={'body'} defaultValue={hour.body}
+                                   onChange={(e) => {
+                                       this.handleChange(e, id)
+                                   }}/>
+                                   <br/>
+                        </span>)
+                    })}
+                </div>) : null}
+                <hr/>
+                Contact Phone:
+                <input type={"tel"} name={"phone_number"} defaultValue={this.state.phone_number}/>
+                <br/>
+                Website Url:
+                <input type={"text"} name={"website"} defaultValue={this.state.website_url}/>
+                <br/>
+                Payment Methods:
+                <input type={"text"} name={"payment_methods"} defaultValue={this.state.payment_methods}/>
+                <br/>
+                Created at:
+                <div className={"markets-created-at"}>{this.state.created_at}</div>
+                <br/>
 
+                Last Updated:
+                <div className={"markets-updated-at"}>{this.state.updated_at}</div>
+                <br/>
                 <button type={"delete"} onClick={this.handleDelete}>Delete</button>
                 <button type={"submit"}>Update</button>
             </form>
@@ -110,19 +160,3 @@ class EditMarket extends React.Component {
 
 export default EditMarket
 
-// {id: 1, name: "Avondale Care1st Resource Center Farmers Market", thumbnail: "../../assets/thumbnails/markets/markets-thumb-placeholder-01.png", street_address: "16838 E Ave of the Fountains", city: "Fountain Hills", …}
-// city: "Fountain Hills"
-// created_at: "2019-06-04T04:08:07.607Z"
-// hours: (2) [{…}, {…}]
-// id: 1
-// name: "Avondale Care1st Resource Center Farmers Market"
-// payment_methods: "Cash, Check, Visa"
-// phone_number: "555-555-5555"
-// rating: "4.2 stars"
-// reviews: "37 reviews"
-// state: "AZ"
-// street_address: "16838 E Ave of the Fountains"
-// thumbnail: "../../assets/thumbnails/markets/markets-thumb-placeholder-01.png"
-// updated_at: "2019-06-04T04:08:07.607Z"
-// website_url: "https://placeholder.com/"
-// zipcode: "85268"

@@ -4,32 +4,48 @@ import EditMarket from './EditMarket'
 import AddMarket from './AddMarket'
 import featureList from "../utils/featureList";
 import {Link} from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
 class Markets extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
-            markets:[],
-            editId: null
+            markets: [],
         }
-        this.editMarket = this.editMarket.bind(this)
+        this.handlePageClick = this.handlePageClick.bind(this)
+    }
+    handlePageClick(e) {
+        let pageClicked = e.selected;
+        // let wordsUsedForSearch = this.state.searchData;
+        // this.getSearchResults(wordsUsedForSearch, pageClicked);
     }
 
-    editMarket(e){
-        this.setState({
-            editId: e.target.id
-        })
-    }
-    componentDidMount(){
+    componentDidMount() {
         fetch('http://localhost:9000/markets')
             .then(res => res.json())
             .then(markets => this.setState({markets}))
     }
 
-    render(){
+    render() {
         return (<div className={"markets-container"}>
-            <CurrentMarkets markets={this.state.markets} editMarket={this.editMarket} />
-        </div>
+                <ReactPaginate
+                    previousLabel={"previous"}
+                    nextLabel={"next"}
+                    pageCount={Math.ceil(this.state.markets.length / 10)}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={5}
+                    // onPageChange={this.handlePageClick}
+                    containerClassName={"pagination"}
+                    subContainerClassName={"pages pagination"}
+                    activeClassName={"active"}
+                />
+                <CurrentMarkets markets={this.state.markets}/>
+                <Link to={'/build/markets/add'}>
+                    <button>
+                        Add New Market
+                    </button>
+                </Link>
+            </div>
         )
     }
 
