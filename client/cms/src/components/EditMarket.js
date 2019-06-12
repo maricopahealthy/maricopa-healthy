@@ -20,10 +20,17 @@ class EditMarket extends React.Component {
             website_url: '',
             zipcode: ''
         }
+        this.addMoreHours = this.addMoreHours.bind(this)
         this.fetchMarket = this.fetchMarket.bind(this)
         this.handleEdit = this.handleEdit.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
         this.handleChange = this.handleChange.bind(this)
+    }
+    addMoreHours(e){
+        e.preventDefault()
+        this.setState((prevState) => ({
+            hours: [...prevState.hours, {header:"", body:""}],
+        }));
     }
 
     fetchMarket(marketId = this.props.match.params.id) {
@@ -133,6 +140,7 @@ class EditMarket extends React.Component {
                                    <br/>
                         </span>)
                     })}
+                    <button onClick={this.addMoreHours}>+</button>
                 </div>) : null}
                 <hr/>
                 Contact Phone:

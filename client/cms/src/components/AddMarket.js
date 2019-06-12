@@ -7,13 +7,13 @@ class AddMarket extends React.Component {
         this.state = {
             city: '',
             created_at: '',
-            hours: [],
+            hours: [{header: '', body:''}],
             name: '',
             payment_methods: '',
             phone_number: '',
             rating: '',
             reviews: '',
-            state: '',
+            state: 'AZ',
             street_address: '',
             thumbnail: '',
             updated_at: '',
@@ -24,8 +24,11 @@ class AddMarket extends React.Component {
         this.handleAdd = this.handleAdd.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
-    addMoreHours(){
-
+    addMoreHours(e){
+        e.preventDefault()
+        this.setState((prevState) => ({
+            hours: [...prevState.hours, {header:"", body:""}],
+        }));
     }
 
     handleAdd() {
@@ -73,16 +76,19 @@ class AddMarket extends React.Component {
                 <hr/>
                 Hours
                 <br/>
-                Header:
-                <input type={"text"} name={'header'}
-                       onChange={this.handleChange}/>
-                <br/>
-                Body:
-                <input type={"text"} name={'body'}
-                       onChange={this.handleChange}/>
-                <br/>
-
-                <button onClick={this.addMoreHours}>Add More Hours</button>
+                {this.state.hours.map((hour, idx)=> {
+                    return(<div key={idx}>
+                        Header:
+                        <input type={"text"} name={`header[${idx}]`}
+                               onChange={this.handleChange}/>
+                        <br/>
+                        Body:
+                        <input type={"text"} name={`body[${idx}]`}
+                               onChange={this.handleChange}/>
+                        <br/>
+                </div>)
+                })}
+                <button onClick={this.addMoreHours}>+</button>
                 <hr/>
                 Contact Phone:
                 <input type={"tel"} name={"phone_number"} onChange={this.handleChange}/>
