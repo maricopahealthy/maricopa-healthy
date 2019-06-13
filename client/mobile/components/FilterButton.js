@@ -1,11 +1,25 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { Text, Button } from "native-base";
+import { connect } from 'react-redux'
+import {resetFilter} from "../actions/filterActions";
 
-export default class FilterButton extends React.Component {
+class FilterButton extends React.Component {
   state = {
     selected: false
   };
+
+  static getDerivedStateFromProps(props, state) {
+     if(props.isResetting) {
+       return {
+         selected: false
+       }
+     } else {
+       return {
+         selected: state.selected
+       }
+     }
+   }
 
   render() {
     const active = this.state.selected;
@@ -19,10 +33,13 @@ export default class FilterButton extends React.Component {
             : { backgroundColor: "#E5E5EA", ...styles.button }
         }
         key={item.id}
-        onPress={() =>
-          this.setState(prevState => {
-            return { selected: !prevState.selected };
-          })
+        onPress={() => {
+            this.props.resetOff();
+            this.setState(prevState => {
+              return {selected: !prevState.selected};
+            })
+
+          }
         }
       >
         <Text style={{ color: "black" }}>{item.text}</Text>
@@ -30,6 +47,24 @@ export default class FilterButton extends React.Component {
     );
   }
 }
+
+const mapStateToProps = ({filter}) => {
+  return {
+    isResetting: filter.isResetting
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    resetOff: () => {
+      dispatch(
+        resetFilter(false)
+      )
+    }
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FilterButton)
 
 const styles = StyleSheet.create({
   button: {
