@@ -11,7 +11,7 @@ import {resetFilter} from "../../actions/filterActions";
  *
  * @returns - a functional component wrapped by Higher-order component: withNavigation();
  */
-const NavigationalHeaderFilter = ({ navigation, resetOn }) => {
+const NavigationalHeaderFilter = ({ navigation, reset }) => {
   return (
       <Header style={styles.color}>
         <Left style={{ flexDirection: 'row' }}>
@@ -34,7 +34,7 @@ const NavigationalHeaderFilter = ({ navigation, resetOn }) => {
         <Right>
           <Button
               transparent
-              onPress={() => resetOn()}
+              onPress={() => reset()}
           >
             <Text style={{ color: "#fff" }}>Reset</Text>
           </Button>
@@ -45,9 +45,9 @@ const NavigationalHeaderFilter = ({ navigation, resetOn }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    resetOn: () => {
+    reset: () => {
       dispatch(
-        resetFilter(true)
+        resetFilter()
       )
     }
   }

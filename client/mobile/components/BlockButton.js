@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet } from 'react-native'
 import { Button, Text, Icon, Left, Body, Right } from "native-base";
 import { withNavigation } from 'react-navigation';
+import {applyFilter} from "../actions/filterActions";
+import {connect} from "react-redux";
 
 /**
  * BlockButton presents a single block sized button that spans across the entire
@@ -28,7 +30,7 @@ const BlockButton = (props) => {
       </Right>
     </Button>
   )
-}
+};
 
 export default withNavigation(BlockButton)
 
