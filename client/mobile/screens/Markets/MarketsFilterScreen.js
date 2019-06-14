@@ -5,19 +5,17 @@ import {
   Container,
   Content,
   ListItem,
-  Text,
-  Button,
-  Input,
-  Item
 } from "native-base";
 import { Rating } from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
 import FilterButtons from "../../components/FilterButtons";
-import {applyFilter, updateFilter} from "../../actions/filterActions";
+import {applyFilter} from "../../actions/filterActions";
 import {connect} from "react-redux";
 import ZipCodeInput from "../../components/ZipCodeInput";
 import BlockButton from "../../components/BlockButton";
+import { withNavigation } from 'react-navigation';
+
 
 // Used for sample data ========================
 const cityData = [
@@ -104,7 +102,7 @@ class MarketsFilterScreen extends React.Component {
             keyExtractor={extractKey}
           />
           <View>
-            <BlockButton title="Apply Filter" onPress={() => this.props.apply(true)}/>
+            <BlockButton title="Apply Filter" onPress={() => this.props.apply(true, this.props.navigation, "MarketsList")}/>
           </View>
         </Content>
       </Container>
@@ -157,15 +155,15 @@ const extractKey = ({ id }) => id;
 
 const mapDispatchToProps = dispatch => {
   return {
-    apply: (boolean) => {
+    apply: (boolean, navigation, route) => {
       dispatch(
-        applyFilter(boolean)
+        applyFilter(boolean, navigation, route)
       )
     }
   }
 };
 
-export default connect(null, mapDispatchToProps)(MarketsFilterScreen)
+export default connect(null, mapDispatchToProps)(withNavigation(MarketsFilterScreen))
 
 const styles = StyleSheet.create({
   container: {

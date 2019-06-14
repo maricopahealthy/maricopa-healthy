@@ -4,12 +4,9 @@ import {
   Container,
   Content,
   ListItem,
-  Text,
-  Button,
   Item,
   Input,
-  Icon,
-  Badge
+  Icon
 } from "native-base";
 import { Rating } from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";
@@ -23,7 +20,7 @@ import {connect} from "react-redux";
 
 const mealTypeData = [
   {
-    type: "mealType",
+    type: "meal_type",
     data: [
       { id: 0, text: "Breakfast" },
       { id: 1, text: "Lunch" },
@@ -62,7 +59,7 @@ class RecipesFilterScreen extends React.Component {
             keyExtractor={extractKey}
           />
           <View>
-            <BlockButton title="Apply Filter" onPress={() => this.props.apply(true)}/>
+            <BlockButton title="Apply Filter" onPress={() => this.props.apply(true, this.props.navigation, "RecipesList")}/>
           </View>
         </Content>
       </Container>
@@ -108,9 +105,9 @@ const sections = [
 
 const mapDispatchToProps = dispatch => {
   return {
-    apply: (boolean) => {
+    apply: (boolean, navigation, route) => {
       dispatch(
-        applyFilter(boolean)
+        applyFilter(boolean, navigation, route)
       )
     }
   }

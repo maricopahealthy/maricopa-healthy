@@ -14,11 +14,28 @@ class EventsListScreen extends React.Component {
   }
 
   render() {
+
+    const filteredEvents = () => {
+      const {events, filter} = this.props
+
+      if(filter.apply) {
+        let newEvents = events;
+        for (let type in filter) {
+          if(filter[type].length) {
+            newEvents = newEvents.filter(event => filter[type].includes(event[type]))
+          }
+        }
+        return newEvents;
+      } else {
+        return events
+      }
+    };
+
     return (
       <Container>
         <Content style={{flex: 1}}>
           <FlatList
-            data={this.props.events}
+            data={filteredEvents()}
             renderItem={({item, index}) => <EventListItem item={item} index={index}/>}
             keyExtractor={(item) => item.id.toString() }
           />
@@ -28,10 +45,11 @@ class EventsListScreen extends React.Component {
   }
 }
 
-function mapStateToProps({events}) {
+function mapStateToProps({events, filter}) {
   return {
     events: events.allIds.map(id => events.byId[id]),
-    isFetching: events.isFetching
+    isFetching: events.isFetching,
+    filter
   };
 }
 

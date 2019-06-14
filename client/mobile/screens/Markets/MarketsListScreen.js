@@ -20,10 +20,27 @@ class MarketsListScreen extends React.Component {
         <Spinner color='red'/>
       )
     }
+
+    const filteredMarkets = () => {
+      const {markets, filter} = this.props
+
+      if(filter.apply) {
+        let newMarkets = markets;
+        for (let type in filter) {
+          if(filter[type].length) {
+            newMarkets = newMarkets.filter(market => filter[type].includes(market[type]))
+          }
+        }
+        return newMarkets;
+      } else {
+        return markets
+      }
+    };
+
     return (
         <View>
           <FlatList
-              data={this.props.markets}
+              data={filteredMarkets()}
               renderItem={({item, index}) => <RecordTile item={item} index={index} type="Markets"/>}
               keyExtractor={(item) => item.id.toString() }
           />
@@ -34,10 +51,11 @@ class MarketsListScreen extends React.Component {
 
 // map connect
 
-const mapStateToProps = ({markets}) => {
+const mapStateToProps = ({markets, filter}) => {
   return {
     markets: markets.allIds.map(id => ({ key: id, ...markets.byId[id] })),
-    isFetching: markets.isFetching
+    isFetching: markets.isFetching,
+    filter
   }
 };
 

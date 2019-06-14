@@ -1,7 +1,7 @@
 // todo: ParksFilterScreen
 import React from 'react';
 import { SectionList, View } from 'react-native';
-import { Container, Content, ListItem, Text, Button, Input, Item } from 'native-base';
+import { Container, Content, ListItem} from 'native-base';
 import { Rating } from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
@@ -80,7 +80,7 @@ class ParksFilterScreen extends React.Component {
             keyExtractor={extractKey}
           />
           <View>
-            <BlockButton title="Apply Filter" onPress={() => this.props.apply(true)}/>
+            <BlockButton title="Apply Filter" onPress={() => this.props.apply(true, this.props.navigation, "ParksList")}/>
           </View>
         </Content>
       </Container>
@@ -129,9 +129,9 @@ const sections = [
 
 const mapDispatchToProps = dispatch => {
   return {
-    apply: (boolean) => {
+    apply: (boolean, navigation, route) => {
       dispatch(
-        applyFilter(boolean)
+        applyFilter(boolean, navigation, route)
       )
     }
   }

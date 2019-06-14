@@ -3,15 +3,10 @@ import {View, SectionList, StyleSheet} from "react-native";
 import {
   Container,
   Content,
-  ListItem,
   Text,
-  Button,
   Item,
   Input,
-  Icon,
-  Badge
 } from "native-base";
-import {Rating} from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
 import FilterButtons from "../../components/FilterButtons";
@@ -113,7 +108,7 @@ class EventsFilterScreen extends React.Component {
             keyExtractor={extractKey}
           />
           <View>
-            <BlockButton title="Apply Filter" onPress={() => this.props.apply(true)}/>
+            <BlockButton title="Apply Filter" onPress={() => this.props.apply(true, this.props.navigation, "EventsList")}/>
           </View>
         </Content>
       </Container>
@@ -182,9 +177,9 @@ const sections = [
 
 const mapDispatchToProps = dispatch => {
   return {
-    apply: (boolean) => {
+    apply: (boolean, navigation, route) => {
       dispatch(
-        applyFilter(boolean)
+        applyFilter(boolean, navigation, route)
       )
     }
   }

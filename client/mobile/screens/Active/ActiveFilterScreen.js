@@ -3,11 +3,7 @@ import { SectionList, View, StyleSheet } from "react-native";
 import {
   Container,
   Content,
-  ListItem,
-  Text,
-  Button,
-  Input,
-  Item
+  ListItem
 } from "native-base";
 import { Rating } from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";
@@ -72,7 +68,7 @@ class ActiveFilterScreen extends React.Component {
             keyExtractor={extractKey}
           />
           <View>
-            <BlockButton title="Apply Filter" onPress={() => this.props.apply(true)}/>
+            <BlockButton title="Apply Filter" onPress={() => this.props.apply(true, this.props.navigation, "ActiveList")}/>
           </View>
         </Content>
       </Container>
@@ -117,9 +113,9 @@ const sections = [
 
 const mapDispatchToProps = dispatch => {
   return {
-    apply: (boolean) => {
+    apply: (boolean, navigation, route) => {
       dispatch(
-        applyFilter(boolean)
+        applyFilter(boolean, navigation, route)
       )
     }
   }

@@ -35,7 +35,8 @@ export const updateFilter = (filter) => {
   }
 };
 
-export const applyFilter = (boolean) => {
+export const applyFilter = (boolean, navigation, route) => {
+  navigation.navigate(route)
   return dispatch => {
     dispatch(
       apply(boolean)

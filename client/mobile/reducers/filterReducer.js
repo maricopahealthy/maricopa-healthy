@@ -7,11 +7,11 @@ const initState = {
   payment: [],
   sortBy: [],
   zipCode: "",
-  rating: null,
+  rating: [],
   age: [],
   cost: [],
   features: [],
-  mealType: [],
+  meal_type: [],
   apply: false
 };
 
