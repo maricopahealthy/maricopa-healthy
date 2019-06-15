@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet} from 'react-native';
 import { Container, Content, Button, Text, Icon, Left, Body, Right } from "native-base";
 import { withNavigation } from 'react-navigation';
+import BlockButton from "../../components/BlockButton";
 
 
 /**
@@ -20,15 +21,11 @@ class FavoritesScreen extends React.Component {
           <View style={{margin: 10}}>
             <Text style={{fontSize: 16}}>To save favorites, you need to create an account.</Text>
           </View>
-          <Button large block style={styles.button} iconRight onPress={() => this.props.navigation.navigate("SignUp")} >
-            <Left style={{flex: 1}}></Left>
-            <Body style={{flex: 4}}>
-              <Text style={{color: "white", fontSize: 24}}>Sign Up</Text>
-            </Body>
-            <Right style={{flex: 1, marginRight: 10}}>
-              <Icon style={{color: "white"}} name="lock"/>
-            </Right>
-          </Button>
+          <BlockButton
+            title="Sign Up"
+            icon="ios-lock"
+            onPress={() => this.props.navigation.navigate("SignUp")}
+          />
         </Content>
       </Container>
     )

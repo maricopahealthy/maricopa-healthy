@@ -23,7 +23,7 @@ class ParksListScreen extends React.Component {
     }
 
     const filteredParks = () => {
-      const {parks, filter} = this.props
+      const {parks, filter} = this.props;
 
       if(filter.apply) {
         let newParks = parks;

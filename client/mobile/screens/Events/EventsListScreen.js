@@ -16,7 +16,7 @@ class EventsListScreen extends React.Component {
   render() {
 
     const filteredEvents = () => {
-      const {events, filter} = this.props
+      const {events, filter} = this.props;
 
       if(filter.apply) {
         let newEvents = events;
