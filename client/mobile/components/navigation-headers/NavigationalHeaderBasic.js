@@ -12,8 +12,8 @@ import { Body, Button, Header, Icon, Left, Right, Text } from "native-base";
  */
 const NavigationalHeaderHomeScreen = ({ navigation, title }) => {
   return (
-    <Header style={styles.color}>
-      <Left style={{ flexDirection: 'row' }}>
+    <Header transparent style={styles.color}>
+      <Left style={{ flexDirection: 'row', flex: 1 }}>
         <Button
           transparent
           onPress={() => navigation.pop()}
@@ -27,10 +27,11 @@ const NavigationalHeaderHomeScreen = ({ navigation, title }) => {
           <Icon name="ios-home" style={{ color: "black" }} />
         </Button>
       </Left>
-      <Body>
-        <Text style={{ color: "black", fontSize: 25, fontWeight: "400" }}>{title}</Text>
+      <Body style={{flex: 6}}>
+        <Text style={styles.title}>{title}</Text>
       </Body>
-      <Right>
+      <Right style={{flex: 1}}>
+        <Text> </Text>
       </Right>
     </Header>
   )
@@ -41,5 +42,10 @@ export default withNavigation(NavigationalHeaderHomeScreen);
 const styles = StyleSheet.create({
   color: {
     backgroundColor: "#E5E5EA"
+  },
+  title: {
+    color: "black",
+    fontSize: 24,
+    fontWeight: "600"
   }
 });

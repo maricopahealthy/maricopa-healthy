@@ -1,4 +1,3 @@
-// todo: OnboardingScreen
 import React from "react";
 import { View, StyleSheet, ScrollView, Dimensions, Image } from "react-native";
 import {
@@ -41,47 +40,41 @@ class OnboardingFiltersScreen extends React.Component {
         </View>
         {/* Page description */}
         <View style={{ flex: 2, justifyContent: "center", alignItems: "center" }}>
-          <Icon name="options" style={{ color: '#fff', fontSize: 180 }} />
-          <Text style={{ color: '#fff', fontSize: 25, fontWeight: 'bold' }}>Filters</Text>
-          <Text style={{ color: '#fff', fontSize: 25, fontWeight: '300', textAlign: 'center' }}>Sort content to find just what you want.</Text>
+          <Icon name="options" style={{ color: '#fff', fontSize: 110 }} />
+          <Text style={{ color: '#fff', fontSize: 32, fontWeight: 'bold' }}>Filters</Text>
+          <Text style={{ color: '#fff', fontSize: 24, fontWeight: '300', textAlign: 'center', width: 300 }}>Sort content to find just what you want.</Text>
         </View>
+        {/* Carousel Indicators */}
+        <View style={{flex: 1}}></View>
         {/* Login + Signup Buttons */}
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-evenly"
-          }}
-        >
-          <Button
-            bordered
-            light
-            onPress={() => this.props.navigation.navigate("SignUp")}
-          >
-            <Text>Sign Up</Text>
-          </Button>
-          <Button
-            bordered
-            light
-            onPress={() => this.props.navigation.navigate("Login")}
-          >
-            <Text>Login</Text>
-          </Button>
-        </View>
-        {/* Explore App */}
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "center"
-          }}
-        >
-          <Text
-            style={{ color: '#fff' }}
-            onPress={() => this.props.navigation.navigate("App")}
-          >
-            Skip and explore the app.
-          </Text>
+        <View style={{flex: 1}}>
+          <View style={{flex: 1, flexDirection: "row", justifyContent: "space-evenly"}}>
+            <Button
+              bordered
+              light
+              style={{width: 150, justifyContent: "center"}}
+              onPress={() => this.props.navigation.navigate("SignUp")}
+            >
+              <Text>Sign Up</Text>
+            </Button>
+            <Button
+              bordered
+              light
+              style={{width: 150, justifyContent: "center"}}
+              onPress={() => this.props.navigation.navigate("Login")}
+            >
+              <Text>Login</Text>
+            </Button>
+          </View>
+          {/* Explore App */}
+          <View style={{flex: 1, flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
+            <Text
+              style={{color: '#fff', fontSize: 16}}
+              onPress={() => this.props.navigation.navigate("App")}
+            >
+              Skip and explore the app.
+            </Text>
+          </View>
         </View>
       </Content>
     );

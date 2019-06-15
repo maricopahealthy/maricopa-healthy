@@ -3,15 +3,6 @@ import { View, StyleSheet, FlatList } from "react-native";
 import {
   Container,
   Content,
-  Text,
-  Card,
-  CardItem,
-  ListItem,
-  Thumbnail,
-  Left,
-  Body,
-  Right,
-  Icon
 } from "native-base";
 import { connect } from "react-redux";
 import { fetchRecipes } from "../../actions/recipesActions";
@@ -26,12 +17,30 @@ class RecipesListScreen extends React.Component {
   }
 
   render() {
+
+    const filteredRecipes = () => {
+      const {recipes, filter} = this.props
+
+      if(filter.apply) {
+        let newRecipes = recipes;
+        for (let type in filter) {
+          if(filter[type].length) {
+            newRecipes = newRecipes.filter(recipe => filter[type].includes(recipe[type]))
+          }
+        }
+        return newRecipes;
+      } else {
+        return recipes
+      }
+    };
+
     return (
       <Container>
         <Content style={{ flex: 1 }}>
           <FlatList
-            data={this.props.recipes}
+            data={filteredRecipes()}
             renderItem={({ item, index }) => <RecipeListItem item={item} index={index} />}
+            keyExtractor={(item) => item.id.toString() }
           />
         </Content>
       </Container>
@@ -39,10 +48,11 @@ class RecipesListScreen extends React.Component {
   }
 }
 
-function mapStateToProps({ recipes }) {
+function mapStateToProps({ recipes, filter }) {
   return {
     recipes: recipes.allIds.map(id => recipes.byId[id]),
-    isFetching: recipes.isFetching
+    isFetching: recipes.isFetching,
+    filter
   };
 }
 

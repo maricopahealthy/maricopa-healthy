@@ -23,11 +23,12 @@ class SearchScreen extends React.Component {
       <Container>
         <View>
           {/* //todo Make search results dynamic */}
-          {/* //todo Make search results bring you to individual record */}
           {this.props.search.length > 3 ?
             <FlatList
             data={results}
-            renderItem={({ item, index }) => <RecordTile index={index} item={item} type="Markets" />}
+            renderItem={({ item, index }) => <RecordTile index={index} item={item} type="Markets"
+            keyExtractor={(item) => item.id.toString() }
+            />}
           /> : <Text>Search for results</Text>}
         </View>
       </Container>

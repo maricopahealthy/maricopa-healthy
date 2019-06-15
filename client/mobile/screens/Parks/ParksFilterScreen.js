@@ -1,15 +1,20 @@
 // todo: ParksFilterScreen
 import React from 'react';
 import { SectionList, View } from 'react-native';
-import { Container, Content, ListItem, Text, Button, Input, Item } from 'native-base';
+import { Container, Content, ListItem} from 'native-base';
 import { Rating } from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
 import FilterButtons from "../../components/FilterButtons";
+import ZipCodeInput from "../../components/ZipCodeInput";
+import BlockButton from "../../components/BlockButton";
+import {applyFilter} from "../../actions/filterActions";
+import {connect} from "react-redux";
 
 // Used for sample data ========================
 const cityData = [
   {
+    type: "city",
     data: [
       { id: 0, text: 'Anthem' },
       { id: 1, text: 'Avondale' },
@@ -26,6 +31,7 @@ const cityData = [
 
 const timeOfDay = [
   {
+    type: "timeOfDay",
     data: [
       { id: 0, text: 'Morning' },
       { id: 1, text: 'Afternoon' },
@@ -36,6 +42,7 @@ const timeOfDay = [
 
 const features = [
   {
+    type: "features",
     data: [
       { id: 0, text: 'ADA accessibility' },
       { id: 1, text: 'archery' },
@@ -48,6 +55,7 @@ const features = [
 
 const sortByData = [
   {
+    type: "sortBy",
     data: [
       { id: 0, text: 'Best Match' },
       { id: 1, text: 'Most Popular' },
@@ -60,7 +68,7 @@ const sortByData = [
 /**
  * Display to add, modify, and delete filter categories for Parks display results.
  */
-export default class ParksFilterScreen extends React.Component {
+class ParksFilterScreen extends React.Component {
 
   render() {
     return (
@@ -72,13 +80,7 @@ export default class ParksFilterScreen extends React.Component {
             keyExtractor={extractKey}
           />
           <View>
-            <Button
-              block
-              danger
-              onPress={() => { }}
-            >
-              <Text>Apply Filter</Text>
-            </Button>
+            <BlockButton title="Apply Filter" onPress={() => this.props.apply(true, this.props.navigation, "ParksList")}/>
           </View>
         </Content>
       </Container>
@@ -96,23 +98,21 @@ const extractKey = ({ id }) => id;
 // sections to display for Filter headers
 const sections = [
   Section('City', cityData, ({ item }) => {
-    const { data } = item;
-    return <FilterButtons data={data} />;
+    const { data, type } = item;
+    return <FilterButtons type={type} data={data} />;
   }),
   Section('Zip Code', [{ id: 0 }], ({ item }) => {
     return (
-      <Item regular>
-        <Input placeholder='Enter Zip Code' />
-      </Item>
+      <ZipCodeInput />
     )
   }),
   Section('Hours', timeOfDay, ({ item }) => {
-    const { data } = item;
-    return <FilterButtons data={data} />;
+    const { data, type } = item;
+    return <FilterButtons type={type} data={data} />;
   }),
   Section('Features', features, ({ item }) => {
-    const { data } = item;
-    return <FilterButtons data={data} />;
+    const { data, type } = item;
+    return <FilterButtons type={type} data={data} />;
   }),
   Section('Rating', [{ id: 0 }], ({ item }) => {
     return (
@@ -122,7 +122,19 @@ const sections = [
     )
   }),
   Section('Sort By', sortByData, ({ item }) => {
-    const { data } = item;
-    return <FilterButtons data={data} />;
+    const { data, type } = item;
+    return <FilterButtons type={type} data={data} />;
   }),
 ];
+
+const mapDispatchToProps = dispatch => {
+  return {
+    apply: (boolean, navigation, route) => {
+      dispatch(
+        applyFilter(boolean, navigation, route)
+      )
+    }
+  }
+};
+
+export default connect(null, mapDispatchToProps)(ParksFilterScreen)

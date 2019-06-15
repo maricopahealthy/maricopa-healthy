@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from "react-native";
 import { Container, Content, Button, Text, Form, Item, Input } from "native-base";
+import BlockButton from "../../components/BlockButton";
 
 export default class LoginScreen extends React.Component {
 
@@ -20,23 +21,21 @@ export default class LoginScreen extends React.Component {
               </Item>
             </Form>
             <View style={{ flex: 1 }}>
-              <Button
-                  block
-                  danger
-                  onPress={() => {this.props.navigation.navigate("App")}}
-              >
-                <Text>Login</Text>
-              </Button>
+              <BlockButton
+                title="Log In"
+                icon="lock"
+                onPress={() => this.props.navigation.navigate("App")}
+              />
             </View>
             <View style={{ flex: 1 }}>
               <Text>
                 <Text
-                    style={{ color: 'red' }}
-                    onPress={() => this.props.navigation.navigate("ResetPassword")}
+                    style={{ color: "#B52126" }}
+                    onPress={() => this.props.navigation.navigate("ForgotPassword")}
                 >Forgot your password?</Text>
                 Don't have a Maricopa Healthy account?
                 <Text
-                    style={{ color: 'red' }}
+                    style={{ color: "#B52126" }}
                     onPress={() => this.props.navigation.navigate("SignUp")}
                 >Create an account.</Text>
               </Text>

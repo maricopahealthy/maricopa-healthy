@@ -20,6 +20,7 @@ class ResourcesListScreen extends React.Component {
           <FlatList
             data={this.props.resources}
             renderItem={({item, index}) => <ResourceListItem item={item} index={index}/>}
+            keyExtractor={(item) => item.id.toString() }
           />
         </Content>
       </Container>

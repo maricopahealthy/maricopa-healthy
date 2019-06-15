@@ -2,6 +2,8 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import { withNavigation } from 'react-navigation';
 import {Body, Button, Header, Icon, Left, Right, Text} from "native-base";
+import {connect} from "react-redux"
+import {resetFilter} from "../../actions/filterActions";
 
 /**
  * NavigationalHeader renders the navigationOptions header component shared across the ... screen (ie - ...) of all App features.
@@ -9,7 +11,7 @@ import {Body, Button, Header, Icon, Left, Right, Text} from "native-base";
  *
  * @returns - a functional component wrapped by Higher-order component: withNavigation();
  */
-const NavigationalHeaderFilter = ({ navigation }) => {
+const NavigationalHeaderFilter = ({ navigation, reset }) => {
   return (
       <Header style={styles.color}>
         <Left style={{ flexDirection: 'row' }}>
@@ -32,8 +34,7 @@ const NavigationalHeaderFilter = ({ navigation }) => {
         <Right>
           <Button
               transparent
-              // todo: implement action for Reset button
-              onPress={() => {}}
+              onPress={() => reset()}
           >
             <Text style={{ color: "#fff" }}>Reset</Text>
           </Button>
@@ -42,7 +43,17 @@ const NavigationalHeaderFilter = ({ navigation }) => {
   )
 };
 
-export default withNavigation(NavigationalHeaderFilter);
+const mapDispatchToProps = dispatch => {
+  return {
+    reset: () => {
+      dispatch(
+        resetFilter()
+      )
+    }
+  }
+};
+
+export default connect(null, mapDispatchToProps)(withNavigation(NavigationalHeaderFilter));
 
 const styles = StyleSheet.create({
   color: {

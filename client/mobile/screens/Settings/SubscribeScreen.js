@@ -2,8 +2,9 @@
 import React from 'react';
 import {View, StyleSheet, SectionList} from 'react-native';
 import Section from "../../utils/SectionsUtility";
-import {Container, Content, Icon, Button, Text} from "native-base";
+import {Container, Content, Icon, Button, Text, Left, Body, Right} from "native-base";
 import SectionHeader from "../../components/SectionHeader";
+import {withNavigation} from "react-navigation";
 
 const weeklyRecipe = [
   {
@@ -25,7 +26,7 @@ const extractKey = ({ id }) => id;
 /**
  * Primary Screen for managing User's subscriptions.
  */
-export default class SubscribeScreen extends React.Component {
+class SubscribeScreen extends React.Component {
 
   render() {
     return (
@@ -40,25 +41,33 @@ export default class SubscribeScreen extends React.Component {
             renderSectionHeader={SectionHeader}
             keyExtractor={extractKey}
           />
-          <View style={styles.container}>
-            <Button style={styles.button} full iconRight>
-              <Text>Subscribe</Text>
-              <Icon name={"ios-lock"}/>
-            </Button>
-          </View>
+          <Button
+            style={styles.button}
+            large
+            block
+            iconRight
+            onPress={() => this.props.navigation.navigate("SubscribeRecipes")}
+          >
+            <Left style={{flex: 1}}></Left>
+            <Body style={{flex: 4}}>
+              <Text style={{color: "white", fontSize: 24}}>Subscribe</Text>
+            </Body>
+            <Right style={{flex: 1, marginRight: 10}}>
+              <Icon style={{color: "white"}} name={"ios-lock"}/>
+            </Right>
+          </Button>
         </Content>
       </Container>
     );
   }
 }
 
+export default withNavigation(SubscribeScreen);
+
 const styles = StyleSheet.create({
-  container: {
-    alignSelf: "center"
-  },
   button : {
-    width: "50%",
     backgroundColor: "#B52126",
-    textAlign: "center"
+    margin: 15,
+    paddingRight: 10
   }
 });

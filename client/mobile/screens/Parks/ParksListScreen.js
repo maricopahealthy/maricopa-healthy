@@ -21,24 +21,43 @@ class ParksListScreen extends React.Component {
         <Spinner color='red' />
       )
     }
+
+    const filteredParks = () => {
+      const {parks, filter} = this.props
+
+      if(filter.apply) {
+        let newParks = parks;
+        for (let type in filter) {
+          if(filter[type].length) {
+            newParks = newParks.filter(park => filter[type].includes(park[type]))
+          }
+        }
+        return newParks;
+      } else {
+        return parks
+      }
+    };
+
     return (
       <View>
         <FlatList
-          data={this.props.parks}
+          data={filteredParks()}
           renderItem={({ item, index }) => <RecordTile item={item} index={index} type="Parks" />}
+          keyExtractor={(item) => item.id.toString() }
         />
       </View>
     )
   }
-};
+}
 
 
-const mapStateToProps = ({ parks }) => {
+const mapStateToProps = ({ parks, filter }) => {
   return {
     parks: parks.allIds.map(id => ({ key: id, ...parks.byId[id] })),
-    isFetching: parks.isFetching
+    isFetching: parks.isFetching,
+    filter
   }
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -48,7 +67,7 @@ const mapDispatchToProps = dispatch => {
       )
     }
   }
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ParksListScreen);
 
