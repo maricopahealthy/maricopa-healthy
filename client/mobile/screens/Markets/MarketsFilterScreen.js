@@ -5,19 +5,22 @@ import {
   Container,
   Content,
   ListItem,
-  Text,
-  Button,
-  Input,
-  Item
 } from "native-base";
 import { Rating } from "react-native-ratings";
 import Section from "../../utils/SectionsUtility";
 import SectionHeader from "../../components/SectionHeader";
 import FilterButtons from "../../components/FilterButtons";
+import {applyFilter} from "../../actions/filterActions";
+import {connect} from "react-redux";
+import ZipCodeInput from "../../components/ZipCodeInput";
+import BlockButton from "../../components/BlockButton";
+import { withNavigation } from 'react-navigation';
+
 
 // Used for sample data ========================
 const cityData = [
   {
+    type: "city",
     data: [
       { id: 0, text: "Anthem" },
       { id: 1, text: "Avondale" },
@@ -33,6 +36,7 @@ const cityData = [
 
 const dayOfWeek = [
   {
+    type: "day",
     data: [
       { id: 0, text: "Sunday" },
       { id: 1, text: "Monday" },
@@ -47,6 +51,7 @@ const dayOfWeek = [
 
 const timeOfDay = [
   {
+    type: "timeOfDay",
     data: [
       { id: 0, text: "Morning" },
       { id: 1, text: "Midday" },
@@ -58,6 +63,7 @@ const timeOfDay = [
 
 const paymentData = [
   {
+    type: "payment",
     data: [
       { id: 0, text: "Cash" },
       { id: 1, text: "Check" },
@@ -71,6 +77,7 @@ const paymentData = [
 
 const sortByData = [
   {
+    type: "sortBy",
     data: [
       { id: 0, text: "Best Match" },
       { id: 1, text: "Most Popular" },
@@ -83,7 +90,8 @@ const sortByData = [
 /**
  *  Display to add, modify, and delete filter categories for Markets display results.
  */
-export default class MarketsFilterScreen extends React.Component {
+class MarketsFilterScreen extends React.Component {
+
   render() {
     return (
       <Container>
@@ -94,15 +102,49 @@ export default class MarketsFilterScreen extends React.Component {
             keyExtractor={extractKey}
           />
           <View>
-            <Button block danger onPress={() => {}}>
-              <Text>Apply Filter</Text>
-            </Button>
+            <BlockButton title="Apply Filter" onPress={() => this.props.apply(true, this.props.navigation, "MarketsList")}/>
           </View>
         </Content>
       </Container>
     );
   }
 }
+
+const // sections to display for Filter headers
+  sections = [
+    Section("City", cityData, ({ item }) => {
+      const { data, type } = item;
+      return <FilterButtons type={type} data={data} />;
+    }),
+    Section("Zip Code", [{ id: 0 }], ({ item }) => {
+      return (
+        <ZipCodeInput />
+      );
+    }),
+    Section("Day of Week", dayOfWeek, ({ item }) => {
+      const { data, type } = item;
+      return <FilterButtons type={type} data={data} />;
+    }),
+    Section("Time of Day", timeOfDay, ({ item }) => {
+      const { data, type } = item;
+      return <FilterButtons type={type} data={data} />;
+    }),
+    Section("Payment Options", paymentData, ({ item }) => {
+      const { data, type } = item;
+      return <FilterButtons type={type} data={data} />;
+    }),
+    Section("Rating", [{ id: 0 }], ({ item }) => {
+      return (
+        <ListItem>
+          <Rating readonly />
+        </ListItem>
+      );
+    }),
+    Section("Sort By", sortByData, ({ item }) => {
+      const { data, type } = item;
+      return <FilterButtons type={type} data={data} />;
+    })
+  ];
 
 /**
  * returns a unique id property for generating the necessary 'key' of a react list.
@@ -111,43 +153,17 @@ export default class MarketsFilterScreen extends React.Component {
  */
 const extractKey = ({ id }) => id;
 
-// sections to display for Filter headers
-const sections = [
-  Section("City", cityData, ({ item }) => {
-    const { data } = item;
-    return <FilterButtons data={data} />;
-  }),
-  Section("Zip Code", [{ id: 0 }], ({ item }) => {
-    return (
-      <Item regular>
-        <Input placeholder="Enter Zip Code" />
-      </Item>
-    );
-  }),
-  Section("Day of Week", dayOfWeek, ({ item }) => {
-    const { data } = item;
-    return <FilterButtons data={data} />;
-  }),
-  Section("Time of Day", timeOfDay, ({ item }) => {
-    const { data } = item;
-    return <FilterButtons data={data} />;
-  }),
-  Section("Payment Options", paymentData, ({ item }) => {
-    const { data } = item;
-    return <FilterButtons data={data} />;
-  }),
-  Section("Rating", [{ id: 0 }], ({ item }) => {
-    return (
-      <ListItem>
-        <Rating readonly />
-      </ListItem>
-    );
-  }),
-  Section("Sort By", sortByData, ({ item }) => {
-    const { data } = item;
-    return <FilterButtons data={data} />;
-  })
-];
+const mapDispatchToProps = dispatch => {
+  return {
+    apply: (boolean, navigation, route) => {
+      dispatch(
+        applyFilter(boolean, navigation, route)
+      )
+    }
+  }
+};
+
+export default connect(null, mapDispatchToProps)(withNavigation(MarketsFilterScreen))
 
 const styles = StyleSheet.create({
   container: {

@@ -28,7 +28,7 @@ const BlockButton = (props) => {
       </Right>
     </Button>
   )
-}
+};
 
 export default withNavigation(BlockButton)
 

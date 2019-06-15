@@ -21,24 +21,42 @@ class ActiveListScreen extends React.Component {
         <Spinner color='red' />
       )
     }
+
+    const filteredActive = () => {
+      const {active, filter} = this.props
+
+      if(filter.apply) {
+        let newActive = active;
+        for (let type in filter) {
+          if(filter[type].length) {
+            newActive = newActive.filter(active => filter[type].includes(active[type]))
+          }
+        }
+        return newActive;
+      } else {
+        return active
+      }
+    };
+
     return (
       <View>
         <FlatList
-          data={this.props.active}
+          data={filteredActive()}
           renderItem={({ item, index }) => <ActiveListItem item={item} index={index} />}
           keyExtractor={(item) => item.id.toString() }
         />
       </View>
     )
   }
-};
+}
 
-const mapStateToProps = ({ active }) => {
+const mapStateToProps = ({ active, filter }) => {
   return {
     active: active.allIds.map(id => ({ key: id, ...active.byId[id] })),
-    isFetching: active.isFetching
+    isFetching: active.isFetching,
+    filter
   }
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -48,7 +66,7 @@ const mapDispatchToProps = dispatch => {
       )
     }
   }
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ActiveListScreen);
 
