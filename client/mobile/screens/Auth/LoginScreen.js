@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from "react-native";
-import { Container, Content, Button, Text, Form, Item, Input } from "native-base";
+import { Container, Content, Text, Form, Item, Input } from "native-base";
 import BlockButton from "../../components/BlockButton";
 
 export default class LoginScreen extends React.Component {
@@ -13,10 +13,10 @@ export default class LoginScreen extends React.Component {
               style={{ flex: 1 }}
           >
             <Form>
-              <Item regular>
+              <Item regular style={styles.formItem}>
                 <Input placeholder='Email Address' />
               </Item>
-              <Item regular>
+              <Item regular style={styles.formItem}>
                 <Input placeholder='Password (case sensitive)' />
               </Item>
             </Form>
@@ -52,4 +52,9 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     backgroundColor: '#fff',
   },
+  formItem: {
+    borderColor: "#8E8E93",
+    margin: 4,
+    borderRadius: 5
+  }
 });

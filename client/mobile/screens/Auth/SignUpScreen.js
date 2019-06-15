@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, FlatList } from "react-native";
-import {Container, Content, Button, Text, Item, Input, Form } from "native-base";
+import {Container, Content, Text, Item, Input, Form } from "native-base";
 import BlockButton from "../../components/BlockButton";
 
 export default class SignUpScreen extends React.Component {
@@ -22,25 +22,39 @@ export default class SignUpScreen extends React.Component {
               />
             </View>
             <Form>
-              <Item regular>
+              <Item regular style={styles.formItem}>
                 <Input placeholder='First Name'/>
               </Item>
-              <Item regular>
+              <Item regular style={styles.formItem}>
                 <Input placeholder='Email Address'/>
               </Item>
-              <Item regular>
+              <Item regular style={styles.formItem}>
                 <Input placeholder='Zip Code'/>
               </Item>
-              <Item regular>
+              <Item regular style={styles.formItem}>
                 <Input placeholder='Password'/>
               </Item>
-              <Item regular>
+              <Item regular style={styles.formItem}>
                 <Input placeholder='Promo Code (optional)'/>
               </Item>
             </Form>
+            <View style={{flex: 1}}>
+              <Text>
+                I have reviewed and agree to the
+                <Text
+                  style={{color: "#B52126"}}
+                  onPress={() => {}}
+                > Terms of Service </Text>
+                and
+                <Text
+                  style={{color: "#B52126"}}
+                  onPress={() => {}}
+                > Privacy Policy.</Text>
+              </Text>
+            </View>
             <View style={{ flex: 1 }}>
               <BlockButton
-                title="Sign Up"
+                title="Create Account"
                 icon="lock"
                 onPress={() => this.props.navigation.navigate("Login")}
               />
@@ -56,5 +70,10 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 15,
     backgroundColor: '#fff',
+  },
+  formItem: {
+    borderColor: "#8E8E93",
+    margin: 4,
+    borderRadius: 5
   }
 });
