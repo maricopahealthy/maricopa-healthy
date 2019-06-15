@@ -20,6 +20,12 @@ const NavigationalHeaderAuth = ({ navigation, title }) => {
         >
           <Icon name="ios-arrow-back" style={{ color: "black" }}/>
         </Button>
+        <Button
+          transparent
+          onPress={() => navigation.navigate("Home")}
+        >
+          <Icon name="ios-home" style={{ color: "black" }} />
+        </Button>
       </Left>
       <Body style={{flex: 6}}>
         <Text style={styles.title}>{title}</Text>

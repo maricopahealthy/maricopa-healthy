@@ -39,7 +39,7 @@ class OnboardingFavoritesScreen extends React.Component {
           <Image source={require("../../assets/logos/onboarding/onboarding-mh-logo-white.png")}/>
         </View>
         {/* Page description */}
-        <View style={{flex: 3, justifyContent: "center", alignItems: "center"}}>
+        <View style={{flex: 2, justifyContent: "center", alignItems: "center"}}>
           <Icon name="heart" style={{color: '#fff', fontSize: 110}}/>
           <Text style={{color: '#fff', fontSize: 32, fontWeight: 'bold'}}>Favorites</Text>
           <Text style={{color: '#fff', fontSize: 24, fontWeight: '300', textAlign: 'center', width: 300}}>Tap to add something to
