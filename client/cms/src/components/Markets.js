@@ -28,6 +28,11 @@ class Markets extends React.Component {
 
     render() {
         return (<div className={"markets-container"}>
+                <Link to={'/build/markets/add'}>
+                    <button>
+                        Add New Market
+                    </button>
+                </Link>
                 <ReactPaginate
                     previousLabel={"previous"}
                     nextLabel={"next"}
@@ -40,11 +45,6 @@ class Markets extends React.Component {
                     activeClassName={"active"}
                 />
                 <CurrentMarkets markets={this.state.markets}/>
-                <Link to={'/build/markets/add'}>
-                    <button>
-                        Add New Market
-                    </button>
-                </Link>
             </div>
         )
     }

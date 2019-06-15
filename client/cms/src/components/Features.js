@@ -1,22 +1,22 @@
-import React from 'react'
-import featureList from '../utils/featureList'
-import {BrowserRouter as Route, Link} from "react-router-dom";
-import Markets from './Markets.js'
+import React from 'react';
+import featureList from '../utils/featureList';
+import { BrowserRouter as Route, Link } from 'react-router-dom';
+import Markets from './Markets.js';
 
 const Features = () => {
-    return (<div>
-        <h6 className={"features-heading"}>FEATURES</h6>
-        <ul>
-            {featureList.map(({name, id}) => (
-                <li key={id}>
-                    <Link to={`/build/${id}`}>{name}</Link>
-                </li>
-            ))}
+	return (
+		<div>
+			<h6 className={'features-heading'}>FEATURES</h6>
+			<ul>
+				{featureList.map(({ name, id }) => (
+					<li key={id}>
+						<Link to={`/build/${id}`}>{name}</Link>
+					</li>
+				))}
+			</ul>
+			{/*<Route path={`/build/:id`} component={Markets}/>*/}
+		</div>
+	);
+};
 
-        </ul>
-        {/*<Route path={`/build/:id`} component={Markets}/>*/}
-
-    </div>)
-}
-
-export default Features
+export default Features;
