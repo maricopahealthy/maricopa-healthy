@@ -47,7 +47,6 @@ class AddEvent extends React.Component {
 	}
 
 	render() {
-		const event = this.state.events;
 		return (
 			<div className={'addEvent-container'}>
 				<h3>Add Event</h3>
