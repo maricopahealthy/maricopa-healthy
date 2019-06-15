@@ -91,10 +91,12 @@ class EventsRecordScreen extends React.Component {
             keyExtractor={extractKey}
           />
           {/* Button */}
-          <BlockButton
-            title="Learn More"
-            onPress={() => {}}
-          />
+          <View style={{flex: 1}}>
+            <BlockButton
+              title="Learn More"
+              onPress={() => {}}
+            />
+          </View>
           <View style={{flex: 1, padding: 16}}>
             <Text style={{fontSize: 12, width: 343}}>
               NOTE: Maricopa Healthy neither endorses nor sponsors the organization or activity being represented here. The distribution of this material is provided as a community service.
