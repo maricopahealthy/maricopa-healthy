@@ -13,7 +13,7 @@ const RecordTile = (props) => {
     <>
       <CardItem
         button
-        style={props.index % 2 === 0 ? { backgroundColor: "white", margin: 0 } : { backgroundColor: "#F6F6F6", margin: 0 }}
+        style={props.index % 2 === 0 ? styles.whiteCard : styles.greyCard}
         onPress={() => props.navigation.navigate(props.type, {id: props.item.id})}
       >
           <Thumbnail large source={props.type === "Markets" ? marketThumbnail : parkThumbnail} />
@@ -30,5 +30,16 @@ const RecordTile = (props) => {
 export default withNavigation(RecordTile);
 
 const styles = StyleSheet.create({
-
+  whiteCard: {
+    backgroundColor: "white",
+    margin: 0,
+    height: 88,
+    padding: 8
+  },
+  greyCard: {
+    backgroundColor: "#F6F6F6",
+    margin: 0,
+    height: 88,
+    padding: 8
+  }
 });

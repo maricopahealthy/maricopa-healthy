@@ -1,5 +1,5 @@
 import React from "react";
-import {FlatList, StyleSheet} from "react-native";
+import {FlatList, StyleSheet, View} from "react-native";
 import {Container, Content} from "native-base";
 import {connect} from "react-redux";
 import {fetchEvents} from "../../actions/eventsActions";
@@ -37,7 +37,7 @@ class EventsListScreen extends React.Component {
           <FlatList
             data={filteredEvents()}
             renderItem={({item, index}) => <EventListItem item={item} index={index}/>}
-            keyExtractor={(item) => item.id.toString() }
+            keyExtractor={(item) => item.id.toString()}
           />
         </Content>
       </Container>

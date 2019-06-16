@@ -1,14 +1,15 @@
 import React from 'react';
 import {Card, CardItem, Left, Body, Right, Icon, Text, Thumbnail} from 'native-base';
 import {withNavigation} from 'react-navigation';
+import {StyleSheet} from "react-native";
 
 const ResourceListItem = (props) => {
   const thumbnail = require("../assets/thumbnails/resources/resources-thumb-placeholder-01.png");
   return (
-    <Card transparent>
+    <Card transparent style={{marginTop: 0, marginBottom: 0}}>
       <CardItem
         button
-        style={props.index % 2 === 0 ? {backgroundColor: "white", margin: 0} : {backgroundColor: "#F6F6F6", margin: 0}}
+        style={props.index % 2 === 0 ? styles.whiteCard : styles.greyCard}
         onPress={() => props.navigation.navigate("ResourcesRecord", {id: props.item.id})}
       >
         <Thumbnail large source={thumbnail}/>
@@ -25,3 +26,18 @@ const ResourceListItem = (props) => {
 };
 
 export default withNavigation(ResourceListItem);
+
+const styles = StyleSheet.create({
+  whiteCard: {
+    backgroundColor: "white",
+    margin: 0,
+    height: 88,
+    padding: 8
+  },
+  greyCard: {
+    backgroundColor: "#F6F6F6",
+    margin: 0,
+    height: 88,
+    padding: 8
+  }
+});

@@ -76,7 +76,7 @@ class EventsRecordScreen extends React.Component {
                   </ListItem>
                 );
               }),
-              Section("Where", [event], ({item}) => {
+              Section("Location", [event], ({item}) => {
                 return (
                   <ListItem>
                     <Text>

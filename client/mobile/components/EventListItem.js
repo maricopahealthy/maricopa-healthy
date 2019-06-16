@@ -1,6 +1,6 @@
 import React from "react";
 import {View, StyleSheet} from "react-native";
-import {Card, CardItem, Left, Body, Right, Icon, Text} from "native-base";
+import {Card, CardItem, Body, Icon, Text} from "native-base";
 import {withNavigation} from "react-navigation";
 import moment from "moment";
 import EventDateBadgeComponent from "./EventDateBadgeComponent";
@@ -8,7 +8,7 @@ import EventDateBadgeComponent from "./EventDateBadgeComponent";
 const EventListItem = props => {
   const day = moment(props.item.start_date, "MM-DD-YYYY");
   return (
-    <Card transparent>
+    <Card transparent style={{marginTop: 0, marginBottom: 0}}>
       <CardItem
         button
         style={props.index % 2 === 0 ? styles.whiteCard : styles.greyCard}

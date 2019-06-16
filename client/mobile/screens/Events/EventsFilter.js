@@ -165,7 +165,7 @@ const sections = [
     const { data, type } = item;
     return <FilterButtons type={type} data={data} />;
   }),
-  Section("Ages", ageData, ({item}) => {
+  Section("Audience", ageData, ({item}) => {
     const { data, type } = item;
     return <FilterButtons type={type} data={data} />;
   }),

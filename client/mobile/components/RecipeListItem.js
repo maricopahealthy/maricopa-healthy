@@ -11,6 +11,7 @@ import {
   Thumbnail
 } from "native-base";
 import {withNavigation} from "react-navigation";
+import {StyleSheet} from "react-native";
 
 /**
  * RecipeListItem is a presentational component for the Recipes home screen list view. It renders a stylistically relevant Card for the Recipe Home screen.
@@ -18,10 +19,10 @@ import {withNavigation} from "react-navigation";
 const RecipeListItem = props => {
   const thumbnail = require("../assets/thumbnails/recipes/apple-pecan-bars.png");
   return (
-    <Card transparent>
+    <Card transparent style={{marginTop: 0, marginBottom: 0}}>
       <CardItem
         button
-        style={props.index % 2 === 0 ? {backgroundColor: "white", margin: 0} : {backgroundColor: "#F6F6F6", margin: 0}}
+        style={props.index % 2 === 0 ? styles.whiteCard : styles.greyCard}
         onPress={() =>
           props.navigation.navigate("RecipesRecord", {id: props.item.id})
         }
@@ -43,3 +44,18 @@ const RecipeListItem = props => {
 };
 
 export default withNavigation(RecipeListItem);
+
+const styles = StyleSheet.create({
+  whiteCard: {
+    backgroundColor: "white",
+    margin: 0,
+    height: 88,
+    padding: 8
+  },
+  greyCard: {
+    backgroundColor: "#F6F6F6",
+    margin: 0,
+    height: 88,
+    padding: 8
+  }
+});
