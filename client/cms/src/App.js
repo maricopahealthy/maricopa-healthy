@@ -16,6 +16,9 @@ import Design from './components/Design';
 import Active from './components/Active';
 import EditActivity from './components/EditActivity';
 import AddActivity from './components/AddActivity';
+import Produce from './components/Produce';
+import EditProduce from './components/EditProduce';
+import AddProduce from './components/AddProduce';
 
 import Manage from './components/Manage';
 import styles from './styles.css';
@@ -41,6 +44,9 @@ function App() {
 					<Route path="/build/active" component={Active} />
 					<Route path="/build/active/add" component={AddActivity} />
 					<Route path="/build/active/edit/:id" component={EditActivity} />
+					<Route path="/build/produce" component={Produce} />
+					<Route path="/build/produce/add" component={AddProduce} />
+					<Route path="/build/produce/edit/:id" component={EditProduce} />
 				</div>
 				<Route path="/analytics" component={Build} />
 				<Route path="/customers" component={Build} />

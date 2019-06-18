@@ -186,6 +186,16 @@ html {
 	font-weight: 100;
 }
 
+.pagination ul {
+	display: inline-block;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.pagination li {
+	display: inline-block;
+}
+
 .overview-container {
 	color: #868686;
 	font-size: 12px;

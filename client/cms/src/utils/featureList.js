@@ -20,8 +20,8 @@ const featureList = [
 		thumnail: null
 	},
 	{
-		name: 'Games',
-		id: 'games',
+		name: 'Produce',
+		id: 'produce',
 		thumnail: null
 	},
 	{
