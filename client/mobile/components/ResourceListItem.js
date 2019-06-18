@@ -12,14 +12,16 @@ const ResourceListItem = (props) => {
         style={props.index % 2 === 0 ? styles.whiteCard : styles.greyCard}
         onPress={() => props.navigation.navigate("ResourcesRecord", {id: props.item.id})}
       >
-        <Thumbnail large source={thumbnail}/>
+        <Thumbnail style={{width: 72, height: 72}} source={thumbnail}/>
         {/* Resource Description */}
-        <Body style={{justifyContent: "center", marginLeft: 15}}>
-          <Text>{props.item.name}</Text>
-          <Text note>{props.item.teaser}</Text>
+        <Body style={{justifyContent: "center", marginHorizontal: 15, paddingVertical: 4}}>
+          <Text style={styles.header}>
+            {(props.item.name.length > 25 ? `${props.item.name.substring(0, 25)}...` : props.item.name)}
+          </Text>
+          <Text style={styles.teaser}>{props.item.teaser}</Text>
         </Body>
         {/* Navigational Arrow */}
-        <Icon name="ios-arrow-forward"/>
+        <Icon style={styles.arrow} name="ios-arrow-forward"/>
       </CardItem>
     </Card>
   )
@@ -39,5 +41,18 @@ const styles = StyleSheet.create({
     margin: 0,
     height: 88,
     padding: 8
+  },
+  arrow: {
+    color: "#8E8E93",
+    width: 12
+  },
+  header: {
+    fontSize: 18,
+    fontFamily: "source-sans-pro-semi-bold"
+  },
+  teaser: {
+    fontSize: 16,
+    fontFamily: "source-sans-pro",
+    color: "#8E8E93"
   }
 });

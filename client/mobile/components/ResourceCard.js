@@ -52,6 +52,6 @@ const styles = StyleSheet.create({
     color: "#fff",
     backgroundColor: "#B52126",
     fontSize: 24,
-    fontWeight: "600"
+    fontFamily: "source-sans-pro-semi-bold"
   }
 });

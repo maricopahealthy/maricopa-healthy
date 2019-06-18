@@ -28,16 +28,16 @@ const RecipeListItem = props => {
         }
       >
         <Thumbnail
-          large
+          style={{width: 72, height: 72}}
           source={thumbnail}
         />
         <Body style={{justifyContent: "center", marginLeft: 15}}>
-          <Text>{props.item.name}</Text>
-          <Text note>
+          <Text style={styles.header}>{props.item.name}</Text>
+          <Text style={styles.teaser}>
             {props.item.stars} {props.item.reviews}
           </Text>
         </Body>
-        <Icon name="ios-arrow-forward"/>
+        <Icon style={styles.arrow} name="ios-arrow-forward"/>
       </CardItem>
     </Card>
   );
@@ -57,5 +57,18 @@ const styles = StyleSheet.create({
     margin: 0,
     height: 88,
     padding: 8
+  },
+  arrow: {
+    color: "#8E8E93",
+    width: 12
+  },
+  header: {
+    fontSize: 18,
+    fontFamily: "source-sans-pro-semi-bold"
+  },
+  teaser: {
+    fontSize: 16,
+    fontFamily: "source-sans-pro",
+    color: "#8E8E93"
   }
 });

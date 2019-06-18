@@ -22,11 +22,7 @@ class OnboardingFavoritesScreen extends React.Component {
     return (
       <Content
         padder
-        contentContainerStyle={{
-          flex: 1,
-          width: Device_Width,
-          backgroundColor: "#B52126"
-        }}
+        contentContainerStyle={styles.container}
       >
         {/* Page logo */}
         <View
@@ -41,8 +37,9 @@ class OnboardingFavoritesScreen extends React.Component {
         {/* Page description */}
         <View style={{flex: 2, justifyContent: "center", alignItems: "center"}}>
           <Icon name="heart" style={{color: '#fff', fontSize: 110}}/>
-          <Text style={{color: '#fff', fontSize: 32, fontWeight: 'bold'}}>Favorites</Text>
-          <Text style={{color: '#fff', fontSize: 24, fontWeight: '300', textAlign: 'center', width: 300}}>Tap to add something to
+          <Text style={styles.title}>Favorites</Text>
+          <Text style={styles.tag}>Tap to add
+            something to
             your list of Favs.</Text>
         </View>
         {/* Carousel Indicators */}
@@ -56,7 +53,7 @@ class OnboardingFavoritesScreen extends React.Component {
               style={{width: 150, justifyContent: "center"}}
               onPress={() => this.props.navigation.navigate("SignUp")}
             >
-              <Text>Sign Up</Text>
+              <Text style={styles.btn}>Sign Up</Text>
             </Button>
             <Button
               bordered
@@ -64,13 +61,13 @@ class OnboardingFavoritesScreen extends React.Component {
               style={{width: 150, justifyContent: "center"}}
               onPress={() => this.props.navigation.navigate("Login")}
             >
-              <Text>Login</Text>
+              <Text style={styles.btn}>Login</Text>
             </Button>
           </View>
           {/* Explore App */}
           <View style={{flex: 1, flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
             <Text
-              style={{color: '#fff', fontSize: 16}}
+              style={{color: '#fff', fontSize: 16, fontFamily: "source-sans-pro"}}
               onPress={() => this.props.navigation.navigate("App")}
             >
               Skip and explore the app.
@@ -85,9 +82,8 @@ class OnboardingFavoritesScreen extends React.Component {
 export default withNavigation(OnboardingFavoritesScreen);
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 15,
-    backgroundColor: "#fff"
-  }
+  container: {flex: 1, width: Device_Width, backgroundColor: "#B52126"},
+  title: {color: '#fff', fontSize: 32, fontFamily: "source-sans-pro-semi-bold"},
+  tag: {color: '#fff', fontSize: 24, fontFamily: "source-sans-pro-light", textAlign: 'center', width: 300},
+  btn: {color: '#fff', fontSize: 20, fontFamily: "source-sans-pro"}
 });
