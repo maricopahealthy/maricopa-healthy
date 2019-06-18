@@ -38,7 +38,7 @@ export default class LoadingScreen extends React.Component {
               resizeMode="contain"
             />
             <Text
-              style={{ color: "#B52126", fontSize: 25, fontWeight: "400" }}
+              style={{ color: "#B52126", fontSize: 24, fontFamily: "source-sans-pro-semi-bold" }}
             >
               Find your healthy adventure.
             </Text>
