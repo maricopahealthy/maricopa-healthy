@@ -21,8 +21,11 @@ class NavigationalHeaderSearch extends React.Component {
           <Input placeholder="Enter your search keywords" value={this.props.search} onChangeText={(e) => this.props.updateSearch(e)} />
           {
             this.props.search.length > 0 ?
-              <Button onPress={() => this.props.updateSearch("")} style={{ backgroundColor: "#8E8E93", height: "80%", marginTop: 4, marginRight: 8}}>
-                <Text style={{ color: "white", fontSize: 12, fontWeight: "600", padding: 0, alignSelf: "center" }}>CLEAR</Text>
+              <Button
+                onPress={() => this.props.updateSearch("")}
+                style={{ backgroundColor: "#8E8E93", height: "80%", marginTop: 4, marginRight: 8}}
+              >
+                <Text style={styles.btn}>CLEAR</Text>
               </Button>
             :
               null
@@ -58,5 +61,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(Navig
 const styles = StyleSheet.create({
   color: {
     backgroundColor: "#FBA208"
-  }
+  },
+  btn: { color: "white", fontSize: 12, fontFamily: "source-sans-pro-semi-bold", padding: 0, alignSelf: "center" }
 });

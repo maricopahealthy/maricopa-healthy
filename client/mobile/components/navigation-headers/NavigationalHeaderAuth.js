@@ -46,6 +46,6 @@ const styles = StyleSheet.create({
   title: {
     color: "black",
     fontSize: 24,
-    fontWeight: "600"
+    fontFamily: "source-sans-pro-semi-bold"
   }
 });
