@@ -31,20 +31,19 @@ export default withNavigation(ResourceCard);
 const styles = StyleSheet.create({
   cardImage: {
     flex: 1,
-    height: 150,
-    width: null
+    height: 120,
+    width: null,
+    borderRadius: 10
   },
   cardContent: {
-    // paddingVertical: 32.5,
-    // paddingHorizontal: 16,
-    //overlay efect
+    // overlay effect
     flex: 1,
     height: 200,
     width: null,
     position: "absolute",
     zIndex: 100,
     left: 0,
-    top: 100,
+    top: 70,
     right: 0,
     backgroundColor: "transparent"
   },
@@ -52,6 +51,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     color: "#fff",
     backgroundColor: "#B52126",
-    fontSize: 25,
+    fontSize: 24,
+    fontFamily: "source-sans-pro-semi-bold"
   }
 });

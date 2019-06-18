@@ -27,7 +27,7 @@ const loggedOutSettings = [
 const SettingsHomeScreen =({navigation}) => {
   return (
     <Container>
-      <Content>
+      <Content padder>
         <FlatList
           data={loggedInSettings}
           renderItem={({ item }) => 

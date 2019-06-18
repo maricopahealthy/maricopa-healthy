@@ -1,4 +1,3 @@
-// todo: SettingsTile
 import React from 'react';
 import { withNavigation } from 'react-navigation';
 import {  ListItem, Icon, Left, Text, Right } from 'native-base';

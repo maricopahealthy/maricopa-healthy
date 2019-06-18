@@ -2,6 +2,7 @@ import React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
 import {connect} from "react-redux";
 import {Container, Content, Card, CardItem, Left, Thumbnail, Body, Right, Icon, Text, Button} from 'native-base';
+import BlockButton from "../../components/BlockButton";
 
 /**
  * Resources Screen for viewing individual resource records.
@@ -30,10 +31,10 @@ class ResourcesRecordScreen extends React.Component {
             <Text>{resource.description}</Text>
             <FlatList
               data={[
-                {key: 0, text: '\u2022 Baseball field'},
-                {key: 1, text: '\u2022 Basketball court'},
-                {key: 2, text: '\u2022 Drinking fountains'},
-                {key: 3, text: '\u2022 Exercise/Fitness station'},
+                {key: "0", text: '\u2022 Baseball field'},
+                {key: "1", text: '\u2022 Basketball court'},
+                {key: "2", text: '\u2022 Drinking fountains'},
+                {key: "3", text: '\u2022 Exercise/Fitness station'},
               ]}
               renderItem={({item}) => <Text>{item.text}</Text>}
             />
@@ -45,14 +46,10 @@ class ResourcesRecordScreen extends React.Component {
           </View>
           {/* Button */}
           <View style={{flex: 1}}>
-            <Button
-              block
-              style={{backgroundColor: "#B52126"}}
-              onPress={() => {
-              }}
-            >
-              <Text>Learn More</Text>
-            </Button>
+            <BlockButton
+              title="Learn More"
+              onPress={() => {}}
+            />
           </View>
         </Content>
       </Container>

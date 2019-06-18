@@ -13,15 +13,15 @@ const RecordTile = (props) => {
     <>
       <CardItem
         button
-        style={props.index % 2 === 0 ? { backgroundColor: "white", margin: 0 } : { backgroundColor: "#F6F6F6", margin: 0 }}
+        style={props.index % 2 === 0 ? styles.whiteCard : styles.greyCard}
         onPress={() => props.navigation.navigate(props.type, {id: props.item.id})}
       >
           <Thumbnail large source={props.type === "Markets" ? marketThumbnail : parkThumbnail} />
         <Body style={{ justifyContent: "center", marginLeft: 15 }}>
-          <Text>{props.item.name}</Text>
-          <Text note>{props.item.street_address}</Text>
+          <Text style={styles.header}>{props.item.name}</Text>
+          <Text style={styles.teaser}>{props.item.street_address}</Text>
         </Body>
-        <Icon style={{ color: "#8E8E93"}} name="ios-arrow-forward" />
+        <Icon style={styles.arrow} name="ios-arrow-forward" />
       </CardItem>
     </>
   );
@@ -30,5 +30,29 @@ const RecordTile = (props) => {
 export default withNavigation(RecordTile);
 
 const styles = StyleSheet.create({
-
+  whiteCard: {
+    backgroundColor: "white",
+    margin: 0,
+    height: 88,
+    padding: 8
+  },
+  greyCard: {
+    backgroundColor: "#F6F6F6",
+    margin: 0,
+    height: 88,
+    padding: 8
+  },
+  arrow: {
+    color: "#8E8E93",
+    width: 12
+  },
+  header: {
+    fontSize: 18,
+    fontFamily: "source-sans-pro-semi-bold"
+  },
+  teaser: {
+    fontSize: 16,
+    fontFamily: "source-sans-pro",
+    color: "#8E8E93"
+  }
 });

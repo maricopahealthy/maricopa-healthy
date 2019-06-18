@@ -14,7 +14,7 @@ export default class ForgotPasswordScreen extends React.Component {
             <Text>Submit your email address and we’ll send you you a code to reset your password.</Text>
           </View>
           <Form>
-            <Item regular>
+            <Item regular style={styles.formItem}>
               <Input placeholder="Email Address" />
             </Item>
           </Form>
@@ -37,4 +37,9 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     backgroundColor: '#fff',
   },
+  formItem: {
+    borderColor: "#8E8E93",
+    margin: 4,
+    borderRadius: 5
+  }
 });

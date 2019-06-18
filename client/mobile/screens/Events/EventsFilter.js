@@ -107,7 +107,7 @@ class EventsFilterScreen extends React.Component {
             renderSectionHeader={SectionHeader}
             keyExtractor={extractKey}
           />
-          <View>
+          <View style={{flex: 1}}>
             <BlockButton title="Apply Filter" onPress={() => this.props.apply(true, this.props.navigation, "EventsList")}/>
           </View>
         </Content>
@@ -165,7 +165,7 @@ const sections = [
     const { data, type } = item;
     return <FilterButtons type={type} data={data} />;
   }),
-  Section("Ages", ageData, ({item}) => {
+  Section("Audience", ageData, ({item}) => {
     const { data, type } = item;
     return <FilterButtons type={type} data={data} />;
   }),

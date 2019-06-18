@@ -20,6 +20,12 @@ const NavigationalHeaderAuth = ({ navigation, title }) => {
         >
           <Icon name="ios-arrow-back" style={{ color: "black" }}/>
         </Button>
+        <Button
+          transparent
+          onPress={() => navigation.navigate("Home")}
+        >
+          <Icon name="ios-home" style={{ color: "black" }} />
+        </Button>
       </Left>
       <Body style={{flex: 6}}>
         <Text style={styles.title}>{title}</Text>
@@ -40,6 +46,6 @@ const styles = StyleSheet.create({
   title: {
     color: "black",
     fontSize: 24,
-    fontWeight: "600"
+    fontFamily: "source-sans-pro-semi-bold"
   }
 });

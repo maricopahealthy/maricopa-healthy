@@ -69,7 +69,7 @@ class RecipesRecordScreen extends React.Component {
               <Body style={{justifyContent: "center", marginLeft: 15}}>
                 <Text>{recipe.name}</Text>
               </Body>
-              <Icon name='heart-empty'/>
+              <Icon name='heart-empty' style={{fontSize: 28}}/>
             </CardItem>
           </Card>
           {/* Action Buttons */}

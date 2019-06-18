@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native'
 import { Text, Card, CardItem, Body, Left, Right, Thumbnail } from 'native-base'
 import { Rating } from "react-native-ratings";
+import ReviewCard from "./ReviewCardComponent";
 
 const RecipeReviews = (props) => {
   return (
@@ -32,30 +33,7 @@ const RecipeReviews = (props) => {
           </CardItem>
         </Card>
         {/* List of Reviews */}
-        <Card>
-          <CardItem header>
-            <Left>
-              <Thumbnail source={{ uri: 'http://placekitten.com/200/200' }} />
-              <Body>
-                <Text>Reviewer Name</Text>
-                <Text note>Location</Text>
-              </Body>
-            </Left>
-            <Right>
-              <Body>
-                <Rating readonly imageSize={20} />
-                <Text note>time</Text>
-              </Body>
-            </Right>
-          </CardItem>
-          <CardItem>
-            <Body>
-              <Text>
-                Is this thing on?
-              </Text>
-            </Body>
-          </CardItem>
-        </Card>
+        <ReviewCard/>
       </View>
   )
 };

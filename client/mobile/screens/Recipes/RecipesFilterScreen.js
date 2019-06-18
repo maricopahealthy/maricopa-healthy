@@ -15,7 +15,6 @@ import FilterButtons from "../../components/FilterButtons";
 import BlockButton from "../../components/BlockButton";
 import {applyFilter} from "../../actions/filterActions";
 import {connect} from "react-redux";
-// todo: refactor into store
 // Used for sample data ========================
 
 const mealTypeData = [
@@ -58,7 +57,7 @@ class RecipesFilterScreen extends React.Component {
             renderSectionHeader={SectionHeader}
             keyExtractor={extractKey}
           />
-          <View>
+          <View style={{flex: 1}}>
             <BlockButton title="Apply Filter" onPress={() => this.props.apply(true, this.props.navigation, "RecipesList")}/>
           </View>
         </Content>

@@ -17,7 +17,7 @@ export default class ResetPasswordScreen extends React.Component {
               </Text>
             </View>
             <Form>
-              <Item regular>
+              <Item regular style={styles.formItem}>
                 <Input placeholder='Email Address' />
               </Item>
             </Form>
@@ -46,4 +46,9 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     backgroundColor: '#fff',
   },
+  formItem: {
+    borderColor: "#8E8E93",
+    margin: 4,
+    borderRadius: 5
+  }
 });
