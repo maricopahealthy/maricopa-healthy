@@ -1,4 +1,4 @@
-import {UPDATE} from "../actions/searchActions";
+import {UPDATE_SEARCH} from "../actions/searchActions";
 
 const initState = {
   search: "",
@@ -6,7 +6,7 @@ const initState = {
 
 const searchReducer = (state = initState, action) => {
   switch (action.type) {
-    case UPDATE:
+    case UPDATE_SEARCH:
       return {
         ...state,
         search: action.payload

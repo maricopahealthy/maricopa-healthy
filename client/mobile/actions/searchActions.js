@@ -1,8 +1,8 @@
 // ACTION TYPES and ACTION CREATORS
 
-export const UPDATE = "UPDATE";
+export const UPDATE_SEARCH = "UPDATE_SEARCH";
 const update = (search) => ({
-  type: UPDATE,
+  type: UPDATE_SEARCH,
   payload: search
 });
 

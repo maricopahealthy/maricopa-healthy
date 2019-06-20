@@ -1,7 +1,9 @@
 import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { Card, CardItem, Body, Text } from 'native-base';
+import { resetFilter } from "../actions/filterActions";
 import { withNavigation } from 'react-navigation';
+import { connect } from 'react-redux'
 
 /**
  * ResourceCard is a presentational component used for displaying the features available for exploration from the Home Screen.
@@ -13,7 +15,11 @@ const ResourceCard = (props) => {
       <CardItem
         cardBody
         button
-        onPress={() => props.navigation.navigate(props.item.resource)}
+        onPress={() => {
+            props.resetFilter();
+            props.navigation.navigate(props.item.resource)
+          }
+        }
       >
         <Image source={props.item.image} style={styles.cardImage} />
         <Body style={styles.cardContent}>
@@ -24,9 +30,19 @@ const ResourceCard = (props) => {
   );
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    resetFilter: () => {
+      dispatch (
+        resetFilter()
+      )
+    }
+  }
+};
+
 // withNavigation returns a component that wraps ResourceCard and passes in the
 // navigation prop automatically. It behaves like connect() function in Redux.
-export default withNavigation(ResourceCard);
+export default connect(null, mapDispatchToProps)(withNavigation(ResourceCard));
 
 const styles = StyleSheet.create({
   cardImage: {
