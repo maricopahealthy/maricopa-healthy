@@ -44,7 +44,32 @@ exports.seed = function(knex, Promise) {
           rating: "4.2 stars",
           reviews: "37 reviews"
         },
-        
+        {
+          name: "Uptown Farmers Market",
+          thumbnail: "../../assets/thumbnails/markets/markets-thumb-placeholder-01.png",
+          street_address: "575 N Central Av",
+          city: "Phoenix",
+          state: "AZ",
+          zipcode: "85012",
+          phone_number: "602-859-5648",
+          website_url: "https://placeholder.com",
+          payment_methods: "Cash, Credit, SNAP, SNAP Matching, FMNP",
+          rating: "3.4 stars",
+          reviews: "26 Reviews"
+        },
+        {
+          name: "Sun City Farmers Market",
+          thumbnail: "../../assets/thumbnails/markets/markets-thumb-placeholder-02.png",
+          street_address: "16820 N99th Ave",
+          city: "Sun City",
+          state: "AZ",
+          zipcode: "85351",
+          phone_number: "623-848-1234",
+          website_url: "https://placeholder.com",
+          payment_methods: "Cash, Credit, SNAP, FMNP",
+          rating: "4.3 Stars",
+          reviews: "34 Reviews"
+        },
       ]);
     });
 };

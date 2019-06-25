@@ -10,6 +10,16 @@ exports.seed = function(knex, Promise) {
           email: "marcusames@email.com", 
           zipcode: "85001" 
         },
+        {
+          username: "oscars",
+          email: "oscars@email.com",
+          zipcode: "85004"
+        },
+        {
+          username: "jenn",
+          email: "jenn@email.com",
+          zipcode: "85004"
+        }
       ]);
     });
 };
