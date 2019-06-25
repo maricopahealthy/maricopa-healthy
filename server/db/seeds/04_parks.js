@@ -41,6 +41,30 @@ exports.seed = function(knex, Promise) {
           rating: "4.2 stars",
           reviews: "37 reviews"
         },
+        {
+          thumbnail: "../../assets/thumbnails/parks/parks-thumb-placeholder-01.png",
+          name: "Adobe Mountain Park",
+          street_address: "3410 W Crest Ln",
+          city: "Phoenix",
+          state: "AZ",
+          zipcode: "85027",
+          phone: "222-222-2222",
+          website: "https://placeholder.com",
+          rating: "3.4 stars",
+          reviews: "13 reviews"
+        },
+        {
+          thumbnail: "../../assets/thumbnails/parks/parks-thumb-placeholder-02.png",
+          name: "Clarence B. Hayes Memorial Park",
+          street_address: "9845 75th Ave",
+          city: "Peoria",
+          state: "AZ",
+          zipcode: "85345",
+          phone: "222-222-2222",
+          website: "https://placeholder.com",
+          rating: "0 stars",
+          reviews: "0 reviews"
+        }
       ]);
     });
 };

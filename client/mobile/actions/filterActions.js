@@ -5,9 +5,9 @@ const reset = () => ({
   type: RESET
 });
 
-export const UPDATE = "UPDATE";
+export const UPDATE_FILTER = "UPDATE_FILTER";
 const update = (filter) => ({
-  type: UPDATE,
+  type: UPDATE_FILTER,
   payload: filter
 });
 

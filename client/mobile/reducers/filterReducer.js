@@ -1,4 +1,4 @@
-import {APPLY, RESET, UPDATE} from "../actions/filterActions";
+import {APPLY, RESET, UPDATE_FILTER} from "../actions/filterActions";
 
 const initState = {
   city: [],
@@ -17,7 +17,7 @@ const initState = {
 
 const filterReducer = (state = initState, action) => {
   switch (action.type) {
-    case UPDATE:
+    case UPDATE_FILTER:
       const {type, value} = action.payload;
       if(type === "zipCode") {
         return {
