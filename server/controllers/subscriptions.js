@@ -51,5 +51,18 @@ module.exports = {
       .del("*")
       .then(data => res.send(data))
       .catch(err => console.error(err));
+  },
+
+  /**
+   * add() Adds Subscription to table and returns that Subscription
+   * @param {Object} req - Express request object.
+   * @param {Object} res - Express response object.
+   * @return {Subscription}
+   */
+  add: (req, res) => {
+    knex("subscriptions")
+      .insert(req.body, "*")
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
   }
 };

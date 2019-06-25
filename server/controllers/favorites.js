@@ -51,5 +51,18 @@ module.exports = {
       .del("*")
       .then(data => res.send(data))
       .catch(err => console.error(err));
+  },
+
+  /**
+   * add() Adds Favorite to table and returns that Favorite
+   * @param {Object} req - Express request object.
+   * @param {Object} res - Express response object.
+   * @return {Favorite}
+   */
+  add: (req, res) => {
+    knex("favorites")
+      .insert(req.body, "*")
+      .then(data => res.send(data))
+      .catch(err => console.error(err));
   }
 };

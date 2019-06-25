@@ -71,12 +71,14 @@ module.exports = (app) => {
   app.get("/favorites/:id", favorites.findById);
   app.get("/favorites/user/:userId", favorites.findByUserId);
   app.delete("/favorites/:id", favorites.findByIdAndDelete);
+  app.post("favorites", favorites.add);
 
   // Routes for Subscriptions
   app.get("/subscriptions", subscriptions.find);
   app.get("/subscriptions/:id", subscriptions.findById);
   app.get("/subscriptions/user/:userId", subscriptions.findByUserId);
   app.delete("/subscriptions/:id", subscriptions.findByIdAndDelete);
+  app.post("subscriptions", subscriptions.add);
 
   // Routes for Notifications
   app.get("/notifications", notifications.find);
