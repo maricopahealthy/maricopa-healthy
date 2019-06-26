@@ -58,9 +58,9 @@ class EditActivity extends React.Component {
 		let activity = this.state.activities || [];
 		console.log(activity, 'activity IN COMPONENT');
 		return (
-			<div className={'editActivity-container'}>
+			<div className={'edit-build-modal'}>
 				<h3>Edit Activity</h3>
-				<Link to={'/build/activity'}>
+				<Link to={'/build/active'}>
 					<button>X</button>
 				</Link>
 				<form onSubmit={this.handleEdit}>

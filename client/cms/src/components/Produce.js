@@ -27,7 +27,7 @@ class Produce extends React.Component {
 
 	render() {
 		return (
-			<div className={'produce-container'}>
+			<div className={'build-contain-inner-data'}>
 				<Link to={'/build/produce/add'}>
 					<button>Add New Produce</button>
 				</Link>

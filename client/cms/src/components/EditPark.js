@@ -59,9 +59,9 @@ class EditPark extends React.Component {
 		let park = this.state.parks || [];
 		console.log(park, 'PARK IN COMPONENT');
 		return (
-			<div className={'editPark-container'}>
+			<div className={'edit-build-modal'}>
 				<h3>Edit Park</h3>
-				<Link to={'/build/park'}>
+				<Link to={'/build/parks'}>
 					<button>X</button>
 				</Link>
 				<form onSubmit={this.handleEdit}>

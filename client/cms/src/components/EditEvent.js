@@ -59,7 +59,7 @@ class EditEvent extends React.Component {
 		let event = this.state.events || [];
 		console.log(event, 'EVENT IN COMPONENT');
 		return (
-			<div className={'editEvent-container'}>
+			<div className={'edit-build-modal'}>
 				<h3>Edit Event</h3>
 				<Link to={'/build/event'}>
 					<button>X</button>

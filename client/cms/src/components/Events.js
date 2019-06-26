@@ -3,43 +3,48 @@ import CurrentEvents from './CurrentEvents';
 import featureList from '../utils/featureList';
 import { Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
+import paginateHelper from '../utils/paginateHelper';
 
 class Events extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			events: []
+			allEvents: [],
+			displayedEvents: []
 		};
-		this.handlePageClick = this.handlePageClick.bind(this);
-	}
-	handlePageClick(e) {
-		let pageClicked = e.selected;
-		// let wordsUsedForSearch = this.state.searchData;
-		// this.getSearchResults(wordsUsedForSearch, pageClicked);
 	}
 
 	componentDidMount() {
-		fetch('http://localhost:9000/events').then((res) => res.json()).then((events) => this.setState({ events }));
+		fetch('http://localhost:9000/events').then((res) => res.json()).then((allEvents) => {
+			let displayedEvents = paginateHelper(0, allEvents);
+			this.setState({ allEvents, displayedEvents });
+		});
 	}
+
+	handlePageClick = ({ selected }) => {
+		const allProduce = this.state.allEvents;
+		let displayedProduce = paginateHelper(selected, allProduce);
+		this.setState({ displayedProduce });
+	};
 
 	render() {
 		return (
-			<div className={'events-container'}>
+			<div className={'build-contain-inner-data'}>
 				<Link to={'/build/events/add'}>
 					<button>Add New Event</button>
 				</Link>
 				<ReactPaginate
 					previousLabel={'previous'}
 					nextLabel={'next'}
-					pageCount={Math.ceil(this.state.events.length / 10)}
+					pageCount={Math.ceil(this.state.allEvents.length / 10)}
 					marginPagesDisplayed={2}
 					pageRangeDisplayed={5}
-					// onPageChange={this.handlePageClick}
+					onPageChange={this.handlePageClick}
 					containerClassName={'pagination'}
 					subContainerClassName={'pages pagination'}
 					activeClassName={'active'}
 				/>
-				<CurrentEvents events={this.state.events} />
+				<CurrentEvents events={this.state.displayedEvents} />
 			</div>
 		);
 	}

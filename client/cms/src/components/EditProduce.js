@@ -58,7 +58,7 @@ class EditProduce extends React.Component {
 		let produce = this.state.produce || [];
 		console.log(produce, 'produce IN COMPONENT');
 		return (
-			<div className={'editProduce-container'}>
+			<div className={'edit-build-modal'}>
 				<h3>Edit produce</h3>
 				<Link to={'/build/produce'}>
 					<button>X</button>

@@ -36,9 +36,9 @@ html {
 .build-container {
 	background-color: #f8f8f8;
 	display: grid;
-	height: 100vh;
-	grid-template-columns: 200px 4fr 4fr;
-	/*grid-template-rows: 35px 50px 200%;*/
+	height: 100%;
+	grid-template-columns: 200px 150px 4fr;
+	/* grid-template-rows: 35px 50px 100%; */
 }
 
 .build-container-inner {
@@ -46,9 +46,14 @@ html {
 	grid-row: 1/4;
 	grid-column: 1/4;
 	display: grid;
-	height: 100vh;
-	grid-template-columns: 200px 4fr 4fr;
+	height: 100%;
+	grid-template-columns: 200px 150px 4fr;
 	grid-template-rows: 35px 50px 100%;
+}
+
+.build-contain-inner-data {
+	grid-column: 3/4;
+	grid-row: 2/4;
 }
 
 .design-container {
@@ -56,7 +61,7 @@ html {
 	display: grid;
 	grid-template-columns: 200px 4fr 4fr;
 	grid-template-rows: 35px 50px 100%;
-	height: 100vh;
+	height: 100%;
 }
 
 .dashboard-container {
@@ -70,9 +75,19 @@ html {
 	padding-right: 10px;
 }
 
-.editMarket-container {
+.edit-build-modal,
+.add-build-modal {
 	z-index: 2;
 	background: white;
+	grid-row: 2/3;
+	grid-column: 2/4;
+	position: flex;
+	margin-top: 200px;
+	padding: 30px;
+	border: 1px solid grey;
+	width: 500px;
+	margin-left: 50px;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
 }
 
 /* .events-container {
@@ -81,14 +96,17 @@ html {
 
 .features-container {
 	grid-column: 2/3;
-	grid-row: 2/3;
+	grid-row: 2/4;
+	border-right: 1px solid #868686;
 }
 
 .features-heading {
+	text-align: center;
+	font-size: 14px;
 	margin: 10px;
-	padding: 5px;
+	padding: 15px 5px;
 	font-weight: 100;
-	border-bottom: 1px solid grey;
+	border-bottom: 1px solid #868686;
 }
 
 .headerNav-container {
@@ -100,7 +118,13 @@ html {
 	padding: 10px;
 }
 
+li {
+	list-style: none;
+	margin: 5px;
+}
+
 .login-container {
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
 	max-width: 500px;
 	margin: 100px;
 	padding: 20px;
@@ -154,11 +178,6 @@ html {
 	border-radius: 5px;
 }
 
-.markets-container {
-	grid-column: 3/4;
-	grid-row: 2/3;
-}
-
 .nav-container {
 	text-align: center;
 	grid-column: 1/2;
@@ -186,15 +205,42 @@ html {
 	font-weight: 100;
 }
 
-.pagination ul {
+li.active {
+	background: white;
+	color: black;
+	width: 20px;
+	text-align: center;
+	border-radius: 5px;
+}
+ul.pagination {
 	display: inline-block;
 	padding-left: 15px;
 	padding-right: 15px;
+	background: #3287b8;
+	color: white;
+	padding: 2px;
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	margin: 40px;
+	border-radius: 5px;
 }
 
 .pagination li {
 	display: inline-block;
+	width: 20px;
+	margin: 10px;
+	margin: 5px 15px;
+	/* justify-items: center; */
+	text-align: center;
 }
+
+li.previous {
+	width: 50px;
+}
+/* .previous li {
+	width: 50px;
+} */
 
 .overview-container {
 	color: #868686;
