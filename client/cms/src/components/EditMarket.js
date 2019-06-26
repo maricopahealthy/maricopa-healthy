@@ -94,7 +94,7 @@ class EditMarket extends React.Component {
 
 	render() {
 		return (
-			<div className={'editMarket-container'}>
+			<div className={'edit-build-modal'}>
 				<h3>Edit Market</h3>
 				<Link to={'/build/markets'}>
 					<button>X</button>

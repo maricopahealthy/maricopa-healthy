@@ -1,28 +1,26 @@
 import React from 'react';
-import CurrentEvents from './CurrentEvents';
-import featureList from '../utils/featureList';
-import { Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
+import { Link } from 'react-router-dom';
+import CurrentProduce from './CurrentProduce';
 import paginateHelper from '../utils/paginateHelper';
 
-class Events extends React.Component {
+class Produce extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			allEvents: [],
-			displayedEvents: []
+			allProduce: [],
+			displayedProduce: []
 		};
 	}
-
 	componentDidMount() {
-		fetch('http://localhost:9000/events').then((res) => res.json()).then((allEvents) => {
-			let displayedEvents = paginateHelper(0, allEvents);
-			this.setState({ allEvents, displayedEvents });
+		fetch('http://localhost:9000/produce').then((res) => res.json()).then((allProduce) => {
+			let displayedProduce = paginateHelper(0, allProduce);
+			this.setState({ allProduce, displayedProduce });
 		});
 	}
 
 	handlePageClick = ({ selected }) => {
-		const allProduce = this.state.allEvents;
+		const allProduce = this.state.allProduce;
 		let displayedProduce = paginateHelper(selected, allProduce);
 		this.setState({ displayedProduce });
 	};
@@ -30,13 +28,14 @@ class Events extends React.Component {
 	render() {
 		return (
 			<div className={'build-contain-inner-data'}>
-				<Link to={'/build/events/add'}>
-					<button>Add New Event</button>
+				<Link to={'/build/produce/add'}>
+					<button>Add New Produce</button>
 				</Link>
 				<ReactPaginate
 					previousLabel={'previous'}
 					nextLabel={'next'}
-					pageCount={Math.ceil(this.state.allEvents.length / 10)}
+					initialPage={1}
+					pageCount={Math.ceil(this.state.allProduce.length / 10)}
 					marginPagesDisplayed={2}
 					pageRangeDisplayed={5}
 					onPageChange={this.handlePageClick}
@@ -44,10 +43,10 @@ class Events extends React.Component {
 					subContainerClassName={'pages pagination'}
 					activeClassName={'active'}
 				/>
-				<CurrentEvents events={this.state.displayedEvents} />
+				<CurrentProduce produce={this.state.displayedProduce} />
 			</div>
 		);
 	}
 }
 
-export default Events;
+export default Produce;

@@ -27,29 +27,25 @@ class AddEvent extends React.Component {
 			website: '',
 			zipcode: ''
 		};
-		this.handleAdd = this.handleAdd.bind(this);
-		this.handleChange = this.handleChange.bind(this);
 	}
-
-	handleAdd() {
+	handleAdd = () => {
 		this.setState({
 			created_at: new Date(),
 			updated_at: new Date()
 		});
-	}
+	};
 
-	handleChange(e) {
+	handleChange = (e) => {
 		this.setState({
 			[e.target.name]: e.target.value,
 			created_at: new Date(),
 			updated_at: new Date()
 		});
-	}
+	};
 
 	render() {
-		const event = this.state.events;
 		return (
-			<div className={'addEvent-container'}>
+			<div className={'add-build-modal'}>
 				<h3>Add Event</h3>
 				<Link to={'/build/events'}>
 					<button>X</button>

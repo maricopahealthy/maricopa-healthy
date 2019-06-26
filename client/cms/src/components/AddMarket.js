@@ -20,35 +20,32 @@ class AddMarket extends React.Component {
 			website_url: '',
 			zipcode: ''
 		};
-		this.addMoreHours = this.addMoreHours.bind(this);
-		this.handleAdd = this.handleAdd.bind(this);
-		this.handleChange = this.handleChange.bind(this);
 	}
-	addMoreHours(e) {
+	addMoreHours = (e) => {
 		e.preventDefault();
 		this.setState((prevState) => ({
 			hours: [ ...prevState.hours, { header: '', body: '' } ]
 		}));
-	}
+	};
 
-	handleAdd() {
+	handleAdd = () => {
 		this.setState({
 			created_at: new Date(),
 			updated_at: new Date()
 		});
-	}
+	};
 
-	handleChange(e) {
+	handleChange = (e) => {
 		this.setState({
 			[e.target.name]: e.target.value,
 			created_at: new Date(),
 			updated_at: new Date()
 		});
-	}
+	};
 
 	render() {
 		return (
-			<div>
+			<div className={'add-build-modal'}>
 				<h3>Add New Market</h3>
 				<Link to={'/build/markets'}>
 					<button>X</button>
