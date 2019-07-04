@@ -6,9 +6,9 @@ const CurrentActivities = ({ activities = activities || [], editActivity }) => {
 	return (
 		<ul onClick={editActivity}>
 			<h3>Activities</h3>
-			{activities.map((activity, id) => (
-				<li id={(id += 1)} key={id}>
-					<Link to={`/build/active/edit/${id}`}>Edit</Link>
+			{activities.map((activity) => (
+				<li id={activity.id} key={activity.id}>
+					<Link to={`/build/active/edit/${activity.id}`}>Edit</Link>
 					Name:
 					{activity.name}
 					<br />

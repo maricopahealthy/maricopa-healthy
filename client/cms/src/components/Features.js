@@ -10,7 +10,9 @@ const Features = () => {
 			<ul>
 				{featureList.map(({ name, id }) => (
 					<li key={id}>
-						<Link to={`/build/${id}`}>{name}</Link>
+						<Link to={`/build/${id}`} className="feature-name">
+							{name}
+						</Link>
 					</li>
 				))}
 			</ul>

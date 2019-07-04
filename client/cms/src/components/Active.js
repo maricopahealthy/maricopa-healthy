@@ -13,12 +13,12 @@ class Active extends React.Component {
 		};
 	}
 
-	componentDidMount() {
+	componentDidMount = () => {
 		fetch('http://localhost:9000/active').then((res) => res.json()).then((allActivities) => {
 			let displayedActivities = paginateHelper(0, allActivities);
 			this.setState({ allActivities, displayedActivities });
 		});
-	}
+	};
 
 	handlePageClick = ({ selected }) => {
 		const allActivities = this.state.allActivities;
@@ -27,6 +27,7 @@ class Active extends React.Component {
 	};
 
 	render() {
+		const activities = this.state.displayedActivities;
 		return (
 			<div className={'build-contain-inner-data'}>
 				<Link to={'/build/active/add'}>
@@ -43,7 +44,7 @@ class Active extends React.Component {
 					subContainerClassName={'pages pagination'}
 					activeClassName={'active'}
 				/>
-				<CurrentActivities activities={this.state.displayedActivities} />
+				{activities.length ? <CurrentActivities activities={activities} /> : 'DODODODO'}
 			</div>
 		);
 	}

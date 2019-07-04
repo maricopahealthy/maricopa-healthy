@@ -24,10 +24,19 @@ class EditPark extends React.Component {
 		});
 	}
 
-	handleDelete() {
-		//run some sort of alert asking for confirmation
-		//send delete request to server
-	}
+	handleDelete = () => {
+		const id = this.state.parks.id;
+		if (window.confirm('Are you sure you want to delete this park?')) {
+			fetch(`http://localhost:9000/parks/${id}`, {
+				method: 'DELETE',
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			})
+				.then(this.props.history.push('/build/parks'))
+				.then(window.location.reload());
+		}
+	};
 
 	handleChange(e) {
 		e.persist();

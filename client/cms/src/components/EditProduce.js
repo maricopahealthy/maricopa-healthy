@@ -23,10 +23,19 @@ class EditProduce extends React.Component {
 		});
 	}
 
-	handleDelete() {
-		//run some sort of alert asking for confirmation
-		//send delete request to server
-	}
+	handleDelete = () => {
+		const id = this.state.produce.id;
+		if (window.confirm('Are you sure you want to delete this produce?')) {
+			fetch(`http://localhost:9000/produce/${id}`, {
+				method: 'DELETE',
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			})
+				.then(this.props.history.push('/build/produce'))
+				.then(window.location.reload());
+		}
+	};
 
 	handleChange(e) {
 		e.persist();

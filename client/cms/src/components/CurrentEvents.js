@@ -5,10 +5,10 @@ import ReactPaginate from 'react-paginate';
 const CurrentEvents = ({ events = events || [], editEvent }) => {
 	return (
 		<ul onClick={editEvent}>
-			<h3>Current Events</h3>
-			{events.map((event, id) => (
-				<li id={(id += 1)} key={id}>
-					<Link to={`/build/events/edit/${id}`}>Edit</Link>
+			<h3>Approved Events</h3>
+			{events.map((event) => (
+				<li id={event.id} key={event.id}>
+					<Link to={`/build/events/edit/${event.id}`}>Edit</Link>
 					Name:
 					{event.name}
 					<br />

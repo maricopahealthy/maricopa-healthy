@@ -6,9 +6,9 @@ const CurrentProduce = ({ produce = produce || [], editProduce }) => {
 	return (
 		<ul onClick={editProduce}>
 			<h3>Produce</h3>
-			{produce.map((produceItem, id) => (
-				<li id={(id += 1)} key={id}>
-					<Link to={`/build/produce/edit/${id}`}>Edit</Link>
+			{produce.map((produceItem) => (
+				<li id={produceItem.id} key={produceItem.id}>
+					<Link to={`/build/produce/edit/${produceItem.id}`}>Edit</Link>
 					<br />
 					Name:
 					{produceItem.name}

@@ -2,10 +2,10 @@ import React from 'react';
 import CurrentMarkets from './CurrentMarkets';
 import EditMarket from './EditMarket';
 import AddMarket from './AddMarket';
-import featureList from '../utils/featureList';
+import paginateHelper from '../utils/paginateHelper';
 import { Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
-import paginateHelper from '../utils/paginateHelper';
+import NoFilesToLoad from './NoFilesToLoad';
 
 class Markets extends React.Component {
 	constructor(props) {
@@ -15,6 +15,7 @@ class Markets extends React.Component {
 			displayedMarkets: []
 		};
 	}
+
 	componentDidMount() {
 		fetch('http://localhost:9000/markets').then((res) => res.json()).then((allMarkets) => {
 			let displayedMarkets = paginateHelper(0, allMarkets);
@@ -29,6 +30,7 @@ class Markets extends React.Component {
 	};
 
 	render() {
+		const markets = this.state.displayedMarkets;
 		return (
 			<div className={'build-contain-inner-data'}>
 				<Link to={'/build/markets/add'}>
@@ -45,7 +47,7 @@ class Markets extends React.Component {
 					subContainerClassName={'pages pagination'}
 					activeClassName={'active'}
 				/>
-				<CurrentMarkets markets={this.state.displayedMarkets} />
+				{markets.length ? <CurrentMarkets markets={markets} /> : <NoFilesToLoad />}
 			</div>
 		);
 	}

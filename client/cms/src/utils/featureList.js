@@ -25,16 +25,6 @@ const featureList = [
 		thumnail: null
 	},
 	{
-		name: 'Biking',
-		id: 'biking',
-		thumnail: null
-	},
-	{
-		name: 'Rides',
-		id: 'rides',
-		thumnail: null
-	},
-	{
 		name: 'Alerts',
 		id: 'alerts',
 		thumnail: null

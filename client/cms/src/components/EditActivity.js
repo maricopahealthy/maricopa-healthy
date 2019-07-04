@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class EditActivity extends React.Component {
 	constructor(props) {
@@ -7,52 +7,65 @@ class EditActivity extends React.Component {
 		this.state = {
 			activities: []
 		};
-		this.fetchActivities = this.fetchActivities.bind(this);
-		this.handleEdit = this.handleEdit.bind(this);
-		this.handleDelete = this.handleDelete.bind(this);
-		this.handleChange = this.handleChange.bind(this);
 	}
 
-	fetchActivities(activityId = this.props.match.params.id) {
+	fetchActivities = (activityId = this.props.match.params.id) => {
+		console.log(activityId, 'ACTIVITyid');
 		fetch(`http://localhost:9000/active/${activityId}`).then((res) => res.json()).then((data) => {
+			console.log('DATAHHHHH', data);
 			let activities = data[0];
 			this.setState({
 				activities
 			});
-			console.log('STATE', this.state);
 		});
-	}
+	};
 
-	handleDelete() {
-		//run some sort of alert asking for confirmation
-		//send delete request to server
-	}
+	handleDelete = () => {
+		const id = this.state.activities.id;
+		if (window.confirm('Are you sure you want to delete this activity?')) {
+			fetch(`http://localhost:9000/active/${id}`, {
+				method: 'DELETE',
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			})
+				.then(this.props.history.push('/build/active'))
+				.then(window.location.reload());
+		}
+	};
 
-	handleChange(e) {
+	handleChange = (e) => {
 		e.persist();
 		this.setState({
 			[e.target.name]: e.target.value,
 			updated_at: new Date()
 		});
-	}
+	};
 
-	handleEdit() {
-		//build out update functionality for server --patch or post?
-		fetch('http://localhost:9000/activity/patch');
-	}
+	handleEdit = () => {
+		const id = this.state.activities.id;
+		fetch(`http://localhost:9000/activity/${id}`, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+			.then(this.props.history.push('/build/active'))
+			.then(window.location.reload());
+	};
 
-	componentDidMount() {
+	componentDidMount = () => {
 		this.fetchActivities();
-		console.log(this.state);
-	}
+		console.log(this.props, 'props in activities');
+	};
 
-	componentDidUpdate(prevProps) {
+	componentDidUpdate = (prevProps) => {
 		const currentActivityId = this.props.match.params.id;
 		const prevActivityId = prevProps.match.params.id;
 		if (prevActivityId !== currentActivityId) {
 			this.fetchActivities(currentActivityId);
 		}
-	}
+	};
 
 	render() {
 		let activity = this.state.activities || [];
@@ -84,7 +97,7 @@ class EditActivity extends React.Component {
 								defaultValue={activity.thumbnail}
 								onChange={this.handleChange}
 							/>
-							<img alt="activitys thumbnail" src={activity.thumbnail} />
+							<img alt="activities thumbnail" src={activity.thumbnail} />
 							<br />
 						</div>
 					) : (
