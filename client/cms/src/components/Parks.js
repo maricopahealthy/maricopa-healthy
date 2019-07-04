@@ -3,6 +3,7 @@ import ReactPaginate from 'react-paginate';
 import { Link } from 'react-router-dom';
 import CurrentParks from './CurrentParks';
 import paginateHelper from '../utils/paginateHelper';
+import NoFilesToLoad from './NoFilesToLoad';
 
 class Parks extends React.Component {
 	constructor(props) {
@@ -26,6 +27,7 @@ class Parks extends React.Component {
 	};
 
 	render() {
+		const parks = this.state.displayedParks;
 		return (
 			<div className={'build-contain-inner-data'}>
 				<Link to={'/build/parks/add'}>
@@ -42,7 +44,7 @@ class Parks extends React.Component {
 					subContainerClassName={'pages pagination'}
 					activeClassName={'active'}
 				/>
-				<CurrentParks parks={this.state.displayedParks} />
+				{parks.length ? <CurrentParks parks={parks} /> : <NoFilesToLoad />}
 			</div>
 		);
 	}

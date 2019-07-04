@@ -4,6 +4,7 @@ import featureList from '../utils/featureList';
 import { Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import paginateHelper from '../utils/paginateHelper';
+import NoFilesToLoad from './NoFilesToLoad';
 
 class Events extends React.Component {
 	constructor(props) {
@@ -28,6 +29,7 @@ class Events extends React.Component {
 	};
 
 	render() {
+		const events = this.state.displayedEvents;
 		return (
 			<div className={'build-contain-inner-data'}>
 				<Link to={'/build/events/add'}>
@@ -44,7 +46,7 @@ class Events extends React.Component {
 					subContainerClassName={'pages pagination'}
 					activeClassName={'active'}
 				/>
-				<CurrentEvents events={this.state.displayedEvents} />
+				{events.length ? <CurrentEvents events={events} /> : <NoFilesToLoad />}
 			</div>
 		);
 	}

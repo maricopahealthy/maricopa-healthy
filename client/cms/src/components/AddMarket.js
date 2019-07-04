@@ -28,11 +28,16 @@ class AddMarket extends React.Component {
 		}));
 	};
 
-	handleAdd = () => {
-		this.setState({
-			created_at: new Date(),
-			updated_at: new Date()
-		});
+	handleAdd = (e) => {
+		e.preventDefault();
+		fetch(`http://localhost:9000/markets`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(this.state)
+		}).then(this.props.history.push('/build/markets'));
+		// .then(window.location.reload());
 	};
 
 	handleChange = (e) => {

@@ -34,15 +34,13 @@ html {
 }
 
 .build-container {
-	background-color: #f8f8f8;
 	display: grid;
-	height: 100%;
+	min-height: 100vh;
 	grid-template-columns: 200px 150px 4fr;
 	/* grid-template-rows: 35px 50px 100%; */
 }
 
 .build-container-inner {
-	background-color: #f8f8f8;
 	grid-row: 1/4;
 	grid-column: 1/4;
 	display: grid;
@@ -90,6 +88,14 @@ html {
 	box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
 }
 
+.empty-file-header {
+	padding: 10px;
+	text-align: center;
+}
+
+.empty-file-image {
+	max-width: 100%;
+}
 /* .events-container {
 	height: 100vh;
 } */
@@ -97,7 +103,7 @@ html {
 .features-container {
 	grid-column: 2/3;
 	grid-row: 2/4;
-	border-right: 1px solid #868686;
+	border: 1px solid #868686;
 }
 
 .features-heading {
@@ -107,6 +113,30 @@ html {
 	padding: 15px 5px;
 	font-weight: 100;
 	border-bottom: 1px solid #868686;
+}
+
+.feature-name {
+	color: black;
+	text-decoration: none;
+	font-weight: 100;
+}
+
+.feature-name:hover {
+	background-color: #3287b88f;
+	color: white;
+	text-decoration: none;
+	/* font-weight: 800; */
+	padding: 4px;
+	border-radius: 5px;
+}
+
+.feature-name:focus {
+	background-color: #3287b8;
+	color: white;
+	text-decoration: none;
+	font-weight: 800;
+	padding: 4px;
+	border-radius: 5px;
 }
 
 .headerNav-container {
@@ -198,6 +228,14 @@ li {
 	padding-top: 10px;
 	border-top: 1px solid white;
 }
+
+/* .nav-dashboard-link:focus {
+	color: red;
+}
+
+.nav-dashboard-container:focus {
+	color: red;
+} */
 
 .nav-dashboard-link {
 	color: white;

@@ -3,7 +3,7 @@ import ReactPaginate from 'react-paginate';
 import { Link } from 'react-router-dom';
 import CurrentProduce from './CurrentProduce';
 import paginateHelper from '../utils/paginateHelper';
-
+import NoFilesToLoad from './NoFilesToLoad';
 class Produce extends React.Component {
 	constructor(props) {
 		super(props);
@@ -26,6 +26,7 @@ class Produce extends React.Component {
 	};
 
 	render() {
+		const produce = this.state.displayedProduce;
 		return (
 			<div className={'build-contain-inner-data'}>
 				<Link to={'/build/produce/add'}>
@@ -43,7 +44,7 @@ class Produce extends React.Component {
 					subContainerClassName={'pages pagination'}
 					activeClassName={'active'}
 				/>
-				<CurrentProduce produce={this.state.displayedProduce} />
+				{produce.length ? <CurrentProduce produce={produce} /> : <NoFilesToLoad />}
 			</div>
 		);
 	}

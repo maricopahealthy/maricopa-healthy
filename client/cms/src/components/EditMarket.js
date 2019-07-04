@@ -20,20 +20,15 @@ class EditMarket extends React.Component {
 			website_url: '',
 			zipcode: ''
 		};
-		this.addMoreHours = this.addMoreHours.bind(this);
-		this.fetchMarket = this.fetchMarket.bind(this);
-		this.handleEdit = this.handleEdit.bind(this);
-		this.handleDelete = this.handleDelete.bind(this);
-		this.handleChange = this.handleChange.bind(this);
 	}
-	addMoreHours(e) {
+	addMoreHours = (e) => {
 		e.preventDefault();
 		this.setState((prevState) => ({
 			hours: [ ...prevState.hours, { header: '', body: '' } ]
 		}));
-	}
+	};
 
-	fetchMarket(marketId = this.props.match.params.id) {
+	fetchMarket = (marketId = this.props.match.params.id) => {
 		fetch(`http://localhost:9000/markets/${marketId}`).then((res) => res.json()).then((markets) => {
 			console.log(markets);
 			let market = markets[0];
@@ -54,14 +49,23 @@ class EditMarket extends React.Component {
 				zipcode: market.zipcode
 			});
 		});
-	}
+	};
 
-	handleDelete() {
-		//run some sort of alert asking for confirmation
-		//send delete request to server
-	}
+	handleDelete = () => {
+		const id = this.state.markets.id;
+		if (window.confirm('Are you sure you want to delete this market?')) {
+			fetch(`http://localhost:9000/markets/${id}`, {
+				method: 'DELETE',
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			})
+				.then(this.props.history.push('/build/markets'))
+				.then(window.location.reload());
+		}
+	};
 
-	handleChange(e, index) {
+	handleChange = (e, index) => {
 		e.persist();
 		index !== undefined
 			? this.setState((prevState) => {
@@ -73,12 +77,12 @@ class EditMarket extends React.Component {
 					[e.target.name]: e.target.value,
 					updated_at: new Date()
 				});
-	}
+	};
 
-	handleEdit() {
+	handleEdit = () => {
 		//build out update functionality for server --patch or post?
 		fetch('http://localhost:9000/markets/patch');
-	}
+	};
 
 	componentDidMount() {
 		this.fetchMarket();

@@ -6,9 +6,9 @@ const CurrentMarkets = ({ markets = markets || [], editMarket }) => {
 	return (
 		<ul onClick={editMarket}>
 			<h3>Markets</h3>
-			{markets.map((market, id) => (
-				<li id={(id += 1)} key={id}>
-					<Link to={`/build/markets/edit/${id}`}>Edit</Link>
+			{markets.map((market) => (
+				<li id={market.id} key={market.id}>
+					<Link to={`/build/markets/edit/${market.id}`}>Edit</Link>
 					<br />
 					Thumbnail
 					<img src={market.thumbnail} />

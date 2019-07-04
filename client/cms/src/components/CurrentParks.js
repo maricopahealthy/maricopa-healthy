@@ -6,9 +6,9 @@ const CurrentParks = ({ parks = parks || [], editPark }) => {
 	return (
 		<ul onClick={editPark}>
 			<h3>Parks</h3>
-			{parks.map((park, id) => (
-				<li id={(id += 1)} key={id}>
-					<Link to={`/build/parks/edit/${id}`}>Edit</Link>
+			{parks.map((park) => (
+				<li id={park.id} key={park.id}>
+					<Link to={`/build/parks/edit/${park.id}`}>Edit</Link>
 					<br />
 					Thumbnail
 					<img src={park.thumbnail} />
